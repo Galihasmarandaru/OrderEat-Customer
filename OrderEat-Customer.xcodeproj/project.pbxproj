@@ -16,6 +16,10 @@
 		CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */; };
 		CA3559B02366A5FB00382CCF /* OrderEat_CustomerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559AF2366A5FB00382CCF /* OrderEat_CustomerTests.swift */; };
 		CA3559BB2366A5FB00382CCF /* OrderEat_CustomerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559BA2366A5FB00382CCF /* OrderEat_CustomerUITests.swift */; };
+		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
+		CAB5D2E123680D9300ACAAD0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */; };
+		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
+		CAB5D2E523685BB600ACAAD0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E423685BB600ACAAD0 /* OnBoarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		CA3559B62366A5FB00382CCF /* OrderEat-CustomerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OrderEat-CustomerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3559BA2366A5FB00382CCF /* OrderEat_CustomerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEat_CustomerUITests.swift; sourceTree = "<group>"; };
 		CA3559BC2366A5FB00382CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAB5D2DE23680CF000ACAAD0 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		CAB5D2E423685BB600ACAAD0 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +109,10 @@
 		CA3559942366A5FB00382CCF /* OrderEat-Customer */ = {
 			isa = PBXGroup;
 			children = (
-				CA3559952366A5FB00382CCF /* AppDelegate.swift */,
-				CA3559972366A5FB00382CCF /* SceneDelegate.swift */,
-				CA3559992366A5FB00382CCF /* ViewController.swift */,
-				CA35599B2366A5FB00382CCF /* Main.storyboard */,
-				CA3559A12366A5FB00382CCF /* Assets.xcassets */,
-				CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */,
+				CAB5D2DD23680C7400ACAAD0 /* View */,
+				CAB5D2DC23680C1E00ACAAD0 /* Model */,
+				CAB5D2DB23680C1700ACAAD0 /* ViewModel */,
+				CAB5D2DA23680C0A00ACAAD0 /* Controller */,
 				CA3559A62366A5FB00382CCF /* Info.plist */,
 				CA35599E2366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld */,
 			);
@@ -129,6 +135,44 @@
 				CA3559BC2366A5FB00382CCF /* Info.plist */,
 			);
 			path = "OrderEat-CustomerUITests";
+			sourceTree = "<group>";
+		};
+		CAB5D2DA23680C0A00ACAAD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA3559952366A5FB00382CCF /* AppDelegate.swift */,
+				CA3559992366A5FB00382CCF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CAB5D2DB23680C1700ACAAD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAB5D2DC23680C1E00ACAAD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAB5D2DE23680CF000ACAAD0 /* Customer.swift */,
+				CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */,
+				CAB5D2E223680D9D00ACAAD0 /* Menu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CAB5D2DD23680C7400ACAAD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA3559972366A5FB00382CCF /* SceneDelegate.swift */,
+				CA35599B2366A5FB00382CCF /* Main.storyboard */,
+				CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */,
+				CA3559A12366A5FB00382CCF /* Assets.xcassets */,
+				CAB5D2E423685BB600ACAAD0 /* OnBoarding.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +282,7 @@
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				CA35599D2366A5FB00382CCF /* Main.storyboard in Resources */,
+				CAB5D2E523685BB600ACAAD0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA35599A2366A5FB00382CCF /* ViewController.swift in Sources */,
+				CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */,
+				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
+				CAB5D2E123680D9300ACAAD0 /* Restaurant.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
