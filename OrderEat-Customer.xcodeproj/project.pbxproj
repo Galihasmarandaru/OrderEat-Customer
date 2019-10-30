@@ -19,7 +19,7 @@
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
-		CAB5D2E523685BB600ACAAD0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E423685BB600ACAAD0 /* OnBoarding.storyboard */; };
+		CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		CAB5D2DE23680CF000ACAAD0 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		CAB5D2E423685BB600ACAAD0 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		CAB5D2E723692F7700ACAAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/View/Base.lproj/OnBoarding.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,11 +166,11 @@
 		CAB5D2DD23680C7400ACAAD0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */,
 				CA3559972366A5FB00382CCF /* SceneDelegate.swift */,
 				CA35599B2366A5FB00382CCF /* Main.storyboard */,
 				CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */,
 				CA3559A12366A5FB00382CCF /* Assets.xcassets */,
-				CAB5D2E423685BB600ACAAD0 /* OnBoarding.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,7 +282,7 @@
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				CA35599D2366A5FB00382CCF /* Main.storyboard in Resources */,
-				CAB5D2E523685BB600ACAAD0 /* OnBoarding.storyboard in Resources */,
+				CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +363,14 @@
 				CA3559A42366A5FB00382CCF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAB5D2E723692F7700ACAAD0 /* Base */,
+			);
+			name = OnBoarding.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

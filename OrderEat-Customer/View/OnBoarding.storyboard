@@ -14,26 +14,22 @@
                     <view key="view" contentMode="scaleToFill" id="SJ6-HN-M6U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lv-k2-qbs">
+                                <rect key="frame" x="186" y="438" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="NID-eu-ivx"/>
                     </view>
-                    <connections>
-                        <segue destination="wbq-09-viD" kind="show" id="dZT-BN-FY0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTr-cK-eb0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-787" y="130"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="gfd-L8-E6e">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="wbq-09-viD" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cIn-Fe-M7a"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="04v-kg-cK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-38" y="-185"/>
+            <point key="canvasLocation" x="-788.40579710144937" y="129.91071428571428"/>
         </scene>
     </scenes>
 </document>
