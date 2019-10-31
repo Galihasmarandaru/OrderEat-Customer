@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA26D1F2236A82C1000FDDD0 /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA26D1F0236A82C1000FDDD0 /* OrderList.storyboard */; };
+		CA26D1F9236A830C000FDDD0 /* ViewControllerOrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA26D1F8236A830C000FDDD0 /* ViewControllerOrderList.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
 		CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559972366A5FB00382CCF /* SceneDelegate.swift */; };
-		CA35599A2366A5FB00382CCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559992366A5FB00382CCF /* ViewController.swift */; };
-		CA35599D2366A5FB00382CCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA35599B2366A5FB00382CCF /* Main.storyboard */; };
+		CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559992366A5FB00382CCF /* ViewControllerHome.swift */; };
+		CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA35599B2366A5FB00382CCF /* Home.storyboard */; };
 		CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA35599E2366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld */; };
 		CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA3559A12366A5FB00382CCF /* Assets.xcassets */; };
 		CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */; };
@@ -40,11 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA26D1F1236A82C1000FDDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/Classes/Home/View/Base.lproj/OrderList.storyboard"; sourceTree = "<group>"; };
+		CA26D1F8236A830C000FDDD0 /* ViewControllerOrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOrderList.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3559952366A5FB00382CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA3559972366A5FB00382CCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA3559992366A5FB00382CCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA35599C2366A5FB00382CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA3559992366A5FB00382CCF /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
+		CA35599C2366A5FB00382CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		CA35599F2366A5FB00382CCF /* OrderEat_Customer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrderEat_Customer.xcdatamodel; sourceTree = "<group>"; };
 		CA3559A12366A5FB00382CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA3559A42366A5FB00382CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,6 +90,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA26D1E32369652B000FDDD0 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				CA26D1E52369653C000FDDD0 /* View */,
+				CA26D1E423696535000FDDD0 /* ViewController */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		CA26D1E423696535000FDDD0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CA26D1E52369653C000FDDD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA26D1E623696599000FDDD0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CA3559972366A5FB00382CCF /* SceneDelegate.swift */,
+				CA3559952366A5FB00382CCF /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CA26D1E7236965B3000FDDD0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CA26D1EC23696787000FDDD0 /* ViewController */,
+				CA26D1EB2369677E000FDDD0 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CA26D1EA23696717000FDDD0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CA26D1F3236A82C8000FDDD0 /* OrderList */,
+				CAB5D2DC23680C1E00ACAAD0 /* Model */,
+				CA26D1ED236967A2000FDDD0 /* LaunchScreen */,
+				CA26D1E32369652B000FDDD0 /* OnBoarding */,
+				CA26D1E7236965B3000FDDD0 /* Home */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CA26D1EB2369677E000FDDD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA35599B2366A5FB00382CCF /* Home.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA26D1EC23696787000FDDD0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA3559992366A5FB00382CCF /* ViewControllerHome.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CA26D1ED236967A2000FDDD0 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CA26D1EE236967AC000FDDD0 /* View */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		CA26D1EE236967AC000FDDD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA26D1EF236967CC000FDDD0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA3559A12366A5FB00382CCF /* Assets.xcassets */,
+				CA3559A62366A5FB00382CCF /* Info.plist */,
+				CA35599E2366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA26D1F3236A82C8000FDDD0 /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+				CA26D1F7236A82E5000FDDD0 /* ViewModel */,
+				CA26D1F6236A82DD000FDDD0 /* ViewController */,
+				CA26D1F4236A82D1000FDDD0 /* View */,
+			);
+			path = OrderList;
+			sourceTree = "<group>";
+		};
+		CA26D1F4236A82D1000FDDD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA26D1F6236A82DD000FDDD0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA26D1F8236A830C000FDDD0 /* ViewControllerOrderList.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CA26D1F7236A82E5000FDDD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA26D1F0236A82C1000FDDD0 /* OrderList.storyboard */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CA3559892366A5FB00382CCF = {
 			isa = PBXGroup;
 			children = (
@@ -109,12 +242,9 @@
 		CA3559942366A5FB00382CCF /* OrderEat-Customer */ = {
 			isa = PBXGroup;
 			children = (
-				CAB5D2DD23680C7400ACAAD0 /* View */,
-				CAB5D2DC23680C1E00ACAAD0 /* Model */,
-				CAB5D2DB23680C1700ACAAD0 /* ViewModel */,
-				CAB5D2DA23680C0A00ACAAD0 /* Controller */,
-				CA3559A62366A5FB00382CCF /* Info.plist */,
-				CA35599E2366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld */,
+				CA26D1E623696599000FDDD0 /* Main */,
+				CA26D1EA23696717000FDDD0 /* Classes */,
+				CA26D1EF236967CC000FDDD0 /* Resources */,
 			);
 			path = "OrderEat-Customer";
 			sourceTree = "<group>";
@@ -137,22 +267,6 @@
 			path = "OrderEat-CustomerUITests";
 			sourceTree = "<group>";
 		};
-		CAB5D2DA23680C0A00ACAAD0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				CA3559952366A5FB00382CCF /* AppDelegate.swift */,
-				CA3559992366A5FB00382CCF /* ViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		CAB5D2DB23680C1700ACAAD0 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		CAB5D2DC23680C1E00ACAAD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,18 +275,6 @@
 				CAB5D2E223680D9D00ACAAD0 /* Menu.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CAB5D2DD23680C7400ACAAD0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */,
-				CA3559972366A5FB00382CCF /* SceneDelegate.swift */,
-				CA35599B2366A5FB00382CCF /* Main.storyboard */,
-				CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */,
-				CA3559A12366A5FB00382CCF /* Assets.xcassets */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +383,8 @@
 			files = (
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
-				CA35599D2366A5FB00382CCF /* Main.storyboard in Resources */,
+				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
+				CA26D1F2236A82C1000FDDD0 /* OrderList.storyboard in Resources */,
 				CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,13 +410,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA35599A2366A5FB00382CCF /* ViewController.swift in Sources */,
+				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
 				CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */,
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				CAB5D2E123680D9300ACAAD0 /* Restaurant.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
+				CA26D1F9236A830C000FDDD0 /* ViewControllerOrderList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,12 +453,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CA35599B2366A5FB00382CCF /* Main.storyboard */ = {
+		CA26D1F0236A82C1000FDDD0 /* OrderList.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA26D1F1236A82C1000FDDD0 /* Base */,
+			);
+			name = OrderList.storyboard;
+			sourceTree = "<group>";
+		};
+		CA35599B2366A5FB00382CCF /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CA35599C2366A5FB00382CCF /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */ = {
