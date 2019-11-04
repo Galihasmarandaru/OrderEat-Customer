@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA26D1F2236A82C1000FDDD0 /* OnGoing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA26D1F0236A82C1000FDDD0 /* OnGoing.storyboard */; };
 		CA26D1F9236A830C000FDDD0 /* OnGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA26D1F8236A830C000FDDD0 /* OnGoingViewController.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
 		CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559972366A5FB00382CCF /* SceneDelegate.swift */; };
@@ -21,6 +20,7 @@
 		CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E6D9236EF4BC00BD3050 /* OnBoardingViewController.swift */; };
 		CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA73E70B236FC6C800BD3050 /* ListOfMerchant.storyboard */; };
 		CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */; };
+		CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA73E714236FD3E800BD3050 /* OnGoing.storyboard */; };
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
@@ -45,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CA26D1F1236A82C1000FDDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/Classes/Home/View/Base.lproj/OnGoing.storyboard"; sourceTree = "<group>"; };
 		CA26D1F8236A830C000FDDD0 /* OnGoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingViewController.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3559952366A5FB00382CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		CA73E6D9236EF4BC00BD3050 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		CA73E70B236FC6C800BD3050 /* ListOfMerchant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListOfMerchant.storyboard; sourceTree = "<group>"; };
 		CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MerchantMenu.storyboard; sourceTree = "<group>"; };
+		CA73E714236FD3E800BD3050 /* OnGoing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnGoing.storyboard; sourceTree = "<group>"; };
 		CAB5D2DE23680CF000ACAAD0 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -198,14 +198,6 @@
 			path = OrderList;
 			sourceTree = "<group>";
 		};
-		CA26D1F4236A82D1000FDDD0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			path = ../View;
-			sourceTree = "<group>";
-		};
 		CA26D1F6236A82DD000FDDD0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +209,6 @@
 		CA26D1F7236A82E5000FDDD0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CA26D1F0236A82C1000FDDD0 /* OnGoing.storyboard */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -649,7 +640,7 @@
 			children = (
 				CA26D1F7236A82E5000FDDD0 /* ViewModel */,
 				CA26D1F6236A82DD000FDDD0 /* ViewController */,
-				CA26D1F4236A82D1000FDDD0 /* View */,
+				CA73E713236FD3AF00BD3050 /* View */,
 			);
 			path = OnGoing;
 			sourceTree = "<group>";
@@ -659,6 +650,14 @@
 			children = (
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		CA73E713236FD3AF00BD3050 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA73E714236FD3E800BD3050 /* OnGoing.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CAB5D2DC23680C1E00ACAAD0 /* Model */ = {
@@ -779,8 +778,8 @@
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
-				CA26D1F2236A82C1000FDDD0 /* OnGoing.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
+				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
 				CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -850,14 +849,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CA26D1F0236A82C1000FDDD0 /* OnGoing.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA26D1F1236A82C1000FDDD0 /* Base */,
-			);
-			name = OnGoing.storyboard;
-			sourceTree = "<group>";
-		};
 		CA35599B2366A5FB00382CCF /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
