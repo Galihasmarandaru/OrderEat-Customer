@@ -14,11 +14,21 @@ enum statusOperation {
 }
 
 struct Restaurant {
-    private var restaurantName: String;
+    private var merchantID: UUID;
+    private var nameMerchant: String;
+    private var phoneMerchant: String;
+    private var emailMerchant: String;
     private var passwordMerchant: String;
-    private var coordinatMerchant: CLLocation;
+    
+    private var adressMerchant: String;
+    private var latCoordinatMerchant: CLLocation;
+    private var longCoordinatMerchant: CLLocation;
+    
+    
     private var timeOpenMerchant: UIDatePicker;
     private var timeCloseMerchant: UIDatePicker;
+    
+    private var QRMerchant: UIImage;
     
     var condition: String;
     
