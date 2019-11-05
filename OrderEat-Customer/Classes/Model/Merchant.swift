@@ -46,5 +46,3 @@ struct Merchant{
         self.restoTravelTime = restorTravelTime
     }
 }
-
-

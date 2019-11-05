@@ -9,8 +9,8 @@
 import UIKit
 
 struct Menu {
-    private var menuName: String;
-    private var detailMenu: String;
-    private var priceMenu: Int;
-    private var imageMenu: UIImage;
+    let nameMenu: String
+    let detailMenu: String
+    let priceMenu: Int
+    let imageMenu: UIImage?
 }
