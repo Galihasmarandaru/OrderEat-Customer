@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */; };
 		CA26D1F9236A830C000FDDD0 /* OnGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA26D1F8236A830C000FDDD0 /* OnGoingViewController.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
 		CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559972366A5FB00382CCF /* SceneDelegate.swift */; };
@@ -24,6 +25,9 @@
 		CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E716236FE02900BD3050 /* TokenAPI.swift */; };
 		CA73E719236FE0A500BD3050 /* OTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E718236FE0A500BD3050 /* OTP.swift */; };
 		CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E71A236FE0B900BD3050 /* Transaction.swift */; };
+		CA73E71D236FEA3500BD3050 /* MerchantMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E71C236FEA3500BD3050 /* MerchantMenuViewController.swift */; };
+		CA73E71F236FECAF00BD3050 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */; };
+		CA73E722236FF06700BD3050 /* AddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E721236FF06700BD3050 /* AddData.swift */; };
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Merchant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
@@ -48,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
 		CA26D1F8236A830C000FDDD0 /* OnGoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingViewController.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3559952366A5FB00382CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +76,9 @@
 		CA73E716236FE02900BD3050 /* TokenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAPI.swift; sourceTree = "<group>"; };
 		CA73E718236FE0A500BD3050 /* OTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTP.swift; sourceTree = "<group>"; };
 		CA73E71A236FE0B900BD3050 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		CA73E71C236FEA3500BD3050 /* MerchantMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantMenuViewController.swift; sourceTree = "<group>"; };
+		CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		CA73E721236FF06700BD3050 /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
 		CAB5D2DE23680CF000ACAAD0 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CAB5D2E023680D9300ACAAD0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -412,6 +420,8 @@
 			isa = PBXGroup;
 			children = (
 				CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */,
+				CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */,
+				CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +429,7 @@
 		CA73E6EB236FC45300BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CA73E71C236FEA3500BD3050 /* MerchantMenuViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -426,6 +437,7 @@
 		CA73E6EC236FC45B00BD3050 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CA73E721236FF06700BD3050 /* AddData.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -816,9 +828,13 @@
 			files = (
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
 				CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */,
+				CA73E71F236FECAF00BD3050 /* MenuTableViewCell.swift in Sources */,
+				CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */,
 				CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */,
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */,
+				CA73E71D236FEA3500BD3050 /* MerchantMenuViewController.swift in Sources */,
+				CA73E722236FF06700BD3050 /* AddData.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,

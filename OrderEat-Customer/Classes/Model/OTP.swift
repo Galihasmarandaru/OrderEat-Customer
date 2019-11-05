@@ -9,6 +9,6 @@
 import UIKit
 
 struct OTP {
-    private var userID: String;
-    private var otpCode: String;
+    private var userID: String
+    private var otpCode: String
 }

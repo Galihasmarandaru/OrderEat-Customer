@@ -9,6 +9,6 @@
 import UIKit
 
 struct TokenAPI {
-    private var userID: String;
-    private var accessToken: String;
+    private var userID: String
+    private var accessToken: String
 }

@@ -9,12 +9,10 @@
 import UIKit
 
 struct Tarnsaction {
-    private var transactionID: UUID;
-    private var customerID: String;
-    private var merchantID: String;
-    private var statusTransaction: Int64;
-    private var totalTransaction: Int;
-    private var pickUpTime: UIDatePicker;
-    
-    
+    private var transactionID: UUID
+    private var customerID: String
+    private var merchantID: String
+    private var statusTransaction: Int64
+    private var totalTransaction: Int
+    private var pickUpTime: UIDatePicker
 }
