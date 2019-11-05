@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct AddData {
+struct AddDataMerchantMenu {
     static func getDataMenu() -> [Menu] {
         var data = [Menu]()
         
@@ -29,8 +29,7 @@ struct AddData {
     }
     
     static func getDataMerchant() -> Merchant {
-        let dataMerchant = Merchant(nameMerchant: "Burger King", adressMerchant: "AEON Mall, BSD City")
-        
+        let dataMerchant = Merchant(from: "Burger King", restorAddress: "AEON Mall, BSD City", restorImage: UIImage(named: "")!, restorDistance: "", restorTravelTime: "")
         return dataMerchant
     }
 }

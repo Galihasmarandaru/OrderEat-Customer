@@ -16,12 +16,12 @@ class MerchantMenuViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewMenu: UIView!
     
-    var theData = AddData.getDataMenu()
+    var theData = AddDataMerchantMenu.getDataMenu()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        merchantTitle.data = AddData.getDataMerchant()
+        merchantTitle.data = AddDataMerchantMenu.getDataMerchant()
         
         backgroundMerchant.image = UIImage(named: "bg-merchat-1")
         viewOfMenu()

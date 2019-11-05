@@ -45,4 +45,5 @@ struct Merchant{
         self.restoDistance = restorDistance
         self.restoTravelTime = restorTravelTime
     }
+    
 }

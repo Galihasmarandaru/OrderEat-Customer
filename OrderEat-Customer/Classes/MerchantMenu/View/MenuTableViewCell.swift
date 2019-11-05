@@ -17,7 +17,7 @@ class MenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var addButton: UIButton!
     
-    var theData = AddData.getDataMenu()
+    var theData = AddDataMerchantMenu.getDataMenu()
     
     var data: Menu! {
         didSet {
