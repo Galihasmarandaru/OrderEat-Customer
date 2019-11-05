@@ -9,41 +9,40 @@
 import UIKit
 import CoreLocation
 
-enum statusOperation {
-    case open, close
-}
-
-struct Merchant {
-//    private var merchantID: UUID
-    var nameMerchant: String
-//    private var phoneMerchant: String
-//    private var emailMerchant: String
-//    private var passwordMerchant: String
-    
-    var adressMerchant: String
-//    private var latCoordinatMerchant: CLLocation
-//    private var longCoordinatMerchant: CLLocation
-    
-    
-//    private var timeOpenMerchant: UIDatePicker
-//    let timeCloseMerchant: UIDatePicker
+//enum statusOperation {
+//    case open, close
+//}
 //
-//    private var QRMerchant: UIImage
+//struct Restaurant {
+//    private var restaurantName: String;
+//    private var coordinatRestaurantL: CLLocation;
+//    private var timeOpenRestaurant: UIDatePicker;
+//    private var timeCloseRestaurant: UIDatePicker;
 //
-//    var condition: String
+//    var condition: String;
 //
-//    mutating func statusOperationMerchant(status: statusOperation) -> String {
+//    mutating func statusOperationRestaurant(status: statusOperation) -> String {
 //        switch status {
 //        case .open:
-//            condition = "Open until, \(timeCloseMerchant)"
+//            condition = "Open until, \(timeCloseRestaurant)"
 //        case .close:
-//            condition = "Close until, \(timeOpenMerchant)"
+//            condition = "Close until, \(timeOpenRestaurant)"
 //        }
 //        return condition
 //    }
+//}
+struct Merchant{
+    let restoName: String
+    let restoAddress: String
+    let restoImage: UIImage
+    let restoDistance: String
+    let restoTravelTime:String
     
-    init(nameMerchant: String, adressMerchant: String) {
-        self.nameMerchant = nameMerchant
-        self.adressMerchant = adressMerchant
+    init(from restorName:String, restorAddress:String, restorImage:UIImage, restorDistance:String, restorTravelTime:String) {
+        self.restoName = restorName
+        self.restoAddress = restorAddress
+        self.restoImage = restorImage
+        self.restoDistance = restorDistance
+        self.restoTravelTime = restorTravelTime
     }
 }
