@@ -25,7 +25,7 @@
 		CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA73E70B236FC6C800BD3050 /* ListOfMerchant.storyboard */; };
 		CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */; };
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
-		CAB5D2E123680D9300ACAAD0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */; };
+		CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Merchant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
 		CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,7 @@
 		CA73E70B236FC6C800BD3050 /* ListOfMerchant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListOfMerchant.storyboard; sourceTree = "<group>"; };
 		CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MerchantMenu.storyboard; sourceTree = "<group>"; };
 		CAB5D2DE23680CF000ACAAD0 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		CAB5D2E023680D9300ACAAD0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CAB5D2E723692F7700ACAAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/View/Base.lproj/OnBoarding.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -674,7 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB5D2DE23680CF000ACAAD0 /* Customer.swift */,
-				CAB5D2E023680D9300ACAAD0 /* Restaurant.swift */,
+				CAB5D2E023680D9300ACAAD0 /* Merchant.swift */,
 				CAB5D2E223680D9D00ACAAD0 /* Menu.swift */,
 			);
 			path = Model;
@@ -821,7 +821,7 @@
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
 				CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */,
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
-				CAB5D2E123680D9300ACAAD0 /* Restaurant.swift in Sources */,
+				CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,

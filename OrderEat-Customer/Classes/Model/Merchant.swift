@@ -31,7 +31,7 @@ import CoreLocation
 //        return condition
 //    }
 //}
-struct Restaurant{
+struct Merchant{
     let restoName: String
     let restoAddress: String
     let restoImage: UIImage

@@ -25,7 +25,7 @@ class ListMerchantTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    var data: Restaurant!{
+    var data: Merchant!{
         didSet{
             self.merchantImage.image = data.restoImage
             self.merchantName.text = data.restoName
