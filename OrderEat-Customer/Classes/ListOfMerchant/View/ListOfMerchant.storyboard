@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNo-Uo-1yf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNo-Uo-1yf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-Xh-1bv">
@@ -129,14 +128,18 @@
                         <constraints>
                             <constraint firstItem="nNA-gM-Cq3" firstAttribute="trailing" secondItem="K16-e8-x3c" secondAttribute="trailing" id="2PR-a9-zDU"/>
                             <constraint firstItem="nNA-gM-Cq3" firstAttribute="trailing" secondItem="Jmg-o4-iTf" secondAttribute="trailing" constant="20" id="8at-GO-vbl"/>
+                            <constraint firstItem="vNo-Uo-1yf" firstAttribute="leading" secondItem="nNA-gM-Cq3" secondAttribute="leading" id="D31-UM-742"/>
                             <constraint firstItem="Jmg-o4-iTf" firstAttribute="top" secondItem="K16-e8-x3c" secondAttribute="bottom" constant="13" id="OXV-Dc-3wd"/>
                             <constraint firstAttribute="bottomMargin" secondItem="S4K-Xh-1bv" secondAttribute="bottom" constant="-35" id="SH4-bO-Q7s"/>
                             <constraint firstItem="K16-e8-x3c" firstAttribute="top" secondItem="nNA-gM-Cq3" secondAttribute="top" constant="1" id="SI4-rN-3Bu"/>
                             <constraint firstItem="K16-e8-x3c" firstAttribute="leading" secondItem="nNA-gM-Cq3" secondAttribute="leading" id="dT2-F8-ciL"/>
                             <constraint firstItem="S4K-Xh-1bv" firstAttribute="top" secondItem="Jmg-o4-iTf" secondAttribute="bottom" constant="16" id="j3g-j7-s64"/>
                             <constraint firstItem="S4K-Xh-1bv" firstAttribute="centerX" secondItem="K16-e8-x3c" secondAttribute="centerX" id="jBT-NR-dEt"/>
+                            <constraint firstItem="vNo-Uo-1yf" firstAttribute="top" secondItem="9a7-OL-Pme" secondAttribute="top" id="kk9-Ye-ZBq"/>
                             <constraint firstItem="S4K-Xh-1bv" firstAttribute="leading" secondItem="9a7-OL-Pme" secondAttribute="leadingMargin" constant="-20" id="lTi-XT-J5u"/>
                             <constraint firstItem="Jmg-o4-iTf" firstAttribute="leading" secondItem="nNA-gM-Cq3" secondAttribute="leading" constant="10" id="lxn-0B-gEa"/>
+                            <constraint firstItem="vNo-Uo-1yf" firstAttribute="trailing" secondItem="nNA-gM-Cq3" secondAttribute="trailing" id="pRc-9m-Pjg"/>
+                            <constraint firstItem="vNo-Uo-1yf" firstAttribute="bottom" secondItem="K16-e8-x3c" secondAttribute="bottom" id="qTn-0G-rqJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nNA-gM-Cq3"/>
                     </view>
