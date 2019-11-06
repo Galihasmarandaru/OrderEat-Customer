@@ -32,7 +32,14 @@ class ConfirmPaymentViewController: UIViewController {
     @IBAction func saveQRButtonPressed(_ sender: Any) {
         UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
         
-        
+        let gojekHooks = "gojek://"
+        let gojekUrl = URL(string: gojekHooks)
+        if UIApplication.shared.canOpenURL(gojekUrl!) {
+            UIApplication.shared.open(gojekUrl!, options: [:], completionHandler: nil)
+        }
+        else {
+            UIApplication.shared.open(URL(string: "https://apps.apple.com/id/app/gojek/id944875099")!, options: [:], completionHandler: nil)
+        }
     }
     
     /*
