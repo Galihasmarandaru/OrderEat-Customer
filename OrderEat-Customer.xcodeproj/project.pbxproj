@@ -10,6 +10,8 @@
 		0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F5783236FFD990048BB0E /* ListMerchantViewController.swift */; };
 		0A61C1832371427700CF695F /* AddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1822371427700CF695F /* AddData.swift */; };
 		0A61C1852371B1D100CF695F /* OnGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1842371B1D100CF695F /* OnGoingViewController.swift */; };
+		0A61C18723726AC400CF695F /* OnGoingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C18623726AC400CF695F /* OnGoingCollectionViewCell.swift */; };
+		0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1882372745500CF695F /* OnGoingViewModel.swift */; };
 		0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */; };
 		CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
@@ -58,6 +60,8 @@
 		0A2F5783236FFD990048BB0E /* ListMerchantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantViewController.swift; sourceTree = "<group>"; };
 		0A61C1822371427700CF695F /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
 		0A61C1842371B1D100CF695F /* OnGoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingViewController.swift; sourceTree = "<group>"; };
+		0A61C18623726AC400CF695F /* OnGoingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A61C1882372745500CF695F /* OnGoingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnGoingViewModel.swift; path = "OrderEat-Customer/Classes/OrderList/OnGoing/View/OnGoingViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantTableViewCell.swift; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +233,7 @@
 		CA26D1F7236A82E5000FDDD0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0A61C1882372745500CF695F /* OnGoingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -683,6 +688,7 @@
 			isa = PBXGroup;
 			children = (
 				CA73E714236FD3E800BD3050 /* OnGoing.storyboard */,
+				0A61C18623726AC400CF695F /* OnGoingCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -847,12 +853,14 @@
 				CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */,
 				CA73E71D236FEA3500BD3050 /* MerchantMenuViewController.swift in Sources */,
 				CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */,
+				0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				0A61C1852371B1D100CF695F /* OnGoingViewController.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
+				0A61C18723726AC400CF695F /* OnGoingCollectionViewCell.swift in Sources */,
 				CA73E719236FE0A500BD3050 /* OTP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

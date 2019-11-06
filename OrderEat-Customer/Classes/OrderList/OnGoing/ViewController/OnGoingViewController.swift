@@ -14,12 +14,14 @@ class OnGoingViewController: UIViewController {
     @IBOutlet weak var onGoingButton: UIButton!
     @IBOutlet weak var onGoingUnderline: UIImageView!
     @IBOutlet weak var historyUnderline: UIImageView!
+    var isiCell = OnGoingViewModel.getTransaction()
     override func viewDidLoad() {
         super.viewDidLoad()
         historyUnderline.isHidden = true
 
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func onGoingClicked(_ sender: Any) {
         onGoingUnderline.isHidden = false
         historyUnderline.isHidden = true
@@ -34,15 +36,24 @@ class OnGoingViewController: UIViewController {
         onGoingButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return isiCell.count
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! OnGoingCollectionViewCell
+        cell.merchantName.text = isiCell[indexPath.row].merchantName
+        cell.transactionID.text = isiCell[indexPath.row].transactionID
+        cell.transactionPrice.text = "Rp \(isiCell[indexPath.row].transactionPrice)"
+        cell.statusTransaction.text = isiCell[indexPath.row].statusTransaction
+        cell.transactionDate.text = isiCell[indexPath.row].pickupDate
+        cell.transactionTime.text = isiCell[indexPath.row].pickupTime
+        return cell
+    }
+    
+    
 }
