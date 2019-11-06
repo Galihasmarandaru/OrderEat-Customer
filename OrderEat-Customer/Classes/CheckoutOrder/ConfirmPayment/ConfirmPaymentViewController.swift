@@ -29,7 +29,12 @@ class ConfirmPaymentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveQRButtonPressed(_ sender: Any) {
+        UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
