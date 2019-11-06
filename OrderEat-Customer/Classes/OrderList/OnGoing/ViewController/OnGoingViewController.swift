@@ -18,7 +18,8 @@ class OnGoingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         historyUnderline.isHidden = true
-
+ 
+        
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +53,11 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         cell.statusTransaction.text = isiCell[indexPath.row].statusTransaction
         cell.transactionDate.text = isiCell[indexPath.row].pickupDate
         cell.transactionTime.text = isiCell[indexPath.row].pickupTime
+        cell.contentView.layer.cornerRadius = 2.0
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cell.layer.shadowOpacity = 0.5
         return cell
     }
     

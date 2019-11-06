@@ -16,4 +16,5 @@ class OnGoingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var statusTransaction: UILabel!
     @IBOutlet weak var transactionDate: UILabel!
     @IBOutlet weak var transactionTime: UILabel!
+    
 }
