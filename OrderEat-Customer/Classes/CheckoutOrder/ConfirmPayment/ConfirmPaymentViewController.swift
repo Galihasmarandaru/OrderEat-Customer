@@ -42,6 +42,18 @@ class ConfirmPaymentViewController: UIViewController {
         }
     }
     
+    @IBAction func confirmPaymentButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Confirm Payment", message: "Are you sure you have done your payment?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { ACTION in
+            //insert what to do here if yes is pressed
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { ACTION in
+            //insert what to do here if no is pressed
+        }))
+        
+        self.present(alert, animated: true)
+    }
     /*
     // MARK: - Navigation
 
