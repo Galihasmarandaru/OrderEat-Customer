@@ -34,15 +34,15 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>OnBoarding</string>
+					<string>OrderSetTime</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>OnBoarding</string>
+	<string>OrderSetTime</string>
 	<key>UIMainStoryboardFile</key>
-	<string>OnBoarding</string>
+	<string>OrderSetTime</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

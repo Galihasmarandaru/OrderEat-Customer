@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Auz-hY-1hp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Waitingfor Resto Confirm View Controller-->
+        <scene sceneID="elW-eh-j43">
+            <objects>
+                <viewController id="Auz-hY-1hp" customClass="WaitingforRestoConfirmViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hKe-Xl-Oqn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4U-70-kir">
+                                <rect key="frame" x="20" y="82" width="374" height="814"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for confirmation from" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq1-7r-loC">
+                                        <rect key="frame" x="50" y="35" width="274" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King AEON Mall, BSD CIty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asL-x8-YVL">
+                                        <rect key="frame" x="20" y="58" width="334" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining 09:55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIo-GA-8Ly">
+                                        <rect key="frame" x="20" y="99" width="334" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iqb-mR-5an">
+                                        <rect key="frame" x="112" y="188.5" width="150" height="379"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="379" id="bRa-0j-I28"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5g-Jp-4Xy" customClass="CustomButton" customModule="OrderEat_Customer" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="637.5" width="334" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="DPZ-VF-iae"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="cancelOrderButtonPressed:" destination="Auz-hY-1hp" eventType="touchUpInside" id="U5N-AB-TdN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Iqb-mR-5an" firstAttribute="top" secondItem="kIo-GA-8Ly" secondAttribute="bottom" constant="70" id="6mZ-O4-wKy"/>
+                                    <constraint firstItem="Iqb-mR-5an" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="112" id="9mc-De-tni"/>
+                                    <constraint firstItem="kIo-GA-8Ly" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="20" id="Aou-uF-GP5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iqb-mR-5an" secondAttribute="trailing" constant="112" id="B8j-si-gEi"/>
+                                    <constraint firstItem="asL-x8-YVL" firstAttribute="top" secondItem="dq1-7r-loC" secondAttribute="bottom" constant="2" id="H8q-4U-Dxt"/>
+                                    <constraint firstItem="asL-x8-YVL" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="20" id="JFt-Ae-2wd"/>
+                                    <constraint firstItem="V5g-Jp-4Xy" firstAttribute="top" secondItem="Iqb-mR-5an" secondAttribute="bottom" constant="70" id="KgN-0L-TSz"/>
+                                    <constraint firstAttribute="trailing" secondItem="dq1-7r-loC" secondAttribute="trailing" constant="50" id="M3L-U5-SfX"/>
+                                    <constraint firstAttribute="trailing" secondItem="asL-x8-YVL" secondAttribute="trailing" constant="20" id="MXY-Io-G5P"/>
+                                    <constraint firstItem="dq1-7r-loC" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="50" id="avT-kL-gnG"/>
+                                    <constraint firstAttribute="trailing" secondItem="kIo-GA-8Ly" secondAttribute="trailing" constant="20" id="c6R-9h-gWz"/>
+                                    <constraint firstItem="V5g-Jp-4Xy" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="20" id="gRA-Qv-fjS"/>
+                                    <constraint firstAttribute="trailing" secondItem="V5g-Jp-4Xy" secondAttribute="trailing" constant="20" id="jpB-b4-2vt"/>
+                                    <constraint firstItem="kIo-GA-8Ly" firstAttribute="top" secondItem="asL-x8-YVL" secondAttribute="bottom" constant="20" id="xgE-1H-dHM"/>
+                                    <constraint firstItem="dq1-7r-loC" firstAttribute="top" secondItem="H4U-70-kir" secondAttribute="top" constant="35" id="zhs-yQ-sgb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="H4U-70-kir" firstAttribute="leading" secondItem="trX-uf-bg2" secondAttribute="leading" constant="20" id="3uq-zb-aqd"/>
+                            <constraint firstItem="H4U-70-kir" firstAttribute="top" secondItem="trX-uf-bg2" secondAttribute="top" constant="38" id="gNQ-zV-KKp"/>
+                            <constraint firstItem="trX-uf-bg2" firstAttribute="trailing" secondItem="H4U-70-kir" secondAttribute="trailing" constant="20" id="jwK-Pp-o8r"/>
+                            <constraint firstAttribute="bottom" secondItem="H4U-70-kir" secondAttribute="bottom" id="whP-BA-8HE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="trX-uf-bg2"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelOrderButton" destination="V5g-Jp-4Xy" id="01r-0k-EVo"/>
+                        <outlet property="contentView" destination="H4U-70-kir" id="8BT-8O-tCL"/>
+                        <outlet property="remainingTimeLabel" destination="kIo-GA-8Ly" id="oLM-Ff-Tw8"/>
+                        <outlet property="restaurantNameLabel" destination="asL-x8-YVL" id="mvy-cq-eV3"/>
+                        <outlet property="waitingImageView" destination="Iqb-mR-5an" id="VJW-cT-5x5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30U-v3-9Om" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284.05797101449275" y="25.446428571428569"/>
+        </scene>
+    </scenes>
+</document>
