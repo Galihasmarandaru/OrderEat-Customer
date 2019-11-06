@@ -27,9 +27,9 @@ class ListMerchantTableViewCell: UITableViewCell {
     }
     var data: Merchant!{
         didSet{
-            self.merchantImage.image = data.restoImage
-            self.merchantName.text = data.restoName
-            self.merchantADdress.text = data.restoAddress
+            self.merchantImage.image = data.merchantImage
+            self.merchantName.text = data.merchantName
+            self.merchantADdress.text = data.merchantAddress
         }
     }
 

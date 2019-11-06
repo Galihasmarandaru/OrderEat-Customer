@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 
 struct AddData{
     static func getDataMerchant() -> [Merchant]{
-        let isiTable:[Merchant] = [Merchant(from: "Burger King", restorAddress: "AEON Mall BSD City",restorImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0"),restorDistance: "1.5km",restorTravelTime: "6 minutes"),Merchant(from: "Onezo", restorAddress: "Pasar Intramoda",restorImage: #imageLiteral(resourceName: "mcd"),restorDistance: "0.6km",restorTravelTime: "12 minutes"),Merchant(from: "Burgushi", restorAddress: "Summarecon Mall Serpong",restorImage: #imageLiteral(resourceName: "WingstopMeal_Lead"),restorDistance: "1.5km",restorTravelTime: "6 minutes"),]
+
+        
+        let isiTable:[Merchant] = [Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall BSD City", merchantImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0"))]
         return isiTable
     }
 }

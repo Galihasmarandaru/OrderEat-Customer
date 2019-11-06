@@ -9,15 +9,18 @@
 import UIKit
 import CoreLocation
 
-//enum statusOperation {
-//    case open, close
-//}
-//
-//struct Restaurant {
-//    private var restaurantName: String;
-//    private var coordinatRestaurantL: CLLocation;
-//    private var timeOpenRestaurant: UIDatePicker;
-//    private var timeCloseRestaurant: UIDatePicker;
+enum statusOperation {
+    case open, close
+}
+
+struct Merchant{
+    let merchantName: String
+    let merchantAddress: String
+    let merchantImage: UIImage
+    
+//    let coordinatRestaurant: CLLocation
+//    let timeOpenRestaurant: UIDatePicker
+//    let timeCloseRestaurant: UIDatePicker
 //
 //    var condition: String;
 //
@@ -30,20 +33,5 @@ import CoreLocation
 //        }
 //        return condition
 //    }
-//}
-struct Merchant{
-    let restoName: String
-    let restoAddress: String
-    let restoImage: UIImage
-    let restoDistance: String
-    let restoTravelTime:String
-    
-    init(from restorName:String, restorAddress:String, restorImage:UIImage, restorDistance:String, restorTravelTime:String) {
-        self.restoName = restorName
-        self.restoAddress = restorAddress
-        self.restoImage = restorImage
-        self.restoDistance = restorDistance
-        self.restoTravelTime = restorTravelTime
-    }
-    
+
 }
