@@ -72,7 +72,7 @@ class OrderSetTimeViewController: UIViewController {
     }
     
     
-    func loadData() {
+//    func loadData() {
 //        let food1 = OrderedMenu.init(image: UIImage(named: "Blackpepper Burger.png")!, name: "Burger", price: 50000, qty: 2)
 //        let food2 = OrderedMenu.init(image: UIImage(named: "Blackpepper Burger.png")!, name: "Noodle", price: 25000, qty: 1)
 //        let food3 = OrderedMenu.init(image: UIImage(named: "Blackpepper Burger.png")!, name: "Chicken Wings", price: 38000, qty: 3)
@@ -80,7 +80,7 @@ class OrderSetTimeViewController: UIViewController {
 //        foods.append(food1)
 //        foods.append(food2)
 //        foods.append(food3)
-    }
+//    }
     
     /*
     // MARK: - Navigation

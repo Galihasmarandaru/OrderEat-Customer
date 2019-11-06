@@ -9,36 +9,46 @@
 import UIKit
 import CoreLocation
 
-enum statusOperation {
-    case open, close
-}
+//enum statusOperation {
+//    case open, close
+//}
 
-struct Restaurant {
-    private var merchantID: UUID;
-    private var nameMerchant: String;
-    private var phoneMerchant: String;
-    private var emailMerchant: String;
-    private var passwordMerchant: String;
+struct Merchant {
+//    private var merchantID: UUID;
+//    private var nameMerchant: String;
+//    private var phoneMerchant: String;
+//    private var emailMerchant: String;
+//    private var passwordMerchant: String;
+//
+//    private var adressMerchant: String;
+//    private var latCoordinatMerchant: CLLocation;
+//    private var longCoordinatMerchant: CLLocation;
+//
+//
+//    private var timeOpenMerchant: UIDatePicker;
+//    private var timeCloseMerchant: UIDatePicker;
+//
+//    private var QRMerchant: UIImage;
+//
+//    var condition: String;
     
-    private var adressMerchant: String;
-    private var latCoordinatMerchant: CLLocation;
-    private var longCoordinatMerchant: CLLocation;
+    let merchantID: String;
+    let merchantName: String;
+    let QRMerchant: UIImage;
     
-    
-    private var timeOpenMerchant: UIDatePicker;
-    private var timeCloseMerchant: UIDatePicker;
-    
-    private var QRMerchant: UIImage;
-    
-    var condition: String;
-    
-    mutating func statusOperationMerchant(status: statusOperation) -> String {
-        switch status {
-        case .open:
-            condition = "Open until, \(timeCloseMerchant)"
-        case .close:
-            condition = "Close until, \(timeOpenMerchant)"
-        }
-        return condition
+    init(merchantID: String, merchantName: String, QRMerchant: UIImage) {
+        self.merchantID = merchantID
+        self.merchantName = merchantName
+        self.QRMerchant = QRMerchant
     }
+    
+//    mutating func statusOperationMerchant(status: statusOperation) -> String {
+//        switch status {
+//        case .open:
+//            condition = "Open until, \(timeCloseMerchant)"
+//        case .close:
+//            condition = "Close until, \(timeOpenMerchant)"
+//        }
+//        return condition
+//    }
 }
