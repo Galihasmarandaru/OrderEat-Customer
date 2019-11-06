@@ -7,20 +7,78 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--On Going View Controller-->
         <scene sceneID="Ear-c9-CZC">
             <objects>
-                <viewController id="r8r-3S-p4L" sceneMemberID="viewController">
+                <viewController id="r8r-3S-p4L" customClass="OnGoingViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k5n-Ag-3fd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJV-K3-9T3">
+                                <rect key="frame" x="89" y="71" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="On Going">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onGoingClicked:" destination="r8r-3S-p4L" eventType="touchUpInside" id="v8B-vY-zZe"/>
+                                    <action selector="onGoingClicked:" destination="L9L-Ld-Nfh" eventType="touchUpInside" id="vQt-F3-gel"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-kx-eb9">
+                                <rect key="frame" x="227" y="93" width="80" height="16"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSI-iT-z6s">
+                                <rect key="frame" x="208" y="71" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="History">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="historyClicked:" destination="r8r-3S-p4L" eventType="touchUpInside" id="Bf3-0c-36F"/>
+                                    <action selector="historyClicked:" destination="L9L-Ld-Nfh" eventType="touchUpInside" id="UGt-Jg-eMe"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="faO-Bd-58q">
+                                <rect key="frame" x="108" y="93" width="80" height="16"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uik-fD-rMm" firstAttribute="bottom" secondItem="WcA-kx-eb9" secondAttribute="bottom" constant="753" id="8v9-89-mKr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="faO-Bd-58q" secondAttribute="trailing" constant="206" id="Axb-Ed-0dz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="mSI-iT-z6s" secondAttribute="bottom" constant="770" id="EbB-h3-wON"/>
+                            <constraint firstItem="uik-fD-rMm" firstAttribute="trailing" secondItem="mSI-iT-z6s" secondAttribute="trailing" constant="87" id="Foe-HL-6sb"/>
+                            <constraint firstItem="uik-fD-rMm" firstAttribute="trailing" secondItem="WcA-kx-eb9" secondAttribute="trailing" constant="107" id="Nta-cr-srt"/>
+                            <constraint firstItem="faO-Bd-58q" firstAttribute="top" secondItem="k5n-Ag-3fd" secondAttribute="topMargin" constant="49" id="OJu-3V-ABZ"/>
+                            <constraint firstItem="faO-Bd-58q" firstAttribute="leading" secondItem="uik-fD-rMm" secondAttribute="leading" constant="108" id="Odo-iL-l0d"/>
+                            <constraint firstItem="SJV-K3-9T3" firstAttribute="leading" secondItem="uik-fD-rMm" secondAttribute="leading" constant="89" id="QSX-cI-ncU"/>
+                            <constraint firstItem="mSI-iT-z6s" firstAttribute="leading" secondItem="k5n-Ag-3fd" secondAttribute="leadingMargin" constant="188" id="WYG-V8-ZAv"/>
+                            <constraint firstItem="WcA-kx-eb9" firstAttribute="top" secondItem="k5n-Ag-3fd" secondAttribute="topMargin" constant="49" id="X5A-YL-S55"/>
+                            <constraint firstItem="uik-fD-rMm" firstAttribute="bottom" secondItem="faO-Bd-58q" secondAttribute="bottom" constant="753" id="aZg-dI-ptK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="SJV-K3-9T3" secondAttribute="bottom" constant="770" id="bqJ-Fa-TwN"/>
+                            <constraint firstItem="SJV-K3-9T3" firstAttribute="top" secondItem="uik-fD-rMm" secondAttribute="top" constant="27" id="d6j-u7-h1r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SJV-K3-9T3" secondAttribute="trailing" constant="186" id="kaA-EW-XsA"/>
+                            <constraint firstItem="WcA-kx-eb9" firstAttribute="leading" secondItem="k5n-Ag-3fd" secondAttribute="leadingMargin" constant="207" id="qQ1-sh-qTr"/>
+                            <constraint firstItem="mSI-iT-z6s" firstAttribute="top" secondItem="k5n-Ag-3fd" secondAttribute="topMargin" constant="27" id="spm-mM-SvX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uik-fD-rMm"/>
                     </view>
+                    <connections>
+                        <outlet property="historyButton" destination="mSI-iT-z6s" id="Pnt-SM-ltm"/>
+                        <outlet property="historyUnderline" destination="WcA-kx-eb9" id="HMI-p9-lEU"/>
+                        <outlet property="onGoingButton" destination="SJV-K3-9T3" id="ilf-no-G6b"/>
+                        <outlet property="onGoingUnderline" destination="faO-Bd-58q" id="izt-UY-jws"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qhm-Bu-CDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="L9L-Ld-Nfh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="142" y="101"/>
+            <point key="canvasLocation" x="140.57971014492756" y="100.44642857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Rectangle" width="48" height="2"/>
+    </resources>
 </document>

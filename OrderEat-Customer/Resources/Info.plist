@@ -34,15 +34,15 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>MerchantMenu</string>
+					<string>OnGoing</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>MerchantMenu</string>
+	<string>OnGoing</string>
 	<key>UIMainStoryboardFile</key>
-	<string>MerchantMenu</string>
+	<string>OnGoing</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
