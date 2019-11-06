@@ -15,7 +15,7 @@ enum statusOperation {
 
 struct OnGoingViewModel{
     static func getTransaction() -> [Transaction]{
-        let isiCell:[Transaction] = [Transaction(from: "D-01", custID: "1", merchName: "BURGER KING AEON MALL", statusTrans: "3", transPrice: "20.000", pickupDat: "29 October 2019", pickUpTim: "09.00"),Transaction(from: "D-02", custID: "1", merchName: "SUSHI TEI SUMMARECON MALL", statusTrans: "2", transPrice: "121.000", pickupDat: "29 October 2019", pickUpTim: "12.00"),Transaction(from: "D-03", custID: "1", merchName: "ONEZO PASAR INTRAMODA", statusTrans: "2", transPrice: "58.000", pickupDat: "29 October 2019", pickUpTim: "13.00"),]
+        let isiCell:[Transaction] = [Transaction(from: "D-01", custID: "1", merchName: "Burger King Aeon Mall", statusTrans: "3", transPrice: "20.000", pickupDat: "29 October 2019", pickUpTim: "09.00"),Transaction(from: "D-02", custID: "1", merchName: "Bubur Kantin Bawah", statusTrans: "2", transPrice: "121.000", pickupDat: "29 October 2019", pickUpTim: "12.00"),Transaction(from: "D-03", custID: "1", merchName: "Onezo Antri Banget", statusTrans: "2", transPrice: "58.000", pickupDat: "29 October 2019", pickUpTim: "13.00"),]
         return isiCell
     }
     

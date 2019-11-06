@@ -10,6 +10,7 @@ import UIKit
 
 class OnGoingViewController: UIViewController {
 
+    @IBOutlet weak var historyView: UIView!
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var onGoingButton: UIButton!
     @IBOutlet weak var onGoingUnderline: UIImageView!
@@ -18,6 +19,7 @@ class OnGoingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         historyUnderline.isHidden = true
+        historyView.isHidden = true
  
         
         // Do any additional setup after loading the view.
@@ -28,6 +30,7 @@ class OnGoingViewController: UIViewController {
         historyUnderline.isHidden = true
         onGoingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
+        historyView.isHidden = true
     }
     
     @IBAction func historyClicked(_ sender: Any)
@@ -36,6 +39,8 @@ class OnGoingViewController: UIViewController {
         historyUnderline.isHidden = false
         onGoingButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
+        
+        historyView.isHidden = false
     }
 
 }
@@ -53,11 +58,12 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         cell.statusTransaction.text = isiCell[indexPath.row].statusTransaction
         cell.transactionDate.text = isiCell[indexPath.row].pickupDate
         cell.transactionTime.text = isiCell[indexPath.row].pickupTime
-        cell.contentView.layer.cornerRadius = 2.0
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cell.layer.cornerRadius = 20
+        cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.5
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.layer.shadowRadius = 5
+        cell.layer.masksToBounds = false
         return cell
     }
     
