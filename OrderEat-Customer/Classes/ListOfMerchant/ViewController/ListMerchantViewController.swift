@@ -47,7 +47,7 @@ extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as! ListMerchantTableViewCell
         
         //INI KALO SEARCH MASUKNYA KESINI BUAT NAMPILIN DATA
-        if searching{
+        if searching {
             for isi in isiTable{
                 if isi.merchantName == searchMerchant[indexPath.row]{
                     cell.merchantName.text = isi.merchantName
@@ -57,7 +57,7 @@ extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
                     cell.merchantDistanceTime.text = "-"
                 }
             }
-        }else{ //INI KALO GAK SEARCH NAMPILIN DATANYA DISINI
+        } else { //INI KALO GAK SEARCH NAMPILIN DATANYA DISINI
             cell.merchantName.text = isiTable[indexPath.row].merchantName
             cell.merchantADdress.text = isiTable[indexPath.row].merchantAddress
             cell.merchantImage.image = isiTable[indexPath.row].merchantImage
