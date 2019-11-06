@@ -46,7 +46,10 @@ class ConfirmPaymentViewController: UIViewController {
         let alert = UIAlertController(title: "Confirm Payment", message: "Are you sure you have done your payment?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { ACTION in
-            //insert what to do here if yes is pressed
+            let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
+            let orderDonePage = storyboard.instantiateViewController(identifier: "orderDone") as! OrderDoneViewController
+            let appDelegate = UIApplication.shared.windows
+            appDelegate.first?.rootViewController = orderDonePage
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { ACTION in
             //insert what to do here if no is pressed

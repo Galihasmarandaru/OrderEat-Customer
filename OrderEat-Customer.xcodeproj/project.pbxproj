@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31B4499237306A500022FE6 /* OrderDone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B4498237306A500022FE6 /* OrderDone.storyboard */; };
+		A31B449B237306DA00022FE6 /* OrderDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449A237306DA00022FE6 /* OrderDoneViewController.swift */; };
 		A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B71185236FE90A00670669 /* OrderSetTime.storyboard */; };
 		A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118B236FF5AF00670669 /* CustomButton.swift */; };
 		A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */; };
@@ -69,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A31B4498237306A500022FE6 /* OrderDone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderDone.storyboard; sourceTree = "<group>"; };
+		A31B449A237306DA00022FE6 /* OrderDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDoneViewController.swift; sourceTree = "<group>"; };
 		A3B71185236FE90A00670669 /* OrderSetTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderSetTime.storyboard; sourceTree = "<group>"; };
 		A3B7118B236FF5AF00670669 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrderedTableViewCell.swift; sourceTree = "<group>"; };
@@ -638,6 +642,7 @@
 		CA73E6FF236FC64300BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A31B4498237306A500022FE6 /* OrderDone.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -645,6 +650,7 @@
 		CA73E700236FC64D00BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A31B449A237306DA00022FE6 /* OrderDoneViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -867,6 +873,7 @@
 				A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */,
 				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
 				A3DDA74023729C29006CB5BA /* WaitingforRestoConfirm.storyboard in Resources */,
+				A31B4499237306A500022FE6 /* OrderDone.storyboard in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
@@ -908,6 +915,7 @@
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */,
 				A3B71192236FFAFC00670669 /* PickUpTimeTableViewCell.swift in Sources */,
+				A31B449B237306DA00022FE6 /* OrderDoneViewController.swift in Sources */,
 				A3B711A0237161E200670669 /* CustomColor.swift in Sources */,
 				A3B71196236FFB4A00670669 /* ConfirmOrderButtonTableViewCell.swift in Sources */,
 				CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */,
