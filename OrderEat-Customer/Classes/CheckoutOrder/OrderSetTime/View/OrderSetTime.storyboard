@@ -242,6 +242,9 @@
                                                         <constraint firstAttribute="width" constant="353" id="x9c-55-UER"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="confirmOrderButtonClicked:" destination="W5O-lK-pEu" eventType="touchUpInside" id="ZOE-9Z-jyL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

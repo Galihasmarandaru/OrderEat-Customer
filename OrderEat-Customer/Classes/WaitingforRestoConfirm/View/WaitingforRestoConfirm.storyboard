@@ -10,7 +10,7 @@
         <!--Waitingfor Resto Confirm View Controller-->
         <scene sceneID="elW-eh-j43">
             <objects>
-                <viewController id="Auz-hY-1hp" customClass="WaitingforRestoConfirmViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WaitingforRestoConfirm" id="Auz-hY-1hp" customClass="WaitingforRestoConfirmViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hKe-Xl-Oqn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -64,6 +64,13 @@ class OrderSetTimeViewController: UIViewController {
         pickUpTime = dateFormatter.string(from: sender.date)
     }
 
+    @IBAction func confirmOrderButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
+        let waitingConfirmationPage = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = waitingConfirmationPage
+    }
+    
     
     func loadData() {
 //        let food1 = OrderedMenu.init(image: UIImage(named: "Blackpepper Burger.png")!, name: "Burger", price: 50000, qty: 2)
