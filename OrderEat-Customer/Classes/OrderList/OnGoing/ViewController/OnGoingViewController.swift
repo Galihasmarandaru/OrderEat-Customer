@@ -16,12 +16,11 @@ class OnGoingViewController: UIViewController {
     @IBOutlet weak var onGoingUnderline: UIImageView!
     @IBOutlet weak var historyUnderline: UIImageView!
     var isiCell = OnGoingViewModel.getTransaction()
-    var a = OnGoingCollectionCell()
     override func viewDidLoad() {
         super.viewDidLoad()
         historyUnderline.isHidden = true
-        setupCollection()
-        penandaSegmented = 0
+//        setupCollection()
+//        penandaSegmented = 0
     }
     
     @IBAction func onGoingClicked(_ sender: Any) {
@@ -55,7 +54,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         cell.transactionID.text = "Order No : \(isiCell[indexPath.row].transactionID)"
         cell.transactionPrice.text = "Rp \(isiCell[indexPath.row].transactionPrice)"
         cell.statusTransaction.text = "Status : \(isiCell[indexPath.row].statusTransaction)"
-        cell.transactionDate.text = isiCell[indexPath.row].pickupDate
+        cell.transactionDate.text = isiCell[indexPath.row].pickUpDate
         cell.transactionTime.text = isiCell[indexPath.row].pickUpTime
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.black.cgColor
