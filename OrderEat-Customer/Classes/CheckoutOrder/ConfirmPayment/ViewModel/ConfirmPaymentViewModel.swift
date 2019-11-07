@@ -16,7 +16,7 @@ struct ConfirmPaymentViewModel {
         return cell
     }
     static func getDataMerchant() -> Merchant {
-        let cell: Merchant = Merchant(merchantID: "1", merchantName: "Burger King AEON Mall, BSD City", QRMerchant: UIImage(named: "qr.png")!)
+        let cell: Merchant = Merchant(merchantID: "1", merchantName: "Burger King AEON Mall, BSD City", QRMerchant: UIImage(named: "qr.png")!, merchantAddress: "BSD City", merchantImage: UIImage(named: "bg-merchat-1"))
         
         return cell
     }

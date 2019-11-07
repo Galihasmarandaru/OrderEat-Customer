@@ -30,21 +30,17 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>ConfirmPayment</string>
+					<string>CancelOrder</string>
 					<key>UISceneConfigurationName</key>
 					<string>Default Configuration</string>
-<!-- 					<string>OnGoing</string> -->
 				</dict>
 			</array>
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>ConfirmPayment</string>
+	<string>CancelOrder</string>
 	<key>UIMainStoryboardFile</key>
-	<string>ConfirmPayment</string>
-<!-- 	<string>OnGoing</string>
-	<key>UIMainStoryboardFile</key>
-	<string>OnGoing</string> -->
+	<string>CancelOrder</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

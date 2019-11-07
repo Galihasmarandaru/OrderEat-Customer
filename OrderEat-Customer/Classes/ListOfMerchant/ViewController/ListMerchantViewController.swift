@@ -25,7 +25,7 @@ class ListMerchantViewController: UIViewController, UISearchControllerDelegate {
         self.merchantTableView.tableFooterView = UIView()
         merchantSearchBar.tintColor = .black
         for isi in isiTable{
-            stringMechant.append(isi.restoName) //INI FUNCTION UNTUK MASUKIN DATA CLASS RESTO ( RESTO NAME ) KE VARIABLE STRINGMERCHANT
+            stringMechant.append(isi.merchantName) //INI FUNCTION UNTUK MASUKIN DATA CLASS RESTO ( RESTO NAME ) KE VARIABLE STRINGMERCHANT
         }
         
     }
@@ -49,20 +49,20 @@ extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
         //INI KALO SEARCH MASUKNYA KESINI BUAT NAMPILIN DATA
         if searching{
             for isi in isiTable{
-                if isi.restoName == searchMerchant[indexPath.row]{
-                    cell.merchantName.text = isi.restoName
-                    cell.merchantADdress.text = isi.restoAddress
-                    cell.merchantImage.image = isi.restoImage
-                    cell.merchantDistance.text = isi.restoDistance
-                    cell.merchantDistanceTime.text = isi.restoTravelTime
+                if isi.merchantName == searchMerchant[indexPath.row]{
+                    cell.merchantName.text = isi.merchantName
+                    cell.merchantADdress.text = isi.merchantAddress
+                    cell.merchantImage.image = isi.merchantImage
+                    cell.merchantDistance.text = "-"
+                    cell.merchantDistanceTime.text = "-"
                 }
             }
         }else{ //INI KALO GAK SEARCH NAMPILIN DATANYA DISINI
-            cell.merchantName.text = isiTable[indexPath.row].restoName
-            cell.merchantADdress.text = isiTable[indexPath.row].restoAddress
-            cell.merchantImage.image = isiTable[indexPath.row].restoImage
-            cell.merchantDistance.text = isiTable[indexPath.row].restoDistance
-            cell.merchantDistanceTime.text = isiTable[indexPath.row].restoTravelTime
+            cell.merchantName.text = isiTable[indexPath.row].merchantName
+            cell.merchantADdress.text = isiTable[indexPath.row].merchantAddress
+            cell.merchantImage.image = isiTable[indexPath.row].merchantImage
+            cell.merchantDistance.text = "-"
+            cell.merchantDistanceTime.text = "-"
         }
         return cell
     }
