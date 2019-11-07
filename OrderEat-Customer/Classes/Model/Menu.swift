@@ -13,7 +13,7 @@ struct Menu {
     let detailMenu: String;
     let priceMenu: Int;
     let imageMenu: UIImage;
-    let qty: Int; //tambahan
+    let qty: Int;
     
     init(nameMenu: String, detailMenu: String, priceMenu: Int, imageMenu: UIImage, qty: Int) {
         self.nameMenu = nameMenu
