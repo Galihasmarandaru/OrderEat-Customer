@@ -15,16 +15,25 @@ class MerchantMenuViewController: UIViewController {
     @IBOutlet weak var promoTitle: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewMenu: UIView!
+    @IBOutlet weak var CartView: UIView!
     
+        
     var theData = AddDataMerchantMenu.getDataMenu()
+    var stepper = MenuTableViewCell()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         merchantTitle.data = AddDataMerchantMenu.getDataMerchant()
-        
         backgroundMerchant.image = UIImage(named: "bg-merchat-1")
         viewOfMenu()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AddAction))
+        CartView.addGestureRecognizer(tap)
+    }
+    
+    @objc func AddAction() {
+        print("BERHASIL")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,6 +44,7 @@ class MerchantMenuViewController: UIViewController {
         super.awakeFromNib()
     }
     
+    
     func viewOfMenu() {
         self.viewMenu.layer.cornerRadius = 20
         self.viewMenu.layer.shadowColor = UIColor.black.cgColor
@@ -42,9 +52,9 @@ class MerchantMenuViewController: UIViewController {
         self.viewMenu.layer.shadowOffset = CGSize(width: 3, height: 3)
         self.viewMenu.layer.shadowRadius = 5
         self.viewMenu.layer.masksToBounds = false
-
     }
 }
+
 
 extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

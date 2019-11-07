@@ -13,4 +13,5 @@ struct Menu {
     let detailMenu: String
     let priceMenu: Int
     let imageMenu: UIImage?
+    var qty: Int
 }
