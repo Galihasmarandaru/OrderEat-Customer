@@ -26,6 +26,10 @@ class MerchantMenuViewController: UIViewController {
         backgroundMerchant.image = UIImage(named: "bg-merchat-1")
         viewOfMenu()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,8 +57,6 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
         cell.data = theData[indexPath.row]
         
         return cell
-
     }
-    
     
 }

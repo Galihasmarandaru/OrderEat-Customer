@@ -35,7 +35,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="npc-dM-Hg0" kind="show" id="M0A-89-4N9"/>
+                                            <action selector="startButtonClick:" destination="tGw-xn-eSv" eventType="touchUpInside" id="3eU-YK-YDv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="-687" y="130"/>
         </scene>
-        <!--Home-->
+        <!--ListOfMerchant-->
         <scene sceneID="p2v-gS-zUD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="npc-dM-Hg0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ListOfMerchant" id="npc-dM-Hg0" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9jj-kD-1i3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XID-Yv-7h5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

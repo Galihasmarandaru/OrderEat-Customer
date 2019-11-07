@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5on-1W-pb1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -10,7 +10,7 @@
         <!--List Merchant View Controller-->
         <scene sceneID="PTF-zj-AOo">
             <objects>
-                <viewController id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListOfMerchant" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9a7-OL-Pme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,10 +20,10 @@
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-Xh-1bv">
-                                <rect key="frame" x="0.0" y="157.5" width="414" height="739.5"/>
+                                <rect key="frame" x="0.0" y="201.5" width="414" height="695.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="122" id="K6F-ff-tIu" userLabel="listCell" customClass="ListMerchantTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="listCell" rowHeight="122" id="K6F-ff-tIu" userLabel="listCell" customClass="ListMerchantTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K6F-ff-tIu" id="CDG-Bz-DPt">
@@ -103,7 +103,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" restorationIdentifier="searchMerchant" barStyle="black" searchBarStyle="minimal" placeholder="Where do you want to eat?" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K16-e8-x3c">
-                                <rect key="frame" x="0.0" y="45" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="B39-R6-agf"/>
                                     <constraint firstAttribute="height" constant="56" id="Pap-VT-3pG"/>
@@ -118,7 +118,7 @@
                                 </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmg-o4-iTf">
-                                <rect key="frame" x="10" y="114" width="384" height="27.5"/>
+                                <rect key="frame" x="10" y="158" width="384" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -143,6 +143,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nNA-gM-Cq3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="B3C-xg-Xb0"/>
                     <connections>
                         <outlet property="merchantSearchBar" destination="K16-e8-x3c" id="rih-Al-GPQ"/>
                         <outlet property="merchantTableView" destination="S4K-Xh-1bv" id="8ng-uA-GAF"/>
@@ -150,7 +151,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99L-gZ-yjj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23.188405797101453" y="78.348214285714278"/>
+            <point key="canvasLocation" x="1843.4782608695652" y="78.348214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ob2-fP-1xb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ath-kx-Aag" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cG4-Eu-Fyp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5on-1W-pb1" kind="relationship" relationship="rootViewController" id="0Sr-qF-5kE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nul-ih-yL4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.33333333333337" y="78.348214285714278"/>
         </scene>
     </scenes>
 </document>

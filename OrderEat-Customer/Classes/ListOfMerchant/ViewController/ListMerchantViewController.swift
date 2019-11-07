@@ -13,7 +13,6 @@ class ListMerchantViewController: UIViewController, UISearchControllerDelegate {
 
     @IBOutlet weak var merchantSearchBar: UISearchBar!
     @IBOutlet weak var merchantTableView: UITableView!
-//    let isiTable:[Test] = [Test(from: "Burger King", restorAddress: "AEON Mall BSD City",restorImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0")),Test(from: "Onezo", restorAddress: "Pasar Intramoda",restorImage: #imageLiteral(resourceName: "mcd")),Test(from: "Burgushi", restorAddress: "Summarecon Mall Serpong",restorImage: #imageLiteral(resourceName: "WingstopMeal_Lead")),]
     var isiTable = AddData.getDataMerchant()
     
     var stringMechant = [String]() //INI VARIABLE TAMPUNGAN STRING NAMA RESTO BUAT DI BANDINGIN SAMA VARIABLE SEARCHMERCHANT DI EXTENSIONS SEARCHBAR
@@ -27,9 +26,12 @@ class ListMerchantViewController: UIViewController, UISearchControllerDelegate {
         for isi in isiTable{
             stringMechant.append(isi.merchantName) //INI FUNCTION UNTUK MASUKIN DATA CLASS RESTO ( RESTO NAME ) KE VARIABLE STRINGMERCHANT
         }
-        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
 }
 
@@ -67,7 +69,14 @@ extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
         return cell
     }
     
-    
+    //MARK:: DidSelectRow
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let MerchantMenuPage = UIStoryboard(name: "MerchantMenu", bundle: nil).instantiateViewController(withIdentifier: "MerchantMenu") as? MerchantMenuViewController {
+            if let navigator = navigationController {
+                navigator.pushViewController(MerchantMenuPage, animated: true)
+            }
+        }
+    }
 }
 
 extension ListMerchantViewController: UISearchBarDelegate{

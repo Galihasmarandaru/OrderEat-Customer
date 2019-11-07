@@ -26,4 +26,5 @@ struct Merchant {
         self.merchantImage = merchantImage
         
     }
+
 }
