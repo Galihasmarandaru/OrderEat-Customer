@@ -30,7 +30,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>OrderSetTime</string>
+					<string>ConfirmPayment</string>
 					<key>UISceneConfigurationName</key>
 					<string>Default Configuration</string>
 				</dict>
@@ -38,9 +38,9 @@
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>OrderSetTime</string>
+	<string>ConfirmPayment</string>
 	<key>UIMainStoryboardFile</key>
-	<string>OrderSetTime</string>
+	<string>ConfirmPayment</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

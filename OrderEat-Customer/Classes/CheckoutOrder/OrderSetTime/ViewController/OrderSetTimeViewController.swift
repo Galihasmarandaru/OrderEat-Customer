@@ -48,6 +48,13 @@ class OrderSetTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        config()
+//        loadData()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func config() {
         self.view.addBackground()
         datePicker.backgroundColor = .white
         viewPicker.backgroundColor = .white
@@ -55,9 +62,6 @@ class OrderSetTimeViewController: UIViewController {
         self.orderTableView.tableFooterView = UIView()
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
-//        loadData()
-        
-        // Do any additional setup after loading the view.
     }
     
     @objc func datePickerChanged(_ sender: UIDatePicker) {

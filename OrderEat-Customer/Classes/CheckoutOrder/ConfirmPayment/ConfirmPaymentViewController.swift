@@ -19,14 +19,18 @@ class ConfirmPaymentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        config()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func config() {
         self.view.addBackground()
 
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
         
         self.orderDetailsTableView.tableFooterView = UIView()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func saveQRButtonPressed(_ sender: Any) {
