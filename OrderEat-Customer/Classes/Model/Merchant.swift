@@ -12,7 +12,6 @@ import CoreLocation
 //enum statusOperation {
 //    case open, close
 //}
-
 struct Merchant {
 //    private var merchantID: UUID;
 //    private var nameMerchant: String;
@@ -41,7 +40,7 @@ struct Merchant {
         self.merchantName = merchantName
         self.QRMerchant = QRMerchant
     }
-    
+}
 //    mutating func statusOperationMerchant(status: statusOperation) -> String {
 //        switch status {
 //        case .open:
@@ -51,4 +50,22 @@ struct Merchant {
 //        }
 //        return condition
 //    }
-}
+//
+//struct Restaurant {
+//    private var restaurantName: String;
+//    private var coordinatRestaurantL: CLLocation;
+//    private var timeOpenRestaurant: UIDatePicker;
+//    private var timeCloseRestaurant: UIDatePicker;
+//
+//    var condition: String;
+//
+//    mutating func statusOperationRestaurant(status: statusOperation) -> String {
+//        switch status {
+//        case .open:
+//            condition = "Open until, \(timeCloseRestaurant)"
+//        case .close:
+//            condition = "Close until, \(timeOpenRestaurant)"
+//        }
+//        return condition
+//    }
+//}
