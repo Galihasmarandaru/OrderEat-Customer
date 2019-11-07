@@ -12,6 +12,44 @@ import CoreLocation
 //enum statusOperation {
 //    case open, close
 //}
+struct Merchant {
+//    private var merchantID: UUID;
+//    private var nameMerchant: String;
+//    private var phoneMerchant: String;
+//    private var emailMerchant: String;
+//    private var passwordMerchant: String;
+//
+//    private var adressMerchant: String;
+//    private var latCoordinatMerchant: CLLocation;
+//    private var longCoordinatMerchant: CLLocation;
+//
+//
+//    private var timeOpenMerchant: UIDatePicker;
+//    private var timeCloseMerchant: UIDatePicker;
+//
+//    private var QRMerchant: UIImage;
+//
+//    var condition: String;
+    
+    let merchantID: String;
+    let merchantName: String;
+    let QRMerchant: UIImage;
+    
+    init(merchantID: String, merchantName: String, QRMerchant: UIImage) {
+        self.merchantID = merchantID
+        self.merchantName = merchantName
+        self.QRMerchant = QRMerchant
+    }
+}
+//    mutating func statusOperationMerchant(status: statusOperation) -> String {
+//        switch status {
+//        case .open:
+//            condition = "Open until, \(timeCloseMerchant)"
+//        case .close:
+//            condition = "Close until, \(timeOpenMerchant)"
+//        }
+//        return condition
+//    }
 //
 //struct Restaurant {
 //    private var restaurantName: String;
@@ -31,20 +69,3 @@ import CoreLocation
 //        return condition
 //    }
 //}
-struct Merchant{
-    let restoName: String
-    let restoAddress: String
-    let restoImage: UIImage
-    let restoDistance: String
-    let restoTravelTime:String
-    
-    init(from restorName:String, restorAddress:String, restorImage:UIImage, restorDistance:String, restorTravelTime:String) {
-        self.restoName = restorName
-        self.restoAddress = restorAddress
-        self.restoImage = restorImage
-        self.restoDistance = restorDistance
-        self.restoTravelTime = restorTravelTime
-    }
-    
-  
-}
