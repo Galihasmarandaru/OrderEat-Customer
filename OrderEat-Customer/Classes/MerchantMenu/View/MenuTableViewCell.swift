@@ -21,17 +21,27 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var plusTap: UIButton!
     @IBOutlet weak var qtyItem: UILabel!
     
+//    @IBOutlet weak var CartView: UIView!
+    
     @IBOutlet weak var viewStepper: UIView!
+    
+    var MerchantMenuVC: MerchantMenuViewController!
+    var bottomConstraint: NSLayoutConstraint!
+    
+    var activityCart: (() -> ())?
+    var hideCartAction: (() -> ())?
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         sender.isHidden = !sender.isHidden
         viewStepper.isHidden = false
+        activityCart?()
     }
     
     @IBAction func minusTap(_ sender: Any) {
         if (data.qty == 0) {
             viewStepper.isHidden = true
             addButton.isHidden = false
+            hideCartAction?()
         } else {
             data.qty -= 1
         }
@@ -40,9 +50,6 @@ class MenuTableViewCell: UITableViewCell {
     @IBAction func plusTap(_ sender: Any) {
         data.qty += 1
     }
-    
-    
-    var theData = AddDataMerchantMenu.getDataMenu()
     
     var data: Menu! {
         didSet {
