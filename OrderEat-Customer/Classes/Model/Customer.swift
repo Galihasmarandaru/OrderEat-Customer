@@ -9,11 +9,11 @@
 import UIKit
 
 struct Customer {
-    private var customerID: UUID;
-    private var customerName: String;
-    private var emailCustomer: String;
-    private var phoneNumberCustomer: String;
+    let customerID: UUID
+    let customerName: String
+    let emailCustomer: String
+    let phoneNumberCustomer: String
     
-    private var orderNumberCustomer: String;
-    private var pickupTimeCustomer: UIDatePicker;
+    let orderNumberCustomer: String
+    let pickupTimeCustomer: UIDatePicker
 }
