@@ -16,13 +16,12 @@ class OnGoingViewController: UIViewController {
     @IBOutlet weak var onGoingUnderline: UIImageView!
     @IBOutlet weak var historyUnderline: UIImageView!
     var isiCell = OnGoingViewModel.getTransaction()
+    var a = OnGoingCollectionCell()
     override func viewDidLoad() {
         super.viewDidLoad()
         historyUnderline.isHidden = true
-        historyView.isHidden = true
- 
-        
-        // Do any additional setup after loading the view.
+        setupCollection()
+        penandaSegmented = 0
     }
     
     @IBAction func onGoingClicked(_ sender: Any) {
@@ -53,14 +52,14 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! OnGoingCollectionViewCell
         cell.merchantName.text = isiCell[indexPath.row].merchantName
-        cell.transactionID.text = isiCell[indexPath.row].transactionID
+        cell.transactionID.text = "Order No : \(isiCell[indexPath.row].transactionID)"
         cell.transactionPrice.text = "Rp \(isiCell[indexPath.row].transactionPrice)"
-        cell.statusTransaction.text = isiCell[indexPath.row].statusTransaction
-        cell.transactionDate.text = isiCell[indexPath.row].pickUpDate
+        cell.statusTransaction.text = "Status : \(isiCell[indexPath.row].statusTransaction)"
+        cell.transactionDate.text = isiCell[indexPath.row].pickupDate
         cell.transactionTime.text = isiCell[indexPath.row].pickUpTime
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.5
+        cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = CGSize(width: 3, height: 3)
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
