@@ -34,7 +34,7 @@ class ConfirmPaymentViewController: UIViewController {
     }
     
     @IBAction func saveQRButtonPressed(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
+//        UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
         
         let gojekHooks = "gojek://"
         let gojekUrl = URL(string: gojekHooks)

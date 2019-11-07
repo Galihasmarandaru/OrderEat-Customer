@@ -12,7 +12,7 @@ import UIKit
 
 struct AddData{
     static func getDataMerchant() -> [Merchant]{
-        let isiTable:[Merchant] = [Merchant(merchantID: "1", merchantName: "Burger King", QRMerchant: UIImage.init(named: "qr.png")!, merchantAddress: "BSD City", merchantImage: UIImage(named: "BK.png")), Merchant(merchantID: "2", merchantName: "Onezo", QRMerchant: UIImage.init(named: "qr.png")!, merchantAddress: "Intermoda BSD", merchantImage: UIImage.init(named: "BK.png")), Merchant(merchantID: "3", merchantName: "Burgushi", QRMerchant: UIImage.init(named: "qr.png")!, merchantAddress: "Summarecon Mall Serpong", merchantImage: UIImage.init(named: "BK.png"))]
+        let isiTable:[Merchant] = [Merchant(from: "Burger King", restorAddress: "AEON Mall BSD City",restorImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0"),restorDistance: "1.5km",restorTravelTime: "6 minutes"),Merchant(from: "Onezo", restorAddress: "Pasar Intramoda",restorImage: #imageLiteral(resourceName: "mcd"),restorDistance: "0.6km",restorTravelTime: "12 minutes"),Merchant(from: "Burgushi", restorAddress: "Summarecon Mall Serpong",restorImage: #imageLiteral(resourceName: "WingstopMeal_Lead"),restorDistance: "1.5km",restorTravelTime: "6 minutes"),]
         return isiTable
     }
 }

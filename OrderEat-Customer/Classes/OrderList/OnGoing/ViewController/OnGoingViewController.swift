@@ -56,8 +56,8 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         cell.transactionID.text = isiCell[indexPath.row].transactionID
         cell.transactionPrice.text = "Rp \(isiCell[indexPath.row].transactionPrice)"
         cell.statusTransaction.text = isiCell[indexPath.row].statusTransaction
-        cell.transactionDate.text = isiCell[indexPath.row].pickUpDate
-        cell.transactionTime.text = isiCell[indexPath.row].pickUpTime
+        cell.transactionDate.text = isiCell[indexPath.row].pickupDate
+        cell.transactionTime.text = isiCell[indexPath.row].pickupTime
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.5

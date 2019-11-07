@@ -19,8 +19,8 @@ class DetailMerchantView: UIView {
     
     var data: Merchant! {
         didSet {
-            self.merchantName.text = data.merchantName
-            self.locationMerchant.text = data.merchantAddress
+            self.merchantName.text = data.restoName
+            self.locationMerchant.text = data.restoAddress
         }
     }
     
