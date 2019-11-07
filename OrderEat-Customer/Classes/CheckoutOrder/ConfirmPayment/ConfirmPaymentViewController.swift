@@ -46,6 +46,13 @@ class ConfirmPaymentViewController: UIViewController {
         }
     }
     
+    @IBAction func confirmPaymentButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
+        let orderDonePage = storyboard.instantiateViewController(identifier: "orderDone") as! OrderDoneViewController
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = orderDonePage
+    }
+    
     /*
     // MARK: - Navigation
 

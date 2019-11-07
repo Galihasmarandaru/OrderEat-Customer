@@ -221,6 +221,9 @@ below</string>
                                                         <constraint firstAttribute="height" constant="44" id="XmU-Of-UQE"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="confirmPaymentButtonClicked:" destination="hbL-LA-ZBw" eventType="touchUpInside" id="WaZ-kk-yyy"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

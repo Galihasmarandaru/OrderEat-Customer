@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Order Done View Controller-->
+        <scene sceneID="Cnb-jj-PI9">
+            <objects>
+                <viewController storyboardIdentifier="orderDone" id="Pgm-5v-TKJ" customClass="OrderDoneViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYO-kF-7Bi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sr2-Xw-img">
+                                <rect key="frame" x="20" y="82" width="374" height="270"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="HMO-UU-nU9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Sr2-Xw-img" firstAttribute="leading" secondItem="ZFR-ky-VtS" secondAttribute="leading" constant="20" id="Edt-Bo-KKQ"/>
+                            <constraint firstItem="Sr2-Xw-img" firstAttribute="top" secondItem="ZFR-ky-VtS" secondAttribute="top" constant="38" id="heX-dF-QOc"/>
+                            <constraint firstItem="ZFR-ky-VtS" firstAttribute="trailing" secondItem="Sr2-Xw-img" secondAttribute="trailing" constant="20" id="vJw-AZ-oas"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZFR-ky-VtS"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerView" destination="Sr2-Xw-img" id="78m-p1-t3y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2A-3x-fgb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15" y="14"/>
+        </scene>
+    </scenes>
+</document>
