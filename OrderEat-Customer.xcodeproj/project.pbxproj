@@ -14,6 +14,10 @@
 		0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1882372745500CF695F /* OnGoingViewModel.swift */; };
 		0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */; };
 		A31B449D2373CB6400022FE6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449C2373CB6400022FE6 /* File.swift */; };
+		A31B44A3237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */; };
+		A31B44A52374052D00022FE6 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
+		A31B44A72374054B00022FE6 /* CancelOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A62374054B00022FE6 /* CancelOrderViewController.swift */; };
+		A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A82374055E00022FE6 /* CancelOrder.storyboard */; };
 		A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B71185236FE90A00670669 /* OrderSetTime.storyboard */; };
 		A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118B236FF5AF00670669 /* CustomButton.swift */; };
 		A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */; };
@@ -26,10 +30,6 @@
 		A3B711A0237161E200670669 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7119F237161E200670669 /* CustomColor.swift */; };
 		A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DDA73923729B93006CB5BA /* ConfirmPayment.storyboard */; };
 		A3DDA73C23729BAB006CB5BA /* ConfirmPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA73B23729BAB006CB5BA /* ConfirmPaymentViewController.swift */; };
-		A3DDA73E23729C18006CB5BA /* WaitingforRestoConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA73D23729C18006CB5BA /* WaitingforRestoConfirmViewController.swift */; };
-		A3DDA74023729C29006CB5BA /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DDA73F23729C29006CB5BA /* WaitingforRestoConfirm.storyboard */; };
-		A3DDA74223729C34006CB5BA /* CancelOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA74123729C33006CB5BA /* CancelOrderViewController.swift */; };
-		A3DDA74423729C3D006CB5BA /* CancelOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DDA74323729C3D006CB5BA /* CancelOrder.storyboard */; };
 		A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA74F2372A768006CB5BA /* OrderedItemTableViewCell.swift */; };
 		A3DDA7522372A770006CB5BA /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA7512372A770006CB5BA /* DetailsTableViewCell.swift */; };
 		A3DDA7542372A778006CB5BA /* QRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA7532372A778006CB5BA /* QRTableViewCell.swift */; };
@@ -86,6 +86,10 @@
 		0A61C1882372745500CF695F /* OnGoingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnGoingViewModel.swift; path = "OrderEat-Customer/Classes/OrderList/OnGoing/View/OnGoingViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantTableViewCell.swift; sourceTree = "<group>"; };
 		A31B449C2373CB6400022FE6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaitingforRestoConfirmViewController.swift; path = "OrderEat-Customer/Classes/WaitingforRestoConfirm/ViewController/WaitingforRestoConfirmViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = WaitingforRestoConfirm.storyboard; path = "OrderEat-Customer/Classes/WaitingforRestoConfirm/View/WaitingforRestoConfirm.storyboard"; sourceTree = SOURCE_ROOT; };
+		A31B44A62374054B00022FE6 /* CancelOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancelOrderViewController.swift; path = "OrderEat-Customer/Classes/CancelOrder/ViewController/CancelOrderViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A31B44A82374055E00022FE6 /* CancelOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CancelOrder.storyboard; path = "OrderEat-Customer/Classes/CancelOrder/View/CancelOrder.storyboard"; sourceTree = SOURCE_ROOT; };
 		A3B71185236FE90A00670669 /* OrderSetTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderSetTime.storyboard; sourceTree = "<group>"; };
 		A3B7118B236FF5AF00670669 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrderedTableViewCell.swift; sourceTree = "<group>"; };
@@ -98,10 +102,6 @@
 		A3B7119F237161E200670669 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		A3DDA73923729B93006CB5BA /* ConfirmPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPayment.storyboard; sourceTree = "<group>"; };
 		A3DDA73B23729BAB006CB5BA /* ConfirmPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfirmPaymentViewController.swift; path = "OrderEat-Customer/Classes/CheckoutOrder/ConfirmPayment/ConfirmPaymentViewController.swift"; sourceTree = SOURCE_ROOT; };
-		A3DDA73D23729C18006CB5BA /* WaitingforRestoConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingforRestoConfirmViewController.swift; sourceTree = "<group>"; };
-		A3DDA73F23729C29006CB5BA /* WaitingforRestoConfirm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WaitingforRestoConfirm.storyboard; sourceTree = "<group>"; };
-		A3DDA74123729C33006CB5BA /* CancelOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelOrderViewController.swift; sourceTree = "<group>"; };
-		A3DDA74323729C3D006CB5BA /* CancelOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CancelOrder.storyboard; sourceTree = "<group>"; };
 		A3DDA74F2372A768006CB5BA /* OrderedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedItemTableViewCell.swift; sourceTree = "<group>"; };
 		A3DDA7512372A770006CB5BA /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		A3DDA7532372A778006CB5BA /* QRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRTableViewCell.swift; sourceTree = "<group>"; };
@@ -570,7 +570,7 @@
 		CA73E6F3236FC5E300BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3DDA73F23729C29006CB5BA /* WaitingforRestoConfirm.storyboard */,
+				A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -578,7 +578,7 @@
 		CA73E6F4236FC5E700BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A3DDA73D23729C18006CB5BA /* WaitingforRestoConfirmViewController.swift */,
+				A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -593,7 +593,7 @@
 		CA73E6F6236FC5F600BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3DDA74323729C3D006CB5BA /* CancelOrder.storyboard */,
+				A31B44A82374055E00022FE6 /* CancelOrder.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -601,7 +601,7 @@
 		CA73E6F7236FC60300BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A3DDA74123729C33006CB5BA /* CancelOrderViewController.swift */,
+				A31B44A62374054B00022FE6 /* CancelOrderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -896,12 +896,12 @@
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */,
 				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
-				A3DDA74023729C29006CB5BA /* WaitingforRestoConfirm.storyboard in Resources */,
+				A31B44A52374052D00022FE6 /* WaitingforRestoConfirm.storyboard in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
-				A3DDA74423729C3D006CB5BA /* CancelOrder.storyboard in Resources */,
+				A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */,
 				CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -933,8 +933,10 @@
 				0A61C1832371427700CF695F /* AddData.swift in Sources */,
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
 				A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */,
+				A31B44A72374054B00022FE6 /* CancelOrderViewController.swift in Sources */,
 				A3DDA7562372A9D2006CB5BA /* ConfirmPaymentViewModel.swift in Sources */,
 				CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */,
+				A31B44A3237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift in Sources */,
 				CA73E71F236FECAF00BD3050 /* MenuTableViewCell.swift in Sources */,
 				CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */,
 				CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */,
@@ -952,13 +954,11 @@
 				CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */,
 				0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
-				A3DDA73E23729C18006CB5BA /* WaitingforRestoConfirmViewController.swift in Sources */,
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				0A61C1852371B1D100CF695F /* OnGoingViewController.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
-				A3DDA74223729C34006CB5BA /* CancelOrderViewController.swift in Sources */,
 				A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
 				A31B449D2373CB6400022FE6 /* File.swift in Sources */,
