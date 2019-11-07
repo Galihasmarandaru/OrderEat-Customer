@@ -15,11 +15,14 @@ class MerchantMenuViewController: UIViewController {
     @IBOutlet weak var promoTitle: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewMenu: UIView!
-    @IBOutlet weak var CartView: UIView!
     
+    @IBOutlet weak var CartView: UIView!
+    @IBOutlet var MainView: UIView!
+    
+    var bottomConstraint: NSLayoutConstraint!
         
     var theData = AddDataMerchantMenu.getDataMenu()
-    var stepper = MenuTableViewCell()
+    var menuCell = MenuTableViewCell()
     
     
     override func viewDidLoad() {
@@ -27,13 +30,7 @@ class MerchantMenuViewController: UIViewController {
         merchantTitle.data = AddDataMerchantMenu.getDataMerchant()
         backgroundMerchant.image = UIImage(named: "bg-merchat-1")
         viewOfMenu()
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(AddAction))
-        CartView.addGestureRecognizer(tap)
-    }
-    
-    @objc func AddAction() {
-        print("BERHASIL")
+        createConstraint()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,6 +50,35 @@ class MerchantMenuViewController: UIViewController {
         self.viewMenu.layer.shadowRadius = 5
         self.viewMenu.layer.masksToBounds = false
     }
+    
+    func showCart() {
+        UIView.animate(withDuration: 0.5) {
+            self.bottomConstraint.constant = -50
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    func hideCart() {
+        UIView.animate(withDuration: 0.5) {
+            self.bottomConstraint.constant = 100
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc func AddAction() {
+        print("Berhasil")
+    }
+    
+    func createConstraint() {
+        CartView.translatesAutoresizingMaskIntoConstraints = false
+        CartView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        bottomConstraint = CartView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100)
+        bottomConstraint.isActive = true
+        CartView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        CartView.widthAnchor.constraint(equalToConstant: 325).isActive = true
+    }
+
+    
 }
 
 
@@ -63,8 +89,17 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? MenuTableViewCell else {return UITableViewCell()}
-        
         cell.data = theData[indexPath.row]
+        
+        cell.activityCart = { [unowned self] in
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.AddAction))
+            self.CartView.addGestureRecognizer(tap)
+            self.showCart()
+        }
+        
+        cell.hideCartAction = { [unowned self] in
+            self.hideCart()
+        }
         
         return cell
     }
