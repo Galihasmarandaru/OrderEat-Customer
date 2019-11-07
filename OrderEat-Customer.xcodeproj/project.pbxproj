@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31B449D2373CB6400022FE6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449C2373CB6400022FE6 /* File.swift */; };
 		A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B71185236FE90A00670669 /* OrderSetTime.storyboard */; };
 		A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118B236FF5AF00670669 /* CustomButton.swift */; };
 		A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A31B449C2373CB6400022FE6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A3B71185236FE90A00670669 /* OrderSetTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderSetTime.storyboard; sourceTree = "<group>"; };
 		A3B7118B236FF5AF00670669 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrderedTableViewCell.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				A3B7118B236FF5AF00670669 /* CustomButton.swift */,
 				A3B7119F237161E200670669 /* CustomColor.swift */,
+				A31B449C2373CB6400022FE6 /* File.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				A3DDA74223729C34006CB5BA /* CancelOrderViewController.swift in Sources */,
 				A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
+				A31B449D2373CB6400022FE6 /* File.swift in Sources */,
 				A3B71194236FFB1F00670669 /* PaymentMethodTableViewCell.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
 				CA73E719236FE0A500BD3050 /* OTP.swift in Sources */,

@@ -48,7 +48,7 @@ class OrderSetTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background Orange.png")!)
+        self.view.addBackground()
         datePicker.backgroundColor = .white
         viewPicker.backgroundColor = .white
         
@@ -70,6 +70,11 @@ class OrderSetTimeViewController: UIViewController {
         let appDelegate = UIApplication.shared.windows
         appDelegate.first?.rootViewController = waitingConfirmationPage
     }
+    
+    //PRESENT MODAL SEGUE
+//    let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
+//let waitingConfirmationPage = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
+//self.present(waitingConfirmationPage, animated: true, completion: nil)
     
     
 //    func loadData() {

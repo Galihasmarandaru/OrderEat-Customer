@@ -19,7 +19,7 @@ class ConfirmPaymentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background Orange.png")!)
+        self.view.addBackground()
 
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
@@ -30,7 +30,7 @@ class ConfirmPaymentViewController: UIViewController {
     }
     
     @IBAction func saveQRButtonPressed(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
+//        UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
         
         let gojekHooks = "gojek://"
         let gojekUrl = URL(string: gojekHooks)
