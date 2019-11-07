@@ -30,8 +30,7 @@ struct AddDataMerchantMenu {
     }
     
     static func getDataMerchant() -> Merchant {
-//        let dataMerchant = Merchant(from: "Burger King", restorAddress: "AEON Mall, BSD City", restorImage: UIImage(named: "")!, restorDistance: "", restorTravelTime: "")
-        let dataMerchant = Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall, BSD City", merchantImage: UIImage(named: "")!)
+        let dataMerchant = Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall, BSD City")
         return dataMerchant
     }
 }

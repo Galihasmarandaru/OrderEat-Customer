@@ -24,7 +24,9 @@ class MenuTableViewCell: UITableViewCell {
             self.imageMenu.image = data.imageMenu
             self.titleFood.text = data.nameMenu
             self.detailFood.text = data.detailMenu
-            self.price.text = String(data.priceMenu)
+            self.price.text = String("Rp \(data.priceMenu)")
+            
+//            self.addButton
         }
     }
     

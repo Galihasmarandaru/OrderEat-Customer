@@ -15,7 +15,7 @@ struct AddData{
     static func getDataMerchant() -> [Merchant]{
 
         
-        let isiTable:[Merchant] = [Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall BSD City", merchantImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0"))]
+        let isiTable:[Merchant] = [Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall BSD City", merchantImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0")), Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall BSD City", merchantImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0")), Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall BSD City", merchantImage: #imageLiteral(resourceName: "bk.spain_.bannernassicabrandpage.1080x1080_0"))]
         return isiTable
     }
 }

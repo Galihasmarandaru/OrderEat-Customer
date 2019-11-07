@@ -16,8 +16,19 @@ enum statusOperation {
 struct Merchant{
     let merchantName: String
     let merchantAddress: String
-    let merchantImage: UIImage
+    var merchantImage: UIImage?
     
+    init(merchantName: String, merchantAddress: String) {
+        self.merchantName = merchantName
+        self.merchantAddress = merchantAddress
+    }
+
+    init(merchantName: String, merchantAddress: String, merchantImage: UIImage?) {
+        self.merchantName = merchantName
+        self.merchantAddress = merchantAddress
+        self.merchantImage = merchantImage
+    }
+
 //    let coordinatRestaurant: CLLocation
 //    let timeOpenRestaurant: UIDatePicker
 //    let timeCloseRestaurant: UIDatePicker
