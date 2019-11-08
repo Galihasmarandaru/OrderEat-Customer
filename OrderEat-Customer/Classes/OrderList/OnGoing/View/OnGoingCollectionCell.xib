@@ -7,9 +7,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+            <connections>
+                <outlet property="orderDate" destination="9tn-lb-r91" id="MlZ-iS-P77"/>
+                <outlet property="orderID" destination="Iv5-hE-T7C" id="v07-Ge-EgW"/>
+                <outlet property="orderPrice" destination="iXn-zE-wqB" id="uO1-Gz-epJ"/>
+                <outlet property="orderStatus" destination="551-n9-mlg" id="Z8r-ka-TsT"/>
+                <outlet property="orderTime" destination="9h5-t7-ziu" id="c5d-qt-fT4"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="onGoingCollectionCellID" id="gTV-IL-0wX" customClass="OnGoingCollectionCell" customModule="OrderEat_Customer" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="onGoingCollectionCellID" id="gTV-IL-0wX" customClass="OnGoingCollectionViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="380" height="111"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -99,15 +107,6 @@
                 <constraint firstAttribute="trailing" secondItem="iOm-TX-3Oj" secondAttribute="trailing" constant="10" id="cBO-9w-a6O"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <connections>
-                <outlet property="bgView" destination="iOm-TX-3Oj" id="2VM-SC-OZW"/>
-                <outlet property="merchantName" destination="551-n9-mlg" id="MAN-7V-zer"/>
-                <outlet property="statusTransaction" destination="Iv5-hE-T7C" id="etd-ye-Bos"/>
-                <outlet property="transactionDate" destination="9tn-lb-r91" id="vfx-IO-JRk"/>
-                <outlet property="transactionID" destination="S9z-dv-JoU" id="xw3-sB-tAs"/>
-                <outlet property="transactionPrice" destination="iXn-zE-wqB" id="4vu-0M-tuE"/>
-                <outlet property="transactionTime" destination="9h5-t7-ziu" id="7u4-mT-Bk8"/>
-            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="124.88839285714285"/>
         </collectionViewCell>
     </objects>

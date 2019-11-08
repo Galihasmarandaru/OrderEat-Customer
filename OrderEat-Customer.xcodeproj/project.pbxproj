@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F5783236FFD990048BB0E /* ListMerchantViewController.swift */; };
 		0A61C1832371427700CF695F /* AddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1822371427700CF695F /* AddData.swift */; };
-		0A61C1852371B1D100CF695F /* OnGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1842371B1D100CF695F /* OnGoingViewController.swift */; };
-		0A61C18723726AC400CF695F /* OnGoingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C18623726AC400CF695F /* OnGoingCollectionViewCell.swift */; };
 		0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1882372745500CF695F /* OnGoingViewModel.swift */; };
 		0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */; };
+		0A73B67E23741771003E1543 /* OnGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A73B67D23741771003E1543 /* OnGoingViewController.swift */; };
+		0A73B681237518D9003E1543 /* OnGoingCollectionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A73B67F237518D9003E1543 /* OnGoingCollectionListCell.swift */; };
+		0A73B682237518D9003E1543 /* OnGoingCollectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A73B680237518D9003E1543 /* OnGoingCollectionListCell.xib */; };
 		A31B449D2373CB6400022FE6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449C2373CB6400022FE6 /* File.swift */; };
 		A31B44A3237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */; };
 		A31B44A52374052D00022FE6 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
@@ -81,10 +82,11 @@
 /* Begin PBXFileReference section */
 		0A2F5783236FFD990048BB0E /* ListMerchantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantViewController.swift; sourceTree = "<group>"; };
 		0A61C1822371427700CF695F /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
-		0A61C1842371B1D100CF695F /* OnGoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingViewController.swift; sourceTree = "<group>"; };
-		0A61C18623726AC400CF695F /* OnGoingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A61C1882372745500CF695F /* OnGoingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnGoingViewModel.swift; path = "OrderEat-Customer/Classes/OrderList/OnGoing/View/OnGoingViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantTableViewCell.swift; sourceTree = "<group>"; };
+		0A73B67D23741771003E1543 /* OnGoingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnGoingViewController.swift; sourceTree = "<group>"; };
+		0A73B67F237518D9003E1543 /* OnGoingCollectionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingCollectionListCell.swift; sourceTree = "<group>"; };
+		0A73B680237518D9003E1543 /* OnGoingCollectionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnGoingCollectionListCell.xib; sourceTree = "<group>"; };
 		A31B449C2373CB6400022FE6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaitingforRestoConfirmViewController.swift; path = "OrderEat-Customer/Classes/WaitingforRestoConfirm/ViewController/WaitingforRestoConfirmViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = WaitingforRestoConfirm.storyboard; path = "OrderEat-Customer/Classes/WaitingforRestoConfirm/View/WaitingforRestoConfirm.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -287,7 +289,7 @@
 		CA26D1F6236A82DD000FDDD0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0A61C1842371B1D100CF695F /* OnGoingViewController.swift */,
+				0A73B67D23741771003E1543 /* OnGoingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -770,7 +772,8 @@
 			isa = PBXGroup;
 			children = (
 				CA73E714236FD3E800BD3050 /* OnGoing.storyboard */,
-				0A61C18623726AC400CF695F /* OnGoingCollectionViewCell.swift */,
+				0A73B67F237518D9003E1543 /* OnGoingCollectionListCell.swift */,
+				0A73B680237518D9003E1543 /* OnGoingCollectionListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -896,6 +899,7 @@
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */,
 				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
+				0A73B682237518D9003E1543 /* OnGoingCollectionListCell.xib in Resources */,
 				A31B44A52374052D00022FE6 /* WaitingforRestoConfirm.storyboard in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
@@ -930,6 +934,7 @@
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
+				0A73B681237518D9003E1543 /* OnGoingCollectionListCell.swift in Sources */,
 				0A61C1832371427700CF695F /* AddData.swift in Sources */,
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
 				A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */,
@@ -957,14 +962,13 @@
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
-				0A61C1852371B1D100CF695F /* OnGoingViewController.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
 				A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
 				A31B449D2373CB6400022FE6 /* File.swift in Sources */,
 				A3B71194236FFB1F00670669 /* PaymentMethodTableViewCell.swift in Sources */,
+				0A73B67E23741771003E1543 /* OnGoingViewController.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
-				0A61C18723726AC400CF695F /* OnGoingCollectionViewCell.swift in Sources */,
 				CA73E719236FE0A500BD3050 /* OTP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
