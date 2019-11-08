@@ -139,8 +139,8 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
         visualEffectView.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    @objc
-    func handleCardTap(recognzier:UITapGestureRecognizer) {
+    
+    @objc func handleCardTap(recognzier:UITapGestureRecognizer) {
         switch recognzier.state {
         case .ended:
             animateTransitionIfNeeded(state: nextState, duration: 0.9)
