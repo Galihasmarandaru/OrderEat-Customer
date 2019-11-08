@@ -11,6 +11,9 @@
 		0A61C1832371427700CF695F /* AddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61C1822371427700CF695F /* AddData.swift */; };
 		0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */; };
 		CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */; };
+		CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */; };
+		CA1BB5E22375073200F6EFD0 /* Signin.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1BB5E12375073200F6EFD0 /* Signin.xib */; };
+		CA1BB5E623750A9C00F6EFD0 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB5E523750A9C00F6EFD0 /* SigninViewController.swift */; };
 		CA26D1F9236A830C000FDDD0 /* OnGoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA26D1F8236A830C000FDDD0 /* OnGoingViewController.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
 		CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559972366A5FB00382CCF /* SceneDelegate.swift */; };
@@ -59,6 +62,9 @@
 		0A61C1822371427700CF695F /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
 		0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantTableViewCell.swift; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
+		CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellDelegate.swift; sourceTree = "<group>"; };
+		CA1BB5E12375073200F6EFD0 /* Signin.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Signin.xib; sourceTree = "<group>"; };
+		CA1BB5E523750A9C00F6EFD0 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		CA26D1F8236A830C000FDDD0 /* OnGoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingViewController.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3559952366A5FB00382CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -428,6 +434,7 @@
 				CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */,
 				CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */,
 				CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */,
+				CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -619,6 +626,7 @@
 		CA73E705236FC67500BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CA1BB5E12375073200F6EFD0 /* Signin.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -633,6 +641,7 @@
 		CA73E707236FC68100BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CA1BB5E523750A9C00F6EFD0 /* SigninViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -807,6 +816,7 @@
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
+				CA1BB5E22375073200F6EFD0 /* Signin.xib in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
@@ -845,9 +855,11 @@
 				CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */,
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */,
+				CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */,
 				CA73E71D236FEA3500BD3050 /* MerchantMenuViewController.swift in Sources */,
 				CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
+				CA1BB5E623750A9C00F6EFD0 /* SigninViewController.swift in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,

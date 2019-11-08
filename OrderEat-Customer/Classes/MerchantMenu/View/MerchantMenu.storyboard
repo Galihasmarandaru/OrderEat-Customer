@@ -154,7 +154,7 @@
                                                                                 <action selector="minusTap:" destination="aaC-xl-hYx" eventType="touchUpInside" id="YqH-3A-iaX"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPw-zG-37X">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPw-zG-37X">
                                                                             <rect key="frame" x="32" y="0.0" width="36" height="30"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" red="0.85882352939999995" green="0.89411764709999997" blue="0.43921568630000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -210,7 +210,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view contentMode="scaleToFill" id="4EN-8c-rCQ" userLabel="CartView">
+                            <view contentMode="scaleToFill" id="4EN-8c-rCQ" userLabel="CartView" customClass="CartView">
                                 <rect key="frame" x="45" y="800" width="325" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -265,7 +265,9 @@
                         <outlet property="CartView" destination="4EN-8c-rCQ" id="mYP-to-Be4"/>
                         <outlet property="MainView" destination="zzP-cc-bMh" id="muV-5n-2qI"/>
                         <outlet property="backgroundMerchant" destination="JJX-At-1eu" id="eSq-f7-OEw"/>
+                        <outlet property="itemSelected" destination="EU9-oj-nU3" id="RJf-8D-6tl"/>
                         <outlet property="merchantTitle" destination="eJR-PW-euN" id="lyh-d9-Vpi"/>
+                        <outlet property="priceSelected" destination="Gig-5F-FPk" id="gob-PR-gnW"/>
                         <outlet property="promoTitle" destination="8C2-F2-sbE" id="bLY-CW-05o"/>
                         <outlet property="tableView" destination="hKG-7B-e5A" id="xdh-KL-86c"/>
                         <outlet property="viewMenu" destination="cXN-0r-qcR" id="Tuw-A2-Zof"/>

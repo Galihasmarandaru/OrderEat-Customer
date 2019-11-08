@@ -10,16 +10,16 @@ import UIKit
 import CoreLocation
 
 struct AddDataMerchantMenu {
-    static func getDataMenu() -> [Menu] {
+    static func getDataMenu(dataTransaction: Int) -> [Menu] {
         var data = [Menu]()
         
-        let menu1 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 0)
+        let menu1 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: dataTransaction)
 
-        let menu2 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 0)
+        let menu2 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: dataTransaction)
 
-        let menu3 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 0)
+        let menu3 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: dataTransaction)
         
-        let menu4 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 0)
+        let menu4 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: dataTransaction)
 
         data.append(menu1)
         data.append(menu2)

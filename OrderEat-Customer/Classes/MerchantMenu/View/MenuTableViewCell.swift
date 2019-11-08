@@ -21,7 +21,7 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var plusTap: UIButton!
     @IBOutlet weak var qtyItem: UILabel!
     
-//    @IBOutlet weak var CartView: UIView!
+    var cellDelegate: ButtonCellDelegate?
     
     @IBOutlet weak var viewStepper: UIView!
     
@@ -32,22 +32,26 @@ class MenuTableViewCell: UITableViewCell {
     var hideCartAction: (() -> ())?
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
+        cellDelegate?.didPressButtonAdd(sender.tag)
         sender.isHidden = !sender.isHidden
         viewStepper.isHidden = false
         activityCart?()
     }
     
-    @IBAction func minusTap(_ sender: Any) {
+    @IBAction func minusTap(_ sender: UIButton) {
         if (data.qty == 0) {
+            cellDelegate?.didPressButtonCart(sender.tag)
             viewStepper.isHidden = true
             addButton.isHidden = false
             hideCartAction?()
         } else {
+            cellDelegate?.didPressButtonCart(sender.tag)
             data.qty -= 1
         }
     }
     
-    @IBAction func plusTap(_ sender: Any) {
+    @IBAction func plusTap(_ sender: UIButton) {
+        cellDelegate?.didPressButtonCart(sender.tag)
         data.qty += 1
     }
     
