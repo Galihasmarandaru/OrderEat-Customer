@@ -30,6 +30,10 @@ class WaitingforRestoConfirmViewController: UIViewController {
     }
     
     @IBAction func cancelOrderButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MerchantMenu", bundle: nil)
+        let merchantMenuPage = storyboard.instantiateViewController(identifier: "merchantMenu") as! MerchantMenuViewController
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = merchantMenuPage
     }
     
     /*
