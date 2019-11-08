@@ -10,9 +10,8 @@ import UIKit
 import CoreLocation
 
 struct AddDataMerchantMenu {
-    static func getDataMenu() -> [Menu] {
+    static func getDataMenu(dataTransaction: Int) -> [Menu] {
         var data = [Menu]()
-        
         let menu1 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 1)
 
         let menu2 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 1)
