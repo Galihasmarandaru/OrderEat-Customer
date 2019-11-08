@@ -15,7 +15,6 @@
 		0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */; };
 		A31B449D2373CB6400022FE6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449C2373CB6400022FE6 /* File.swift */; };
 		A31B449F2373FD5800022FE6 /* OrderDone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B449E2373FD5800022FE6 /* OrderDone.storyboard */; };
-		A31B44A12373FD8100022FE6 /* OrderDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A02373FD8100022FE6 /* OrderDoneViewController.swift */; };
 		A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B71185236FE90A00670669 /* OrderSetTime.storyboard */; };
 		A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118B236FF5AF00670669 /* CustomButton.swift */; };
 		A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */; };
@@ -36,6 +35,11 @@
 		A3DDA7522372A770006CB5BA /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA7512372A770006CB5BA /* DetailsTableViewCell.swift */; };
 		A3DDA7542372A778006CB5BA /* QRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA7532372A778006CB5BA /* QRTableViewCell.swift */; };
 		A3DDA7562372A9D2006CB5BA /* ConfirmPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA7552372A9D2006CB5BA /* ConfirmPaymentViewModel.swift */; };
+		A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D02375200D00693241 /* ItemTableViewCell.swift */; };
+		A3E4D5D32375201800693241 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D22375201800693241 /* DetailTableViewCell.swift */; };
+		A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */; };
+		A3E4D5D72375231300693241 /* OrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D62375231300693241 /* OrderDoneViewModel.swift */; };
+		A3E4D5D92375234A00693241 /* OrderDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */; };
 		A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F92EBE23727AE00048F6ED /* OrderSetTimeViewModel.swift */; };
 		CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
@@ -89,7 +93,6 @@
 		0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantTableViewCell.swift; sourceTree = "<group>"; };
 		A31B449C2373CB6400022FE6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A31B449E2373FD5800022FE6 /* OrderDone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderDone.storyboard; sourceTree = "<group>"; };
-		A31B44A02373FD8100022FE6 /* OrderDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderDoneViewController.swift; path = "OrderEat-Customer/Classes/CheckoutOrder/OrderDone/OrderDoneViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A3B71185236FE90A00670669 /* OrderSetTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderSetTime.storyboard; sourceTree = "<group>"; };
 		A3B7118B236FF5AF00670669 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrderedTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +113,11 @@
 		A3DDA7512372A770006CB5BA /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		A3DDA7532372A778006CB5BA /* QRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRTableViewCell.swift; sourceTree = "<group>"; };
 		A3DDA7552372A9D2006CB5BA /* ConfirmPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentViewModel.swift; sourceTree = "<group>"; };
+		A3E4D5D02375200D00693241 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		A3E4D5D22375201800693241 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQRTableViewCell.swift; sourceTree = "<group>"; };
+		A3E4D5D62375231300693241 /* OrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDoneViewModel.swift; sourceTree = "<group>"; };
+		A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDoneViewController.swift; sourceTree = "<group>"; };
 		A3F92EBE23727AE00048F6ED /* OrderSetTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSetTimeViewModel.swift; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,7 +394,8 @@
 			children = (
 				CA73E6E1236FC30100BD3050 /* Signin */,
 			);
-			path = Authentication;
+			name = Authentication;
+			path = CheckoutOrder/ConfirmOrder/Authentication;
 			sourceTree = "<group>";
 		};
 		CA73E6E0236FC2F100BD3050 /* CheckoutOrder */ = {
@@ -669,6 +678,9 @@
 			isa = PBXGroup;
 			children = (
 				A31B449E2373FD5800022FE6 /* OrderDone.storyboard */,
+				A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */,
+				A3E4D5D22375201800693241 /* DetailTableViewCell.swift */,
+				A3E4D5D02375200D00693241 /* ItemTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -676,7 +688,7 @@
 		CA73E700236FC64D00BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A31B44A02373FD8100022FE6 /* OrderDoneViewController.swift */,
+				A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -684,6 +696,7 @@
 		CA73E701236FC65300BD3050 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A3E4D5D62375231300693241 /* OrderDoneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -935,8 +948,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
-				A31B44A12373FD8100022FE6 /* OrderDoneViewController.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
+				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
 				0A61C1832371427700CF695F /* AddData.swift in Sources */,
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
@@ -947,6 +960,7 @@
 				CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */,
 				CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */,
 				A3DDA7542372A778006CB5BA /* QRTableViewCell.swift in Sources */,
+				A3E4D5D92375234A00693241 /* OrderDoneViewController.swift in Sources */,
 				A3DDA7522372A770006CB5BA /* DetailsTableViewCell.swift in Sources */,
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */,
@@ -963,6 +977,7 @@
 				A3DDA73E23729C18006CB5BA /* WaitingforRestoConfirmViewController.swift in Sources */,
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
+				A3E4D5D32375201800693241 /* DetailTableViewCell.swift in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				0A61C1852371B1D100CF695F /* OnGoingViewController.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
@@ -970,8 +985,10 @@
 				A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
 				A31B449D2373CB6400022FE6 /* File.swift in Sources */,
+				A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */,
 				A3B71194236FFB1F00670669 /* PaymentMethodTableViewCell.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
+				A3E4D5D72375231300693241 /* OrderDoneViewModel.swift in Sources */,
 				0A61C18723726AC400CF695F /* OnGoingCollectionViewCell.swift in Sources */,
 				CA73E719236FE0A500BD3050 /* OTP.swift in Sources */,
 			);
