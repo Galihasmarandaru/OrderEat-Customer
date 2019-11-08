@@ -10,7 +10,7 @@ import UIKit
 
 class OnGoingViewController: UIViewController {
 
-    @IBOutlet weak var historyView: UIView!
+    @IBOutlet weak var onGoingCollectionView: UICollectionView!
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var onGoingButton: UIButton!
     @IBOutlet weak var onGoingUnderline: UIImageView!
@@ -18,11 +18,14 @@ class OnGoingViewController: UIViewController {
     var isiCell = OnGoingViewModel.getTransaction()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollection()
         historyUnderline.isHidden = true
-        historyView.isHidden = true
- 
-        
-        // Do any additional setup after loading the view.
+//        penandaSegmented = 0
+    }
+    
+    func setupCollection(){
+        onGoingCollectionView.register(UINib(nibName: "OnGoingCollectionListCell", bundle: nil), forCellWithReuseIdentifier: "onGoingCollectionListCellID")
+        onGoingCollectionView.reloadData()
     }
     
     @IBAction func onGoingClicked(_ sender: Any) {
@@ -30,7 +33,6 @@ class OnGoingViewController: UIViewController {
         historyUnderline.isHidden = true
         onGoingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
-        historyView.isHidden = true
     }
     
     @IBAction func historyClicked(_ sender: Any)
@@ -40,7 +42,6 @@ class OnGoingViewController: UIViewController {
         onGoingButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         
-        historyView.isHidden = false
     }
 
 }
@@ -51,16 +52,16 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! OnGoingCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onGoingCollectionListCellID", for: indexPath) as! OnGoingCollectionListCell
         cell.merchantName.text = isiCell[indexPath.row].merchantName
-        cell.transactionID.text = isiCell[indexPath.row].transactionID
-        cell.transactionPrice.text = "Rp \(isiCell[indexPath.row].transactionPrice)"
-        cell.statusTransaction.text = isiCell[indexPath.row].statusTransaction
-        cell.transactionDate.text = isiCell[indexPath.row].pickUpDate
-        cell.transactionTime.text = isiCell[indexPath.row].pickUpTime
+        cell.orderID.text = "Order No : \(isiCell[indexPath.row].transactionID)"
+        cell.orderPrice.text = "Rp \(isiCell[indexPath.row].transactionPrice)"
+        cell.orderStatus.text = "Status : \(isiCell[indexPath.row].statusTransaction)"
+        cell.orderDate.text = isiCell[indexPath.row].pickUpDate
+        cell.orderTime.text = isiCell[indexPath.row].pickUpTime
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.5
+        cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = CGSize(width: 3, height: 3)
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
