@@ -27,18 +27,18 @@
 			<key>UIWindowSceneSessionRoleApplication</key>
 			<array>
 				<dict>
+					<key>UISceneStoryboardFile</key>
+					<string>OrderDone</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>OnBoarding</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>OnBoarding</string>
+	<string>OrderDone</string>
 	<key>UIMainStoryboardFile</key>
-	<string>OnBoarding</string>
+	<string>OrderDone</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

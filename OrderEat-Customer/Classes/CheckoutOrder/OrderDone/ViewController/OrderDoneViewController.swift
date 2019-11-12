@@ -11,8 +11,7 @@ import UIKit
 class OrderDoneViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var orderDoneTableView: UITableView!
-
+    @IBOutlet weak var orderDoneTableView: UITableView!    
     var foods = OrderDoneViewModel.getDataMenuPayment()
     var merchants = OrderDoneViewModel.getDataMerchant()
     var image: UIImage? = nil
@@ -68,7 +67,7 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count + 6
+        return foods.count + 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,33 +91,20 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cellTax
         }
-        else if indexPath.row == (foods.count + 2) {
+        else if indexPath.row == (foods.count + 2){
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellTotal.leftLabel.text = "Total"
             cellTotal.rightLabel.text = "Rp. 143.000"
             
             return cellTotal
         }
-        else if indexPath.row == (foods.count + 3) {
-            let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-            cellPickup.leftLabel.text = "Pick Up Time"
-            cellPickup.rightLabel.text = "12.00"
+        else {
+            let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
             
-            return cellPickup
+            cellQR.QRImageView.image = image
+            cellQR.pickUpTimeLabel.text = "12.00"
+            
+            return cellQR
         }
-        else if indexPath.row == (foods.count + 4) {
-        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-        
-            cellPayment.leftLabel.text = "Payment Method"
-            cellPayment.rightLabel.text = "GOPAY"
-        
-        return cellPayment
-        }
-        
-        let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
-        
-        cellQR.QRImageView.image = image
-        
-        return cellQR
     }
 }
