@@ -37,7 +37,7 @@ class onBoardingViewController: UIViewController , UIScrollViewDelegate{
     func setupScroll()
        {
             var imageArr = [UIImage]()
-            imageArr = [#imageLiteral(resourceName: "Group 1-On Boarding"),#imageLiteral(resourceName: "Group 2-On Boarding"),#imageLiteral(resourceName: "Group 3-On Boarding")]
+            imageArr = [#imageLiteral(resourceName: "Group 1-On Boarding"),#imageLiteral(resourceName: "image-2"),#imageLiteral(resourceName: "Group 3-On Boarding")]
             let screenWidth = self.view.frame.size.width
             scrollView.contentSize = CGSize(width: screenWidth * CGFloat(imageArr.count), height: scrollView.frame.size.height)
            scrollView.layer.borderColor = UIColor.black.cgColor
