@@ -11,4 +11,5 @@ import Foundation
 final class CurrentUser {
     static let id = "6cade91c-fd4b-42f1-b86b-d78af884a6a2"
     static let name = "Fred"
+    //aa
 }

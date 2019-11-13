@@ -12,7 +12,7 @@ class TransactionDetail : Codable {
     var transactionId : String? // E
     var menu : Menu? // D
     var menuId : String? // E
-    var qty : Int? // D, E
+    var qty : Int? // D, E //
     
     private enum CodingKeys: String, CodingKey{
         case transactionId
