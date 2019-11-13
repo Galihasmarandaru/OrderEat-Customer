@@ -13,32 +13,34 @@ enum statusOperation {
     case zero, one, two, three, four
 }
 
-struct OnGoingViewModel{
-    static func getTransaction() -> [Transaction]{
-        let isiCell:[Transaction] = [Transaction(transactionID:"D-01",customerID: "",merchantID: "",merchantName: "Burger King Aeon Mall",pickUpTime: "09.00",orderedItem: [],statusTransaction: "Ready To Pick Up",transactionPrice: "120.000",pickupDate: "29 November 2019")]
-        return isiCell
+class OnGoingViewModel{
+    var transactions : [Transaction]? {
+        didSet {
+            self.didFinishFetch?()
+        }
     }
     
-//    func status(){
-//        let statusText:Transaction
-//        
-//        var condition: String;
-//
-//        func statusOperationRestaurant(status: statusOperation) -> String {
-//            switch status {
-//            case .zero:
-//                condition = "Not Confirmed"
-//            case .one:
-//                condition = "Confirmed"
-//            case .two:
-//                condition = "On Process"
-//            case .three:
-//                condition = "Ready To PickUp"
-//            case .four:
-//                condition = "Your Food Already Dingin"
-//            }
-//            return condition
-//        }
-//    }
+    var error : Error? {
+        didSet {
+            
+        }
+    }
     
+    var isLoading : Bool = false {
+        didSet {
+            print()
+        }
+    }
+    
+    // Closures for callback
+    var showAlertClosure : (() -> ())?
+    var updateLoadingStatus : (() -> ())?
+    var didFinishFetch : (() -> ())?
+    
+    //Network call
+    func fetchTransactions() {
+        APIRequest.getTransactions(customerId: CurrentUser.id) { (transactions) in
+            self.transactions = transactions
+        }
+    }
 }

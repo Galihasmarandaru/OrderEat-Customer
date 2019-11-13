@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
+class MerchantMenuViewController: UIViewController {
 
     @IBOutlet weak var backgroundMerchant: UIImageView!
     @IBOutlet weak var merchantTitle: DetailMerchantView!
@@ -18,7 +18,6 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
     
     @IBOutlet weak var itemSelected: UILabel!
     @IBOutlet weak var priceSelected: UILabel!
-    
     
     @IBOutlet weak var CartView: UIView!
     @IBOutlet var MainView: UIView!
@@ -46,27 +45,74 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
     var bottomConstraint: NSLayoutConstraint!
     
     var selectedItem: Int!
+    var qtyItem: Int!
         
-    var total: Int = 1
+    var totalItem: Int!
+    var dataItem: [Int] = [0]
+    var totalItemArray: [Int] = [0]
+    var totalQtyArray: [Int] = [0]
+    
+    var totalCount: Int!
+    var totalQty: Int!
+    
+    var total: Int = 0
     var menuCell = MenuTableViewCell()
-    lazy var theData = AddDataMerchantMenu.getDataMenu(dataTransaction: total)
+//    lazy var theData = AddDataMerchantMenu.getDataMenu(dataTransaction: 0)
+    
+    // Injection
+    let viewModel = MerchantMenuViewModel()
+    
+    var merchant : Merchant!
+    var menus = [Menu]()
+    
+    var transaction : Transaction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        merchantTitle.data = AddDataMerchantMenu.getDataMerchant()
+//        merchantTitle.data = AddDataMerchantMenu.getDataMerchant()
         backgroundMerchant.image = UIImage(named: "bg-merchat-1")
+        merchantTitle.merchant = merchant
         viewOfMenu()
         createConstraint()
+        
+        attemptFetchMenus(withMerchantId: merchant.id!)
+        setupTransaction()
+        setupCartTapRecognizer()
+        //transaction = DecodeTest.attemptDecodeTransaction()
+        
+//        tableView.tableFooterView = UIView().white
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        //tabBarController.setta
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
+    private func attemptFetchMenus(withMerchantId merchantId : String) {
+        viewModel.fetchMenu(withMerchantId: merchantId)
+        
+        viewModel.didFinishFetch = {
+            self.menus = self.viewModel.menus!
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func setupTransaction() {
+        transaction = Transaction(merchantId: merchant.id!)
+        transaction.merchant = merchant
+    }
+    
+    func setupCartTapRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.cartTapAction))
+        CartView.addGestureRecognizer(tap)
+    }
     
     func viewOfMenu() {
         self.viewMenu.layer.cornerRadius = 20
@@ -91,9 +137,13 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
         }
     }
 
-    @objc func AddAction() {
-            print("Berhasil")
-            setupCard()
+    @objc func cartTapAction() {
+        if let orderSetTimeVC = UIStoryboard(name: "OrderSetTime", bundle: nil).instantiateViewController(identifier: "OrderSetTime") as? OrderSetTimeViewController {
+            orderSetTimeVC.transaction = self.transaction
+            orderSetTimeVC.merchantMenuVC = self
+
+            self.present(orderSetTimeVC, animated: true, completion: nil)
+        }
     }
     
     func createConstraint() {
@@ -103,19 +153,6 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
         bottomConstraint.isActive = true
         CartView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         CartView.widthAnchor.constraint(equalToConstant: 325).isActive = true
-    }
-
-    func didPressButtonAdd(_ tag: Int) {
-        selectedItem = theData[tag].priceMenu
-        let totalItem = selectedItem * 1
-        itemSelected.text = String(totalItem)
-    }
-    
-    func didPressButtonCart(_ tag: Int) {        
-        var totalItem = [Int]()
-        totalItem = [theData[tag].priceMenu * theData[tag].qty]
-        let totalCount = totalItem.reduce(0, +)
-        itemSelected.text = String(totalCount)
     }
     
     // MARK: Handle Signin
@@ -139,8 +176,8 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
         visualEffectView.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    @objc
-    func handleCardTap(recognzier:UITapGestureRecognizer) {
+    
+    @objc func handleCardTap(recognzier:UITapGestureRecognizer) {
         switch recognzier.state {
         case .ended:
             animateTransitionIfNeeded(state: nextState, duration: 0.9)
@@ -243,26 +280,43 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
 
 extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return theData.count
+        return menus.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? MenuTableViewCell else {return UITableViewCell()}
-        cell.data = theData[indexPath.row]
+//        cell.data = theData[indexPath.row]
         
-        cell.activityCart = { [unowned self] in
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.AddAction))
-            self.CartView.addGestureRecognizer(tap)
-            self.showCart()
-//            self.selectedItem
+        // assign menu data to cell
+        cell.detail = TransactionDetail(menu: menus[indexPath.row])
+        
+        cell.addBtnClosure = { [unowned self] in
+            self.transaction.details?.append(cell.detail)
+            if self.transaction.getTotalMenu() == 1 {
+                self.showCart()
+                print("Cart show")
+            }
         }
         
-        cell.hideCartAction = { [unowned self] in
-            self.hideCart()
+        cell.refreshCartClosure = { [unowned self] in
+            //self.transaction.details?.removeAll(where: $0.qty == 0 )
+//            print("Details count: ", self.transaction.details?.count)
+//            print("Total Item: ", self.transaction.getTotalMenu())
+            if self.transaction.getTotalMenu() == 0 {
+                self.hideCart()
+                print("Cart hide")
+            }
+            else {
+                let totalMenu = self.transaction.getTotalMenu()
+                self.itemSelected.text = "\(totalMenu) item" + (totalMenu > 1 ? "s" : "")
+                self.priceSelected.text = "Rp. \(self.transaction.getSubTotalPrice())"
+            }
         }
         
-        cell.cellDelegate = self
-        cell.addButton.tag = indexPath.row
+        cell.checkCartClosure = { [unowned self] in
+            self.transaction.details!.removeAll(where: {$0.qty == 0})
+        }
+
         return cell
     }
 }
