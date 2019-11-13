@@ -15,6 +15,7 @@ class ConfirmPaymentViewController: UIViewController {
     
     var foods = ConfirmPaymentViewModel.getDataMenuPayment()
     var merchants = ConfirmPaymentViewModel.getDataMerchant()
+    var flag: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ConfirmPaymentViewController: UIViewController {
 
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
+        self.flag = 0
         
         self.orderDetailsTableView.tableFooterView = UIView()
     }
@@ -44,6 +46,8 @@ class ConfirmPaymentViewController: UIViewController {
         else {
             UIApplication.shared.open(URL(string: "https://apps.apple.com/id/app/gojek/id944875099")!, options: [:], completionHandler: nil)
         }
+        flag = 1
+        orderDetailsTableView.reloadData()
     }
     
     @IBAction func confirmPaymentButtonClicked(_ sender: Any) {
@@ -51,6 +55,7 @@ class ConfirmPaymentViewController: UIViewController {
         let orderDonePage = storyboard.instantiateViewController(identifier: "orderDone") as! OrderDoneViewController
         let appDelegate = UIApplication.shared.windows
         appDelegate.first?.rootViewController = orderDonePage
+        self.flag = 1
     }
     
     /*
@@ -117,15 +122,20 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         
         return cellPayment
         }
-        
-        let cellButton = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
-        
-        cellButton.QRImageView.image = merchants.QRMerchant
-        
-        cellButton.confirmPaymentButton.setTitle("Confirm Payment", for: .normal)
-        cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
-        
-        return cellButton
+        else {
+            let cellButton = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
+            
+            cellButton.QRImageView.image = merchants.QRMerchant
+            
+            if flag == 0 {
+                cellButton.disableButton()
+            }
+            else {
+                cellButton.enableButton()
+            }
+            
+            return cellButton
+        }
     }
 
 

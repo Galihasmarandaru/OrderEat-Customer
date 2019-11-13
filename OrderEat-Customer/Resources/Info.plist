@@ -28,7 +28,7 @@
 			<array>
 				<dict>
 					<key>UISceneStoryboardFile</key>
-					<string>OrderDone</string>
+					<string>ConfirmPayment</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 				</dict>
@@ -36,9 +36,9 @@
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>OrderDone</string>
+	<string>ConfirmPayment</string>
 	<key>UIMainStoryboardFile</key>
-	<string>OrderDone</string>
+	<string>ConfirmPayment</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

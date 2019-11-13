@@ -17,6 +17,19 @@ class QRTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.confirmPaymentButton.setTitle("Confirm Payment", for: .normal)
+    }
+    
+    func disableButton() {
+        confirmPaymentButton.isEnabled = false
+        confirmPaymentButton.backgroundColor = .systemGray6
+        confirmPaymentButton.setTitleColor(.systemGray, for: .normal)
+    }
+    
+    func enableButton() {
+        confirmPaymentButton.isEnabled = true
+        confirmPaymentButton.backgroundColor = .ijoDela
+        confirmPaymentButton.setTitleColor(.black, for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,5 +37,4 @@ class QRTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
