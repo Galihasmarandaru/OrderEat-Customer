@@ -9,27 +9,6 @@
 import UIKit
 import CoreLocation
 
-/*
-struct Merchant {
-    
-    let merchantID: String;
-    let merchantName: String;
-    let QRMerchant: UIImage;
-    let merchantAddress: String;
-    let merchantImage: UIImage?
-    
-    
-    init(merchantID: String, merchantName: String, QRMerchant: UIImage, merchantAddress: String, merchantImage: UIImage?) {
-        self.merchantID = merchantID
-        self.merchantName = merchantName
-        self.QRMerchant = QRMerchant
-        self.merchantAddress = merchantAddress
-        self.merchantImage = merchantImage
-        
-    }
-}
-*/
-
 class Merchant : Codable {
     var id : String? // D
     var name : String? // D, E

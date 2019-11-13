@@ -285,7 +285,6 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? MenuTableViewCell else {return UITableViewCell()}
-//        cell.data = theData[indexPath.row]
         
         // assign menu data to cell
         cell.detail = TransactionDetail(menu: menus[indexPath.row])
@@ -299,9 +298,6 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
         }
         
         cell.refreshCartClosure = { [unowned self] in
-            //self.transaction.details?.removeAll(where: $0.qty == 0 )
-//            print("Details count: ", self.transaction.details?.count)
-//            print("Total Item: ", self.transaction.getTotalMenu())
             if self.transaction.getTotalMenu() == 0 {
                 self.hideCart()
                 print("Cart hide")

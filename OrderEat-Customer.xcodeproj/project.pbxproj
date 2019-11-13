@@ -20,6 +20,7 @@
 		93F62E7C237BD8E4007FED6B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E77237BD8E4007FED6B /* APIRequest.swift */; };
 		93F62E7D237BD8E4007FED6B /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E78237BD8E4007FED6B /* TransactionStatus.swift */; };
 		93F62E7F237BD8EE007FED6B /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E7E237BD8EE007FED6B /* TransactionDetail.swift */; };
+		93F62E80237BDEB4007FED6B /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
 		A31B449D2373CB6400022FE6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449C2373CB6400022FE6 /* File.swift */; };
 		A31B449F2373FD5800022FE6 /* OrderDone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B449E2373FD5800022FE6 /* OrderDone.storyboard */; };
 		A31B44A3237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */; };
@@ -44,9 +45,7 @@
 		A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D02375200D00693241 /* ItemTableViewCell.swift */; };
 		A3E4D5D32375201800693241 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D22375201800693241 /* DetailTableViewCell.swift */; };
 		A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */; };
-		A3E4D5D72375231300693241 /* OrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D62375231300693241 /* OrderDoneViewModel.swift */; };
 		A3E4D5D92375234A00693241 /* OrderDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */; };
-		A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F92EBE23727AE00048F6ED /* OrderSetTimeViewModel.swift */; };
 		CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */; };
 		CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
@@ -132,9 +131,7 @@
 		A3E4D5D02375200D00693241 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		A3E4D5D22375201800693241 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQRTableViewCell.swift; sourceTree = "<group>"; };
-		A3E4D5D62375231300693241 /* OrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDoneViewModel.swift; sourceTree = "<group>"; };
 		A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDoneViewController.swift; sourceTree = "<group>"; };
-		A3F92EBE23727AE00048F6ED /* OrderSetTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSetTimeViewModel.swift; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
 		CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellDelegate.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -443,11 +440,9 @@
 			isa = PBXGroup;
 			children = (
 				CA73E6E9236FC37100BD3050 /* OrderSetTime */,
-				CA73E6E8236FC36700BD3050 /* ConfirmOrder */,
 				CA73E6E7236FC35B00BD3050 /* WaitingforRestoConfirm */,
 				CA73E6E6236FC35000BD3050 /* CancelOrder */,
 				CA73E6E5236FC34500BD3050 /* ConfirmPayment */,
-				CA73E6E4236FC33600BD3050 /* MakeSureConfirmPayment */,
 				CA73E6E3236FC32B00BD3050 /* OrderDone */,
 				CA73E6E2236FC31700BD3050 /* OrderDoneandReadytoPickup */,
 			);
@@ -484,16 +479,6 @@
 			path = OrderDone;
 			sourceTree = "<group>";
 		};
-		CA73E6E4236FC33600BD3050 /* MakeSureConfirmPayment */ = {
-			isa = PBXGroup;
-			children = (
-				CA73E6FE236FC63C00BD3050 /* ViewModel */,
-				CA73E6FD236FC63500BD3050 /* ViewController */,
-				CA73E6FC236FC62F00BD3050 /* View */,
-			);
-			path = MakeSureConfirmPayment;
-			sourceTree = "<group>";
-		};
 		CA73E6E5236FC34500BD3050 /* ConfirmPayment */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,16 +507,6 @@
 				CA73E6F3236FC5E300BD3050 /* View */,
 			);
 			path = WaitingforRestoConfirm;
-			sourceTree = "<group>";
-		};
-		CA73E6E8236FC36700BD3050 /* ConfirmOrder */ = {
-			isa = PBXGroup;
-			children = (
-				CA73E6F2236FC5DC00BD3050 /* ViewModel */,
-				CA73E6F1236FC5D200BD3050 /* ViewController */,
-				CA73E6F0236FC5CD00BD3050 /* View */,
-			);
-			path = ConfirmOrder;
 			sourceTree = "<group>";
 		};
 		CA73E6E9236FC37100BD3050 /* OrderSetTime */ = {
@@ -596,28 +571,6 @@
 			isa = PBXGroup;
 			children = (
 				A3B7119D23710FD100670669 /* OrderedMenu.swift */,
-				A3F92EBE23727AE00048F6ED /* OrderSetTimeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CA73E6F0236FC5CD00BD3050 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CA73E6F1236FC5D200BD3050 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		CA73E6F2236FC5DC00BD3050 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -695,27 +648,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CA73E6FC236FC62F00BD3050 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CA73E6FD236FC63500BD3050 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		CA73E6FE236FC63C00BD3050 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		CA73E6FF236FC64300BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,7 +670,6 @@
 		CA73E701236FC65300BD3050 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A3E4D5D62375231300693241 /* OrderDoneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -957,6 +888,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F62E80237BDEB4007FED6B /* WaitingforRestoConfirm.storyboard in Resources */,
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */,
@@ -1035,7 +967,6 @@
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
 				E63B673923755AD000578442 /* SigninViewController.swift in Sources */,
-				A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
 				A31B449D2373CB6400022FE6 /* File.swift in Sources */,
 				A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */,
@@ -1044,7 +975,6 @@
 				93F62E7F237BD8EE007FED6B /* TransactionDetail.swift in Sources */,
 				93F62E7D237BD8E4007FED6B /* TransactionStatus.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
-				A3E4D5D72375231300693241 /* OrderDoneViewModel.swift in Sources */,
 				CA73E719236FE0A500BD3050 /* OTP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

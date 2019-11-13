@@ -17,9 +17,6 @@ class ConfirmPaymentViewController: UIViewController {
     @IBOutlet weak var merchantNameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     
-//    var foods = ConfirmPaymentViewModel.getDataMenuPayment()
-//    var merchants = ConfirmPaymentViewModel.getDataMerchant()
-    
     var details : [TransactionDetail]!
     var transaction : Transaction! {
         didSet {

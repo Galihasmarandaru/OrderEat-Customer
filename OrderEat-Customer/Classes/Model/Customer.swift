@@ -8,18 +8,6 @@
 
 import UIKit
 
-/*
-struct Customer {
-    let customerID: UUID
-    let customerName: String
-    let emailCustomer: String
-    let phoneNumberCustomer: String
-    
-    let orderNumberCustomer: String
-    let pickupTimeCustomer: UIDatePicker
-}
-*/
-
 class Customer : Codable {
     var id : String? // D
     var name : String? // D, E
