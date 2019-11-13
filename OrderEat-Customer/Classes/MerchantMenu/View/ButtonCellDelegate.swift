@@ -11,4 +11,6 @@ import UIKit
 protocol ButtonCellDelegate: class {
     func didPressButtonAdd(_ tag: Int)
     func didPressButtonCart(_ tag: Int)
+    func updateMinusQty(_ tag: Int)
+    func updatePlusQty(_ tag: Int)
 }

@@ -15,12 +15,40 @@ class OnGoingViewController: UIViewController {
     @IBOutlet weak var onGoingButton: UIButton!
     @IBOutlet weak var onGoingUnderline: UIImageView!
     @IBOutlet weak var historyUnderline: UIImageView!
-    var isiCell = OnGoingViewModel.getTransaction()
+    
+    // Injection
+    var viewModel = OnGoingViewModel()
+    
+    // Array
+    var transactions = [Transaction]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
         historyUnderline.isHidden = true
 //        penandaSegmented = 0
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(attemptFetchTransactions), for: .valueChanged)
+        onGoingCollectionView.refreshControl = refreshControl
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        attemptFetchTransactions()
+    }
+    
+    @objc private func attemptFetchTransactions() {
+        viewModel.fetchTransactions()
+        
+        viewModel.didFinishFetch = {
+            self.transactions = self.viewModel.transactions!
+            
+            DispatchQueue.main.async {
+                self.onGoingCollectionView.reloadData()
+                
+                self.onGoingCollectionView.refreshControl?.endRefreshing()
+            }
+        }
     }
     
     func setupCollection(){
@@ -48,17 +76,16 @@ class OnGoingViewController: UIViewController {
 
 extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return isiCell.count
+//        return isiCell.count
+        
+        print(transactions.count)
+        return transactions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onGoingCollectionListCellID", for: indexPath) as! OnGoingCollectionListCell
-        cell.merchantName.text = isiCell[indexPath.row].merchantName
-        cell.orderID.text = "Order No : \(isiCell[indexPath.row].transactionID)"
-        cell.orderPrice.text = "Rp \(isiCell[indexPath.row].transactionPrice)"
-        cell.orderStatus.text = "Status : \(isiCell[indexPath.row].statusTransaction)"
-        cell.orderDate.text = isiCell[indexPath.row].pickUpDate
-        cell.orderTime.text = isiCell[indexPath.row].pickUpTime
+        
+        cell.transaction = transactions[indexPath.row]
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.2
@@ -68,5 +95,36 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! OnGoingCollectionListCell
+        let status = cell.transaction.status!
+        
+        switch status {
+        case 1: // Waiting for payment
+            let storyboard = UIStoryboard(name: "ConfirmPayment", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ConfirmPayment") as! ConfirmPaymentViewController
+            
+            vc.transaction  = transactions[indexPath.row]
+            
+            self.present(vc, animated: true, completion: nil)
+            
+        case 2, 3: // On Process           
+            let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "OrderDone") as! OrderDoneViewController
+
+            vc.transaction = transactions[indexPath.row]
+
+            self.present(vc, animated: true, completion: nil)
+            
+//        case 3: // Ready To Pick Up
+//            let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
+//            let vc = storyboard.instantiateViewController(identifier: "OrderDone") as! OrderDoneViewController
+//
+//            vc.transaction = transactions[indexPath.row]
+//
+//            self.present(vc, animated: true, completion: nil)
+        default:
+            break;
+        }
+    }
 }

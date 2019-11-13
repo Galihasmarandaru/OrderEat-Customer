@@ -9,28 +9,34 @@
 import UIKit
 import CoreLocation
 
-struct AddDataMerchantMenu {
-    static func getDataMenu(dataTransaction: Int) -> [Menu] {
-        var data = [Menu]()
-        let menu1 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 1)
-
-        let menu2 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 1)
-
-        let menu3 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 1)
-        
-        let menu4 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: 1)
-
-        data.append(menu1)
-        data.append(menu2)
-        data.append(menu3)
-        data.append(menu4)
-        
-        return data
+class MerchantMenuViewModel {
+    var menus : [Menu]? {
+        didSet {
+            self.didFinishFetch?()
+        }
     }
     
-    static func getDataMerchant() -> Merchant {
-        let dataMerchant = Merchant(merchantID: "Burger King", merchantName: "AEON Mall, BSD City", QRMerchant: UIImage(named: "qr.png")!, merchantAddress: "BSD City", merchantImage: UIImage(named: "BK.png"))
-//        let dataMerchant = Merchant(from: "Burger King", restorAddress: "AEON Mall, BSD City", restorImage: UIImage(named: "")!, restorDistance: "", restorTravelTime: "")
-        return dataMerchant
+    var error : Error? {
+        didSet {
+            
+        }
+    }
+    
+    var isLoading : Bool = false {
+        didSet {
+            print()
+        }
+    }
+    
+    // Closures for callback
+    var showAlertClosure : (() -> ())?
+    var updateLoadingStatus : (() -> ())?
+    var didFinishFetch : (() -> ())?
+    
+    //Network call
+    func fetchMenu(withMerchantId merchantId: String) {
+        APIRequest.getMenus(merchantId: merchantId) { (menus) in
+            self.menus = menus
+        }
     }
 }
