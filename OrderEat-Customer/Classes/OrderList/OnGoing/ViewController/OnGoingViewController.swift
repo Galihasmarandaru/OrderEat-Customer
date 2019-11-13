@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PusherSwift
 
-class OnGoingViewController: UIViewController {
+class OnGoingViewController: UIViewController{
 
     @IBOutlet weak var onGoingCollectionView: UICollectionView!
     @IBOutlet weak var historyButton: UIButton!
@@ -31,6 +32,19 @@ class OnGoingViewController: UIViewController {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(attemptFetchTransactions), for: .valueChanged)
         onGoingCollectionView.refreshControl = refreshControl
+        
+        // bind a callback to handle an event
+        let _ = PusherChannels.channel.bind(eventName: "NewTransaction", eventCallback: { (event: PusherEvent) in
+            if event.data != nil {
+                 // you can parse the data as necessary
+                 // print(data)
+                print("trying refresh ongoing pagee")
+                self.attemptFetchTransactions()
+
+               }
+           })
+        PusherChannels.pusher.connect()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
