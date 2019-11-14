@@ -184,7 +184,7 @@ class MerchantMenuViewController: UIViewController, ButtonCellDelegate {
     
 }
 
-// MARK: Data Menu
+// MARK: Data Menu Merchant
 
 extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
