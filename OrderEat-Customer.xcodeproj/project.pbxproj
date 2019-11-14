@@ -67,6 +67,8 @@
 		CA73E71D236FEA3500BD3050 /* MerchantMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E71C236FEA3500BD3050 /* MerchantMenuViewController.swift */; };
 		CA73E71F236FECAF00BD3050 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */; };
 		CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E721236FF06700BD3050 /* AddDataMerchantMenu.swift */; };
+		CA754E27237D12B6005BAD6D /* OrderSetTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E26237D12B6005BAD6D /* OrderSetTimeViewModel.swift */; };
+		CA754E29237D12DF005BAD6D /* OrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E28237D12DF005BAD6D /* OrderDoneViewModel.swift */; };
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Merchant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
@@ -159,6 +161,8 @@
 		CA73E71C236FEA3500BD3050 /* MerchantMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantMenuViewController.swift; sourceTree = "<group>"; };
 		CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		CA73E721236FF06700BD3050 /* AddDataMerchantMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataMerchantMenu.swift; sourceTree = "<group>"; };
+		CA754E26237D12B6005BAD6D /* OrderSetTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSetTimeViewModel.swift; sourceTree = "<group>"; };
+		CA754E28237D12DF005BAD6D /* OrderDoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderDoneViewModel.swift; path = "OrderEat-Customer/Classes/CheckoutOrder/OrderSetTime/ViewModel/OrderDoneViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		CAB5D2DE23680CF000ACAAD0 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		CAB5D2E023680D9300ACAAD0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -571,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B7119D23710FD100670669 /* OrderedMenu.swift */,
+				CA754E26237D12B6005BAD6D /* OrderSetTimeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 		CA73E701236FC65300BD3050 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CA754E28237D12DF005BAD6D /* OrderDoneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -951,6 +957,7 @@
 				A3B711A0237161E200670669 /* CustomColor.swift in Sources */,
 				A3B71196236FFB4A00670669 /* ConfirmOrderButtonTableViewCell.swift in Sources */,
 				CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */,
+				CA754E29237D12DF005BAD6D /* OrderDoneViewModel.swift in Sources */,
 				A3DDA73C23729BAB006CB5BA /* ConfirmPaymentViewController.swift in Sources */,
 				A3B7119E23710FD100670669 /* OrderedMenu.swift in Sources */,
 				CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */,
@@ -961,6 +968,7 @@
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				93F62E7A237BD8E4007FED6B /* Data.swift in Sources */,
 				93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */,
+				CA754E27237D12B6005BAD6D /* OrderSetTimeViewModel.swift in Sources */,
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
 				A3E4D5D32375201800693241 /* DetailTableViewCell.swift in Sources */,
