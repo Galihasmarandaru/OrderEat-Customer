@@ -284,6 +284,7 @@
                     </view>
                     <connections>
                         <outlet property="headerView" destination="V3g-JX-q0A" id="Y2w-so-5zx"/>
+                        <outlet property="merchantNameLbl" destination="vrr-Go-jZT" id="eaT-ZO-Tw0"/>
                         <outlet property="orderNumber" destination="SlA-c4-jXj" id="dQg-ZL-dcM"/>
                         <outlet property="orderTableView" destination="ALr-vE-3IZ" id="ZcR-rz-Eb3"/>
                         <outlet property="restaurantName" destination="vrr-Go-jZT" id="N0v-os-XFv"/>

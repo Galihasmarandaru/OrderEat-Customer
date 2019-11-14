@@ -76,9 +76,6 @@ class OnGoingViewController: UIViewController {
 
 extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return isiCell.count
-        
-        print(transactions.count)
         return transactions.count
     }
     

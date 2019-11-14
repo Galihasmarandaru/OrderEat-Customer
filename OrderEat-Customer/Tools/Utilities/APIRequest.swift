@@ -205,8 +205,11 @@ final class APIRequest {
             } catch {
                 print(error.localizedDescription)
             }
+
             return Data()
         }
+        
+        print(jsonData.prettyPrintedJSONString)
         
         request.httpMethod = "POST"
         

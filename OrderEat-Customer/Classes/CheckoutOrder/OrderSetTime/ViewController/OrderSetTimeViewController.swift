@@ -14,8 +14,9 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var orderNumber: UILabel!
     @IBOutlet weak var orderTableView: UITableView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var merchantNameLbl: UILabel!
     
-    var pickUpTime: String = ""
+    var pickUpTime = Date()
     var paymentMethod: String = "GOPAY"
     
     let viewPicker = UIPickerView()
@@ -36,9 +37,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
         
         let formatter = DateFormatter()
         
-        formatter.dateStyle = .none
-        
-        formatter.timeStyle = .short
+        formatter.dateFormat = "HH:mm"
         
         return formatter
     }()
@@ -60,6 +59,8 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         
         config()
+        
+        merchantNameLbl.text = transaction.merchant?.name!
     }
     
     func config() {
@@ -73,20 +74,20 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     }
     
     @objc func datePickerChanged(_ sender: UIDatePicker) {
-        pickUpTime = dateFormatter.string(from: sender.date)
+        pickUpTime = sender.date
     }
 
     @IBAction func confirmOrderButtonClicked(_ sender: Any) {
-        
+        transaction.pickUpTime = pickUpTime.string
         APIRequest.post(.transactions, object: transaction) { (id) in
             self.transaction.id = id
-            
+
             let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
             DispatchQueue.main.async {
                 let waitingConfirmationPageVC = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
-                
+
                 waitingConfirmationPageVC.transaction = self.transaction
-                
+
                 if let navigator = self.merchantMenuVC.navigationController {
                     self.dismiss(animated: true) {
                         navigator.pushViewController(waitingConfirmationPageVC, animated: false)
@@ -104,7 +105,7 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return details.count + 6
+        return details.count + 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -124,7 +125,7 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
         }
         else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
-            cellTax.leftLabel.text = "Tax"
+            cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
             cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
 
             return cellTax
@@ -141,24 +142,24 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
 
             cellPickup.pickUpTimeTextField.inputAccessoryView = addToolBar()
 
-            cellPickup.pickUpTimeTextField.text = pickUpTime
+            cellPickup.pickUpTimeTextField.text = pickUpTime.string
             cellPickup.pickUpTimeTextField.inputView = datePicker
             
             return cellPickup
         }
-        else if indexPath.row == (details.count + 4) {
-            let cellPayment = tableView.dequeueReusableCell(withIdentifier: "paymentMethodTableViewCell", for: indexPath) as! PaymentMethodTableViewCell
-
-            paymentMethodData = ["GOPAY", "OVO"]
-            viewPicker.delegate = self
-
-            cellPayment.paymentMethodTextField.inputAccessoryView = addToolBar()
-
-            cellPayment.paymentMethodTextField.inputView = viewPicker
-            cellPayment.paymentMethodTextField.text = paymentMethod
-
-            return cellPayment
-        }
+//        else if indexPath.row == (details.count + 4) {
+//            let cellPayment = tableView.dequeueReusableCell(withIdentifier: "paymentMethodTableViewCell", for: indexPath) as! PaymentMethodTableViewCell
+//
+//            paymentMethodData = ["GOPAY", "OVO"]
+//            viewPicker.delegate = self
+//
+//            cellPayment.paymentMethodTextField.inputAccessoryView = addToolBar()
+//
+//            cellPayment.paymentMethodTextField.inputView = viewPicker
+//            cellPayment.paymentMethodTextField.text = paymentMethod
+//
+//            return cellPayment
+//        }
         
         let cellButton = tableView.dequeueReusableCell(withIdentifier: "confirmOrderButtonTableViewCell", for: indexPath) as! ConfirmOrderButtonTableViewCell
         

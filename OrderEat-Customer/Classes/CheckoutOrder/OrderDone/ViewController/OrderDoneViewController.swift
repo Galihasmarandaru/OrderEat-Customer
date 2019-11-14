@@ -76,10 +76,10 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if transaction.status == 2 {
-            return details.count + 5
+            return details.count + 4
         }
         else {
-            return details.count + 6
+            return details.count + 5
         }
     }
     
@@ -99,7 +99,7 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-            cellTax.leftLabel.text = "Tax"
+            cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
             cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
 
             return cellTax
@@ -114,18 +114,18 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
         else if indexPath.row == (details.count + 3) {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellPickup.leftLabel.text = "Pick Up Time"
-            cellPickup.rightLabel.text = "12.00"
+            cellPickup.rightLabel.text = transaction.pickUpTime?.time
 
             return cellPickup
         }
-        else if indexPath.row == (details.count + 4) {
-        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-
-            cellPayment.leftLabel.text = "Payment Method"
-            cellPayment.rightLabel.text = "GOPAY"
-
-        return cellPayment
-        }
+//        else if indexPath.row == (details.count + 4) {
+//        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
+//
+//            cellPayment.leftLabel.text = "Payment Method"
+//            cellPayment.rightLabel.text = "GOPAY"
+//
+//        return cellPayment
+//        }
         
         if transaction.status == 3 {
             let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell

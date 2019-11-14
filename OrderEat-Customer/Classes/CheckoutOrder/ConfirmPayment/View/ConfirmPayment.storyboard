@@ -79,19 +79,19 @@
                                     <constraint firstItem="q4h-5S-chv" firstAttribute="top" secondItem="fg8-dx-KKY" secondAttribute="bottom" constant="5" id="vw7-vS-mY1"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-Dl-6df">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="35" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-Dl-6df">
                                 <rect key="frame" x="20" y="279" width="374" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderedItemTableViewCell" rowHeight="137" id="RZ1-ef-Qj5" customClass="OrderedItemTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="137"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderedItemTableViewCell" rowHeight="135" id="RZ1-ef-Qj5" customClass="OrderedItemTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RZ1-ef-Qj5" id="G5K-av-SXt">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="137"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-Ka-fCI">
-                                                    <rect key="frame" x="20" y="17" width="104" height="104"/>
+                                                    <rect key="frame" x="20" y="17" width="104" height="102"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="104" id="18H-pW-2aM"/>
@@ -139,7 +139,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsTableViewCell" rowHeight="35" id="ibZ-a2-gKr" customClass="DetailsTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="165" width="374" height="35"/>
+                                        <rect key="frame" x="0.0" y="163" width="374" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ibZ-a2-gKr" id="XPz-Bd-PnA">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
@@ -173,39 +173,37 @@
                                             <outlet property="rightLabel" destination="cRN-8i-zgn" id="tkn-do-qdH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRTableViewCell" rowHeight="309" id="lTx-1q-dv0" customClass="QRTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="200" width="374" height="309"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRTableViewCell" rowHeight="280" id="lTx-1q-dv0" customClass="QRTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="198" width="374" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lTx-1q-dv0" id="kj9-V1-gZy">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="309"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4RW-0E-c0s">
-                                                    <rect key="frame" x="224" y="20" width="130" height="134"/>
+                                                    <rect key="frame" x="224" y="21" width="130" height="130"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="130" id="JGs-8W-jCF"/>
-                                                        <constraint firstAttribute="width" constant="130" id="iRz-cL-yS9"/>
+                                                        <constraint firstAttribute="width" constant="130" id="NQ7-NB-5k0"/>
+                                                        <constraint firstAttribute="width" secondItem="4RW-0E-c0s" secondAttribute="height" multiplier="1:1" id="PV5-lv-EOz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxY-Z1-hDq">
-                                                    <rect key="frame" x="224" y="164" width="130" height="25"/>
+                                                    <rect key="frame" x="224" y="160" width="130" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="oaI-iQ-icu"/>
+                                                        <constraint firstAttribute="width" constant="130" id="0r4-Nc-bPx"/>
+                                                        <constraint firstAttribute="height" constant="30" id="d3X-K3-9eQ"/>
                                                     </constraints>
                                                     <state key="normal" title="Open Go-Jek App"/>
                                                     <connections>
                                                         <action selector="saveQRButtonPressed:" destination="hbL-LA-ZBw" eventType="touchUpInside" id="kS6-4u-Bb9"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to pay?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8z-JZ-PlM">
-                                                    <rect key="frame" x="20" y="25" width="95" height="20"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyy-Na-Dd6">
-                                                    <rect key="frame" x="20" y="50" width="194" height="125.5"/>
+                                                    <rect key="frame" x="20" y="50" width="194" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="F7e-Qc-5CL"/>
+                                                    </constraints>
                                                     <string key="text">1. Click Open Go-Jek App and pay with this QR (this QR will be automatically saved to your Camera Roll)
 
 2. After that, click Confirm Payment below.</string>
@@ -214,9 +212,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqf-sh-WJe" customClass="CustomButton" customModule="OrderEat_Customer" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="234" width="334" height="44"/>
+                                                    <rect key="frame" x="20" y="220" width="334" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="XmU-Of-UQE"/>
+                                                        <constraint firstAttribute="height" constant="44" id="Lbs-Q8-KVv"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
@@ -224,22 +222,31 @@
                                                         <action selector="confirmPaymentButtonClicked:" destination="hbL-LA-ZBw" eventType="touchUpInside" id="WaZ-kk-yyy"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to pay?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8z-JZ-PlM">
+                                                    <rect key="frame" x="20" y="20" width="95" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="CCf-lG-KNv"/>
+                                                        <constraint firstAttribute="width" constant="95" id="VFb-5N-MI3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="mxY-Z1-hDq" secondAttribute="bottom" constant="120" id="26G-aB-b5v"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Dqf-sh-WJe" secondAttribute="bottom" constant="20" id="2tk-Nl-Xcv"/>
-                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="leading" secondItem="Eyy-Na-Dd6" secondAttribute="trailing" constant="10" id="9Xc-Hb-qzt"/>
-                                                <constraint firstItem="S8z-JZ-PlM" firstAttribute="leading" secondItem="kj9-V1-gZy" secondAttribute="leading" constant="20" id="GhC-jX-9sp"/>
-                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="top" secondItem="kj9-V1-gZy" secondAttribute="top" constant="20" id="HBz-9D-xHT"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dqf-sh-WJe" secondAttribute="trailing" constant="20" id="IXp-NO-5X7"/>
-                                                <constraint firstItem="S8z-JZ-PlM" firstAttribute="top" secondItem="kj9-V1-gZy" secondAttribute="top" constant="25" id="KLI-Gk-I1b"/>
-                                                <constraint firstAttribute="trailing" secondItem="mxY-Z1-hDq" secondAttribute="trailing" constant="20" id="lOk-Hh-cPB"/>
-                                                <constraint firstItem="Eyy-Na-Dd6" firstAttribute="leading" secondItem="kj9-V1-gZy" secondAttribute="leading" constant="20" id="mwP-IR-Jfe"/>
-                                                <constraint firstItem="Dqf-sh-WJe" firstAttribute="top" secondItem="4RW-0E-c0s" secondAttribute="bottom" constant="80" id="o00-QR-1CT"/>
-                                                <constraint firstItem="Eyy-Na-Dd6" firstAttribute="top" secondItem="S8z-JZ-PlM" secondAttribute="bottom" constant="5" id="vb5-jg-uSd"/>
-                                                <constraint firstAttribute="trailing" secondItem="4RW-0E-c0s" secondAttribute="trailing" constant="20" id="xEJ-AS-wY3"/>
-                                                <constraint firstItem="mxY-Z1-hDq" firstAttribute="top" secondItem="4RW-0E-c0s" secondAttribute="bottom" constant="10" id="yEL-yK-yxV"/>
-                                                <constraint firstItem="Dqf-sh-WJe" firstAttribute="leading" secondItem="kj9-V1-gZy" secondAttribute="leading" constant="20" id="zbq-Oo-UQo"/>
+                                                <constraint firstItem="mxY-Z1-hDq" firstAttribute="top" secondItem="4RW-0E-c0s" secondAttribute="bottom" constant="9" id="717-TZ-zGk"/>
+                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="trailing" secondItem="kj9-V1-gZy" secondAttribute="trailingMargin" id="EQc-0m-ewO"/>
+                                                <constraint firstItem="S8z-JZ-PlM" firstAttribute="top" secondItem="kj9-V1-gZy" secondAttribute="topMargin" constant="9" id="Eno-bW-TUd"/>
+                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="top" secondItem="kj9-V1-gZy" secondAttribute="topMargin" constant="10" id="UBo-0B-5IP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dqf-sh-WJe" secondAttribute="bottom" constant="5" id="V56-b0-XHp"/>
+                                                <constraint firstItem="Eyy-Na-Dd6" firstAttribute="top" secondItem="S8z-JZ-PlM" secondAttribute="bottom" constant="10" id="Xwp-bE-niC"/>
+                                                <constraint firstItem="Dqf-sh-WJe" firstAttribute="trailing" secondItem="kj9-V1-gZy" secondAttribute="trailingMargin" id="Z5z-ZY-FsR"/>
+                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="leading" secondItem="Eyy-Na-Dd6" secondAttribute="trailing" constant="10" id="fto-qm-zou"/>
+                                                <constraint firstItem="mxY-Z1-hDq" firstAttribute="centerX" secondItem="4RW-0E-c0s" secondAttribute="centerX" id="i9j-t0-0pl"/>
+                                                <constraint firstItem="Dqf-sh-WJe" firstAttribute="leading" secondItem="kj9-V1-gZy" secondAttribute="leadingMargin" id="kKH-vp-kts"/>
+                                                <constraint firstItem="Eyy-Na-Dd6" firstAttribute="leading" secondItem="S8z-JZ-PlM" secondAttribute="leading" id="mRd-gC-IGW"/>
+                                                <constraint firstItem="S8z-JZ-PlM" firstAttribute="leading" secondItem="kj9-V1-gZy" secondAttribute="leadingMargin" id="zL9-OM-RxB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -260,10 +267,10 @@
                         <constraints>
                             <constraint firstItem="yyw-Dl-6df" firstAttribute="top" secondItem="XTk-fN-sib" secondAttribute="bottom" constant="-20" id="04K-By-Ee7"/>
                             <constraint firstAttribute="bottom" secondItem="yyw-Dl-6df" secondAttribute="bottom" id="2Eq-fb-djo"/>
-                            <constraint firstItem="XJk-kQ-pxO" firstAttribute="trailing" secondItem="yyw-Dl-6df" secondAttribute="trailing" constant="20" id="ALo-rU-C5H"/>
                             <constraint firstItem="yyw-Dl-6df" firstAttribute="leading" secondItem="Om9-0D-itf" secondAttribute="leading" constant="20" id="LpP-fo-f5b"/>
                             <constraint firstItem="XTk-fN-sib" firstAttribute="leading" secondItem="XJk-kQ-pxO" secondAttribute="leading" constant="20" id="c2U-TN-tsE"/>
                             <constraint firstItem="XJk-kQ-pxO" firstAttribute="trailing" secondItem="XTk-fN-sib" secondAttribute="trailing" constant="20" id="dJg-cb-KIx"/>
+                            <constraint firstItem="XJk-kQ-pxO" firstAttribute="trailing" secondItem="yyw-Dl-6df" secondAttribute="trailing" constant="20" id="hSI-od-Cdb"/>
                             <constraint firstItem="XTk-fN-sib" firstAttribute="top" secondItem="XJk-kQ-pxO" secondAttribute="top" constant="25" id="t1u-37-0QU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XJk-kQ-pxO"/>

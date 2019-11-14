@@ -42,7 +42,7 @@ class Merchant : Codable {
     var long : Double? // D, E
     var qrCode : String? // D, E
     var image : String? // D, E
-    var tax : Double = 0.1 // D, E
+    var tax : Double? // D, E
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -70,6 +70,7 @@ class Merchant : Codable {
         self.long = try container.decodeIfPresent(Double.self, forKey: .long)
         self.qrCode = try container.decodeIfPresent(String.self, forKey: .qrCode)
         self.image = try container.decodeIfPresent(String.self, forKey: .image)
+        self.tax = try container.decodeIfPresent(Double.self, forKey: .tax)
     }
     
     func encode(to encoder: Encoder) throws {

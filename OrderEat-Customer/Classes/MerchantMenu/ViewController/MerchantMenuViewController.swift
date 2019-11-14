@@ -69,7 +69,6 @@ class MerchantMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        merchantTitle.data = AddDataMerchantMenu.getDataMerchant()
         backgroundMerchant.image = UIImage(named: "bg-merchat-1")
         merchantTitle.merchant = merchant
         viewOfMenu()
@@ -78,14 +77,11 @@ class MerchantMenuViewController: UIViewController {
         attemptFetchMenus(withMerchantId: merchant.id!)
         setupTransaction()
         setupCartTapRecognizer()
-        //transaction = DecodeTest.attemptDecodeTransaction()
         
 //        tableView.tableFooterView = UIView().white
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        //tabBarController.setta
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -124,13 +120,21 @@ class MerchantMenuViewController: UIViewController {
     }
     
     func showCart() {
+        let inset : CGFloat = 40
+        let contentInset : CGFloat = inset + CartView.frame.height - 20
+        tableView.contentInset.bottom = contentInset
+        
         UIView.animate(withDuration: 0.5) {
-            self.bottomConstraint.constant = -50
+            self.bottomConstraint.constant = 0 - inset
             self.view.layoutIfNeeded()
+            
         }
+        
+
     }
 
     func hideCart() {
+        tableView.contentInset.bottom = 0
         UIView.animate(withDuration: 0.5) {
             self.bottomConstraint.constant = 100
             self.view.layoutIfNeeded()
@@ -139,6 +143,7 @@ class MerchantMenuViewController: UIViewController {
 
     @objc func cartTapAction() {
         if let orderSetTimeVC = UIStoryboard(name: "OrderSetTime", bundle: nil).instantiateViewController(identifier: "OrderSetTime") as? OrderSetTimeViewController {
+            
             orderSetTimeVC.transaction = self.transaction
             orderSetTimeVC.merchantMenuVC = self
 
@@ -294,7 +299,6 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
             self.transaction.details?.append(cell.detail)
             if self.transaction.getTotalMenu() == 1 {
                 self.showCart()
-                print("Cart show")
             }
         }
         
@@ -304,7 +308,6 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
 //            print("Total Item: ", self.transaction.getTotalMenu())
             if self.transaction.getTotalMenu() == 0 {
                 self.hideCart()
-                print("Cart hide")
             }
             else {
                 let totalMenu = self.transaction.getTotalMenu()

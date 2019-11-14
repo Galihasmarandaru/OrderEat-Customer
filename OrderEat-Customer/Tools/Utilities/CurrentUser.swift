@@ -9,7 +9,7 @@
 import Foundation
 
 final class CurrentUser {
-    static let id = "6cade91c-fd4b-42f1-b86b-d78af884a6a2"
+    static let id = "21a8c0dd-3945-491d-9d90-642e44dd6f4d"
     static let name = "Fred"
     //aa
 }

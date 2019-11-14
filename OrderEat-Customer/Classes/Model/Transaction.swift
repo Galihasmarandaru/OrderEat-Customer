@@ -14,7 +14,7 @@ class Transaction : Codable{
     var merchant : Merchant? // D
     var customerId : String? // E
     var merchantId : String? // E
-    var pickUpTime : Date? // D, E
+    var pickUpTime : String? // D, E
     var total : Int? // D, E
     var status : Int? // D, E
     var details : [TransactionDetail]? // D, E
@@ -36,7 +36,7 @@ class Transaction : Codable{
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
         self.customer = try container.decodeIfPresent(Customer.self, forKey: .customer)
         self.merchant = try container.decodeIfPresent(Merchant.self, forKey: .merchant)
-        self.pickUpTime = try container.decodeIfPresent(Date.self, forKey: .pickUpTime)
+        self.pickUpTime = try container.decodeIfPresent(String.self, forKey: .pickUpTime)
         self.total = try container.decodeIfPresent(Int.self, forKey: .total)
         self.status = try container.decodeIfPresent(Int.self, forKey: .status)
         self.details = try container.decodeIfPresent([TransactionDetail].self, forKey: .details)
@@ -81,7 +81,7 @@ class Transaction : Codable{
     
     func getTaxPrice() -> Int {
         
-        let taxPrice = Int(merchant!.tax * Double(getSubTotalPrice()))
+        let taxPrice = Int(merchant!.tax! * Double(getSubTotalPrice()))
         
         return taxPrice
     }
