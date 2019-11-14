@@ -17,27 +17,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AjW-DR-NDf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="aBE-3K-ow1"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage=" arrow set cart" id="aBE-3K-ow1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yG4-dE-j3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1603" y="844"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="Fde-U5-IRr">
-            <objects>
-                <viewController id="Kyx-Tt-vFh" customClass="ViewControllerHome" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="51w-g6-9I8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="vnm-xl-NpY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="0JX-XA-vT2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxm-FT-Hc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2539" y="-562"/>
         </scene>
         <!--Item-->
         <scene sceneID="x5h-sP-Amf">
@@ -49,25 +33,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wwd-WO-S0d"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="8LA-aQ-A5b"/>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage=" arrow set cart" id="8LA-aQ-A5b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1l-lK-cym" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="271" y="844"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Home-->
         <scene sceneID="Rbi-4g-Bfj">
             <objects>
-                <tabBarController id="iyF-7M-NGT" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iyF-7M-NGT" customClass="TabBarHome" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hO7-KP-vgC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Kyx-Tt-vFh" kind="relationship" relationship="viewControllers" id="d87-DM-NC5"/>
-                        <segue destination="0uE-Ug-7hS" kind="relationship" relationship="viewControllers" id="Imh-dZ-DhQ"/>
-                        <segue destination="PDx-vU-Fha" kind="relationship" relationship="viewControllers" id="Okv-CF-k9A"/>
+                        <segue destination="nzr-SV-Zfo" kind="relationship" relationship="viewControllers" id="d87-DM-NC5"/>
                         <segue destination="qd2-ro-u0u" kind="relationship" relationship="viewControllers" id="Jek-dR-V8f"/>
                     </connections>
                 </tabBarController>
@@ -83,7 +65,20 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgO-Ps-tlP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2538" y="212"/>
+            <point key="canvasLocation" x="1782" y="258"/>
+        </scene>
+        <!--ListOfMerchant-->
+        <scene sceneID="xDe-NB-kFp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListOfMerchant" id="nzr-SV-Zfo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="BVr-NY-zfm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4j-Ue-PQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="-52"/>
         </scene>
     </scenes>
+    <resources>
+        <image name=" arrow set cart" width="30" height="16"/>
+    </resources>
 </document>

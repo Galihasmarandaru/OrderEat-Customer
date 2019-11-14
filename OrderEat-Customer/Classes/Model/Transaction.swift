@@ -8,11 +8,30 @@
 
 import UIKit
 
-struct Tarnsaction {
-    private var transactionID: UUID
-    private var customerID: String
-    private var merchantID: String
-    private var statusTransaction: Int64
-    private var totalTransaction: Int
-    private var pickUpTime: UIDatePicker
+struct Transaction {
+
+    let transactionID: String;
+    let customerID: String;
+    let merchantID: String;
+    let merchantName: String
+    let pickUpTime: String;
+    let orderedItem: [Menu];
+    let statusTransaction: String
+    let transactionPrice: String
+    let pickUpDate: String
+    
+    init(transactionID: String, customerID: String, merchantID: String, merchantName: String, pickUpTime: String, orderedItem: [Menu], statusTransaction: String, transactionPrice: String, pickupDate: String) {
+        self.transactionID = transactionID
+        self.customerID = customerID
+        self.merchantID = merchantID
+        self.merchantName = merchantName
+        self.pickUpTime = pickUpTime
+        self.orderedItem = orderedItem
+        self.statusTransaction = statusTransaction
+        self.transactionPrice = transactionPrice
+        self.pickUpDate = pickupDate
+    }
 }
+
+
+

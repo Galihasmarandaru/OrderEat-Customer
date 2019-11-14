@@ -10,7 +10,7 @@
         <!--Merchant Menu View Controller-->
         <scene sceneID="tKq-Lh-rqN">
             <objects>
-                <viewController storyboardIdentifier="MerchantMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UYE-t0-ECC" customClass="MerchantMenuViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MerchantMenu" id="UYE-t0-ECC" customClass="MerchantMenuViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zzP-cc-bMh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

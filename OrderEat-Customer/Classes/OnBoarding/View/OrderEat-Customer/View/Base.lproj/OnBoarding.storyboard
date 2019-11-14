@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="-687" y="130"/>
         </scene>
-        <!--ListOfMerchant-->
+        <!--Home-->
         <scene sceneID="p2v-gS-zUD">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListOfMerchant" id="npc-dM-Hg0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" id="npc-dM-Hg0" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9jj-kD-1i3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XID-Yv-7h5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

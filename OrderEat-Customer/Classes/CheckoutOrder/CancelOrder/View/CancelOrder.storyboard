@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F5w-gV-ngY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cancel Order View Controller-->
+        <scene sceneID="MWx-52-wpk">
+            <objects>
+                <viewController id="F5w-gV-ngY" customClass="CancelOrderViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L2N-bg-AtZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7j-8h-nhE">
+                                <rect key="frame" x="20" y="82" width="374" height="814"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry! Your order is cancelled because the restaurant is not responding" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5J-1q-naG">
+                                        <rect key="frame" x="8" y="35" width="358" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="73" id="TCK-YE-0Qb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-cT-fva">
+                                        <rect key="frame" x="115" y="188" width="144" height="332"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="332" id="czL-NG-ZOJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ8-8S-fCa" customClass="CustomButton" customModule="OrderEat_Customer" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="600" width="334" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="zgR-LN-8XX"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="orderAgainButtonClicked:" destination="F5w-gV-ngY" eventType="touchUpInside" id="qwx-bF-xbf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uQ8-8S-fCa" secondAttribute="trailing" constant="20" id="BiA-dx-jyz"/>
+                                    <constraint firstAttribute="trailing" secondItem="T5J-1q-naG" secondAttribute="trailing" constant="8" id="LVU-ct-HYU"/>
+                                    <constraint firstItem="uQ8-8S-fCa" firstAttribute="top" secondItem="RAU-cT-fva" secondAttribute="bottom" constant="80" id="Lzd-S3-kFV"/>
+                                    <constraint firstItem="T5J-1q-naG" firstAttribute="leading" secondItem="K7j-8h-nhE" secondAttribute="leading" constant="8" id="MCZ-NR-aiH"/>
+                                    <constraint firstAttribute="trailing" secondItem="RAU-cT-fva" secondAttribute="trailing" constant="115" id="MdC-AN-QAC"/>
+                                    <constraint firstItem="RAU-cT-fva" firstAttribute="leading" secondItem="K7j-8h-nhE" secondAttribute="leading" constant="115" id="QXf-Ub-u0W"/>
+                                    <constraint firstItem="RAU-cT-fva" firstAttribute="top" secondItem="T5J-1q-naG" secondAttribute="bottom" constant="80" id="Se8-Cf-ueo"/>
+                                    <constraint firstItem="uQ8-8S-fCa" firstAttribute="leading" secondItem="K7j-8h-nhE" secondAttribute="leading" constant="20" id="o4m-x4-Pas"/>
+                                    <constraint firstItem="T5J-1q-naG" firstAttribute="top" secondItem="K7j-8h-nhE" secondAttribute="top" constant="35" id="oSp-os-AUf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="K7j-8h-nhE" firstAttribute="top" secondItem="YSj-Ui-JO9" secondAttribute="top" constant="38" id="Er3-qW-87Q"/>
+                            <constraint firstItem="YSj-Ui-JO9" firstAttribute="trailing" secondItem="K7j-8h-nhE" secondAttribute="trailing" constant="20" id="Lcj-O0-H5k"/>
+                            <constraint firstAttribute="bottom" secondItem="K7j-8h-nhE" secondAttribute="bottom" id="STX-8G-vMe"/>
+                            <constraint firstItem="K7j-8h-nhE" firstAttribute="leading" secondItem="YSj-Ui-JO9" secondAttribute="leading" constant="20" id="sbW-u8-7JP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YSj-Ui-JO9"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelledImageView" destination="RAU-cT-fva" id="Hci-aj-uyA"/>
+                        <outlet property="contentView" destination="K7j-8h-nhE" id="qhD-L5-CVb"/>
+                        <outlet property="orderAgainButton" destination="uQ8-8S-fCa" id="Zpl-dd-PYn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lnl-Mi-4g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+</document>

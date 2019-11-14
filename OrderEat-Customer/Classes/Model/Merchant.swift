@@ -9,40 +9,21 @@
 import UIKit
 import CoreLocation
 
-enum statusOperation {
-    case open, close
-}
-
-struct Merchant{
-    let merchantName: String
-    let merchantAddress: String
-    var merchantImage: UIImage?
+struct Merchant {
     
-    init(merchantName: String, merchantAddress: String) {
+    let merchantID: String;
+    let merchantName: String;
+    let QRMerchant: UIImage;
+    let merchantAddress: String;
+    let merchantImage: UIImage?
+    
+    
+    init(merchantID: String, merchantName: String, QRMerchant: UIImage, merchantAddress: String, merchantImage: UIImage?) {
+        self.merchantID = merchantID
         self.merchantName = merchantName
-        self.merchantAddress = merchantAddress
-    }
-
-    init(merchantName: String, merchantAddress: String, merchantImage: UIImage?) {
-        self.merchantName = merchantName
+        self.QRMerchant = QRMerchant
         self.merchantAddress = merchantAddress
         self.merchantImage = merchantImage
+        
     }
-
-//    let coordinatRestaurant: CLLocation
-//    let timeOpenRestaurant: UIDatePicker
-//    let timeCloseRestaurant: UIDatePicker
-//
-//    var condition: String;
-//
-//    mutating func statusOperationRestaurant(status: statusOperation) -> String {
-//        switch status {
-//        case .open:
-//            condition = "Open until, \(timeCloseRestaurant)"
-//        case .close:
-//            condition = "Close until, \(timeOpenRestaurant)"
-//        }
-//        return condition
-//    }
-
 }

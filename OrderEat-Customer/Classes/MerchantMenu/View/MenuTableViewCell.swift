@@ -29,29 +29,30 @@ class MenuTableViewCell: UITableViewCell {
     var bottomConstraint: NSLayoutConstraint!
     
     var activityCart: (() -> ())?
-    var hideCartAction: (() -> ())?
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         cellDelegate?.didPressButtonAdd(sender.tag)
-        sender.isHidden = !sender.isHidden
+        addButton.isHidden = true
         viewStepper.isHidden = false
         activityCart?()
+        data.qty = 1
     }
     
     @IBAction func minusTap(_ sender: UIButton) {
-        if (data.qty == 0) {
-            cellDelegate?.didPressButtonCart(sender.tag)
+        if (data.qty == 1) {
             viewStepper.isHidden = true
             addButton.isHidden = false
-            hideCartAction?()
+            cellDelegate?.updateMinusQty(sender.tag)
+            data.qty -= 1
+
         } else {
-            cellDelegate?.didPressButtonCart(sender.tag)
+            cellDelegate?.updateMinusQty(sender.tag)
             data.qty -= 1
         }
     }
     
     @IBAction func plusTap(_ sender: UIButton) {
-        cellDelegate?.didPressButtonCart(sender.tag)
+        cellDelegate?.updatePlusQty(sender.tag)
         data.qty += 1
     }
     

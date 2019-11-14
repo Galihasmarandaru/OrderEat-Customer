@@ -12,7 +12,6 @@ import CoreLocation
 struct AddDataMerchantMenu {
     static func getDataMenu(dataTransaction: Int) -> [Menu] {
         var data = [Menu]()
-        
         let menu1 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: dataTransaction)
 
         let menu2 = Menu(nameMenu: "Blackpepper Burger", detailMenu: "Blackpapper Ham, Pepperoni with Mayonaise Sauce", priceMenu: 20000, imageMenu: UIImage(named: "menu-1")!, qty: dataTransaction)
@@ -30,7 +29,8 @@ struct AddDataMerchantMenu {
     }
     
     static func getDataMerchant() -> Merchant {
-        let dataMerchant = Merchant(merchantName: "Burger King", merchantAddress: "AEON Mall, BSD City")
+        let dataMerchant = Merchant(merchantID: "Burger King", merchantName: "AEON Mall, BSD City", QRMerchant: UIImage(named: "qr.png")!, merchantAddress: "BSD City", merchantImage: UIImage(named: "BK.png"))
+//        let dataMerchant = Merchant(from: "Burger King", restorAddress: "AEON Mall, BSD City", restorImage: UIImage(named: "")!, restorDistance: "", restorTravelTime: "")
         return dataMerchant
     }
 }

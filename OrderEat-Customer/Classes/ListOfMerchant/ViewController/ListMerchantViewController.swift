@@ -32,7 +32,6 @@ class ListMerchantViewController: UIViewController, UISearchControllerDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
 }
 
 extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
@@ -49,18 +48,22 @@ extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as! ListMerchantTableViewCell
         
         //INI KALO SEARCH MASUKNYA KESINI BUAT NAMPILIN DATA
-        if searching{
+        if searching {
             for isi in isiTable{
                 if isi.merchantName == searchMerchant[indexPath.row]{
                     cell.merchantName.text = isi.merchantName
                     cell.merchantADdress.text = isi.merchantAddress
                     cell.merchantImage.image = isi.merchantImage
+                    cell.merchantDistance.text = "-"
+                    cell.merchantDistanceTime.text = "-"
                 }
             }
-        }else{ //INI KALO GAK SEARCH NAMPILIN DATANYA DISINI
+        } else { //INI KALO GAK SEARCH NAMPILIN DATANYA DISINI
             cell.merchantName.text = isiTable[indexPath.row].merchantName
             cell.merchantADdress.text = isiTable[indexPath.row].merchantAddress
             cell.merchantImage.image = isiTable[indexPath.row].merchantImage
+            cell.merchantDistance.text = "-"
+            cell.merchantDistanceTime.text = "-"
         }
         return cell
     }
