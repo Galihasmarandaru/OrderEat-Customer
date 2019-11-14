@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderDone: UIViewController {
+class OrderDoneViewModel: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
