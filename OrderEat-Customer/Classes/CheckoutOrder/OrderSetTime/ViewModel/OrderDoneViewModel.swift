@@ -6,4 +6,10 @@
 //  Copyright © 2019 Galih Asmarandaru. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class OrderDone: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
