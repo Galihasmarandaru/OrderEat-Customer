@@ -1,5 +1,5 @@
 //
-//  OrderSetTimeViewModel.swift
+//  OrderDoneViewModel.swift
 //  OrderEat-Customer
 //
 //  Created by Galih Asmarandaru on 14/11/19.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class OrderSetTimeViewModel: UIViewController {
+class OrderDoneViewModel: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("test")
     }
 }

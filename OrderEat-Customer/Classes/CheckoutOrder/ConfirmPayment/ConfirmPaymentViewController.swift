@@ -12,13 +12,10 @@ class ConfirmPaymentViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var orderDetailsTableView: UITableView!
-    
+
     // Header View
     @IBOutlet weak var merchantNameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
-    
-//    var foods = ConfirmPaymentViewModel.getDataMenuPayment()
-//    var merchants = ConfirmPaymentViewModel.getDataMerchant()
     
     var details : [TransactionDetail]!
     var transaction : Transaction! {
@@ -41,6 +38,7 @@ class ConfirmPaymentViewController: UIViewController {
 
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
+        self.flag = 0
         
         self.orderDetailsTableView.tableFooterView = UIView()
     }
@@ -56,13 +54,12 @@ class ConfirmPaymentViewController: UIViewController {
         else {
             UIApplication.shared.open(URL(string: "https://apps.apple.com/id/app/gojek/id944875099")!, options: [:], completionHandler: nil)
         }
+        flag = 1
+        orderDetailsTableView.reloadData()
     }
     
     @IBAction func confirmPaymentButtonClicked(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
-//        let orderDonePage = storyboard.instantiateViewController(identifier: "orderDone") as! OrderDoneViewController
-//        let appDelegate = UIApplication.shared.windows
-//        appDelegate.first?.rootViewController = orderDonePage
+        
     }
 }
 
