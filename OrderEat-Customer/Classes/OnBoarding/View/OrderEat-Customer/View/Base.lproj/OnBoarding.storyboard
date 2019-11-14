@@ -50,7 +50,7 @@
                                 <rect key="frame" x="188" y="665" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.030122480149999999" green="0.01383471967" blue="0.1121372891" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -65,16 +65,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQP-ng-Mcm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-687" y="130"/>
-        </scene>
-        <!--ListOfMerchant-->
-        <scene sceneID="p2v-gS-zUD">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ListOfMerchant" id="npc-dM-Hg0" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9jj-kD-1i3"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XID-Yv-7h5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="139" y="130"/>
         </scene>
     </scenes>
     <resources>

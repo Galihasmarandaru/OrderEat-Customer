@@ -26,19 +26,14 @@ class ItemOrderedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var data: Menu! {
+    var detail: TransactionDetail! {
         didSet {
-            self.itemImageVIew.image = data.imageMenu
-            self.itemNameLabel.text = data.nameMenu
-            self.itemQtyLabel.text = String(data.qty)
-            self.itemPriceLabel.text = String(data.priceMenu)
-        }
-    }
-    
-    var transaction: Transaction! {
-        didSet {
+            //self.itemImageVIew.image = menu.image
+            itemNameLabel.text = detail.menu?.name
+            itemQtyLabel.text = String(detail.qty!)
             
+            let price = detail.menu?.price
+            itemPriceLabel.text = "Rp. \(price!)"
         }
     }
-
 }

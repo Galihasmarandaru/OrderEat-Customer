@@ -15,22 +15,20 @@ class ListMerchantTableViewCell: UITableViewCell {
     @IBOutlet weak var merchantADdress: UILabel!
     @IBOutlet weak var merchantDistance: UILabel!
     @IBOutlet weak var merchantDistanceTime: UILabel!
+    
+    var merchant: Merchant!{
+        didSet{
+            //self.merchantImage.image = data.ima
+            self.merchantName.text = merchant.name
+            self.merchantADdress.text = merchant.address
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    var data: Merchant!{
-        didSet{
-            self.merchantImage.image = data.merchantImage
-            self.merchantName.text = data.merchantName
-            self.merchantADdress.text = data.merchantAddress
-        }
-    }
-
 }

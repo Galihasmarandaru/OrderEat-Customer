@@ -11,9 +11,21 @@ import UIKit
 class OrderDoneViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var orderDoneTableView: UITableView!    
-    var foods = OrderDoneViewModel.getDataMenuPayment()
-    var merchants = OrderDoneViewModel.getDataMerchant()
+    @IBOutlet weak var orderDoneTableView: UITableView!
+
+    // Header View
+    @IBOutlet weak var merchantNameLbl: UILabel!
+    @IBOutlet weak var statusLbl: UILabel!
+    
+    var details : [TransactionDetail]!
+    
+    // Container
+    var transaction : Transaction! {
+        didSet {
+            self.details = transaction.details!
+        }
+    }
+    
     var image: UIImage? = nil
     
     override func viewDidLoad() {
@@ -21,7 +33,14 @@ class OrderDoneViewController: UIViewController {
         
         config()
         
-        // Do any additional setup after loading the view.
+        merchantNameLbl.text = transaction.merchant?.name!
+        statusLbl.text = "Status: " + transactionStatus[transaction.status!]
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 3])
     }
     
     func config() {
@@ -30,7 +49,7 @@ class OrderDoneViewController: UIViewController {
         headerView.layer.cornerRadius = 15
         self.orderDoneTableView.tableFooterView = UIView()
         
-        image = generateQRCode(from: "A4cae43b4-d3a3-410f-9ea3-1488e03a0de3")
+        image = generateQRCode(from: transaction.id!)
     }
 
     func generateQRCode(from string: String) -> UIImage? {
@@ -47,17 +66,6 @@ class OrderDoneViewController: UIViewController {
 
         return nil
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
@@ -67,44 +75,68 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count + 4
+        if transaction.status == 2 {
+            return details.count + 5
+        }
+        else {
+            return details.count + 6
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row < foods.count {
+        if indexPath.row < details.count {
             let cellFood = tableView.dequeueReusableCell(withIdentifier: "itemTableViewCell", for: indexPath) as! ItemTableViewCell
-            cellFood.data = foods[indexPath.row]
-            
+            cellFood.detail = details[indexPath.row]
+
             return cellFood
         }
-        else if indexPath.row == foods.count {
+        else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp. 130.000"
-            
+            cellSub.rightLabel.text = "Rp.  \(transaction.getSubTotalPrice())"
+
             return cellSub
         }
-        else if indexPath.row == (foods.count + 1) {
+        else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellTax.leftLabel.text = "Tax"
-            cellTax.rightLabel.text = "Rp. 13.000"
-            
+            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
+
             return cellTax
         }
-        else if indexPath.row == (foods.count + 2){
+        else if indexPath.row == (details.count + 2) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. 143.000"
-            
+            cellTotal.rightLabel.text = "Rp. \(transaction.total!)"
+
             return cellTotal
         }
-        else {
+        else if indexPath.row == (details.count + 3) {
+            let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
+            cellPickup.leftLabel.text = "Pick Up Time"
+            cellPickup.rightLabel.text = "12.00"
+
+            return cellPickup
+        }
+        else if indexPath.row == (details.count + 4) {
+        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
+
+            cellPayment.leftLabel.text = "Payment Method"
+            cellPayment.rightLabel.text = "GOPAY"
+
+        return cellPayment
+        }
+        
+        if transaction.status == 3 {
             let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
-            
+
             cellQR.QRImageView.image = image
-            cellQR.pickUpTimeLabel.text = "12.00"
-            
+
             return cellQR
+        }
+        
+        else {
+            return UITableViewCell()
         }
     }
 }

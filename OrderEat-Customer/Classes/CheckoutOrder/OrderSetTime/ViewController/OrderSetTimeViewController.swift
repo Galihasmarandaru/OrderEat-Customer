@@ -8,20 +8,18 @@
 
 import UIKit
 
-class OrderSetTimeViewController: UIViewController {
+class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var orderNumber: UILabel!
     @IBOutlet weak var orderTableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     
-//    var foods: [OrderedMenu] = []
-    var foods = OrderSetTimeViewModel.getDataMenuTransaction()
     var pickUpTime: String = ""
-    var paymentMethod: String = ""
+    var paymentMethod: String = "GOPAY"
     
     let viewPicker = UIPickerView()
-    var paymentMethodData: [String] = [String]()
+    var paymentMethodData: [String] = ["GOPAY", "OVO"]
     
     lazy var datePicker: UIDatePicker = {
         
@@ -45,13 +43,23 @@ class OrderSetTimeViewController: UIViewController {
         return formatter
     }()
     
+    var merchantMenuVC : MerchantMenuViewController!
+    
+    // Array
+    var transaction : Transaction! {
+        didSet {
+            details = transaction.details!
+            transaction.total = transaction.getSubTotalPrice() + transaction.getTaxPrice()
+        }
+    }
+    var details : [TransactionDetail]!
+    var subtotal : Int!
+    var tax : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         config()
-//        loadData()
-        
-        // Do any additional setup after loading the view.
     }
     
     func config() {
@@ -70,38 +78,24 @@ class OrderSetTimeViewController: UIViewController {
     }
 
     @IBAction func confirmOrderButtonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
-        let waitingConfirmationPage = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
-        let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = waitingConfirmationPage
+        
+        APIRequest.post(.transactions, object: transaction) { (id) in
+            self.transaction.id = id
+            
+            let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
+            DispatchQueue.main.async {
+                let waitingConfirmationPageVC = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
+                
+                waitingConfirmationPageVC.transaction = self.transaction
+                
+                if let navigator = self.merchantMenuVC.navigationController {
+                    self.dismiss(animated: true) {
+                        navigator.pushViewController(waitingConfirmationPageVC, animated: false)
+                    }
+                }
+            }
+        }
     }
-    
-    //PRESENT MODAL SEGUE
-//    let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
-//let waitingConfirmationPage = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
-//self.present(waitingConfirmationPage, animated: true, completion: nil)
-    
-    
-//    func loadData() {
-//        let food1 = OrderedMenu.init(image: UIImage(named: "Blackpepper Burger.png")!, name: "Burger", price: 50000, qty: 2)
-//        let food2 = OrderedMenu.init(image: UIImage(named: "Blackpepper Burger.png")!, name: "Noodle", price: 25000, qty: 1)
-//        let food3 = OrderedMenu.init(image: UIImage(named: "Blackpepper Burger.png")!, name: "Chicken Wings", price: 38000, qty: 3)
-//
-//        foods.append(food1)
-//        foods.append(food2)
-//        foods.append(food3)
-//    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 }
 
 extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -111,41 +105,41 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count + 6
+        return details.count + 6
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row < foods.count {
+        if indexPath.row < details.count {
             let cellFood = tableView.dequeueReusableCell(withIdentifier: "ItemOrderedTableViewCell", for: indexPath) as! ItemOrderedTableViewCell
-            cellFood.data = foods[indexPath.row]
-            
+            cellFood.detail = details[indexPath.row]
+
             return cellFood
         }
-        else if indexPath.row == foods.count {
+        else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp. 130.000"
-            
+            cellSub.rightLabel.text = "Rp. \(transaction.getSubTotalPrice())"
+
             return cellSub
         }
-        else if indexPath.row == (foods.count + 1) {
+        else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellTax.leftLabel.text = "Tax"
-            cellTax.rightLabel.text = "Rp. 13.000"
-            
+            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
+
             return cellTax
         }
-        else if indexPath.row == (foods.count + 2) {
+        else if indexPath.row == (details.count + 2) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. 143.000"
-            
+            cellTotal.rightLabel.text = "Rp. \(transaction.total!)"
+
             return cellTotal
         }
-        else if indexPath.row == (foods.count + 3) {
+        else if indexPath.row == (details.count + 3) {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "pickUpTimeTableViewCell", for: indexPath) as! PickUpTimeTableViewCell
-            
+
             cellPickup.pickUpTimeTextField.inputAccessoryView = addToolBar()
 
             cellPickup.pickUpTimeTextField.text = pickUpTime
@@ -153,17 +147,17 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
             
             return cellPickup
         }
-        else if indexPath.row == (foods.count + 4) {
+        else if indexPath.row == (details.count + 4) {
             let cellPayment = tableView.dequeueReusableCell(withIdentifier: "paymentMethodTableViewCell", for: indexPath) as! PaymentMethodTableViewCell
-            
+
             paymentMethodData = ["GOPAY", "OVO"]
             viewPicker.delegate = self
-            
+
             cellPayment.paymentMethodTextField.inputAccessoryView = addToolBar()
-            
+
             cellPayment.paymentMethodTextField.inputView = viewPicker
             cellPayment.paymentMethodTextField.text = paymentMethod
-            
+
             return cellPayment
         }
         
@@ -212,4 +206,3 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
     }
     
 }
-

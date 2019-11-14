@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,29 +20,28 @@
                         <rect key="frame" x="10" y="0.0" width="360" height="111"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BURGER KING AEON MALL BSD CITY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDb-Nt-LxT">
-                                <rect key="frame" x="10" y="6" width="184" height="22"/>
+                                <rect key="frame" x="10" y="6" width="210" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Fp3-gb-1vb"/>
-                                    <constraint firstAttribute="width" constant="184" id="SuD-Bl-mkJ"/>
+                                    <constraint firstAttribute="width" constant="210" id="SuD-Bl-mkJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDER NO : D01" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssJ-AF-nbL">
                                 <rect key="frame" x="10" y="30" width="342" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 20.000" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fp-xi-kRv">
-                                <rect key="frame" x="204" y="4.5" width="146" height="25"/>
+                                <rect key="frame" x="235" y="4.5" width="115" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="grF-Yy-ViJ"/>
                                     <constraint firstAttribute="height" constant="25" id="mUj-SS-xdC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29 October 2019" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqB-PV-6kF">
@@ -51,7 +50,7 @@
                                     <constraint firstAttribute="width" constant="152" id="7OH-Wt-gFG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="| 09.00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkL-tb-1E7">
@@ -60,7 +59,7 @@
                                     <constraint firstAttribute="width" constant="180" id="910-pG-iGd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : Ready to pickup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr5-rw-ZrP">
@@ -69,11 +68,11 @@
                                     <constraint firstAttribute="width" constant="340" id="214-Cc-WQA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uqB-PV-6kF" firstAttribute="centerY" secondItem="JkL-tb-1E7" secondAttribute="centerY" id="60l-4C-VFs"/>
                             <constraint firstAttribute="width" constant="360" id="97c-iP-sdn"/>
@@ -87,6 +86,7 @@
                             <constraint firstItem="0Fp-xi-kRv" firstAttribute="centerY" secondItem="tDb-Nt-LxT" secondAttribute="centerY" id="aF7-Hr-L6Q"/>
                             <constraint firstItem="JkL-tb-1E7" firstAttribute="top" secondItem="0Fp-xi-kRv" secondAttribute="bottom" constant="53.5" id="cSB-D3-Dbh"/>
                             <constraint firstItem="JkL-tb-1E7" firstAttribute="trailing" secondItem="Jr5-rw-ZrP" secondAttribute="trailing" id="fGI-Mc-evO"/>
+                            <constraint firstItem="0Fp-xi-kRv" firstAttribute="leading" secondItem="tDb-Nt-LxT" secondAttribute="trailing" constant="15" id="iUw-5j-bC2"/>
                             <constraint firstItem="uqB-PV-6kF" firstAttribute="top" secondItem="Jr5-rw-ZrP" secondAttribute="bottom" constant="1" id="rIw-hJ-JJc"/>
                             <constraint firstItem="ssJ-AF-nbL" firstAttribute="leading" secondItem="tDb-Nt-LxT" secondAttribute="leading" id="u3j-ar-k1J"/>
                             <constraint firstItem="JkL-tb-1E7" firstAttribute="trailing" secondItem="0Fp-xi-kRv" secondAttribute="trailing" id="vPF-k4-QQq"/>
@@ -102,12 +102,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="XRg-FY-Mc3"/>
             <connections>
-                <outlet property="merchantName" destination="Jr5-rw-ZrP" id="9WL-Fg-Je0"/>
-                <outlet property="orderDate" destination="uqB-PV-6kF" id="A13-Zy-fhV"/>
-                <outlet property="orderID" destination="tDb-Nt-LxT" id="tFp-OT-EFh"/>
-                <outlet property="orderPrice" destination="0Fp-xi-kRv" id="ves-Q2-TfF"/>
-                <outlet property="orderStatus" destination="ssJ-AF-nbL" id="BW5-81-nwH"/>
-                <outlet property="orderTime" destination="JkL-tb-1E7" id="dQe-hu-l9v"/>
+                <outlet property="dateLbl" destination="uqB-PV-6kF" id="QhA-6G-BdW"/>
+                <outlet property="merchantNameLbl" destination="tDb-Nt-LxT" id="HSi-dY-5Sn"/>
+                <outlet property="orderNumLbl" destination="ssJ-AF-nbL" id="OHV-R5-gLY"/>
+                <outlet property="pickUpTimeLbl" destination="JkL-tb-1E7" id="vU3-Pi-LKe"/>
+                <outlet property="priceLbl" destination="0Fp-xi-kRv" id="1Du-b7-GDJ"/>
+                <outlet property="statusLbl" destination="Jr5-rw-ZrP" id="qxe-ch-gqU"/>
             </connections>
             <point key="canvasLocation" x="74" y="7"/>
         </collectionViewCell>
