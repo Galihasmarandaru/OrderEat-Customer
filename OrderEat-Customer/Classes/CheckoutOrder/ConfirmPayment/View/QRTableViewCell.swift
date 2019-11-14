@@ -14,6 +14,8 @@ class QRTableViewCell: UITableViewCell {
     @IBOutlet weak var saveQRButton: UIButton!
     @IBOutlet weak var confirmPaymentButton: CustomButton!
     
+    var confirmBtnClosure : (() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +27,7 @@ class QRTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func confirmBtnPressed(_ sender: Any) {
+        confirmBtnClosure?()
+    }
 }

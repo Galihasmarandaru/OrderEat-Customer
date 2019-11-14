@@ -13,15 +13,24 @@ class ConfirmPaymentViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var orderDetailsTableView: UITableView!
     
-    var foods = ConfirmPaymentViewModel.getDataMenuPayment()
-    var merchants = ConfirmPaymentViewModel.getDataMerchant()
+    // Header View
+    @IBOutlet weak var merchantNameLbl: UILabel!
+    @IBOutlet weak var statusLbl: UILabel!
+    
+    var details : [TransactionDetail]!
+    var transaction : Transaction! {
+        didSet {
+            self.details = transaction.details
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         config()
         
-        // Do any additional setup after loading the view.
+        merchantNameLbl.text = transaction.merchant?.name!
+        statusLbl.text = "Status: " + transactionStatus[transaction.status!]
     }
     
     func config() {
@@ -34,7 +43,7 @@ class ConfirmPaymentViewController: UIViewController {
     }
     
     @IBAction func saveQRButtonPressed(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
+        //UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
         
         let gojekHooks = "gojek://"
         let gojekUrl = URL(string: gojekHooks)
@@ -47,22 +56,11 @@ class ConfirmPaymentViewController: UIViewController {
     }
     
     @IBAction func confirmPaymentButtonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
-        let orderDonePage = storyboard.instantiateViewController(identifier: "orderDone") as! OrderDoneViewController
-        let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = orderDonePage
+//        let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
+//        let orderDonePage = storyboard.instantiateViewController(identifier: "orderDone") as! OrderDoneViewController
+//        let appDelegate = UIApplication.shared.windows
+//        appDelegate.first?.rootViewController = orderDonePage
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSource {
@@ -71,59 +69,64 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count + 6
+        return details.count + 6
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row < foods.count {
+        if indexPath.row < details.count {
             let cellFood = tableView.dequeueReusableCell(withIdentifier: "orderedItemTableViewCell", for: indexPath) as! OrderedItemTableViewCell
-            cellFood.data = foods[indexPath.row]
-            
+            cellFood.detail = details[indexPath.row]
+
             return cellFood
         }
-        else if indexPath.row == foods.count {
+        else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp. 130.000"
-            
+            cellSub.rightLabel.text = "Rp.  \(transaction.getSubTotalPrice())"
+
             return cellSub
         }
-        else if indexPath.row == (foods.count + 1) {
+        else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellTax.leftLabel.text = "Tax"
-            cellTax.rightLabel.text = "Rp. 13.000"
-            
+            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
+
             return cellTax
         }
-        else if indexPath.row == (foods.count + 2) {
+        else if indexPath.row == (details.count + 2) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. 143.000"
-            
+            cellTotal.rightLabel.text = "Rp. \(transaction.total!)"
+
             return cellTotal
         }
-        else if indexPath.row == (foods.count + 3) {
+        else if indexPath.row == (details.count + 3) {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellPickup.leftLabel.text = "Pick Up Time"
             cellPickup.rightLabel.text = "12.00"
-            
+
             return cellPickup
         }
-        else if indexPath.row == (foods.count + 4) {
+        else if indexPath.row == (details.count + 4) {
         let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
-        
+
             cellPayment.leftLabel.text = "Payment Method"
             cellPayment.rightLabel.text = "GOPAY"
-        
+
         return cellPayment
         }
         
         let cellButton = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
-        
-        cellButton.QRImageView.image = merchants.QRMerchant
-        
+
+        //cellButton.QRImageView.image = merchants.QRMerchant
+
         cellButton.confirmPaymentButton.setTitle("Confirm Payment", for: .normal)
         cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
+        
+        cellButton.confirmBtnClosure = { [unowned self] in
+            APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
+            self.dismiss(animated: true, completion: nil)
+        }
         
         return cellButton
     }

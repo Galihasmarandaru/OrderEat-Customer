@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct OTP {
-    private var userID: String
-    private var otpCode: String
+class OTP {
+    private var userID: String!
+    private var otpCode: String!
 }
