@@ -64,6 +64,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     
     func config() {
         self.view.addBackground()
+        datePicker.minimumDate = Calendar.current.date(byAdding: .minute, value: 30, to: Date())
         datePicker.backgroundColor = .white
         viewPicker.backgroundColor = .white
         

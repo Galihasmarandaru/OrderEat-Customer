@@ -10,12 +10,14 @@ import UIKit
 
 class ShowQRTableViewCell: UITableViewCell {
 
-    
+    @IBOutlet weak var pickUpTimeLabel: UILabel!
     @IBOutlet weak var QRImageView: UIImageView!
+    @IBOutlet weak var pickUpTimeView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.pickUpTimeView.backgroundColor = .ijoDela
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
