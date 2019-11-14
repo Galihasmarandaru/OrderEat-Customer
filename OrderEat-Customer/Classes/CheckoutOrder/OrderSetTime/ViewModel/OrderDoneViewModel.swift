@@ -11,5 +11,6 @@ import UIKit
 class OrderDoneViewModel: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("test")
     }
 }
