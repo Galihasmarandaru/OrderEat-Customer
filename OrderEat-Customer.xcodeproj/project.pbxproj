@@ -1142,7 +1142,6 @@
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
 				E63B673923755AD000578442 /* SigninViewController.swift in Sources */,
-				A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */,
 				A3573CE3237E47E40076D4D9 /* AlertView.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
 				87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */,
@@ -1354,7 +1353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7WQ84MA4V4;
+				DEVELOPMENT_TEAM = G4J883BN75;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1374,7 +1373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7WQ84MA4V4;
+				DEVELOPMENT_TEAM = G4J883BN75;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

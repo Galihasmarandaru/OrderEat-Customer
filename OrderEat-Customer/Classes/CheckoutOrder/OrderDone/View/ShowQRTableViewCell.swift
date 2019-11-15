@@ -12,7 +12,9 @@ class ShowQRTableViewCell: UITableViewCell {
 
     @IBOutlet weak var pickUpTimeLabel: UILabel!
     @IBOutlet weak var QRImageView: UIImageView!
-    @IBOutlet weak var pickUpTimeView: UIView!
+    @IBOutlet weak var pickUpTimeView: UILabel!
+    @IBOutlet weak var pickUpTimeLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
