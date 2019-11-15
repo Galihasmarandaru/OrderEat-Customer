@@ -27,11 +27,6 @@ class OnGoingViewController: UIViewController{
         super.viewDidLoad()
         setupCollection()
         historyUnderline.isHidden = true
-//        penandaSegmented = 0
-        
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(attemptFetchTransactions), for: .valueChanged)
-        onGoingCollectionView.refreshControl = refreshControl
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "NewTransaction", eventCallback: { (event: PusherEvent) in
@@ -60,7 +55,7 @@ class OnGoingViewController: UIViewController{
             DispatchQueue.main.async {
                 self.onGoingCollectionView.reloadData()
                 
-                self.onGoingCollectionView.refreshControl?.endRefreshing()
+                //self.onGoingCollectionView.refreshControl?.endRefreshing()
             }
         }
     }
@@ -97,7 +92,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onGoingCollectionListCellID", for: indexPath) as! OnGoingCollectionListCell
         
         cell.transaction = transactions[indexPath.row]
-        cell.layer.cornerRadius = 20
+        cell.view.layer.cornerRadius = 8
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = CGSize(width: 3, height: 3)
@@ -119,7 +114,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
             
             self.present(vc, animated: true, completion: nil)
             
-        case 2, 3: // On Process           
+        case 2, 3: // On Process , ready to pickup
             let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "OrderDone") as! OrderDoneViewController
 

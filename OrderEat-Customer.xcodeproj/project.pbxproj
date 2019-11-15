@@ -16,18 +16,21 @@
 		0A73B682237518D9003E1543 /* OnGoingCollectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A73B680237518D9003E1543 /* OnGoingCollectionListCell.xib */; };
 		15177FC09B0E6C27B7B9FA80 /* Pods_OrderEat_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */; };
 		1D712389374EA7F1ACF31BD8 /* Pods_OrderEat_Customer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */; };
-		2DD8AF41DB82AC7C6C41CC5B /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B1E8F97D124A0E99CF962B /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */; };
 		87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6A237C0A29009AC6EA /* PusherBeams.swift */; };
 		87940C6D237C0A35009AC6EA /* PusherChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6C237C0A35009AC6EA /* PusherChannels.swift */; };
+		9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
+		93ADD17D237D327E001E3094 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17B237D327E001E3094 /* Date.swift */; };
+		93ADD17E237D327E001E3094 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17C237D327E001E3094 /* String.swift */; };
+		93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
+		93ADD181237EAB02001E3094 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD180237EAB02001E3094 /* Alert.swift */; };
 		93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E73237BD8E4007FED6B /* CurrentUser.swift */; };
 		93F62E7A237BD8E4007FED6B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E75237BD8E4007FED6B /* Data.swift */; };
 		93F62E7B237BD8E4007FED6B /* Decode test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E76237BD8E4007FED6B /* Decode test.swift */; };
 		93F62E7C237BD8E4007FED6B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E77237BD8E4007FED6B /* APIRequest.swift */; };
 		93F62E7D237BD8E4007FED6B /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E78237BD8E4007FED6B /* TransactionStatus.swift */; };
 		93F62E7F237BD8EE007FED6B /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E7E237BD8EE007FED6B /* TransactionDetail.swift */; };
-		93F62E81237C0E77007FED6B /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
-		93FA9298237CF81B006AD4D2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA9297237CF81B006AD4D2 /* Date.swift */; };
-		93FA929A237CFE5F006AD4D2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA9299237CFE5F006AD4D2 /* String.swift */; };
+		93FA9298237CF81B006AD4D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		93FA929A237CFE5F006AD4D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A31B449D2373CB6400022FE6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449C2373CB6400022FE6 /* File.swift */; };
 		A31B449F2373FD5800022FE6 /* OrderDone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B449E2373FD5800022FE6 /* OrderDone.storyboard */; };
 		A31B44A3237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */; };
@@ -79,7 +82,7 @@
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Merchant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
-		CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
+		E2DF631C911053E5D5FBA063 /* Pods_OrderEat_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */; };
 		E63B673923755AD000578442 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B673823755AD000578442 /* SigninViewController.swift */; };
 		E63B673B23755ADE00578442 /* Signin.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63B673A23755ADE00578442 /* Signin.xib */; };
 /* End PBXBuildFile section */
@@ -112,12 +115,15 @@
 		0A73B680237518D9003E1543 /* OnGoingCollectionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnGoingCollectionListCell.xib; sourceTree = "<group>"; };
 		0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_CustomerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		161E78106E0741F75E5C3C6A /* Pods-OrderEat-CustomerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerTests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerTests/Pods-OrderEat-CustomerTests.release.xcconfig"; sourceTree = "<group>"; };
+		2896473C030DA1179810F140 /* Pods-OrderEat-CustomerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerUITests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerUITests/Pods-OrderEat-CustomerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BCEE4C6E70AA41141DF0E8 /* Pods-OrderEat-Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.release.xcconfig"; sourceTree = "<group>"; };
 		87940C69237BFF55009AC6EA /* OrderEat-Customer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OrderEat-Customer.entitlements"; sourceTree = "<group>"; };
 		87940C6A237C0A29009AC6EA /* PusherBeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherBeams.swift; sourceTree = "<group>"; };
 		87940C6C237C0A35009AC6EA /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
-		90B1E8F97D124A0E99CF962B /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93ADD17B237D327E001E3094 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		93ADD17C237D327E001E3094 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		93ADD180237EAB02001E3094 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		93F62E73237BD8E4007FED6B /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		93F62E75237BD8E4007FED6B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		93F62E76237BD8E4007FED6B /* Decode test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decode test.swift"; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		A3E4D5D22375201800693241 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQRTableViewCell.swift; sourceTree = "<group>"; };
 		A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDoneViewController.swift; sourceTree = "<group>"; };
+		B2F1FB048AAD7F9EF99DECC5 /* Pods-OrderEat-CustomerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerUITests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerUITests/Pods-OrderEat-CustomerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C215777DC99BD140213BFF05 /* Pods-OrderEat-CustomerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerTests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerTests/Pods-OrderEat-CustomerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9E1CDE4DCFBBE2D2140CA50 /* Pods-OrderEat-Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
@@ -186,6 +193,7 @@
 		CAB5D2E023680D9300ACAAD0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CAB5D2E723692F7700ACAAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/View/Base.lproj/OnBoarding.storyboard"; sourceTree = "<group>"; };
+		CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63B673823755AD000578442 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = "OrderEat-Customer/Classes/Authentication/Signin/ViewController/SigninViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E63B673A23755ADE00578442 /* Signin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Signin.xib; path = "OrderEat-Customer/Classes/Authentication/Signin/View/Signin.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -211,7 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD8AF41DB82AC7C6C41CC5B /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework in Frameworks */,
+				E2DF631C911053E5D5FBA063 /* Pods_OrderEat_CustomerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,8 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */,
-				90B1E8F97D124A0E99CF962B /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */,
 				0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */,
+				CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,6 +245,8 @@
 				9E9A7F0D3BB1EB3E3622BFB6 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.release.xcconfig */,
 				C215777DC99BD140213BFF05 /* Pods-OrderEat-CustomerTests.debug.xcconfig */,
 				161E78106E0741F75E5C3C6A /* Pods-OrderEat-CustomerTests.release.xcconfig */,
+				B2F1FB048AAD7F9EF99DECC5 /* Pods-OrderEat-CustomerUITests.debug.xcconfig */,
+				2896473C030DA1179810F140 /* Pods-OrderEat-CustomerUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -251,6 +261,7 @@
 				93F62E78237BD8E4007FED6B /* TransactionStatus.swift */,
 				87940C6A237C0A29009AC6EA /* PusherBeams.swift */,
 				87940C6C237C0A35009AC6EA /* PusherChannels.swift */,
+				93ADD180237EAB02001E3094 /* Alert.swift */,
 			);
 			name = Utilities;
 			path = "OrderEat-Customer/Tools/Utilities";
@@ -259,9 +270,9 @@
 		93F62E74237BD8E4007FED6B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				93ADD17B237D327E001E3094 /* Date.swift */,
+				93ADD17C237D327E001E3094 /* String.swift */,
 				93F62E75237BD8E4007FED6B /* Data.swift */,
-				93FA9297237CF81B006AD4D2 /* Date.swift */,
-				93FA9299237CFE5F006AD4D2 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -853,7 +864,7 @@
 				CA35598E2366A5FB00382CCF /* Sources */,
 				CA35598F2366A5FB00382CCF /* Frameworks */,
 				CA3559902366A5FB00382CCF /* Resources */,
-				CC3F37C669CE6A93C8814956 /* [CP] Embed Pods Frameworks */,
+				B1F96A65EF4AA2084909E02E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -891,7 +902,6 @@
 				CA3559B22366A5FB00382CCF /* Sources */,
 				CA3559B32366A5FB00382CCF /* Frameworks */,
 				CA3559B42366A5FB00382CCF /* Resources */,
-				40C9F358E871615FDE01925E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -951,7 +961,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93F62E80237BDEB4007FED6B /* WaitingforRestoConfirm.storyboard in Resources */,
+				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
+				9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */,
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */,
@@ -964,7 +975,6 @@
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
 				A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */,
-				CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,28 +1010,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrderEat-Customer-OrderEat-CustomerUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OrderEat-CustomerUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		40C9F358E871615FDE01925E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B0EE05F7F1108EA4C2092D3D /* [CP] Check Pods Manifest.lock */ = {
@@ -1046,6 +1039,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B1F96A65EF4AA2084909E02E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2BBE97B7E07743E99CB7C4F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1068,23 +1078,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC3F37C669CE6A93C8814956 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1092,12 +1085,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93ADD17E237D327E001E3094 /* String.swift in Sources */,
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
 				0A73B681237518D9003E1543 /* OnGoingCollectionListCell.swift in Sources */,
 				0A61C1832371427700CF695F /* AddData.swift in Sources */,
+				93ADD181237EAB02001E3094 /* Alert.swift in Sources */,
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
 				93F62E7B237BD8E4007FED6B /* Decode test.swift in Sources */,
 				A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */,
@@ -1108,11 +1103,12 @@
 				CA73E71F236FECAF00BD3050 /* MenuTableViewCell.swift in Sources */,
 				CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */,
 				CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */,
+				93ADD17D237D327E001E3094 /* Date.swift in Sources */,
 				A3DDA7542372A778006CB5BA /* QRTableViewCell.swift in Sources */,
 				A3E4D5D92375234A00693241 /* OrderDoneViewController.swift in Sources */,
 				A3DDA7522372A770006CB5BA /* DetailsTableViewCell.swift in Sources */,
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
-				93FA9298237CF81B006AD4D2 /* Date.swift in Sources */,
+				93FA9298237CF81B006AD4D2 /* (null) in Sources */,
 				A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */,
 				A3B71192236FFAFC00670669 /* PickUpTimeTableViewCell.swift in Sources */,
 				A3B711A0237161E200670669 /* CustomColor.swift in Sources */,
@@ -1123,7 +1119,7 @@
 				A3B7119E23710FD100670669 /* OrderedMenu.swift in Sources */,
 				CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */,
 				93F62E7C237BD8E4007FED6B /* APIRequest.swift in Sources */,
-				93FA929A237CFE5F006AD4D2 /* String.swift in Sources */,
+				93FA929A237CFE5F006AD4D2 /* (null) in Sources */,
 				CA73E71D236FEA3500BD3050 /* MerchantMenuViewController.swift in Sources */,
 				CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */,
 				0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */,
@@ -1246,6 +1242,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1306,6 +1303,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1412,7 +1410,7 @@
 		};
 		CA3559C62366A5FB00382CCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 086A7886E760FB70E2FAB993 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.debug.xcconfig */;
+			baseConfigurationReference = B2F1FB048AAD7F9EF99DECC5 /* Pods-OrderEat-CustomerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1433,7 +1431,7 @@
 		};
 		CA3559C72366A5FB00382CCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E9A7F0D3BB1EB3E3622BFB6 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.release.xcconfig */;
+			baseConfigurationReference = 2896473C030DA1179810F140 /* Pods-OrderEat-CustomerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

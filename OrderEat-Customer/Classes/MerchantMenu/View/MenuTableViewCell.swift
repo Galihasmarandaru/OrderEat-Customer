@@ -34,13 +34,16 @@ class MenuTableViewCell: UITableViewCell {
     var checkCartClosure: (() -> ())?
     
     // Container
-    var detail : TransactionDetail! {
+    var detail = TransactionDetail()
+    
+    var menu : Menu! {
         didSet {
-            detail.menuId = detail.menu?.id
-            titleFood.text = detail.menu?.name!
-            detailFood.text = "testtest" // dummy
+            detail.menu = menu
+            detail.menuId = menu.id
+            titleFood.text = menu.name!
+            imageMenu.image = menu.image != nil ? UIImage(named: "default") : UIImage(named: "default")
             
-            let price = detail.menu?.price
+            let price = menu.price
             priceLbl.text = "Rp. \(price!)"
         }
     }

@@ -9,8 +9,8 @@
 import UIKit
 
 class OnGoingCollectionListCell: UICollectionViewCell {
-
     
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var merchantNameLbl: UILabel!
     @IBOutlet weak var orderNumLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
@@ -22,7 +22,7 @@ class OnGoingCollectionListCell: UICollectionViewCell {
         didSet{
             self.merchantNameLbl.text = transaction.merchant?.name!
             self.priceLbl.text = "Rp. \(transaction.total!)"
-            self.statusLbl.text = transactionStatus[transaction.status!]
+            self.statusLbl.text = "Status: " + transactionStatus[transaction.status!]
         }
     }
     

@@ -24,6 +24,8 @@ class ConfirmPaymentViewController: UIViewController {
         }
     }
     
+    var flag : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +40,7 @@ class ConfirmPaymentViewController: UIViewController {
 
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
-        self.flag = 0
+        flag = 0
         
         self.orderDetailsTableView.tableFooterView = UIView()
     }
@@ -124,8 +126,12 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
         
         cellButton.confirmBtnClosure = { [unowned self] in
-            APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
-            self.dismiss(animated: true, completion: nil)
+
+            
+            Alert.showConfirmationAlert(on: self, title: "Payment", message: "Hello", yesAction: {
+                APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
+                self.dismiss(animated: true, completion: nil)
+            })
         }
         
         return cellButton

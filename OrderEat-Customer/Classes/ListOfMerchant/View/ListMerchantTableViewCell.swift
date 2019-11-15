@@ -12,15 +12,15 @@ class ListMerchantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var merchantImage: UIImageView!
     @IBOutlet weak var merchantName: UILabel!
-    @IBOutlet weak var merchantADdress: UILabel!
+    @IBOutlet weak var merchantAddress: UILabel!
     @IBOutlet weak var merchantDistance: UILabel!
     @IBOutlet weak var merchantDistanceTime: UILabel!
     
     var merchant: Merchant!{
         didSet{
-            //self.merchantImage.image = data.ima
+            self.merchantImage.image = merchant!.image != nil ? UIImage(named: "default") : UIImage(named: "default")
             self.merchantName.text = merchant.name
-            self.merchantADdress.text = merchant.address
+            self.merchantAddress.text = merchant.address
         }
     }
     

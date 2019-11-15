@@ -75,12 +75,7 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if transaction.status == 2 {
-            return details.count + 4
-        }
-        else {
-            return details.count + 5
-        }
+        return details.count + 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,12 +106,22 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
 
             return cellTotal
         }
-        else if indexPath.row == (details.count + 3) {
-            let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-            cellPickup.leftLabel.text = "Pick Up Time"
-            cellPickup.rightLabel.text = transaction.pickUpTime?.time
+        else {
+            if transaction.status == 3 {
+                let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
 
-            return cellPickup
+                cellQR.QRImageView.image = image
+                cellQR.pickUpTimeLabel.text = transaction.pickUpTime?.time
+
+                return cellQR
+            }
+            else {
+                let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
+                cellPickup.leftLabel.text = "Pick Up Time"
+                cellPickup.rightLabel.text = transaction.pickUpTime?.time
+
+                return cellPickup
+            }
         }
 //        else if indexPath.row == (details.count + 4) {
 //        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
@@ -126,17 +131,17 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
 //
 //        return cellPayment
 //        }
-        
-        if transaction.status == 3 {
-            let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
-
-            cellQR.QRImageView.image = image
-
-            return cellQR
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row < details.count {
+            return 135
         }
-        
+        else if indexPath.row == details.count + 3 && transaction.status == 3{
+            return 370
+        }
         else {
-            return UITableViewCell()
+            return 35
         }
     }
 }

@@ -13,8 +13,6 @@ import PushNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //background color of text field
@@ -48,19 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
         }
 
         func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-            
-//            print("'what is on userinfo'")
-            
-    //        [AnyHashable("aps"): {
-    //            alert = "Payment has been confirmed. Your order is being process";
-    //            "content-available" = 1;
-    //        }, AnyHashable("data"): {
-    //            pusher =     {
-    //                instanceId = "f4175959-3847-4a45-aadc-2ca1a3cf752a";
-    //                publishId = "pubid-bae28d66-c347-45ab-9c22-845f7ab64d8f";
-    //                userShouldIgnore = 1;
-    //            };
-    //        }]
             
             PusherBeams.pushNotifications.handleNotification(userInfo: userInfo)
             

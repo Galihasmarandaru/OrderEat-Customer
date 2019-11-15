@@ -21,6 +21,7 @@ class DetailMerchantView: UIView {
         didSet {
             self.merchantName.text = merchant.name!
             self.locationMerchant.text = merchant.address!
+            self.layer.cornerRadius = 8
         }
     }
     
