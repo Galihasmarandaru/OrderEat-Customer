@@ -123,6 +123,7 @@ class MerchantMenuViewController: UIViewController {
         self.viewMenu.layer.masksToBounds = false
     }
     
+//    MARK: Cart Animation
     func showCart() {
         UIView.animate(withDuration: 0.5) {
             self.bottomConstraint.constant = -50
@@ -155,27 +156,13 @@ class MerchantMenuViewController: UIViewController {
         CartView.widthAnchor.constraint(equalToConstant: 325).isActive = true
     }
     
-    // MARK: Handle Signin
+//    MARK: Update Cart
     
-    func setupCard() {
-        visualEffectView = UIVisualEffectView()
-        visualEffectView.frame = self.view.frame
-        self.view.addSubview(visualEffectView)
-        
-        cardViewController = SigninViewController(nibName:"Signin", bundle:nil)
-        self.addChild(cardViewController)
-        self.view.addSubview(cardViewController.view)
-        
-        cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight + 10, width: self.view.bounds.width, height: cardHeight)
-        
-        cardViewController.view.clipsToBounds = true
-        
-        animateTransitionIfNeeded(state: nextState, duration: 0.9)
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MerchantMenuViewController.handleCardTap(recognzier:)))
-        visualEffectView.addGestureRecognizer(tapGestureRecognizer)
+    func updatePlusQty(_ tag: Int) {
+        incrementQty(tag: tag)
+        updateCart(tag: tag)
+        printtCart()
     }
-
     
     @objc func handleCardTap(recognzier:UITapGestureRecognizer) {
         switch recognzier.state {
@@ -186,97 +173,54 @@ class MerchantMenuViewController: UIViewController {
         }
     }
     
-    @objc
-    func handleCardPan (recognizer:UIPanGestureRecognizer) {
-        switch recognizer.state {
-        case .began:
-            startInteractiveTransition(state: nextState, duration: 0.9)
-        case .changed:
-            let translation = recognizer.translation(in: self.cardViewController.handleView)
-            var fractionComplete = translation.y / cardHeight
-            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
-            updateInteractiveTransition(fractionCompleted: fractionComplete)
-        case .ended:
-            continueInteractiveTransition()
-        default:
-            break
+    func didPressButtonAdd(_ tag: Int) {
+        if (tableCell[tag] == 0) {
+            incrementQty(tag: tag)
+            updateCart(tag: tag)
+            printtCart()
         }
+    }
+    
+    func incrementQty(tag: Int) {
+        theData[tag].qty += 1
+    }
+    
+    func decrementQty(tag: Int) {
+        theData[tag].qty -= 1
+    }
+
+    
+    func updateCart(tag: Int) {
+        totalQtyArray[tag] = theData[tag].qty
+        tableCell[tag] = theData[tag].priceMenu * theData[tag].qty
+        dataItem = tableCell.filter { $0 != 0 }.count
+        totalItem = theData[tag].priceMenu * tableCell[tag]
+        printtCart()
+
+    }
+    
+    func printtCart() {
+        totalQty = totalQtyArray.reduce(0, +)
+        totalCount = tableCell.reduce(0, +)
+        priceSelected.text = String(totalCount)
+        itemSelected.text = String(dataItem) + " Item"
+    }
+    
+    func didPressButtonCart(_ tag: Int) {
+
+    }
+    
+    // MARK: Handle Signin
+    func setupCard() {
+        let storyboard = UIStoryboard(name:"Signin", bundle:nil)
+        let showCardVC = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
+        self.present(showCardVC, animated: true, completion: nil)
         
-    }
-    
-    func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
-        if runningAnimations.isEmpty {
-            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
-                switch state {
-                case .expanded:
-                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
-                case .collapsed:
-                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight + 80
-                    self.visualEffectView.removeFromSuperview()
-                }
-            }
-            
-            frameAnimator.addCompletion { _ in
-                self.cardVisible = !self.cardVisible
-                self.runningAnimations.removeAll()
-            }
-            
-            frameAnimator.startAnimation()
-            runningAnimations.append(frameAnimator)
-            
-            
-            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
-                switch state {
-                case .expanded:
-                    self.cardViewController.view.layer.cornerRadius = 12
-                case .collapsed:
-                    self.cardViewController.view.layer.cornerRadius = 0
-                }
-            }
-            
-            cornerRadiusAnimator.startAnimation()
-            runningAnimations.append(cornerRadiusAnimator)
-            
-            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
-                switch state {
-                case .expanded:
-                    self.visualEffectView.effect = UIBlurEffect(style: .dark)
-                case .collapsed:
-                    self.visualEffectView.effect = nil
-                }
-            }
-            
-            blurAnimator.startAnimation()
-            runningAnimations.append(blurAnimator)
-            
-        }
-    }
-    
-    func startInteractiveTransition(state:CardState, duration:TimeInterval) {
-        if runningAnimations.isEmpty {
-            animateTransitionIfNeeded(state: state, duration: duration)
-        }
-        for animator in runningAnimations {
-            animator.pauseAnimation()
-            animationProgressWhenInterrupted = animator.fractionComplete
-        }
-    }
-    
-    func updateInteractiveTransition(fractionCompleted:CGFloat) {
-        for animator in runningAnimations {
-            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
-        }
-    }
-    
-    func continueInteractiveTransition (){
-        for animator in runningAnimations {
-            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-        }
     }
     
 }
 
-// MARK: Data Menu
+// MARK: Data Menu Merchant
 
 extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

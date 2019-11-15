@@ -8,19 +8,63 @@
 
 import UIKit
 import CoreData
+import PusherSwift
+import PushNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //background color of text field
-         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .black
+        
+        // Pusher Beams
+        PusherBeams.initPushNotifications()
+        PusherBeams.registerDeviceInterest(pushInterest: "global")
+        
+        // Pusher Channels
+         let options = PusherClientOptions(
+           host: .cluster("ap1")
+         )
+        PusherChannels.pusher = Pusher(
+           key: "6c1e137627b90e824011",
+           options: options
+         )
+        PusherChannels.pusher.delegate = self
+        //        CurrentUser.subscribePushChannel(channel: CurrentUser.id)
+        PusherChannels.channel = PusherChannels.pusher.subscribe(channelName: CurrentUser.id)
+        PusherChannels.pusher.connect()
+        print("push notif init done")
+
+        
         return true
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+            PusherBeams.pushNotifications.registerDeviceToken(deviceToken)
+        }
+
+        func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+            
+//            print("'what is on userinfo'")
+            
+    //        [AnyHashable("aps"): {
+    //            alert = "Payment has been confirmed. Your order is being process";
+    //            "content-available" = 1;
+    //        }, AnyHashable("data"): {
+    //            pusher =     {
+    //                instanceId = "f4175959-3847-4a45-aadc-2ca1a3cf752a";
+    //                publishId = "pubid-bae28d66-c347-45ab-9c22-845f7ab64d8f";
+    //                userShouldIgnore = 1;
+    //            };
+    //        }]
+            
+            PusherBeams.pushNotifications.handleNotification(userInfo: userInfo)
+            
+        }
 
     // MARK: UISceneSession Lifecycle
 
