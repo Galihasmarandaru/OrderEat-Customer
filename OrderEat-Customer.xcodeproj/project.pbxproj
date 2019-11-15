@@ -17,6 +17,9 @@
 		15177FC09B0E6C27B7B9FA80 /* Pods_OrderEat_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */; };
 		1D712389374EA7F1ACF31BD8 /* Pods_OrderEat_Customer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */; };
 		2DD8AF41DB82AC7C6C41CC5B /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B1E8F97D124A0E99CF962B /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */; };
+		870988FE237D0DB300773647 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870988FD237D0DB300773647 /* Cloudinary.swift */; };
+		87098904237E703C00773647 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87098903237E703C00773647 /* Image.swift */; };
+		87098906237E743500773647 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87098905237E743500773647 /* UploadImage.swift */; };
 		87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6A237C0A29009AC6EA /* PusherBeams.swift */; };
 		87940C6D237C0A35009AC6EA /* PusherChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6C237C0A35009AC6EA /* PusherChannels.swift */; };
 		93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E73237BD8E4007FED6B /* CurrentUser.swift */; };
@@ -110,6 +113,9 @@
 		161E78106E0741F75E5C3C6A /* Pods-OrderEat-CustomerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerTests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerTests/Pods-OrderEat-CustomerTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BCEE4C6E70AA41141DF0E8 /* Pods-OrderEat-Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.release.xcconfig"; sourceTree = "<group>"; };
+		870988FD237D0DB300773647 /* Cloudinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
+		87098903237E703C00773647 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		87098905237E743500773647 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		87940C69237BFF55009AC6EA /* OrderEat-Customer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OrderEat-Customer.entitlements"; sourceTree = "<group>"; };
 		87940C6A237C0A29009AC6EA /* PusherBeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherBeams.swift; sourceTree = "<group>"; };
 		87940C6C237C0A35009AC6EA /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
@@ -245,6 +251,8 @@
 				93F62E78237BD8E4007FED6B /* TransactionStatus.swift */,
 				87940C6A237C0A29009AC6EA /* PusherBeams.swift */,
 				87940C6C237C0A35009AC6EA /* PusherChannels.swift */,
+				870988FD237D0DB300773647 /* Cloudinary.swift */,
+				87098905237E743500773647 /* UploadImage.swift */,
 			);
 			name = Utilities;
 			path = "OrderEat-Customer/Tools/Utilities";
@@ -828,6 +836,7 @@
 				CA73E718236FE0A500BD3050 /* OTP.swift */,
 				CA73E71A236FE0B900BD3050 /* Transaction.swift */,
 				93F62E7E237BD8EE007FED6B /* TransactionDetail.swift */,
+				87098903237E703C00773647 /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1083,6 +1092,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
+				87098904237E703C00773647 /* Image.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
@@ -1108,6 +1118,7 @@
 				A3B71196236FFB4A00670669 /* ConfirmOrderButtonTableViewCell.swift in Sources */,
 				CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */,
 				A3DDA73C23729BAB006CB5BA /* ConfirmPaymentViewController.swift in Sources */,
+				87098906237E743500773647 /* UploadImage.swift in Sources */,
 				A3B7119E23710FD100670669 /* OrderedMenu.swift in Sources */,
 				CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */,
 				93F62E7C237BD8E4007FED6B /* APIRequest.swift in Sources */,
@@ -1129,6 +1140,7 @@
 				A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */,
 				A3B71194236FFB1F00670669 /* PaymentMethodTableViewCell.swift in Sources */,
 				0A73B67E23741771003E1543 /* OnGoingViewController.swift in Sources */,
+				870988FE237D0DB300773647 /* Cloudinary.swift in Sources */,
 				93F62E7F237BD8EE007FED6B /* TransactionDetail.swift in Sources */,
 				93F62E7D237BD8E4007FED6B /* TransactionStatus.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,

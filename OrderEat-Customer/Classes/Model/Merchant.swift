@@ -22,6 +22,7 @@ class Merchant : Codable {
     var qrCode : String? // D, E
     var image : String? // D, E
     var tax : Double = 0.1 // D, E
+    var imageFile : UIImage?
     
     private enum CodingKeys: String, CodingKey {
         case id
