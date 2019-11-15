@@ -76,10 +76,10 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if transaction.status == 2 {
-            return details.count + 5
+            return details.count + 3
         }
         else {
-            return details.count + 6
+            return details.count + 4
         }
     }
     
@@ -111,32 +111,14 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
 
             return cellTotal
         }
-        else if indexPath.row == (details.count + 3) {
-            let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-            cellPickup.leftLabel.text = "Pick Up Time"
-            cellPickup.rightLabel.text = "12.00"
-
-            return cellPickup
-        }
-        else if indexPath.row == (details.count + 4) {
-        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-
-            cellPayment.leftLabel.text = "Payment Method"
-            cellPayment.rightLabel.text = "GOPAY"
-
-        return cellPayment
-        }
-        
-        if transaction.status == 3 {
+        else {
             let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
-
+            
             cellQR.QRImageView.image = image
-
+            cellQR.pickUpTimeLabel.text = "12.00"
+            
             return cellQR
         }
-        
-        else {
-            return UITableViewCell()
-        }
+
     }
 }
