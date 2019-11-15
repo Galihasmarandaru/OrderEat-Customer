@@ -62,6 +62,8 @@
 		CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3559A32366A5FB00382CCF /* LaunchScreen.storyboard */; };
 		CA3559B02366A5FB00382CCF /* OrderEat_CustomerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559AF2366A5FB00382CCF /* OrderEat_CustomerTests.swift */; };
 		CA3559BB2366A5FB00382CCF /* OrderEat_CustomerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559BA2366A5FB00382CCF /* OrderEat_CustomerUITests.swift */; };
+		CA70EE26237905390090B246 /* TabBarListOfMerchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA70EE25237905390090B246 /* TabBarListOfMerchant.swift */; };
+		CA70EE29237907BA0090B246 /* TabBarHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA70EE27237907BA0090B246 /* TabBarHome.swift */; };
 		CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E6D9236EF4BC00BD3050 /* OnBoardingViewController.swift */; };
 		CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA73E70B236FC6C800BD3050 /* ListOfMerchant.storyboard */; };
 		CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */; };
@@ -74,12 +76,12 @@
 		CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73E721236FF06700BD3050 /* AddDataMerchantMenu.swift */; };
 		CA754E27237D12B6005BAD6D /* OrderSetTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E26237D12B6005BAD6D /* OrderSetTimeViewModel.swift */; };
 		CA754E29237D12DF005BAD6D /* OrderDoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA754E28237D12DF005BAD6D /* OrderDoneViewModel.swift */; };
+		CAA6023B237BBAD600EE4497 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA70EE3023792C000090B246 /* Signin.storyboard */; };
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Merchant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
 		CAB5D2E823692F7700ACAAD0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
 		E63B673923755AD000578442 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B673823755AD000578442 /* SigninViewController.swift */; };
-		E63B673B23755ADE00578442 /* Signin.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63B673A23755ADE00578442 /* Signin.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +170,9 @@
 		CA3559B62366A5FB00382CCF /* OrderEat-CustomerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OrderEat-CustomerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3559BA2366A5FB00382CCF /* OrderEat_CustomerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEat_CustomerUITests.swift; sourceTree = "<group>"; };
 		CA3559BC2366A5FB00382CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA70EE25237905390090B246 /* TabBarListOfMerchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarListOfMerchant.swift; sourceTree = "<group>"; };
+		CA70EE28237907BA0090B246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/TabBarHome.swift; sourceTree = "<group>"; };
+		CA70EE3123792C000090B246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/Classes/Home/View/Base.lproj/Signin.storyboard"; sourceTree = SOURCE_ROOT; };
 		CA73E6D9236EF4BC00BD3050 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		CA73E70B236FC6C800BD3050 /* ListOfMerchant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListOfMerchant.storyboard; sourceTree = "<group>"; };
 		CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MerchantMenu.storyboard; sourceTree = "<group>"; };
@@ -185,7 +190,6 @@
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CAB5D2E723692F7700ACAAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/View/Base.lproj/OnBoarding.storyboard"; sourceTree = "<group>"; };
 		E63B673823755AD000578442 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = "OrderEat-Customer/Classes/Authentication/Signin/ViewController/SigninViewController.swift"; sourceTree = SOURCE_ROOT; };
-		E63B673A23755ADE00578442 /* Signin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Signin.xib; path = "OrderEat-Customer/Classes/Authentication/Signin/View/Signin.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				CA35599B2366A5FB00382CCF /* Home.storyboard */,
+				CA70EE27237907BA0090B246 /* TabBarHome.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -752,7 +757,7 @@
 		CA73E705236FC67500BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E63B673A23755ADE00578442 /* Signin.xib */,
+				CA70EE3023792C000090B246 /* Signin.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +782,7 @@
 			children = (
 				CA73E70B236FC6C800BD3050 /* ListOfMerchant.storyboard */,
 				0A72B4FD236FF04100707951 /* ListMerchantTableViewCell.swift */,
+				CA70EE25237905390090B246 /* TabBarListOfMerchant.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -948,6 +954,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F62E80237BDEB4007FED6B /* WaitingforRestoConfirm.storyboard in Resources */,
+				CAA6023B237BBAD600EE4497 /* Signin.storyboard in Resources */,
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */,
@@ -956,7 +963,6 @@
 				0A73B682237518D9003E1543 /* OnGoingCollectionListCell.xib in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
-				E63B673B23755ADE00578442 /* Signin.xib in Resources */,
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
 				A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */,
@@ -1088,6 +1094,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA70EE29237907BA0090B246 /* TabBarHome.swift in Sources */,
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
@@ -1127,6 +1134,7 @@
 				CA754E27237D12B6005BAD6D /* OrderSetTimeViewModel.swift in Sources */,
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
+				CA70EE26237905390090B246 /* TabBarListOfMerchant.swift in Sources */,
 				A3E4D5D32375201800693241 /* DetailTableViewCell.swift in Sources */,
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
@@ -1191,6 +1199,22 @@
 				CA3559A42366A5FB00382CCF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CA70EE27237907BA0090B246 /* TabBarHome.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA70EE28237907BA0090B246 /* Base */,
+			);
+			name = TabBarHome.swift;
+			sourceTree = "<group>";
+		};
+		CA70EE3023792C000090B246 /* Signin.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA70EE3123792C000090B246 /* Base */,
+			);
+			name = Signin.storyboard;
 			sourceTree = "<group>";
 		};
 		CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */ = {

@@ -61,6 +61,7 @@ class MenuTableViewCell: UITableViewCell {
         {
             checkCartClosure?()
             toggleButtonView()
+
         }
         
         refreshCartClosure?()
