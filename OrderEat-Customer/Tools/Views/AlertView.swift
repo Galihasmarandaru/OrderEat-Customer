@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-//final class AlertView {
-//    class func showAlert(title: String, message: String) -> UIAlertController {
-//        let alertController = UIAlertController(title: title, message:
-//            message, preferredStyle: .alert)
-//        alertController.addAction(UIAlertAction(title: "Yes", style: .default))
-//        alertController.addAction(UIAlertAction(title: "No", style: .default, handler: { ACTION in
-//
-//            }))
-//
-//        return alertController
-//    }
-//}
+final class AlertView {
+    class func showAlert(title: String, message: String) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: .default))
+        alertController.addAction(UIAlertAction(title: "No", style: .default, handler: { ACTION in
+
+            }))
+
+        return alertController
+    }
+}
