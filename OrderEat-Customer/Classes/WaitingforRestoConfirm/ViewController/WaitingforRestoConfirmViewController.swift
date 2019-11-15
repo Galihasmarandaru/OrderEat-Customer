@@ -16,6 +16,8 @@ class WaitingforRestoConfirmViewController: UIViewController {
     @IBOutlet weak var waitingImageView: UIImageView!
     @IBOutlet weak var cancelOrderButton: CustomButton!
     
+    var transaction : Transaction!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,24 +28,35 @@ class WaitingforRestoConfirmViewController: UIViewController {
         self.cancelOrderButton.setTitle("Cancel Order", for: .normal)
         self.cancelOrderButton.setTitleColor(.merahTextButton, for: .normal)
         
-        // Do any additional setup after loading the view.
+        _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { _ in
+            APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 1])
+            
+            // Change root
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+            tabBarVC.selectedIndex = 1
+            let appDelegate = UIApplication.shared.windows
+            appDelegate.first?.rootViewController = tabBarVC
+        })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @IBAction func cancelOrderButtonPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "MerchantMenu", bundle: nil)
-        let merchantMenuPage = storyboard.instantiateViewController(identifier: "merchantMenu") as! MerchantMenuViewController
-        let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = merchantMenuPage
+        // Show Alert
+        
+        APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 5])
+        
+        self.navigationController?.popViewController(animated: false)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

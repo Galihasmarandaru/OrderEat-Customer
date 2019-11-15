@@ -12,7 +12,7 @@ import UIKit
 
 struct OrderDoneViewModel {
     static func getDataMenuPayment() -> [Menu] {
-        let cell: [Menu] = [Menu(nameMenu: "Burger", detailMenu: "Test", priceMenu: 50000, imageMenu: UIImage(named: "Blackpepper Burger.png")!, qty: 2), Menu(nameMenu: "Noodle", detailMenu: "Test", priceMenu: 25000, imageMenu: UIImage(named: "Blackpepper Burger.png")!, qty: 1), Menu(nameMenu: "Fried Chicken", detailMenu: "Test", priceMenu: 30000, imageMenu: UIImage(named: "Blackpepper Burger.png")!, qty: 1)]
+        let cell: [Menu] = [Menu(nameMenu: "Burger", detailMenu: "Test", priceMenu: 50000, imageMenu: UIImage(named: "Blackpepper Burger.png")!, qty: 0), Menu(nameMenu: "Noodle", detailMenu: "Test", priceMenu: 25000, imageMenu: UIImage(named: "Blackpepper Burger.png")!, qty: 0), Menu(nameMenu: "Fried Chicken", detailMenu: "Test", priceMenu: 30000, imageMenu: UIImage(named: "Blackpepper Burger.png")!, qty: 0)]
         
         return cell
     }

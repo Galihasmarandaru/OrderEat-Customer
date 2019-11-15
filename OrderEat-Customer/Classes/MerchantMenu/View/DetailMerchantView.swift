@@ -17,10 +17,10 @@ class DetailMerchantView: UIView {
     @IBOutlet weak var iconDAT: UIImageView!
     @IBOutlet weak var iconTO: UIImageView!
     
-    var data: Merchant! {
+    var merchant: Merchant! {
         didSet {
-            self.merchantName.text = data.merchantName
-            self.locationMerchant.text = data.merchantAddress
+            self.merchantName.text = merchant.name!
+            self.locationMerchant.text = merchant.address!
         }
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct TokenAPI {
-    private var userID: String
-    private var accessToken: String
+class TokenAPI : Codable {
+    var userID : String?
+    var accessToken : String?
 }

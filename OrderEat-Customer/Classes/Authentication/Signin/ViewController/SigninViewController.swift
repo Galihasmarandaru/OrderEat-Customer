@@ -9,6 +9,12 @@
 import UIKit
 
 class SigninViewController: UIViewController {
-    @IBOutlet weak var handleView: UIView!
     
+    @IBAction func buttonSignin(_ sender: Any) {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

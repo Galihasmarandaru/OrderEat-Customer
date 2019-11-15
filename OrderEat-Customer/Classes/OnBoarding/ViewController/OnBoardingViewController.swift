@@ -19,11 +19,10 @@ class onBoardingViewController: UIViewController , UIScrollViewDelegate{
     
 //    MARK:: Root Navigation
     @IBAction func startButtonClick(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ListOfMerchant", bundle: nil)
-        let listMerchantPage = storyboard.instantiateViewController(identifier: "ListOfMerchant") as! ListMerchantViewController
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
         let appDelegate = UIApplication.shared.windows
-        let navCont = UINavigationController(rootViewController: listMerchantPage)
-        appDelegate.first?.rootViewController = navCont
+        appDelegate.first?.rootViewController = tabBarVC
     }
     
     
