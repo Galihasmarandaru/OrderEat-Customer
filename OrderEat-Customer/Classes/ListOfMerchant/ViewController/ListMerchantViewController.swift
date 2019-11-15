@@ -37,6 +37,11 @@ class ListMerchantViewController: UIViewController, UISearchControllerDelegate {
         }
         */
         attemptFetchMerchants()
+        
+        let image = #imageLiteral(resourceName: "mcd")
+        let upload = UploadImage()
+        upload.uploadImage(image: image)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
