@@ -31,6 +31,7 @@
 		A31B44A3237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */; };
 		A31B44A72374054B00022FE6 /* CancelOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A62374054B00022FE6 /* CancelOrderViewController.swift */; };
 		A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A82374055E00022FE6 /* CancelOrder.storyboard */; };
+		A3573CE3237E47E40076D4D9 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3573CE2237E47E40076D4D9 /* AlertView.swift */; };
 		A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B71185236FE90A00670669 /* OrderSetTime.storyboard */; };
 		A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118B236FF5AF00670669 /* CustomButton.swift */; };
 		A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */; };
@@ -131,6 +132,7 @@
 		A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = WaitingforRestoConfirm.storyboard; path = "OrderEat-Customer/Classes/WaitingforRestoConfirm/View/WaitingforRestoConfirm.storyboard"; sourceTree = SOURCE_ROOT; };
 		A31B44A62374054B00022FE6 /* CancelOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancelOrderViewController.swift; path = "OrderEat-Customer/Classes/CancelOrder/ViewController/CancelOrderViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A31B44A82374055E00022FE6 /* CancelOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CancelOrder.storyboard; path = "OrderEat-Customer/Classes/CancelOrder/View/CancelOrder.storyboard"; sourceTree = SOURCE_ROOT; };
+		A3573CE2237E47E40076D4D9 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		A3B71185236FE90A00670669 /* OrderSetTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderSetTime.storyboard; sourceTree = "<group>"; };
 		A3B7118B236FF5AF00670669 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrderedTableViewCell.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				A3B7118B236FF5AF00670669 /* CustomButton.swift */,
 				A3B7119F237161E200670669 /* CustomColor.swift */,
 				A31B449C2373CB6400022FE6 /* File.swift */,
+				A3573CE2237E47E40076D4D9 /* AlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1139,6 +1142,8 @@
 				CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */,
 				CA73E717236FE02900BD3050 /* TokenAPI.swift in Sources */,
 				E63B673923755AD000578442 /* SigninViewController.swift in Sources */,
+				A3F92EBF23727AE00048F6ED /* OrderSetTimeViewModel.swift in Sources */,
+				A3573CE3237E47E40076D4D9 /* AlertView.swift in Sources */,
 				CA73E6DA236EF4BC00BD3050 /* OnBoardingViewController.swift in Sources */,
 				87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */,
 				A31B449D2373CB6400022FE6 /* File.swift in Sources */,
