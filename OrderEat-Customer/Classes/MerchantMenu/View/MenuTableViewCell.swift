@@ -21,8 +21,6 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var plusTap: UIButton!
     @IBOutlet weak var qtyItem: UILabel!
     
-    var cellDelegate: ButtonCellDelegate?
-    
     @IBOutlet weak var viewStepper: UIView!
     
     var MerchantMenuVC: MerchantMenuViewController!
@@ -32,14 +30,12 @@ class MenuTableViewCell: UITableViewCell {
     var addBtnClosure: (() ->  ())?
     var refreshCartClosure: (() -> ())?
     var checkCartClosure: (() -> ())?
+    var plusBtnClosure: (() -> ())?
+    var minusBtnClosure: (() -> ())?
     
     // Container
-    var detail = TransactionDetail()
-    
     var menu : Menu! {
         didSet {
-            detail.menu = menu
-            detail.menuId = menu.id
             titleFood.text = menu.name!
             imageMenu.image = menu.image != nil ? UIImage(named: "default") : UIImage(named: "default")
             
@@ -48,31 +44,44 @@ class MenuTableViewCell: UITableViewCell {
         }
     }
     
+    var detail : TransactionDetail! {
+        didSet {
+            if detail.qty! > 0 {
+                toggleButtonView()
+            }
+            refreshLabel()
+        }
+    }
+//
+    override func prepareForReuse() {
+        addButton.isHidden = false
+        viewStepper.isHidden = true
+    }
+    
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        detail.qty! = 1
-        toggleButtonView()
-        refreshQtyLbl()
         addBtnClosure?()
+        detail.qty! += 1
+        toggleButtonView()
+        refreshLabel()
         refreshCartClosure?()
     }
     
     @IBAction func minusTap(_ sender: UIButton) {
         detail.qty! -= 1
-        refreshQtyLbl()
-        
-        if detail.qty! == 0
-        {
-            checkCartClosure?()
+        minusBtnClosure?()
+        refreshCartClosure?()
+        if detail.qty! == 0 {
             toggleButtonView()
         }
-        
-        refreshCartClosure?()
+        else {
+            refreshLabel()
+        }
     }
     
     @IBAction func plusTap(_ sender: UIButton) {
         detail.qty! += 1
-        refreshQtyLbl()
         refreshCartClosure?()
+        refreshLabel()
     }
     
     func toggleButtonView() {
@@ -80,7 +89,7 @@ class MenuTableViewCell: UITableViewCell {
         viewStepper.isHidden = !viewStepper.isHidden
     }
     
-    func refreshQtyLbl() {
-        qtyItem.text = "\(detail.qty!)"
+    func refreshLabel() {
+        qtyItem.text = String(detail.qty!)
     }
 }

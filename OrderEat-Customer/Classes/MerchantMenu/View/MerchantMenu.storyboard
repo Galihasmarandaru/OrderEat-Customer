@@ -30,7 +30,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXN-0r-qcR" userLabel="ViewMenu">
-                                <rect key="frame" x="20" y="230" width="374" height="666"/>
+                                <rect key="frame" x="20" y="70" width="374" height="826"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJR-PW-euN" userLabel="MerchantDetail" customClass="DetailMerchantView" customModule="OrderEat_Customer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
@@ -110,7 +110,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hKG-7B-e5A">
-                                        <rect key="frame" x="0.0" y="164" width="374" height="502"/>
+                                        <rect key="frame" x="0.0" y="164" width="374" height="662"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TableCell" rowHeight="120" id="aaC-xl-hYx" userLabel="MenuTableViewCell" customClass="MenuTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
@@ -320,7 +320,7 @@
                             <constraint firstItem="HSr-VQ-nsh" firstAttribute="top" secondItem="zzP-cc-bMh" secondAttribute="top" id="W4b-Si-wig"/>
                             <constraint firstItem="HSr-VQ-nsh" firstAttribute="leading" secondItem="yIg-FG-BWW" secondAttribute="leading" id="aFl-7B-nPB"/>
                             <constraint firstItem="cXN-0r-qcR" firstAttribute="leading" secondItem="yIg-FG-BWW" secondAttribute="leading" constant="20" id="kBf-Xp-KUK"/>
-                            <constraint firstItem="cXN-0r-qcR" firstAttribute="top" secondItem="zzP-cc-bMh" secondAttribute="top" constant="230" id="x9J-09-4fJ"/>
+                            <constraint firstItem="cXN-0r-qcR" firstAttribute="top" secondItem="zzP-cc-bMh" secondAttribute="top" constant="70" id="x9J-09-4fJ"/>
                             <constraint firstItem="wkN-im-Ea4" firstAttribute="leading" secondItem="yIg-FG-BWW" secondAttribute="leading" constant="20" id="ztt-gI-5Wz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yIg-FG-BWW"/>

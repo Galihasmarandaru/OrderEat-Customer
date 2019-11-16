@@ -58,7 +58,7 @@ class MerchantMenuViewController: UIViewController {
         createConstraint()
         
         attemptFetchMenus(withMerchantId: merchant.id!)
-        setupTransaction()
+
         setupCartTapRecognizer()
         
         backBtn.layer.cornerRadius = backBtn.frame.height/2
@@ -74,10 +74,6 @@ class MerchantMenuViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -96,7 +92,7 @@ class MerchantMenuViewController: UIViewController {
         
         viewModel.didFinishFetch = {
             self.menus = self.viewModel.menus!
-            
+            self.setupTransaction()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -106,6 +102,11 @@ class MerchantMenuViewController: UIViewController {
     func setupTransaction() {
         transaction = Transaction(merchantId: merchant.id!)
         transaction.merchant = merchant
+        for i in 0..<menus.count {
+            let detail = TransactionDetail(menu: menus[i])
+            
+            transaction.details?.append(detail)
+        }
     }
     
     func setupCartTapRecognizer() {
@@ -124,8 +125,6 @@ class MerchantMenuViewController: UIViewController {
     
     func showCart() {
         let inset : CGFloat = 40
-//        let contentInset : CGFloat = inset + CartView.frame.height - 20
-//        tableView.contentInset.bottom = contentInset
         
         UIView.animate(withDuration: 0.5) {
             self.tableViewBottomConstraint.constant = inset + self.CartView.frame.height + 20
@@ -135,7 +134,6 @@ class MerchantMenuViewController: UIViewController {
     }
 
     func hideCart() {
-        //tableView.contentInset.bottom = 0
         UIView.animate(withDuration: 0.5) {
             self.tableViewBottomConstraint.constant = 0
             self.bottomConstraint.constant = 100
@@ -144,6 +142,8 @@ class MerchantMenuViewController: UIViewController {
     }
 
     @objc func cartTapAction() {
+        var filteredCart
+        
         if let orderSetTimeVC = UIStoryboard(name: "OrderSetTime", bundle: nil).instantiateViewController(identifier: "OrderSetTime") as? OrderSetTimeViewController {
             
             orderSetTimeVC.transaction = self.transaction
@@ -172,53 +172,53 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? MenuTableViewCell else {return UITableViewCell()}
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! MenuTableViewCell
         
-        // assign menu data to cell
-        cell.menu = menus[indexPath.row]
+        let row = indexPath.row
+        
+        cell.detail = transaction.details![row]
+        cell.menu =  menus[row]
         
         cell.addBtnClosure = { [unowned self] in
-            self.transaction.details?.append(cell.detail)
-            if self.transaction.getTotalMenu() == 1 {
+            if self.transaction.getTotalMenu() == 0 {
                 self.showCart()
             }
         }
         
-        cell.refreshCartClosure = { [unowned self] in
+        cell.minusBtnClosure = { [unowned self] in
             if self.transaction.getTotalMenu() == 0 {
                 self.hideCart()
             }
-            else {
+        }
+        
+        cell.refreshCartClosure = { [unowned self] in
+            if self.transaction.getTotalMenu() != 0 {
                 let totalMenu = self.transaction.getTotalMenu()
                 self.itemSelected.text = "\(totalMenu) item" + (totalMenu > 1 ? "s" : "")
                 self.priceSelected.text = "Rp. \(self.transaction.getSubTotalPrice())"
             }
         }
         
-        cell.checkCartClosure = { [unowned self] in
-            self.transaction.details!.removeAll(where: {$0.qty == 0})
-        }
-
         return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffset = tableView.contentOffset.y
-        let limit : CGFloat = 300.0
-        //let maxLimit : CGFloat = 600.0
-        let isScrollingDown : Bool = contentOffset > limit
-
-        if isScrollingDown != self.isScrollingDown {
-            self.isScrollingDown = isScrollingDown
-        }
-
-        if !isScrollingDown {
-            let progress = contentOffset / limit
-
-            //topBarView.alpha = contentOffset / limit
-
-            menuViewTopConstraint.constant = (1 - progress/3) * 230.0
-            self.view.layoutIfNeeded()
-        }
+//        let contentOffset = tableView.contentOffset.y
+//        let limit : CGFloat = 300.0
+//        //let maxLimit : CGFloat = 600.0
+//        let isScrollingDown : Bool = contentOffset > limit
+//
+//        if isScrollingDown != self.isScrollingDown {
+//            self.isScrollingDown = isScrollingDown
+//        }
+//
+//        if !isScrollingDown {
+//            let progress = contentOffset / limit
+//
+//            //topBarView.alpha = contentOffset / limit
+//
+//            menuViewTopConstraint.constant = (1 - progress/3) * 230.0
+//            self.view.layoutIfNeeded()
+//        }
     }
 }

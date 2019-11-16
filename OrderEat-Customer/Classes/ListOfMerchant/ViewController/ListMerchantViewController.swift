@@ -86,7 +86,7 @@ extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as! ListMerchantTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListMerchantTableViewCell
         
         if isFiltering {
             cell.merchant = filteredMerchants[indexPath.row]

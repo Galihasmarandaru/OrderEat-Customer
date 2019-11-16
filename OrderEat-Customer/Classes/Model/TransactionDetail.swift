@@ -28,7 +28,8 @@ class TransactionDetail : Codable {
         qty = try container.decodeIfPresent(Int.self, forKey: .qty)
     }
     
-    init() {
+    init(menu : Menu) {
+        self.menu = menu
         self.qty = 0
     }
     
