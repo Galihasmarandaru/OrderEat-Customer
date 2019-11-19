@@ -10,13 +10,19 @@
 import Foundation
 
 final class APIRequest {
-    static let api = "http://157.245.196.14/api"
+    static let api = "http://167.71.194.60/api"
     
     enum Endpoint : String {
         case customers = "/customer/"
         case merchants = "/merchant/"
         case menus = "/menu/"
         case transactions = "/transaction/"
+    }
+    
+    enum Error : String {
+        case offline = "Please check your internet"
+        case badRequest = "Bad Request"
+        case invalidInput = "Invalid Input"
     }
     
     // GET
@@ -30,7 +36,7 @@ final class APIRequest {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let response = response as? HTTPURLResponse, let data = data
+            guard let response = response as? HTTPURLResponse, let data = data // offline
                 else {
                     print("Error: Not a valid http response")
                     return
@@ -48,6 +54,7 @@ final class APIRequest {
                 
                 case 400:
                     print(error!)
+                
                 default:
                     break
 

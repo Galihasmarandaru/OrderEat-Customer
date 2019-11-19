@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Transaction : Codable{
+struct Transaction : Codable{
     var id : String? // D
     var customer : Customer? // D
     var merchant : Merchant? // D
@@ -31,7 +31,7 @@ class Transaction : Codable{
         case details
     }
     
-    required init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
         self.customer = try container.decodeIfPresent(Customer.self, forKey: .customer)

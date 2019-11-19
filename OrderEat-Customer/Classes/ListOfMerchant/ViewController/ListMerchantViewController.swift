@@ -32,6 +32,8 @@ class ListMerchantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        merchantTableView.tableFooterView = UIView()
+        
         setupSearchController()
         
         attemptFetchMerchants()

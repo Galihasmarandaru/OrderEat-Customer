@@ -57,6 +57,9 @@ class MerchantMenuViewController: UIViewController {
         viewOfMenu()
         createConstraint()
         
+        // ganti di storyboard
+        menuViewTopConstraint.constant = 230.0
+        
         attemptFetchMenus(withMerchantId: merchant.id!)
 
         setupCartTapRecognizer()
@@ -126,7 +129,7 @@ class MerchantMenuViewController: UIViewController {
     func showCart() {
         let inset : CGFloat = 40
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.tableViewBottomConstraint.constant = inset + self.CartView.frame.height + 20
             self.bottomConstraint.constant = 0 - inset
             self.view.layoutIfNeeded()
@@ -134,7 +137,7 @@ class MerchantMenuViewController: UIViewController {
     }
 
     func hideCart() {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.tableViewBottomConstraint.constant = 0
             self.bottomConstraint.constant = 100
             self.view.layoutIfNeeded()
@@ -142,8 +145,6 @@ class MerchantMenuViewController: UIViewController {
     }
 
     @objc func cartTapAction() {
-        var filteredCart
-        
         if let orderSetTimeVC = UIStoryboard(name: "OrderSetTime", bundle: nil).instantiateViewController(identifier: "OrderSetTime") as? OrderSetTimeViewController {
             
             orderSetTimeVC.transaction = self.transaction
@@ -203,22 +204,22 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let contentOffset = tableView.contentOffset.y
-//        let limit : CGFloat = 300.0
-//        //let maxLimit : CGFloat = 600.0
-//        let isScrollingDown : Bool = contentOffset > limit
-//
-//        if isScrollingDown != self.isScrollingDown {
-//            self.isScrollingDown = isScrollingDown
-//        }
-//
-//        if !isScrollingDown {
-//            let progress = contentOffset / limit
-//
-//            //topBarView.alpha = contentOffset / limit
-//
-//            menuViewTopConstraint.constant = (1 - progress/3) * 230.0
-//            self.view.layoutIfNeeded()
-//        }
+        let contentOffset = tableView.contentOffset.y
+        let limit : CGFloat = 300.0
+        //let maxLimit : CGFloat = 600.0
+        let isScrollingDown : Bool = contentOffset > limit
+
+        if isScrollingDown != self.isScrollingDown {
+            self.isScrollingDown = isScrollingDown
+        }
+
+        if !isScrollingDown {
+            let progress = contentOffset / limit
+
+            //topBarView.alpha = contentOffset / limit
+
+            menuViewTopConstraint.constant = (1 - progress/2) * 230.0
+            self.view.layoutIfNeeded()
+        }
     }
 }

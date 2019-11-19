@@ -47,6 +47,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     // Array
     var transaction : Transaction! {
         didSet {
+            transaction.details!.removeAll(where: {$0.qty == 0})
             details = transaction.details!
             transaction.total = transaction.getSubTotalPrice() + transaction.getTaxPrice()
         }
