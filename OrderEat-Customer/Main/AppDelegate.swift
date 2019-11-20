@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .black
         
+        // CLOUDINARY
+//        Cloudinary.uploadImage()
+        
         // Pusher Beams
         PusherBeams.initPushNotifications()
         PusherBeams.registerDeviceInterest(pushInterest: "global")
