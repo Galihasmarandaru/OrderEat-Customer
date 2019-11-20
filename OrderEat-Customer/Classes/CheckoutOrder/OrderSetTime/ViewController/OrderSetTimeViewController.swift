@@ -81,7 +81,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
 
     @IBAction func confirmOrderButtonClicked(_ sender: Any) {
         transaction.pickUpTime = pickUpTime.string
-        APIRequest.post(.transactions, object: transaction) { (id) in
+        APIRequest.post(.transactions, object: transaction) { (id, error) in
             self.transaction.id = id
 
             let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)

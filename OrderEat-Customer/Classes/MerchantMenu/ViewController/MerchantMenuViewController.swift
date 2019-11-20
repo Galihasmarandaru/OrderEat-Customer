@@ -57,9 +57,6 @@ class MerchantMenuViewController: UIViewController {
         viewOfMenu()
         createConstraint()
         
-        // ganti di storyboard
-        menuViewTopConstraint.constant = 230.0
-        
         attemptFetchMenus(withMerchantId: merchant.id!)
 
         setupCartTapRecognizer()
@@ -93,6 +90,18 @@ class MerchantMenuViewController: UIViewController {
     private func attemptFetchMenus(withMerchantId merchantId : String) {
         viewModel.fetchMenu(withMerchantId: merchantId)
         
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchMenu(withMerchantId: merchantId)
+                }
+            }
+        }
+        
         viewModel.didFinishFetch = {
             self.menus = self.viewModel.menus!
             self.setupTransaction()
@@ -107,7 +116,7 @@ class MerchantMenuViewController: UIViewController {
         transaction.merchant = merchant
         for i in 0..<menus.count {
             let detail = TransactionDetail(menu: menus[i])
-            
+            detail.menuId = menus[i].id
             transaction.details?.append(detail)
         }
     }
@@ -207,6 +216,7 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
         let contentOffset = tableView.contentOffset.y
         let limit : CGFloat = 300.0
         //let maxLimit : CGFloat = 600.0
+        
         let isScrollingDown : Bool = contentOffset > limit
 
         if isScrollingDown != self.isScrollingDown {
@@ -218,7 +228,7 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
 
             //topBarView.alpha = contentOffset / limit
 
-            menuViewTopConstraint.constant = (1 - progress/2) * 230.0
+            menuViewTopConstraint.constant = (1 - progress/2) * 215.0
             self.view.layoutIfNeeded()
         }
     }

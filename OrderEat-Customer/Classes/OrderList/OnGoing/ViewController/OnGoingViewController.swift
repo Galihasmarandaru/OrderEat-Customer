@@ -49,13 +49,25 @@ class OnGoingViewController: UIViewController{
     @objc private func attemptFetchTransactions() {
         viewModel.fetchTransactions()
         
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchTransactions()
+                }
+            }
+        }
+        
         viewModel.didFinishFetch = {
-            self.transactions = self.viewModel.transactions!
+            if let transactions = self.viewModel.transactions {
+                self.transactions = transactions
+            }
             
             DispatchQueue.main.async {
                 self.onGoingCollectionView.reloadData()
-                
-                //self.onGoingCollectionView.refreshControl?.endRefreshing()
             }
         }
     }
@@ -122,13 +134,6 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
 
             self.present(vc, animated: true, completion: nil)
             
-//        case 3: // Ready To Pick Up
-//            let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
-//            let vc = storyboard.instantiateViewController(identifier: "OrderDone") as! OrderDoneViewController
-//
-//            vc.transaction = transactions[indexPath.row]
-//
-//            self.present(vc, animated: true, completion: nil)
         default:
             break;
         }

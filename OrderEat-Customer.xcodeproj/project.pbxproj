@@ -19,13 +19,14 @@
 		87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6A237C0A29009AC6EA /* PusherBeams.swift */; };
 		87940C6D237C0A35009AC6EA /* PusherChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6C237C0A35009AC6EA /* PusherChannels.swift */; };
 		9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
+		934DA39A2383CCB7007675B4 /* WorkingHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA3992383CCB7007675B4 /* WorkingHour.swift */; };
+		935A165E2384D85A001C1D4F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165D2384D85A001C1D4F /* Defaults.swift */; };
 		93ADD17D237D327E001E3094 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17B237D327E001E3094 /* Date.swift */; };
 		93ADD17E237D327E001E3094 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17C237D327E001E3094 /* String.swift */; };
 		93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
 		93ADD181237EAB02001E3094 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD180237EAB02001E3094 /* Alert.swift */; };
 		93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E73237BD8E4007FED6B /* CurrentUser.swift */; };
 		93F62E7A237BD8E4007FED6B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E75237BD8E4007FED6B /* Data.swift */; };
-		93F62E7B237BD8E4007FED6B /* Decode test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E76237BD8E4007FED6B /* Decode test.swift */; };
 		93F62E7C237BD8E4007FED6B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E77237BD8E4007FED6B /* APIRequest.swift */; };
 		93F62E7D237BD8E4007FED6B /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E78237BD8E4007FED6B /* TransactionStatus.swift */; };
 		93F62E7F237BD8EE007FED6B /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E7E237BD8EE007FED6B /* TransactionDetail.swift */; };
@@ -121,12 +122,13 @@
 		87940C69237BFF55009AC6EA /* OrderEat-Customer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OrderEat-Customer.entitlements"; sourceTree = "<group>"; };
 		87940C6A237C0A29009AC6EA /* PusherBeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherBeams.swift; sourceTree = "<group>"; };
 		87940C6C237C0A35009AC6EA /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
+		934DA3992383CCB7007675B4 /* WorkingHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHour.swift; sourceTree = "<group>"; };
+		935A165D2384D85A001C1D4F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		93ADD17B237D327E001E3094 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		93ADD17C237D327E001E3094 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		93ADD180237EAB02001E3094 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		93F62E73237BD8E4007FED6B /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		93F62E75237BD8E4007FED6B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		93F62E76237BD8E4007FED6B /* Decode test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decode test.swift"; sourceTree = "<group>"; };
 		93F62E77237BD8E4007FED6B /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		93F62E78237BD8E4007FED6B /* TransactionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatus.swift; sourceTree = "<group>"; };
 		93F62E7E237BD8EE007FED6B /* TransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
@@ -256,12 +258,12 @@
 			children = (
 				93F62E73237BD8E4007FED6B /* CurrentUser.swift */,
 				93F62E74237BD8E4007FED6B /* Extensions */,
-				93F62E76237BD8E4007FED6B /* Decode test.swift */,
 				93F62E77237BD8E4007FED6B /* APIRequest.swift */,
 				93F62E78237BD8E4007FED6B /* TransactionStatus.swift */,
 				87940C6A237C0A29009AC6EA /* PusherBeams.swift */,
 				87940C6C237C0A35009AC6EA /* PusherChannels.swift */,
 				93ADD180237EAB02001E3094 /* Alert.swift */,
+				935A165D2384D85A001C1D4F /* Defaults.swift */,
 			);
 			name = Utilities;
 			path = "OrderEat-Customer/Tools/Utilities";
@@ -849,6 +851,7 @@
 				CA73E718236FE0A500BD3050 /* OTP.swift */,
 				CA73E71A236FE0B900BD3050 /* Transaction.swift */,
 				93F62E7E237BD8EE007FED6B /* TransactionDetail.swift */,
+				934DA3992383CCB7007675B4 /* WorkingHour.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1094,7 +1097,6 @@
 				0A61C1832371427700CF695F /* AddData.swift in Sources */,
 				93ADD181237EAB02001E3094 /* Alert.swift in Sources */,
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
-				93F62E7B237BD8E4007FED6B /* Decode test.swift in Sources */,
 				A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */,
 				A31B44A72374054B00022FE6 /* CancelOrderViewController.swift in Sources */,
 				A3DDA7562372A9D2006CB5BA /* ConfirmPaymentViewModel.swift in Sources */,
@@ -1123,6 +1125,7 @@
 				CA73E71D236FEA3500BD3050 /* MerchantMenuViewController.swift in Sources */,
 				CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */,
 				0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */,
+				934DA39A2383CCB7007675B4 /* WorkingHour.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				93F62E7A237BD8E4007FED6B /* Data.swift in Sources */,
 				93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */,
@@ -1141,6 +1144,7 @@
 				0A73B67E23741771003E1543 /* OnGoingViewController.swift in Sources */,
 				93F62E7F237BD8EE007FED6B /* TransactionDetail.swift in Sources */,
 				93F62E7D237BD8E4007FED6B /* TransactionStatus.swift in Sources */,
+				935A165E2384D85A001C1D4F /* Defaults.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
 				87940C6D237C0A35009AC6EA /* PusherChannels.swift in Sources */,
 				CA73E719236FE0A500BD3050 /* OTP.swift in Sources */,

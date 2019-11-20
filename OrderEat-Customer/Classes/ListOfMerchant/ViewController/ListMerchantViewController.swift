@@ -52,8 +52,22 @@ class ListMerchantViewController: UIViewController {
     private func attemptFetchMerchants() {
         viewModel.fetchMerchants()
         
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchMerchants()
+                }
+            }
+        }
+        
         viewModel.didFinishFetch = {
-            self.merchants = self.viewModel.merchants!
+            if let merchants = self.viewModel.merchants {
+                self.merchants = merchants
+            }
             
             DispatchQueue.main.async {
                 self.merchantTableView.reloadData()
@@ -61,7 +75,7 @@ class ListMerchantViewController: UIViewController {
         }
     }
     
-    func  filterContentsForSearch(_ searchText: String) {
+    func filterContentsForSearch(_ searchText: String) {
         filteredMerchants = merchants.filter({ (merchant) -> Bool in
             return (merchant.name?.lowercased().contains(searchText.lowercased()))!
         })
@@ -102,14 +116,6 @@ extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{
     
     //MARK:: DidSelectRow
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        // perform segue
-//        let storyboard = UIStoryboard(name: "MerchantMenu", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "MerchantMenu") as! MerchantMenuViewController
-//
-//        vc.merchant = merchants[indexPath.row]
-//
-//        navigationController?.pushViewController(vc, animated: true)
-        
         let cell = tableView.cellForRow(at: indexPath) as! ListMerchantTableViewCell
 
         selectedMerchant = cell.merchant

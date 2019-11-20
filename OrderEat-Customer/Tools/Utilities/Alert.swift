@@ -25,4 +25,17 @@ struct Alert {
             vc.present(alert, animated: true)
         }
     }
+    
+    static func showErrorAlert(on vc: UIViewController, title: String, retryAction: @escaping () -> ()) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { (_) in
+            retryAction()
+            vc.dismiss(animated: true, completion: nil)
+        }))
+        
+        DispatchQueue.main.async {
+            vc.present(alert, animated: true)
+        }
+    }
 }

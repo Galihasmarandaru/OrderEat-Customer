@@ -20,15 +20,15 @@ class OnGoingViewModel{
         }
     }
     
-    var error : Error? {
+    var errorString : String? {
         didSet {
-            
+            self.showAlertClosure?()
         }
     }
     
     var isLoading : Bool = false {
         didSet {
-            print()
+            self.updateLoadingStatus?()
         }
     }
     
@@ -39,7 +39,16 @@ class OnGoingViewModel{
     
     //Network call
     func fetchTransactions() {
-        APIRequest.getTransactions(customerId: CurrentUser.id) { (transactions) in
+        isLoading = true
+
+        APIRequest.getTransactions(customerId: CurrentUser.id) { (transactions, error) in
+            if let error = error {
+                self.errorString = error.rawValue
+                self.isLoading = false
+                return
+            }
+            self.errorString = nil
+            self.isLoading = false
             self.transactions = transactions
         }
     }

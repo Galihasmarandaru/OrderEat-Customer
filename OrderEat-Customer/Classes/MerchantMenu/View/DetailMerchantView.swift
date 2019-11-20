@@ -21,6 +21,9 @@ class DetailMerchantView: UIView {
         didSet {
             self.merchantName.text = merchant.name!
             self.locationMerchant.text = merchant.address!
+            
+            let workingHour = merchant.workingHours!.first!
+            self.timeOpen.text = "\(workingHour.openHour!.time) - \(workingHour.closeHour!.time)"
             self.layer.cornerRadius = 8
         }
     }
