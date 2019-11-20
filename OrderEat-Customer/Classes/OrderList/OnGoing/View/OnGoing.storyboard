@@ -46,7 +46,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9vX-mH-X2f">
                                 <rect key="frame" x="0.0" y="110" width="375" height="619"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="15" minimumInteritemSpacing="15" id="CKx-uC-A6w">
+                               <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="15" minimumInteritemSpacing="15" id="CKx-uC-A6w">
                                     <size key="itemSize" width="377" height="111"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -117,6 +117,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name=" arrow set cart" width="30" height="16"/>
         <image name="Rectangle" width="48" height="2"/>
         <image name="list.dash" catalog="system" width="64" height="44"/>
     </resources>

@@ -53,5 +53,6 @@
     </scenes>
     <resources>
         <image name="list.dash" catalog="system" width="64" height="44"/>
+
     </resources>
 </document>
