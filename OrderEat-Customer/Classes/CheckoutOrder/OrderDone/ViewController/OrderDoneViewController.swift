@@ -40,7 +40,9 @@ class OrderDoneViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 3])
+        if transaction.status == 2 {
+            APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 3])
+        }
     }
     
     func config() {
