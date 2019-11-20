@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import OrderEat_Customer
+@testable import Pods_OrderEat_Customer
 
 class OrderEat_CustomerTests: XCTestCase {
 

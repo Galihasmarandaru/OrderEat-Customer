@@ -27,11 +27,6 @@ class OnGoingViewController: UIViewController{
         super.viewDidLoad()
         setupCollection()
         historyUnderline.isHidden = true
-//        penandaSegmented = 0
-        
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(attemptFetchTransactions), for: .valueChanged)
-        onGoingCollectionView.refreshControl = refreshControl
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "NewTransaction", eventCallback: { (event: PusherEvent) in
@@ -54,13 +49,25 @@ class OnGoingViewController: UIViewController{
     @objc private func attemptFetchTransactions() {
         viewModel.fetchTransactions()
         
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchTransactions()
+                }
+            }
+        }
+        
         viewModel.didFinishFetch = {
-            self.transactions = self.viewModel.transactions!
+            if let transactions = self.viewModel.transactions {
+                self.transactions = transactions
+            }
             
             DispatchQueue.main.async {
                 self.onGoingCollectionView.reloadData()
-                
-                self.onGoingCollectionView.refreshControl?.endRefreshing()
             }
         }
     }
@@ -90,9 +97,6 @@ class OnGoingViewController: UIViewController{
 
 extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return isiCell.count
-        
-        print(transactions.count)
         return transactions.count
     }
     
@@ -100,7 +104,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onGoingCollectionListCellID", for: indexPath) as! OnGoingCollectionListCell
         
         cell.transaction = transactions[indexPath.row]
-        cell.layer.cornerRadius = 20
+        cell.view.layer.cornerRadius = 8
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = CGSize(width: 3, height: 3)
@@ -122,7 +126,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
             
             self.present(vc, animated: true, completion: nil)
             
-        case 2, 3: // On Process           
+        case 2, 3: // On Process , ready to pickup
             let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "OrderDone") as! OrderDoneViewController
 
@@ -130,13 +134,6 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
 
             self.present(vc, animated: true, completion: nil)
             
-//        case 3: // Ready To Pick Up
-//            let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
-//            let vc = storyboard.instantiateViewController(identifier: "OrderDone") as! OrderDoneViewController
-//
-//            vc.transaction = transactions[indexPath.row]
-//
-//            self.present(vc, animated: true, completion: nil)
         default:
             break;
         }

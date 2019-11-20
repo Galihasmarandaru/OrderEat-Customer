@@ -40,7 +40,9 @@ class OrderDoneViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 3])
+        if transaction.status == 2 {
+            APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 3])
+        }
     }
     
     func config() {
@@ -75,12 +77,7 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if transaction.status == 2 {
-            return details.count + 3
-        }
-        else {
-            return details.count + 4
-        }
+        return details.count + 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,7 +96,7 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
-            cellTax.leftLabel.text = "Tax"
+            cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
             cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
 
             return cellTax
@@ -112,13 +109,41 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
             return cellTotal
         }
         else {
-            let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
-            
-            cellQR.QRImageView.image = image
-            cellQR.pickUpTimeLabel.text = "12.00"
-            
-            return cellQR
-        }
+            if transaction.status == 3 {
+                let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
 
+                cellQR.QRImageView.image = image
+                cellQR.pickUpTimeLabel.text = transaction.pickUpTime?.time
+
+                return cellQR
+            }
+            else {
+                let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
+                cellPickup.leftLabel.text = "Pick Up Time"
+                cellPickup.rightLabel.text = transaction.pickUpTime?.time
+
+                return cellPickup
+            }
+        }
+//        else if indexPath.row == (details.count + 4) {
+//        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
+//
+//            cellPayment.leftLabel.text = "Payment Method"
+//            cellPayment.rightLabel.text = "GOPAY"
+//
+//        return cellPayment
+//        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row < details.count {
+            return 135
+        }
+        else if indexPath.row == details.count + 3 && transaction.status == 3{
+            return 370
+        }
+        else {
+            return 35
+        }
     }
 }

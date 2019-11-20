@@ -16,15 +16,15 @@ class MerchantMenuViewModel {
         }
     }
     
-    var error : Error? {
+    var errorString : String? {
         didSet {
-            
+            self.showAlertClosure?()
         }
     }
     
     var isLoading : Bool = false {
         didSet {
-            print()
+            self.updateLoadingStatus?()
         }
     }
     
@@ -35,7 +35,16 @@ class MerchantMenuViewModel {
     
     //Network call
     func fetchMenu(withMerchantId merchantId: String) {
-        APIRequest.getMenus(merchantId: merchantId) { (menus) in
+        isLoading = true
+        
+        APIRequest.getMenus(merchantId: merchantId) { (menus, error) in
+            if let error = error {
+                self.errorString = error.rawValue
+                self.isLoading = false
+                return
+            }
+            self.errorString = nil
+            self.isLoading = false
             self.menus = menus
         }
     }

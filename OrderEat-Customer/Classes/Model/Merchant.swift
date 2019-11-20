@@ -21,8 +21,8 @@ class Merchant : Codable {
     var long : Double? // D, E
     var qrCode : String? // D, E
     var image : String? // D, E
-    var tax : Double = 0.1 // D, E
-    var imageFile : UIImage?
+    var tax : Double? // D, E
+    var workingHours : [WorkingHour]?
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -37,19 +37,24 @@ class Merchant : Codable {
         case qrCode
         case image
         case tax
+        case workingHours = "workingHour"
+        case openHour
+        case closeHour
     }
 
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decodeIfPresent(String.self, forKey: .id)
-        self.name = try container.decodeIfPresent(String.self, forKey: .name)
-        self.phone = try container.decodeIfPresent(String.self, forKey: .phone)
-        self.address = try container.decodeIfPresent(String.self, forKey: .address)
-        self.isOpen = try container.decodeIfPresent(Bool.self, forKey: .isOpen)
-        self.lat = try container.decodeIfPresent(Double.self, forKey: .lat)
-        self.long = try container.decodeIfPresent(Double.self, forKey: .long)
-        self.qrCode = try container.decodeIfPresent(String.self, forKey: .qrCode)
-        self.image = try container.decodeIfPresent(String.self, forKey: .image)
+        id = try container.decodeIfPresent(String.self, forKey: .id)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
+        phone = try container.decodeIfPresent(String.self, forKey: .phone)
+        address = try container.decodeIfPresent(String.self, forKey: .address)
+        isOpen = try container.decodeIfPresent(Bool.self, forKey: .isOpen)
+        lat = try container.decodeIfPresent(Double.self, forKey: .lat)
+        long = try container.decodeIfPresent(Double.self, forKey: .long)
+        qrCode = try container.decodeIfPresent(String.self, forKey: .qrCode)
+        image = try container.decodeIfPresent(String.self, forKey: .image)
+        tax = try container.decodeIfPresent(Double.self, forKey: .tax)
+        workingHours = try container.decodeIfPresent([WorkingHour].self, forKey: .workingHours)
     }
     
     func encode(to encoder: Encoder) throws {

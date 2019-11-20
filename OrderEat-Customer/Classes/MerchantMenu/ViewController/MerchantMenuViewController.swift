@@ -9,7 +9,7 @@
 import UIKit
 
 class MerchantMenuViewController: UIViewController {
-
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var backgroundMerchant: UIImageView!
     @IBOutlet weak var merchantTitle: DetailMerchantView!
     @IBOutlet weak var promoTitle: UIView!
@@ -19,45 +19,28 @@ class MerchantMenuViewController: UIViewController {
     @IBOutlet weak var itemSelected: UILabel!
     @IBOutlet weak var priceSelected: UILabel!
     
+    @IBOutlet weak var topBarView: UIView!
+    
     @IBOutlet weak var CartView: UIView!
-    @IBOutlet var MainView: UIView!
     
-    enum CardState {
-        case expanded
-        case collapsed
-    }
-    
-    var cardViewController:SigninViewController!
-    var visualEffectView:UIVisualEffectView!
-    
-    let cardHeight:CGFloat = 600
-    let cardHandleAreaHeight:CGFloat = 65
-    
-    var cardVisible = false
-    var nextState:CardState {
-        return cardVisible ? .collapsed : .expanded
-    }
-    
-    var runningAnimations = [UIViewPropertyAnimator]()
-    var animationProgressWhenInterrupted:CGFloat = 0
-
-    
+    @IBOutlet weak var menuViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     var bottomConstraint: NSLayoutConstraint!
+    
+    var isScrollingDown : Bool! {
+        didSet {
+            if isScrollingDown {
+                print("Content Down")
+            }
+            else
+            {
+                print("Content Up")
+            }
+        }
+    }
     
     var selectedItem: Int!
     var qtyItem: Int!
-        
-    var totalItem: Int!
-    var dataItem: [Int] = [0]
-    var totalItemArray: [Int] = [0]
-    var totalQtyArray: [Int] = [0]
-    
-    var totalCount: Int!
-    var totalQty: Int!
-    
-    var total: Int = 0
-    var menuCell = MenuTableViewCell()
-//    lazy var theData = AddDataMerchantMenu.getDataMenu(dataTransaction: 0)
     
     // Injection
     let viewModel = MerchantMenuViewModel()
@@ -69,35 +52,59 @@ class MerchantMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        merchantTitle.data = AddDataMerchantMenu.getDataMerchant()
         backgroundMerchant.image = UIImage(named: "bg-merchat-1")
         merchantTitle.merchant = merchant
         viewOfMenu()
         createConstraint()
         
         attemptFetchMenus(withMerchantId: merchant.id!)
-        setupTransaction()
+
         setupCartTapRecognizer()
-        //transaction = DecodeTest.attemptDecodeTransaction()
         
-//        tableView.tableFooterView = UIView().white
+        backBtn.layer.cornerRadius = backBtn.frame.height/2
+        
+        tableView.tableFooterView = UIView()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //tabBarController.setta
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     private func attemptFetchMenus(withMerchantId merchantId : String) {
         viewModel.fetchMenu(withMerchantId: merchantId)
         
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchMenu(withMerchantId: merchantId)
+                }
+            }
+        }
+        
         viewModel.didFinishFetch = {
             self.menus = self.viewModel.menus!
-            
+            self.setupTransaction()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -107,6 +114,11 @@ class MerchantMenuViewController: UIViewController {
     func setupTransaction() {
         transaction = Transaction(merchantId: merchant.id!)
         transaction.merchant = merchant
+        for i in 0..<menus.count {
+            let detail = TransactionDetail(menu: menus[i])
+            detail.menuId = menus[i].id
+            transaction.details?.append(detail)
+        }
     }
     
     func setupCartTapRecognizer() {
@@ -125,14 +137,18 @@ class MerchantMenuViewController: UIViewController {
     
 //    MARK: Cart Animation
     func showCart() {
-        UIView.animate(withDuration: 0.5) {
-            self.bottomConstraint.constant = -50
+        let inset : CGFloat = 40
+        
+        UIView.animate(withDuration: 0.3) {
+            self.tableViewBottomConstraint.constant = inset + self.CartView.frame.height + 20
+            self.bottomConstraint.constant = 0 - inset
             self.view.layoutIfNeeded()
         }
     }
 
     func hideCart() {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
+            self.tableViewBottomConstraint.constant = 0
             self.bottomConstraint.constant = 100
             self.view.layoutIfNeeded()
         }
@@ -140,6 +156,7 @@ class MerchantMenuViewController: UIViewController {
 
     @objc func cartTapAction() {
         if let orderSetTimeVC = UIStoryboard(name: "OrderSetTime", bundle: nil).instantiateViewController(identifier: "OrderSetTime") as? OrderSetTimeViewController {
+            
             orderSetTimeVC.transaction = self.transaction
             orderSetTimeVC.merchantMenuVC = self
 
@@ -228,35 +245,54 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? MenuTableViewCell else {return UITableViewCell()}
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! MenuTableViewCell
         
-        // assign menu data to cell
-        cell.detail = TransactionDetail(menu: menus[indexPath.row])
+        let row = indexPath.row
+        
+        cell.detail = transaction.details![row]
+        cell.menu =  menus[row]
         
         cell.addBtnClosure = { [unowned self] in
-            self.transaction.details?.append(cell.detail)
-            if self.transaction.getTotalMenu() == 1 {
+            if self.transaction.getTotalMenu() == 0 {
                 self.showCart()
-                print("Cart show")
+            }
+        }
+        
+        cell.minusBtnClosure = { [unowned self] in
+            if self.transaction.getTotalMenu() == 0 {
+                self.hideCart()
             }
         }
         
         cell.refreshCartClosure = { [unowned self] in
-            if self.transaction.getTotalMenu() == 0 {
-                self.hideCart()
-                print("Cart hide")
-            }
-            else {
+            if self.transaction.getTotalMenu() != 0 {
                 let totalMenu = self.transaction.getTotalMenu()
                 self.itemSelected.text = "\(totalMenu) item" + (totalMenu > 1 ? "s" : "")
                 self.priceSelected.text = "Rp. \(self.transaction.getSubTotalPrice())"
             }
         }
         
-        cell.checkCartClosure = { [unowned self] in
-            self.transaction.details!.removeAll(where: {$0.qty == 0})
+        return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffset = tableView.contentOffset.y
+        let limit : CGFloat = 300.0
+        //let maxLimit : CGFloat = 600.0
+        
+        let isScrollingDown : Bool = contentOffset > limit
+
+        if isScrollingDown != self.isScrollingDown {
+            self.isScrollingDown = isScrollingDown
         }
 
-        return cell
+        if !isScrollingDown {
+            let progress = contentOffset / limit
+
+            //topBarView.alpha = contentOffset / limit
+
+            menuViewTopConstraint.constant = (1 - progress/2) * 215.0
+            self.view.layoutIfNeeded()
+        }
     }
 }

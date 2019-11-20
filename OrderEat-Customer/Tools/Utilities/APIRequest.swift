@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 final class APIRequest {
-    static let api = "http://157.245.196.14/api"
+    static let api = "http://167.71.194.60/api"
     
     enum Endpoint : String {
         case customers = "/customer/"
@@ -21,9 +21,16 @@ final class APIRequest {
         case transactions = "/transaction/"
     }
     
+    enum Error : String {
+        case offline = "Please check your internet"
+        case badRequest = "Bad Request"
+        case invalidData = "Unstable Connection"
+    }
+    
     // GET
-    class func getMerchants(completion: @escaping ([Merchant]?) -> Void) {
-        let url = URL(string: api + "/merchant")!
+    class func getMerchants(completion: @escaping ([Merchant]?, Error?) -> Void) {
+        let currentWeekday = Calendar.current.component(.weekday, from: Date())
+        let url = URL(string: api + "/merchant/t=\(currentWeekday)")!
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
@@ -32,9 +39,9 @@ final class APIRequest {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let response = response as? HTTPURLResponse, let data = data
+            guard let response = response as? HTTPURLResponse, let data = data // offline
                 else {
-                    print("Error: Not a valid http response")
+                    completion(nil, .offline)
                     return
             }
             
@@ -43,13 +50,14 @@ final class APIRequest {
                     let decoder = JSONDecoder()
                     do {
                         let merchants = try decoder.decode([Merchant].self, from: data)
-                        completion(merchants)
+                        completion(merchants, nil)
                     } catch {
-                        print("Error: ",error.localizedDescription)
+                        completion(nil, .offline)
                     }
                 
                 case 400:
-                    print(error!)
+                    completion(nil, .badRequest)
+                
                 default:
                     break
 
@@ -59,7 +67,7 @@ final class APIRequest {
         task.resume()
     }
     
-    class func getDetail(_ endpoint: Endpoint, id: String, completion: @escaping (Any?) -> Void) {
+    class func getDetail(_ endpoint: Endpoint, id: String, completion: @escaping (Any?, Error?) -> Void) {
         let url = URL(string: api + endpoint.rawValue + id)!
         var request = URLRequest(url: url)
         
@@ -71,7 +79,7 @@ final class APIRequest {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
                 else {
-                    print("Error: Not a valid http response")
+                    completion(nil, .offline)
                     return
             }
             
@@ -82,23 +90,23 @@ final class APIRequest {
                         switch endpoint {
                         case .merchants:
                             let merchant = try decoder.decode(Merchant.self, from: data)
-                            completion(merchant)
+                            completion(merchant, nil)
                         case .customers:
                             let customer = try decoder.decode(Customer.self, from: data)
-                            completion(customer)
+                            completion(customer, nil)
                         case .menus:
                             let menu = try decoder.decode(Menu.self, from: data)
-                            completion(menu)
+                            completion(menu, nil)
                         case .transactions:
                             let transaction = try decoder.decode(Transaction.self, from: data)
-                            completion(transaction)
+                            completion(transaction, nil)
                         }
                     } catch {
-                        print("Error: ",error.localizedDescription)
+                        completion(nil, .offline)
                     }
                 
                 case 400:
-                    print(error!)
+                    completion(nil, .badRequest)
                 default:
                     break
 
@@ -108,7 +116,7 @@ final class APIRequest {
         task.resume()
     }
     
-    class func getTransactions(customerId: String, completion: @escaping ([Transaction]?) -> Void) {
+    class func getTransactions(customerId: String, completion: @escaping ([Transaction]?, Error?) -> Void) {
         let url = URL(string: api + "/customer/" + customerId + "/ongoing")!
         var request = URLRequest(url: url)
         
@@ -120,7 +128,7 @@ final class APIRequest {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
                 else {
-                    print("Error: Not a valid http response")
+                    completion(nil, .offline)
                     return
             }
             
@@ -129,13 +137,13 @@ final class APIRequest {
                     let decoder = JSONDecoder()
                     do {
                         let transactions = try decoder.decode([Transaction].self, from: data)
-                        completion(transactions)
+                        completion(transactions, nil)
                     } catch {
-                        print("Error: ",error.localizedDescription)
+                        completion(nil, .offline)
                     }
                 
                 case 400:
-                    print(error!)
+                    completion(nil, .badRequest)
                 default:
                     break
 
@@ -146,7 +154,7 @@ final class APIRequest {
     }
     
     // GET menu
-    class func getMenus(merchantId: String, completion: @escaping ([Menu]?) -> Void) {
+    class func getMenus(merchantId: String, completion: @escaping ([Menu]?, Error?) -> Void) {
         let url = URL(string: api + "/merchant/" + merchantId + "/menu")!
         var request = URLRequest(url: url)
         
@@ -158,7 +166,7 @@ final class APIRequest {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
                 else {
-                    print("Error: Not a valid http response")
+                    completion(nil, .offline)
                     return
             }
             
@@ -168,13 +176,13 @@ final class APIRequest {
                     
                     do {
                         let menus = try decoder.decode([Menu].self, from: data)
-                        completion(menus)
+                        completion(menus, nil)
                     } catch {
-                        print("Error: ",error.localizedDescription)
+                        completion(nil, .offline)
                     }
                 
                 case 400:
-                    print(error!)
+                    completion(nil, .badRequest)
                 default:
                     break
 
@@ -184,7 +192,7 @@ final class APIRequest {
         task.resume()
     }
     
-    class func post(_ endpoint: Endpoint, object: Codable, completion: @escaping (String?) -> Void) {
+    class func post(_ endpoint: Endpoint, object: Codable, completion: @escaping (String?,  Error?) -> Void) {
         let url = URL(string: api + endpoint.rawValue)!
         var request = URLRequest(url: url)
         
@@ -205,9 +213,10 @@ final class APIRequest {
                     return try encoder.encode(transactionObject)
                 }
             } catch {
-                print(error.localizedDescription)
+                completion(nil, .offline)
             }
             return Data()
+            
         }
         
         request.httpMethod = "POST"
@@ -220,21 +229,20 @@ final class APIRequest {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
                 else {
-                    print("Error: Not a valid http response")
+                    completion(nil, .offline)
                     return
             }
             
             switch(response.statusCode) {
                 case 200:
-                    print(data.prettyPrintedJSONString!)
                     
                     let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
                     
                     let newObjectId = json["id"] as! String
                 
-                    completion(newObjectId)
+                    completion(newObjectId, nil)
                 case 400:
-                    print(error!)
+                    completion(nil, .badRequest)
                 default:
                     break
                     
@@ -266,7 +274,7 @@ final class APIRequest {
             
             switch(response.statusCode) {
                 case 200:
-                    print(data.prettyPrintedJSONString!)
+                    break
                 case 400:
                     print(error!)
                 default:

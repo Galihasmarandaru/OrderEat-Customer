@@ -24,6 +24,8 @@ class ConfirmPaymentViewController: UIViewController {
         }
     }
     
+    var flag : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +40,7 @@ class ConfirmPaymentViewController: UIViewController {
 
         self.headerView.layer.masksToBounds = true
         self.headerView.layer.cornerRadius = 15
-        self.flag = 0
+        flag = 0
         
         self.orderDetailsTableView.tableFooterView = UIView()
     }
@@ -85,7 +87,7 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return details.count + 6
+        return details.count + 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,7 +106,7 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         }
         else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
-            cellTax.leftLabel.text = "Tax"
+            cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
             cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
 
             return cellTax
@@ -119,18 +121,18 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         else if indexPath.row == (details.count + 3) {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellPickup.leftLabel.text = "Pick Up Time"
-            cellPickup.rightLabel.text = "12.00"
+            cellPickup.rightLabel.text = transaction.pickUpTime?.time
 
             return cellPickup
         }
-        else if indexPath.row == (details.count + 4) {
-        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
-
-            cellPayment.leftLabel.text = "Payment Method"
-            cellPayment.rightLabel.text = "GOPAY"
-
-        return cellPayment
-        }
+//        else if indexPath.row == (details.count + 4) {
+//        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
+//
+//            cellPayment.leftLabel.text = "Payment Method"
+//            cellPayment.rightLabel.text = "GOPAY"
+//
+//        return cellPayment
+//        }
         
         let cellButton = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
 
@@ -140,12 +142,26 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
         
         cellButton.confirmBtnClosure = { [unowned self] in
-            APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
-            self.dismiss(animated: true, completion: nil)
+
+            
+            Alert.showConfirmationAlert(on: self, title: "Payment", message: "Hello", yesAction: {
+                APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
+                self.dismiss(animated: true, completion: nil)
+            })
         }
         
         return cellButton
     }
 
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row < details.count {
+            return 135
+        }
+        else if indexPath.row == details.count + 4 {
+            return 280
+        }
+        else {
+            return 35
+        }
+    }
 }

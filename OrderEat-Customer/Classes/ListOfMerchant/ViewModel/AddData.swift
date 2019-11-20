@@ -25,15 +25,15 @@ class ListOfMerchantViewModel{
         }
     }
     
-    var error : Error? {
+    var errorString : String? {
         didSet {
-            
+            self.showAlertClosure?()
         }
     }
     
     var isLoading : Bool = false {
         didSet {
-            print()
+            self.updateLoadingStatus?()
         }
     }
     
@@ -44,7 +44,16 @@ class ListOfMerchantViewModel{
     
     //Network call
     func fetchMerchants() {
-        APIRequest.getMerchants { (merchants) in
+        isLoading = true
+        
+        APIRequest.getMerchants { (merchants, error) in
+            if let error = error {
+                self.errorString = error.rawValue
+                self.isLoading = false
+                return
+            }
+            self.errorString = nil
+            self.isLoading = false
             self.merchants = merchants
         }
     }
