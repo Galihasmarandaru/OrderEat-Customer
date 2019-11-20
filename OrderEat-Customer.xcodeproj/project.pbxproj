@@ -1022,18 +1022,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-<<<<<<< HEAD
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
 				9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */,
-=======
 				93F62E80237BDEB4007FED6B /* WaitingforRestoConfirm.storyboard in Resources */,
 				CAA6023B237BBAD600EE4497 /* Signin.storyboard in Resources */,
->>>>>>> master
-=======
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
 				9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */,
->>>>>>> 20a4b03189d917e7f6d6bffff157e17ee1365404
 				CA3559A52366A5FB00382CCF /* LaunchScreen.storyboard in Resources */,
 				CA3559A22366A5FB00382CCF /* Assets.xcassets in Resources */,
 				CA754E64237E66A2005BAD6D /* OTP.storyboard in Resources */,
@@ -1156,15 +1150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-<<<<<<< HEAD
 				93ADD17E237D327E001E3094 /* String.swift in Sources */,
-=======
 				CA70EE29237907BA0090B246 /* TabBarHome.swift in Sources */,
->>>>>>> master
-=======
 				93ADD17E237D327E001E3094 /* String.swift in Sources */,
->>>>>>> 20a4b03189d917e7f6d6bffff157e17ee1365404
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				87098904237E703C00773647 /* Image.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
