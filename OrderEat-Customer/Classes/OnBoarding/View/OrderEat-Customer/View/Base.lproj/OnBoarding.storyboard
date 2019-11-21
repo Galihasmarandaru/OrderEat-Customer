@@ -66,19 +66,6 @@
             </objects>
             <point key="canvasLocation" x="-687" y="130"/>
         </scene>
-<<<<<<< HEAD
-=======
-        <!--Home-->
-        <scene sceneID="p2v-gS-zUD">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="npc-dM-Hg0" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9jj-kD-1i3"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XID-Yv-7h5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="139" y="130"/>
-        </scene>
->>>>>>> MerchantMenu_Signin
     </scenes>
     <resources>
         <image name="BG - On Boarding" width="414" height="896"/>
