@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PusherSwift
 
 class WaitingforRestoConfirmViewController: UIViewController {
 
@@ -28,16 +29,39 @@ class WaitingforRestoConfirmViewController: UIViewController {
         self.cancelOrderButton.setTitle("Cancel Order", for: .normal)
         self.cancelOrderButton.setTitleColor(.merahTextButton, for: .normal)
         
-        _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { _ in
-            APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 1])
+        // bind a callback to handle an event
+        let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
+            if let transactionID = event.data {
+             // you can parse the data as necessary
+                print(transactionID)
             
-            // Change root
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
-            tabBarVC.selectedIndex = 1
-            let appDelegate = UIApplication.shared.windows
-            appDelegate.first?.rootViewController = tabBarVC
-        })
+                if self.transaction.id == transactionID {
+                    print("trying refresh ongoing pagee")
+                
+                    DispatchQueue.main.async {
+                        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                        let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+                        tabBarVC.selectedIndex = 1
+                        let appDelegate = UIApplication.shared.windows
+                        appDelegate.first?.rootViewController = tabBarVC
+                }
+            }
+            
+           }
+       })
+        PusherChannels.pusher.connect()
+        
+//        _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { _ in
+//            APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 1])
+//
+//            // Change root
+//            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+//            tabBarVC.selectedIndex = 1
+//            let appDelegate = UIApplication.shared.windows
+//            appDelegate.first?.rootViewController = tabBarVC
+//        })
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -13,7 +13,7 @@ final class PusherBeams {
     
     // Beams
     static let pushNotifications = PushNotifications.shared
-    static let instanceId = "f4175959-3847-4a45-aadc-2ca1a3cf752a"
+    static var instanceId = "f4175959-3847-4a45-aadc-2ca1a3cf752a"
     
     class func initPushNotifications() {
         // Pusher Beams Notification
@@ -26,11 +26,14 @@ final class PusherBeams {
         print("push notif init done")
     }
     
+    // run this after sign in
     class func registerDeviceInterest(pushInterest: String) {
-            try? self.pushNotifications.addDeviceInterest(interest: pushInterest)
+        try? self.pushNotifications.addDeviceInterest(interest: pushInterest)
     }
     
+    // run this after logout
     class func removeDeviceInterest(pushInterest: String) {
-            try? self.pushNotifications.removeDeviceInterest(interest: pushInterest)
+        try? self.pushNotifications.removeDeviceInterest(interest: pushInterest)
+        CurrentUser.id = ""
     }
 }

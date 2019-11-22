@@ -135,6 +135,7 @@ class MerchantMenuViewController: UIViewController {
         self.viewMenu.layer.masksToBounds = false
     }
     
+//    MARK: Cart Animation
     func showCart() {
         let inset : CGFloat = 40
         
@@ -171,10 +172,9 @@ class MerchantMenuViewController: UIViewController {
         CartView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         CartView.widthAnchor.constraint(equalToConstant: 325).isActive = true
     }
-    
 }
 
-// MARK: Data Menu
+// MARK: Data Menu Merchant
 
 extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

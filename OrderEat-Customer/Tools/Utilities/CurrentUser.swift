@@ -10,8 +10,13 @@ import Foundation
 import PusherSwift
 import PushNotifications
 
-final class CurrentUser: PusherDelegate {
-    static var id = "21a8c0dd-3945-491d-9d90-642e44dd6f4d"
+final class CurrentUser {
+    static var id = "ebab3258-de7f-4af9-aafe-dd57c54b7dfc"
     static var name = "Fred"
     static var accessToken: String = ""
+    
+    // do this after user sign in
+    class func updateUserId(id: String) {
+        self.id = id
+    }
 }

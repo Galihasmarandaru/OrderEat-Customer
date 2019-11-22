@@ -19,23 +19,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .black
         
+        // CLOUDINARY
+//        Cloudinary.uploadImage()
+        
         // Pusher Beams
         PusherBeams.initPushNotifications()
         PusherBeams.registerDeviceInterest(pushInterest: "global")
         
         // Pusher Channels
-         let options = PusherClientOptions(
-           host: .cluster("ap1")
-         )
-        PusherChannels.pusher = Pusher(
-           key: "6c1e137627b90e824011",
-           options: options
-         )
+        PusherChannels.initPusherChannel()
         PusherChannels.pusher.delegate = self
-        //        CurrentUser.subscribePushChannel(channel: CurrentUser.id)
-        PusherChannels.channel = PusherChannels.pusher.subscribe(channelName: CurrentUser.id)
-        PusherChannels.pusher.connect()
-        print("push notif init done")
+        if (CurrentUser.id != "") {
+            PusherChannels.subscribePushChannel(channel: CurrentUser.id)
+        }
+
+//        let options = PusherClientOptions(
+//           host: .cluster("ap1")
+//         )
+//        PusherChannels.pusher = Pusher(
+//           key: "6c1e137627b90e824011",
+//           options: options
+//         )
+//        PusherChannels.pusher.delegate = self
+//        //        CurrentUser.subscribePushChannel(channel: CurrentUser.id)
+//        PusherChannels.channel = PusherChannels.pusher.subscribe(channelName: CurrentUser.id)
+//        PusherChannels.pusher.connect()
+//        print("push notif init done")
 
         
         return true

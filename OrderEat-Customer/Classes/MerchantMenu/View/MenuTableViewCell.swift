@@ -72,6 +72,7 @@ class MenuTableViewCell: UITableViewCell {
         refreshCartClosure?()
         if detail.qty! == 0 {
             toggleButtonView()
+
         }
         else {
             refreshLabel()

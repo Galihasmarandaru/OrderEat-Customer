@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hbL-LA-ZBw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hbL-LA-ZBw">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--Confirm Payment View Controller-->
         <scene sceneID="1H5-Eg-mlW">
             <objects>
-                <viewController storyboardIdentifier="ConfirmPayment" id="hbL-LA-ZBw" customClass="ConfirmPaymentViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmPayment" id="hbL-LA-ZBw" customClass="ConfirmPaymentViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Om9-0D-itf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
                                 <rect key="frame" x="20" y="279" width="374" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderedItemTableViewCell" rowHeight="135" id="RZ1-ef-Qj5" customClass="OrderedItemTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderedItemTableViewCell" rowHeight="135" id="RZ1-ef-Qj5" customClass="OrderedItemTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RZ1-ef-Qj5" id="G5K-av-SXt">
@@ -138,7 +138,7 @@
                                             <outlet property="itemQtyLabel" destination="bte-OT-ROP" id="IWn-PW-XP4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsTableViewCell" rowHeight="35" id="ibZ-a2-gKr" customClass="DetailsTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsTableViewCell" rowHeight="35" id="ibZ-a2-gKr" customClass="DetailsTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="163" width="374" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ibZ-a2-gKr" id="XPz-Bd-PnA">
@@ -173,7 +173,7 @@
                                             <outlet property="rightLabel" destination="cRN-8i-zgn" id="tkn-do-qdH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRTableViewCell" rowHeight="280" id="lTx-1q-dv0" customClass="QRTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRTableViewCell" rowHeight="280" id="lTx-1q-dv0" customClass="QRTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="198" width="374" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lTx-1q-dv0" id="kj9-V1-gZy">
@@ -211,7 +211,7 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqf-sh-WJe" customClass="CustomButton" customModule="OrderEat_Customer" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqf-sh-WJe" customClass="CustomButton" customModule="Eativa_Customer" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="220" width="334" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Lbs-Q8-KVv"/>
@@ -219,7 +219,6 @@
                                                     <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="confirmBtnPressed:" destination="lTx-1q-dv0" eventType="touchUpInside" id="AdZ-mZ-EQ6"/>
-                                                        <action selector="confirmPaymentButtonClicked:" destination="hbL-LA-ZBw" eventType="touchUpInside" id="WaZ-kk-yyy"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to pay?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8z-JZ-PlM">

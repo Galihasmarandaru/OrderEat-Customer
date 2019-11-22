@@ -37,6 +37,7 @@ class ListMerchantViewController: UIViewController {
         setupSearchController()
         
         attemptFetchMerchants()
+        
     }
     
     func setupSearchController() {

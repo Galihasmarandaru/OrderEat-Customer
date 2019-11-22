@@ -61,7 +61,14 @@ class ConfirmPaymentViewController: UIViewController {
     }
     
     @IBAction func confirmPaymentButtonClicked(_ sender: Any) {
-        
+        let alert = AlertView.showAlert(title: "Confirm Payment", message: "Are you sure you have done your payment?")
+
+        self.present(alert, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
+//        let orderDonePage = storyboard.instantiateViewController(identifier: "orderDone") as! OrderDoneViewController
+//        let appDelegate = UIApplication.shared.windows
+//        appDelegate.first?.rootViewController = orderDonePage
+//        self.flag = 1
     }
 }
 
