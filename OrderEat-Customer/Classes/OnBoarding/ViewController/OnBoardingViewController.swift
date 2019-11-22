@@ -8,15 +8,27 @@
 
 import UIKit
 
+var imageArr = [UIImage]()
 class onBoardingViewController: UIViewController , UIScrollViewDelegate{
 
-
-    @IBOutlet weak var scrollView: UIScrollView!
+    var currentPage: Int = 0
+    @IBOutlet weak var collectionView: UICollectionView!
+    
 
     @IBOutlet weak var pageControl: UIPageControl!
 
     @IBOutlet weak var startButton: UIButton!
-    
+    fileprivate var pageSize: CGSize {
+    let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
+    var pageSize = layout.itemSize
+    if layout.scrollDirection == .horizontal {
+    pageSize.width += layout.minimumLineSpacing
+    } else {
+    pageSize.height += layout.minimumLineSpacing
+    }
+    return pageSize
+    }
+
 //    MARK:: Root Navigation
     @IBAction func startButtonClick(_ sender: Any) {
 //        let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -30,39 +42,29 @@ class onBoardingViewController: UIViewController , UIScrollViewDelegate{
         appDelegate.first?.rootViewController = tabBarVC
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.isHidden = true
-        setupScroll()
-        scrollView.delegate = self
+        pageControl.currentPage = 0
+        
+        imageArr = [#imageLiteral(resourceName: "Group 1-On Boarding"),#imageLiteral(resourceName: "Group 2-On Boarding"),#imageLiteral(resourceName: "Group 3-On Boarding")]
+        let floawLayout = UPCarouselFlowLayout()
+        floawLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 60.0, height: collectionView.frame.size.height)
+        floawLayout.scrollDirection = .horizontal
+        floawLayout.sideItemScale = 0
+        floawLayout.sideItemAlpha = 0
+        floawLayout.spacingMode = .fixed(spacing: 10.0)
+        collectionView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0)
+        collectionView.collectionViewLayout = floawLayout
+
     }
     
-    func setupScroll()
-       {
-            var imageArr = [UIImage]()
-            imageArr = [#imageLiteral(resourceName: "Group 1-On Boarding"),#imageLiteral(resourceName: "Group 2-On Boarding"),#imageLiteral(resourceName: "Group 3-On Boarding")]
-            let screenWidth = self.view.frame.size.width
-            scrollView.contentSize = CGSize(width: screenWidth * CGFloat(imageArr.count), height: scrollView.frame.size.height)
-           scrollView.layer.borderColor = UIColor.black.cgColor
-           scrollView.layer.borderWidth = 1
-            scrollView.isPagingEnabled = true
-           
-        for i in 0..<imageArr.count
-           {
-            let imageView = UIImageView()
-            imageView.image = imageArr[i]
-            let xPosition = self.view.frame.width * CGFloat(i) + 100
-            imageView.frame = CGRect(x: xPosition, y: 120, width: self.view.frame.width/2, height: self.view.frame.height/2)
-            imageView.contentMode = .scaleAspectFill
-            scrollView.addSubview(imageView)
-                        
-        }
-        
-       }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let page = scrollView.contentOffset.x / scrollView.frame.width
-        pageControl.currentPage = Int(page)
+        let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
+        let pageSide = (layout.scrollDirection == .horizontal) ? self.pageSize.width : self.pageSize.height
+        let offset = (layout.scrollDirection == .horizontal) ? scrollView.contentOffset.x : scrollView.contentOffset.y
+        currentPage = Int(floor((offset - pageSide / 2) / pageSide) + 1)
+        pageControl.currentPage = currentPage
         if pageControl.currentPage == 2 {
             startButton.isHidden = false
         }else {
@@ -70,6 +72,16 @@ class onBoardingViewController: UIViewController , UIScrollViewDelegate{
             startButton.isHidden = true
         }
     }
+}
+extension onBoardingViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageArr.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! OnBoardingCollectionViewCell
+        cell.imageView.image = imageArr[indexPath.row]
+        return cell
+    }
 
 }
