@@ -22,7 +22,7 @@ class SigninViewController: UIViewController {
                 
                 let params = [
                     "phone": phoneTextField.text,
-//                    "pin": passwordTextField.text ?? nil
+                    "PIN": passwordTextField.text?.encrypted ?? nil
                 ]
                 
                 APIRequest.signIn(parameter: params) { (isVerified, error) in

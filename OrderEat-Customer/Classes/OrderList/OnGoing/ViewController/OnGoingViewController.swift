@@ -18,6 +18,7 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var onGoingUnderline: UIImageView!
     @IBOutlet weak var historyUnderline: UIImageView!
     @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var emptyStateView: UIStackView!
     
     // Injection
     var viewModel = OnGoingViewModel()
@@ -51,7 +52,11 @@ class OnGoingViewController: UIViewController{
     }
     
     func startAnimation() {
-        print("Animation start")
+        DispatchQueue.main.async {
+            self.emptyStateView.isHidden = true
+            self.animationView.isHidden = false
+        }
+        
         let animation = Animation.named("loading")
         
         animationView.animation = animation
@@ -63,8 +68,7 @@ class OnGoingViewController: UIViewController{
     }
     
     func stopAnimation() {
-        print("Animation stop")
-        animationView.pause()
+        animationView.stop()
         
         DispatchQueue.main.async {
             self.animationView.isHidden = true
@@ -76,7 +80,7 @@ class OnGoingViewController: UIViewController{
         viewModel.fetchTransactions()
         
         viewModel.updateLoadingStatus = {
-            let _ = self.viewModel.isLoading ? self.startAnimation() : self.stopAnimation()
+            //let _ = self.viewModel.isLoading ? self.startAnimation() : self.stopAnimation()
         }
         
         viewModel.showAlertClosure = {
@@ -93,7 +97,11 @@ class OnGoingViewController: UIViewController{
             }
             
             DispatchQueue.main.async {
+                self.emptyStateView.isHidden = self.transactions.count > 0
                 self.onGoingCollectionView.reloadData()
+                
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                 generator.impactOccurred()
             }
         }
     }
@@ -159,7 +167,6 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
             vc.transaction = transactions[indexPath.row]
 
             self.present(vc, animated: true, completion: nil)
-            view.backgroundColor = .ijoDela
         default:
             break;
         }

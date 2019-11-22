@@ -18,7 +18,7 @@ struct Alert {
             yesAction()
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            vc.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
         }))
         
         DispatchQueue.main.async {

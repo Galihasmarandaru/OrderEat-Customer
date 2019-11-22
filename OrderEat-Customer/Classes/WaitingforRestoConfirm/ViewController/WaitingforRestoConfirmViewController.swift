@@ -36,8 +36,9 @@ class WaitingforRestoConfirmViewController: UIViewController {
                 print(transactionID)
             
                 if self.transaction.id == transactionID {
-                    print("trying refresh ongoing pagee")
-                
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.success)
+                    
                     DispatchQueue.main.async {
                         let storyboard = UIStoryboard(name: "Home", bundle: nil)
                         let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController

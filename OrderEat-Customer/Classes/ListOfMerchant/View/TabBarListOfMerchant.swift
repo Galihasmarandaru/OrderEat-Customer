@@ -10,7 +10,6 @@ import UIKit
 
 class TabBarListOfMerchant: UITabBarItem {
     override func awakeFromNib() {
-//        self.selectedImage = UIImage(named: "Logo Blood Hero")!.withRenderingMode(.alwaysOriginal)
     }
 }
 
