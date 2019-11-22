@@ -37,6 +37,7 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data // offline
@@ -75,7 +76,8 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
                 else {
@@ -124,6 +126,8 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -162,7 +166,8 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
                 else {
@@ -225,6 +230,8 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -264,6 +271,8 @@ final class APIRequest {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, let data = data
@@ -276,10 +285,52 @@ final class APIRequest {
                 case 200:
                     break
                 case 400:
-                    print(error!)
+                    break
                 default:
                     break
                     
+            }
+        }
+        
+        task.resume()
+    }
+    
+    class func signIn(parameter body: [String : Any], completion: @escaping (Bool?, Error?) -> Void) {
+        let url = URL(string: api + "/customer/signin")!
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: body, options: [])
+        
+        request.httpBody = jsonData!
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let response = response as? HTTPURLResponse, let data = data
+                else {
+                    completion(nil, .offline)
+                    return
+            }
+            
+            switch(response.statusCode) {
+            case 200:
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
+
+                print(jsonData!["id"]!)
+                CurrentUser.id =  jsonData!["id"]!
+                CurrentUser.accessToken = jsonData!["access_token"]!
+                
+                completion(true, nil)
+                
+            case 400:
+                print(data.prettyPrintedJSONString)
+                completion(nil, .offline)
+            default:
+                completion(nil, .offline)
+                
             }
         }
         

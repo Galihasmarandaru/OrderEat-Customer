@@ -10,11 +10,43 @@ import UIKit
 
 class SigninViewController: UIViewController {
     
-    @IBAction func buttonSignin(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func signInBtn(_ sender: Any) {
+        // Sign in post request
+                
+                let params = [
+                    "phone": phoneTextField.text,
+//                    "pin": passwordTextField.text ?? nil
+                ]
+                
+                APIRequest.signIn(parameter: params) { (isVerified, error) in
+                    if let error = error {
+                        //print("ERROR : \(error)")
+                        return
+                    }
+                    
+                    if isVerified! {
+                        DispatchQueue.main.async {
+                            
+                            if (CurrentUser.id != "") {
+                                print(CurrentUser.accessToken)
+                                PusherChannels.subscribePushChannel(channel: CurrentUser.id)
+                                PusherBeams.registerDeviceInterest(pushInterest: CurrentUser.id)
+                            }
+                            
+                            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+                            let appDelegate = UIApplication.shared.windows
+                            appDelegate.first?.rootViewController = tabBarVC
+                        }
+                       
+                    }
+                }
     }
 }
