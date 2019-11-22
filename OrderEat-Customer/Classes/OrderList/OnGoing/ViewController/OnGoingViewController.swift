@@ -29,10 +29,12 @@ class OnGoingViewController: UIViewController{
         historyUnderline.isHidden = true
         
         // bind a callback to handle an event
-        let _ = PusherChannels.channel.bind(eventName: "NewTransaction", eventCallback: { (event: PusherEvent) in
-            if event.data != nil {
+        let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
+            if let data = event.data {
                  // you can parse the data as necessary
-                 // print(data)
+                
+                print(data)
+                
                 print("trying refresh ongoing pagee")
                 self.attemptFetchTransactions()
 

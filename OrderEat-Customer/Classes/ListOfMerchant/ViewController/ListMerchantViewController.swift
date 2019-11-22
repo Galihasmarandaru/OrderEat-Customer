@@ -38,10 +38,6 @@ class ListMerchantViewController: UIViewController {
         
         attemptFetchMerchants()
         
-        let image = #imageLiteral(resourceName: "mcd")
-        let upload = UploadImage()
-        upload.uploadImage(image: image)
-        
     }
     
     func setupSearchController() {

@@ -32,6 +32,7 @@
 		93F62E7F237BD8EE007FED6B /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E7E237BD8EE007FED6B /* TransactionDetail.swift */; };
 		93FA9298237CF81B006AD4D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		93FA929A237CFE5F006AD4D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		9B0AC39019AC306E97D26BF9 /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0630D84745754823C0853FE0 /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */; };
 		A31B449D2373CB6400022FE6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B449C2373CB6400022FE6 /* File.swift */; };
 		A31B449F2373FD5800022FE6 /* OrderDone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B449E2373FD5800022FE6 /* OrderDone.storyboard */; };
 		A31B44A3237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A2237404FA00022FE6 /* WaitingforRestoConfirmViewController.swift */; };
@@ -92,7 +93,6 @@
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Merchant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
-		E2DF631C911053E5D5FBA063 /* Pods_OrderEat_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */; };
 		E63B673923755AD000578442 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B673823755AD000578442 /* SigninViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +114,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0630D84745754823C0853FE0 /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		086A7886E760FB70E2FAB993 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer-OrderEat-CustomerUITests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A2F5783236FFD990048BB0E /* ListMerchantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMerchantViewController.swift; sourceTree = "<group>"; };
 		0A61C1822371427700CF695F /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
@@ -173,7 +174,7 @@
 		C9E1CDE4DCFBBE2D2140CA50 /* Pods-OrderEat-Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
 		CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellDelegate.swift; sourceTree = "<group>"; };
-		CA3559922366A5FB00382CCF /* OrderEat-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrderEat-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3559922366A5FB00382CCF /* Eativa-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eativa-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3559952366A5FB00382CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA3559972366A5FB00382CCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CA3559992366A5FB00382CCF /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
@@ -213,7 +214,6 @@
 		CAB5D2E023680D9300ACAAD0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CAB5D2E723692F7700ACAAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/View/Base.lproj/OnBoarding.storyboard"; sourceTree = "<group>"; };
-		CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63B673823755AD000578442 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = "OrderEat-Customer/Classes/Authentication/Signin/ViewController/SigninViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -238,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2DF631C911053E5D5FBA063 /* Pods_OrderEat_CustomerUITests.framework in Frameworks */,
+				9B0AC39019AC306E97D26BF9 /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +250,7 @@
 			children = (
 				2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */,
 				0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */,
-				CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */,
+				0630D84745754823C0853FE0 /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 		CA3559932366A5FB00382CCF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA3559922366A5FB00382CCF /* OrderEat-Customer.app */,
+				CA3559922366A5FB00382CCF /* Eativa-Customer.app */,
 				CA3559AB2366A5FB00382CCF /* OrderEat-CustomerTests.xctest */,
 				CA3559B62366A5FB00382CCF /* OrderEat-CustomerUITests.xctest */,
 			);
@@ -934,7 +934,7 @@
 			);
 			name = "OrderEat-Customer";
 			productName = "OrderEat-Customer";
-			productReference = CA3559922366A5FB00382CCF /* OrderEat-Customer.app */;
+			productReference = CA3559922366A5FB00382CCF /* Eativa-Customer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CA3559AA2366A5FB00382CCF /* OrderEat-CustomerTests */ = {
@@ -964,6 +964,7 @@
 				CA3559B22366A5FB00382CCF /* Sources */,
 				CA3559B32366A5FB00382CCF /* Frameworks */,
 				CA3559B42366A5FB00382CCF /* Resources */,
+				EC6B1554BBF3BCA1D187A8E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1075,7 +1076,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrderEat-CustomerUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OrderEat-Customer-OrderEat-CustomerUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1141,6 +1142,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6B1554BBF3BCA1D187A8E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1419,16 +1437,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJAF5B347D;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 7WQ84MA4V4;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Customer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eativa.Customer;
+				PRODUCT_NAME = "Eativa-Customer";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1439,16 +1458,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJAF5B347D;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 7WQ84MA4V4;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Customer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eativa.Customer;
+				PRODUCT_NAME = "Eativa-Customer";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1500,7 +1520,7 @@
 		};
 		CA3559C62366A5FB00382CCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2F1FB048AAD7F9EF99DECC5 /* Pods-OrderEat-CustomerUITests.debug.xcconfig */;
+			baseConfigurationReference = 086A7886E760FB70E2FAB993 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1521,7 +1541,7 @@
 		};
 		CA3559C72366A5FB00382CCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2896473C030DA1179810F140 /* Pods-OrderEat-CustomerUITests.release.xcconfig */;
+			baseConfigurationReference = 9E9A7F0D3BB1EB3E3622BFB6 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -15,10 +15,20 @@ final class PusherChannels: PusherDelegate {
     static var pusher: Pusher!
     static var channel: PusherChannel!
     
+    class func initPusherChannel() {
+        let options = PusherClientOptions(
+           host: .cluster("ap1")
+         )
+        self.pusher = Pusher(
+           key: "6c1e137627b90e824011",
+           options: options
+         )
+    }
+    
     class func subscribePushChannel(channel: String) {
         // subscribe to channel
         self.channel = pusher.subscribe(channelName: channel)
-        pusher.connect()
+        self.pusher.connect()
 
         print("pusher coonnect done")
 
