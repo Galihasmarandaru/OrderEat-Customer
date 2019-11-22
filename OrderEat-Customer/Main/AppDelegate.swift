@@ -42,14 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-            PusherBeams.pushNotifications.registerDeviceToken(deviceToken)
-        }
+        PusherBeams.pushNotifications.registerDeviceToken(deviceToken)
+    }
 
-        func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-            
-            PusherBeams.pushNotifications.handleNotification(userInfo: userInfo)
-            
-        }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        PusherBeams.pushNotifications.handleNotification(userInfo: userInfo)
+        
+    }
 
     // MARK: UISceneSession Lifecycle
 

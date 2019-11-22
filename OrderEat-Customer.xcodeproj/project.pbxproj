@@ -21,6 +21,7 @@
 		9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
 		934DA39A2383CCB7007675B4 /* WorkingHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA3992383CCB7007675B4 /* WorkingHour.swift */; };
 		935A165E2384D85A001C1D4F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165D2384D85A001C1D4F /* Defaults.swift */; };
+		93AA9A382387838300B98AF4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 93AA9A372387838300B98AF4 /* loading.json */; };
 		93ADD17D237D327E001E3094 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17B237D327E001E3094 /* Date.swift */; };
 		93ADD17E237D327E001E3094 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17C237D327E001E3094 /* String.swift */; };
 		93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
@@ -83,9 +84,9 @@
 		CAB5D2DF23680CF000ACAAD0 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2DE23680CF000ACAAD0 /* Customer.swift */; };
 		CAB5D2E123680D9300ACAAD0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E023680D9300ACAAD0 /* Merchant.swift */; };
 		CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5D2E223680D9D00ACAAD0 /* Menu.swift */; };
-		E2DF631C911053E5D5FBA063 /* Pods_OrderEat_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */; };
 		E63B673923755AD000578442 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B673823755AD000578442 /* SigninViewController.swift */; };
 		E63B673B23755ADE00578442 /* Signin.xib in Resources */ = {isa = PBXBuildFile; fileRef = E63B673A23755ADE00578442 /* Signin.xib */; };
+		FAB88AE8FDFD85D6ED747E52 /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73B41ADAC03A8EB0022D72F /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		87940C6C237C0A35009AC6EA /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
 		934DA3992383CCB7007675B4 /* WorkingHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHour.swift; sourceTree = "<group>"; };
 		935A165D2384D85A001C1D4F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		93AA9A372387838300B98AF4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		93ADD17B237D327E001E3094 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		93ADD17C237D327E001E3094 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		93ADD180237EAB02001E3094 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -195,7 +197,7 @@
 		CAB5D2E023680D9300ACAAD0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		CAB5D2E223680D9D00ACAAD0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		CAB5D2E723692F7700ACAAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "OrderEat-Customer/View/Base.lproj/OnBoarding.storyboard"; sourceTree = "<group>"; };
-		CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73B41ADAC03A8EB0022D72F /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63B673823755AD000578442 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = "OrderEat-Customer/Classes/Authentication/Signin/ViewController/SigninViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E63B673A23755ADE00578442 /* Signin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Signin.xib; path = "OrderEat-Customer/Classes/Authentication/Signin/View/Signin.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -221,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2DF631C911053E5D5FBA063 /* Pods_OrderEat_CustomerUITests.framework in Frameworks */,
+				FAB88AE8FDFD85D6ED747E52 /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +235,7 @@
 			children = (
 				2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */,
 				0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */,
-				CF9EFF700E656F13BBF46ACD /* Pods_OrderEat_CustomerUITests.framework */,
+				D73B41ADAC03A8EB0022D72F /* Pods_OrderEat_Customer_OrderEat_CustomerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -442,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				87940C69237BFF55009AC6EA /* OrderEat-Customer.entitlements */,
+				93AA9A372387838300B98AF4 /* loading.json */,
 				A3B71189236FF57300670669 /* Tools */,
 				CA26D1E623696599000FDDD0 /* Main */,
 				CA26D1EA23696717000FDDD0 /* Classes */,
@@ -905,6 +908,7 @@
 				CA3559B22366A5FB00382CCF /* Sources */,
 				CA3559B32366A5FB00382CCF /* Frameworks */,
 				CA3559B42366A5FB00382CCF /* Resources */,
+				005D515E6ED9682F109472F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -977,6 +981,7 @@
 				E63B673B23755ADE00578442 /* Signin.xib in Resources */,
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
+				93AA9A382387838300B98AF4 /* loading.json in Resources */,
 				A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -998,6 +1003,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		005D515E6ED9682F109472F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrderEat-Customer-OrderEat-CustomerUITests/Pods-OrderEat-Customer-OrderEat-CustomerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D94FE975B54B9D7F185F0B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1013,7 +1035,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrderEat-CustomerUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OrderEat-Customer-OrderEat-CustomerUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1414,7 +1436,7 @@
 		};
 		CA3559C62366A5FB00382CCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2F1FB048AAD7F9EF99DECC5 /* Pods-OrderEat-CustomerUITests.debug.xcconfig */;
+			baseConfigurationReference = 086A7886E760FB70E2FAB993 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1435,7 +1457,7 @@
 		};
 		CA3559C72366A5FB00382CCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2896473C030DA1179810F140 /* Pods-OrderEat-CustomerUITests.release.xcconfig */;
+			baseConfigurationReference = 9E9A7F0D3BB1EB3E3622BFB6 /* Pods-OrderEat-Customer-OrderEat-CustomerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

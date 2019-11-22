@@ -8,6 +8,7 @@
 
 import UIKit
 import PusherSwift
+import Lottie
 
 class OnGoingViewController: UIViewController{
 
@@ -16,6 +17,7 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var onGoingButton: UIButton!
     @IBOutlet weak var onGoingUnderline: UIImageView!
     @IBOutlet weak var historyUnderline: UIImageView!
+    @IBOutlet weak var animationView: AnimationView!
     
     // Injection
     var viewModel = OnGoingViewModel()
@@ -46,11 +48,33 @@ class OnGoingViewController: UIViewController{
         attemptFetchTransactions()
     }
     
+    func startAnimation() {
+        print("Animation start")
+        let animation = Animation.named("loading")
+        
+        animationView.animation = animation
+        animationView.contentMode = .scaleAspectFit
+        
+        animationView.loopMode  = .loop
+        
+        animationView.play()
+    }
+    
+    func stopAnimation() {
+        print("Animation stop")
+        animationView.pause()
+        
+        DispatchQueue.main.async {
+            self.animationView.isHidden = true
+        }
+        
+    }
+    
     @objc private func attemptFetchTransactions() {
         viewModel.fetchTransactions()
         
         viewModel.updateLoadingStatus = {
-            
+            let _ = self.viewModel.isLoading ? self.startAnimation() : self.stopAnimation()
         }
         
         viewModel.showAlertClosure = {
@@ -133,7 +157,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
             vc.transaction = transactions[indexPath.row]
 
             self.present(vc, animated: true, completion: nil)
-            
+            view.backgroundColor = .ijoDela
         default:
             break;
         }

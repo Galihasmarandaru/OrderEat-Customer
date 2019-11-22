@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r8r-3S-p4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r8r-3S-p4L">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,6 +74,14 @@
                                 <rect key="frame" x="198" y="88" width="80" height="2"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNZ-im-b9F" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="12.666666666666657" y="231" width="350" height="350"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="Iwj-wW-Xw2"/>
+                                    <constraint firstAttribute="height" constant="350" id="yg8-v1-Dpf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -82,6 +90,7 @@
                             <constraint firstItem="9vX-mH-X2f" firstAttribute="leading" secondItem="uik-fD-rMm" secondAttribute="leading" id="553-yC-fbP"/>
                             <constraint firstItem="9vX-mH-X2f" firstAttribute="trailing" secondItem="uik-fD-rMm" secondAttribute="trailing" id="6CZ-0n-Bnb"/>
                             <constraint firstItem="WcA-kx-eb9" firstAttribute="trailing" secondItem="mSI-iT-z6s" secondAttribute="trailing" id="6ll-EV-ftY"/>
+                            <constraint firstItem="GNZ-im-b9F" firstAttribute="centerX" secondItem="k5n-Ag-3fd" secondAttribute="centerX" id="CZU-mq-zqI"/>
                             <constraint firstItem="Hkm-pQ-mJj" firstAttribute="top" secondItem="uik-fD-rMm" secondAttribute="top" id="J2n-WL-Mmg"/>
                             <constraint firstItem="mSI-iT-z6s" firstAttribute="centerY" secondItem="Hkm-pQ-mJj" secondAttribute="centerY" id="Jvz-Hp-JsF"/>
                             <constraint firstItem="mSI-iT-z6s" firstAttribute="height" secondItem="SJV-K3-9T3" secondAttribute="height" id="KFk-JS-4bN"/>
@@ -94,6 +103,7 @@
                             <constraint firstItem="Hkm-pQ-mJj" firstAttribute="leading" secondItem="SJV-K3-9T3" secondAttribute="trailing" constant="10" id="mP0-qp-TZH"/>
                             <constraint firstItem="9vX-mH-X2f" firstAttribute="bottom" secondItem="uik-fD-rMm" secondAttribute="bottom" id="pX8-Ns-vPE"/>
                             <constraint firstItem="faO-Bd-58q" firstAttribute="leading" secondItem="SJV-K3-9T3" secondAttribute="leading" id="rrM-V1-ZSD"/>
+                            <constraint firstItem="GNZ-im-b9F" firstAttribute="centerY" secondItem="k5n-Ag-3fd" secondAttribute="centerY" id="uJL-Fp-eao"/>
                             <constraint firstItem="faO-Bd-58q" firstAttribute="trailing" secondItem="SJV-K3-9T3" secondAttribute="trailing" id="uSW-yc-lfR"/>
                             <constraint firstItem="mSI-iT-z6s" firstAttribute="leading" secondItem="Hkm-pQ-mJj" secondAttribute="trailing" constant="10" id="vRS-YQ-hGI"/>
                         </constraints>
@@ -103,6 +113,7 @@
                     <navigationItem key="navigationItem" title="Order List" id="lEs-DY-AHg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="animationView" destination="GNZ-im-b9F" id="j3H-Ck-0B3"/>
                         <outlet property="historyButton" destination="mSI-iT-z6s" id="Pnt-SM-ltm"/>
                         <outlet property="historyUnderline" destination="WcA-kx-eb9" id="HMI-p9-lEU"/>
                         <outlet property="onGoingButton" destination="SJV-K3-9T3" id="ilf-no-G6b"/>
@@ -118,6 +129,6 @@
     </scenes>
     <resources>
         <image name="Rectangle" width="48" height="2"/>
-        <image name="list.dash" catalog="system" width="64" height="44"/>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
     </resources>
 </document>
