@@ -23,6 +23,8 @@
 		9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
 		934DA39A2383CCB7007675B4 /* WorkingHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA3992383CCB7007675B4 /* WorkingHour.swift */; };
 		935A165E2384D85A001C1D4F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165D2384D85A001C1D4F /* Defaults.swift */; };
+		93AA9A382387838300B98AF4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 93AA9A372387838300B98AF4 /* loading.json */; };
+		93AA9A3A23878E3F00B98AF4 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA9A3923878E3F00B98AF4 /* UIImageView.swift */; };
 		93ADD17D237D327E001E3094 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17B237D327E001E3094 /* Date.swift */; };
 		93ADD17E237D327E001E3094 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17C237D327E001E3094 /* String.swift */; };
 		93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
@@ -137,6 +139,8 @@
 		87940C6C237C0A35009AC6EA /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
 		934DA3992383CCB7007675B4 /* WorkingHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHour.swift; sourceTree = "<group>"; };
 		935A165D2384D85A001C1D4F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		93AA9A372387838300B98AF4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		93AA9A3923878E3F00B98AF4 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		93ADD17B237D327E001E3094 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		93ADD17C237D327E001E3094 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		93ADD180237EAB02001E3094 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				93ADD17B237D327E001E3094 /* Date.swift */,
 				93ADD17C237D327E001E3094 /* String.swift */,
 				93F62E75237BD8E4007FED6B /* Data.swift */,
+				93AA9A3923878E3F00B98AF4 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				87940C69237BFF55009AC6EA /* OrderEat-Customer.entitlements */,
+				93AA9A372387838300B98AF4 /* loading.json */,
 				A3B71189236FF57300670669 /* Tools */,
 				CA26D1E623696599000FDDD0 /* Main */,
 				CA26D1EA23696717000FDDD0 /* Classes */,
@@ -1046,6 +1052,7 @@
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
+				93AA9A382387838300B98AF4 /* loading.json in Resources */,
 				A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1217,6 +1224,7 @@
 				CA73E722236FF06700BD3050 /* AddDataMerchantMenu.swift in Sources */,
 				0A61C1892372745500CF695F /* OnGoingViewModel.swift in Sources */,
 				934DA39A2383CCB7007675B4 /* WorkingHour.swift in Sources */,
+				93AA9A3A23878E3F00B98AF4 /* UIImageView.swift in Sources */,
 				CA3559A02366A5FB00382CCF /* OrderEat_Customer.xcdatamodeld in Sources */,
 				93F62E7A237BD8E4007FED6B /* Data.swift in Sources */,
 				93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */,

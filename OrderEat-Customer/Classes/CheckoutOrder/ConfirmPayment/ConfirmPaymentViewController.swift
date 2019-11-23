@@ -127,15 +127,15 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         
         let cellButton = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
 
-        //cellButton.QRImageView.image = merchants.QRMerchant
+        if let qrCodeURL = transaction.merchant!.qrCode {
+            cellButton.QRImageView.load(url: URL(string: qrCodeURL)!)
+        }
 
         cellButton.confirmPaymentButton.setTitle("Confirm Payment", for: .normal)
         cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
         
         cellButton.confirmBtnClosure = { [unowned self] in
-
-            
-            Alert.showConfirmationAlert(on: self, title: "Payment", message: "Hello", yesAction: {
+            Alert.showConfirmationAlert(on: self, title: "Confirm Payment", message: "Are you sure you have done your payment?", yesAction: {
                 APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
                 self.dismiss(animated: true, completion: nil)
             })

@@ -11,12 +11,11 @@ import PusherSwift
 import PushNotifications
 
 final class CurrentUser {
-    static var id = "ebab3258-de7f-4af9-aafe-dd57c54b7dfc"
-    static var name = "Fred"
+    static var id = ""
     static var accessToken: String = ""
     
-    // do this after user sign in
-    class func updateUserId(id: String) {
-        self.id = id
+    class func reset() {
+        id = ""
+        accessToken = ""
     }
 }

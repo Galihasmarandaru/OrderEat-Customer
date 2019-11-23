@@ -22,8 +22,9 @@ final class PusherBeams {
         
         if ( !CurrentUser.id.isEmpty ) {
             registerDeviceInterest(pushInterest: CurrentUser.id)
+            print("push notif init done")
         }
-        print("push notif init done")
+
     }
     
     // run this after sign in
@@ -34,6 +35,5 @@ final class PusherBeams {
     // run this after logout
     class func removeDeviceInterest(pushInterest: String) {
         try? self.pushNotifications.removeDeviceInterest(interest: pushInterest)
-        CurrentUser.id = ""
     }
 }

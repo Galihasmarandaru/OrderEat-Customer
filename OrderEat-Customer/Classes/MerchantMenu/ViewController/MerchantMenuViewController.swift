@@ -52,7 +52,6 @@ class MerchantMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundMerchant.image = UIImage(named: "bg-merchat-1")
         merchantTitle.merchant = merchant
         viewOfMenu()
         createConstraint()

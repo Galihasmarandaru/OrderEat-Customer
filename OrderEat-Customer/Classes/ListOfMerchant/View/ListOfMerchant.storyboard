@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9vW-Lm-PPd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9vW-Lm-PPd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
-       <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Discover-->
         <scene sceneID="PTF-zj-AOo">
             <objects>
-                <viewController storyboardIdentifier="ListOfMerchant" title="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListOfMerchant" title="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9a7-OL-Pme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,8 +22,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-Xh-1bv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="681"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>                               				<prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="listCell" rowHeight="122" id="K6F-ff-tIu" userLabel="listCell" customClass="ListMerchantTableViewCell" customModule="OrderEat_Customer" customModuleProvider="target">
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="listCell" rowHeight="122" id="K6F-ff-tIu" userLabel="listCell" customClass="ListMerchantTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K6F-ff-tIu" id="CDG-Bz-DPt">
@@ -130,7 +131,13 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" image="house.fill" catalog="system" selectedImage="house.fill" id="YnD-hS-Cfk"/>
-                    <navigationItem key="navigationItem" id="B3C-xg-Xb0"/>
+                    <navigationItem key="navigationItem" id="B3C-xg-Xb0">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="FGa-X2-Rvv">
+                            <connections>
+                                <action selector="logoutBtnPressed:" destination="5on-1W-pb1" id="xdn-rZ-CNh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -145,10 +152,10 @@
         <!--MerchantMenu-->
         <scene sceneID="GTL-3N-tEe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KE7-zs-30i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="MerchantMenu" id="lqF-Ik-vYi" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8Eq-iF-Ylh"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KE7-zs-30i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2701" y="159"/>
         </scene>
@@ -157,7 +164,7 @@
             <objects>
                 <navigationController id="9vW-Lm-PPd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="UPy-Nu-SRg">
-                       <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

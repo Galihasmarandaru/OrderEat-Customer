@@ -8,6 +8,7 @@
 
 import UIKit
 import PusherSwift
+import Lottie
 
 class OnGoingViewController: UIViewController{
 
@@ -16,6 +17,8 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var onGoingButton: UIButton!
     @IBOutlet weak var onGoingUnderline: UIImageView!
     @IBOutlet weak var historyUnderline: UIImageView!
+    @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var emptyStateView: UIStackView!
     
     // Injection
     var viewModel = OnGoingViewModel()
@@ -30,29 +33,54 @@ class OnGoingViewController: UIViewController{
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
-            if let data = event.data {
+            if event.data != nil {
                  // you can parse the data as necessary
                 
-                print(data)
-                
-                print("trying refresh ongoing pagee")
-                self.attemptFetchTransactions()
-
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
                }
            })
-        PusherChannels.pusher.connect()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         attemptFetchTransactions()
+        PusherChannels.pusher.connect()
     }
     
-    @objc private func attemptFetchTransactions() {
+    override func viewWillDisappear(_ animated: Bool) {
+        PusherChannels.pusher.disconnect()
+    }
+    
+    func startAnimation() {
+        DispatchQueue.main.async {
+            self.emptyStateView.isHidden = true
+            self.animationView.isHidden = false
+        }
+        
+        let animation = Animation.named("loading")
+        
+        animationView.animation = animation
+        animationView.contentMode = .scaleAspectFit
+        
+        animationView.loopMode  = .loop
+        
+        animationView.play()
+    }
+    
+    func stopAnimation() {
+        animationView.stop()
+        
+        DispatchQueue.main.async {
+            self.animationView.isHidden = true
+        }
+        
+    }
+    
+    @objc func attemptFetchTransactions() {
         viewModel.fetchTransactions()
         
         viewModel.updateLoadingStatus = {
-            
+            //let _ = self.viewModel.isLoading ? self.startAnimation() : self.stopAnimation()
         }
         
         viewModel.showAlertClosure = {
@@ -69,6 +97,7 @@ class OnGoingViewController: UIViewController{
             }
             
             DispatchQueue.main.async {
+                self.emptyStateView.isHidden = self.transactions.count > 0
                 self.onGoingCollectionView.reloadData()
             }
         }
@@ -135,7 +164,6 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
             vc.transaction = transactions[indexPath.row]
 
             self.present(vc, animated: true, completion: nil)
-            
         default:
             break;
         }

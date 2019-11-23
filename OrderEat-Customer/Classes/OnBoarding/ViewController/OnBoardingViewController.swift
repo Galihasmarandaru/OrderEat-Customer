@@ -37,13 +37,16 @@ class onBoardingViewController: UIViewController , UIScrollViewDelegate{
 //        appDelegate.first?.rootViewController = tabBarVC
         
         let storyboard = UIStoryboard(name: "Signin", bundle: nil)
-        let tabBarVC = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
+        let vc = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
         let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = tabBarVC
+        appDelegate.first?.rootViewController = vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkLogin()
+        
         startButton.isHidden = true
         pageControl.currentPage = 0
         
@@ -57,8 +60,15 @@ class onBoardingViewController: UIViewController , UIScrollViewDelegate{
         collectionView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0)
         collectionView.collectionViewLayout = floawLayout
 
+    }    
+    func checkLogin() {
+        if Defaults.getUserLogin() {
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+            let appDelegate = UIApplication.shared.windows
+            appDelegate.first?.rootViewController = tabBarVC
+        }
     }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
         let pageSide = (layout.scrollDirection == .horizontal) ? self.pageSize.width : self.pageSize.height

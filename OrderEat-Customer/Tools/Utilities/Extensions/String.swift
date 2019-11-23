@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoKit
 
 extension String {
     var time : String {
@@ -20,5 +21,17 @@ extension String {
         let string = formatter.string(from: date!)
         
         return string
+    }
+    
+    var encrypted : String {
+        let passwordString = self
+        let salt = "aKnasdJaOmuHn{r8+i129sa.[fa"
+        let passwordData = Data((passwordString + salt).utf8)
+
+        let hashed = SHA256.hash(data: passwordData)
+
+        let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
+
+        return hashString
     }
 }

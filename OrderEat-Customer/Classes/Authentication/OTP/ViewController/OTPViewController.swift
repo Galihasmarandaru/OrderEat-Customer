@@ -21,7 +21,6 @@ class OTPViewController: UIViewController {
         
     }
     
-    
     @IBAction func submitBtnPressed(_ sender: Any) {
         // Sign in post request
         
