@@ -13,14 +13,19 @@ import PushNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
+    
+    var window : UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //background color of text field
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .black
         
-        // CLOUDINARY
-//        Cloudinary.uploadImage()
+        if Defaults.getUserLogin() {
+            CurrentUser.id = Defaults.getId()
+            CurrentUser.accessToken = Defaults.getToken()
+        }
         
         // Pusher Beams
         PusherBeams.initPushNotifications()
@@ -32,20 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
         if (CurrentUser.id != "") {
             PusherChannels.subscribePushChannel(channel: CurrentUser.id)
         }
-
-//        let options = PusherClientOptions(
-//           host: .cluster("ap1")
-//         )
-//        PusherChannels.pusher = Pusher(
-//           key: "6c1e137627b90e824011",
-//           options: options
-//         )
-//        PusherChannels.pusher.delegate = self
-//        //        CurrentUser.subscribePushChannel(channel: CurrentUser.id)
-//        PusherChannels.channel = PusherChannels.pusher.subscribe(channelName: CurrentUser.id)
-//        PusherChannels.pusher.connect()
-//        print("push notif init done")
-
         
         return true
     }
@@ -57,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
         PusherBeams.pushNotifications.handleNotification(userInfo: userInfo)
-        
     }
 
     // MARK: UISceneSession Lifecycle

@@ -25,17 +25,29 @@ class onBoardingViewController: UIViewController , UIScrollViewDelegate{
 //        appDelegate.first?.rootViewController = tabBarVC
         
         let storyboard = UIStoryboard(name: "Signin", bundle: nil)
-        let tabBarVC = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
+        let vc = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
         let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = tabBarVC
+        appDelegate.first?.rootViewController = vc
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkLogin()
+        
         startButton.isHidden = true
         setupScroll()
         scrollView.delegate = self
+    }
+    
+    func checkLogin() {
+        if Defaults.getUserLogin() {
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+            let appDelegate = UIApplication.shared.windows
+            appDelegate.first?.rootViewController = tabBarVC
+        }
     }
     
     func setupScroll()

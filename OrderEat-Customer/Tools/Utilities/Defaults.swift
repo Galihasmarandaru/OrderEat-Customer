@@ -11,17 +11,17 @@ import Foundation
 struct Defaults {
     static let userLogin = "userLogin"
     static let id = "customerId"
-    static let name = "customerName"
+    static let token = "customerToken"
     
-    static func saveCustomerData(name customerName: String, id customerId: String){
-        UserDefaults.standard.set(customerName, forKey: name)
+    static func saveCustomerData(token accessToken: String, id customerId: String){
+        UserDefaults.standard.set(accessToken, forKey: token)
         UserDefaults.standard.set(customerId, forKey: id)
     }
-    
-    static func getName() -> String{
-        let customerName = UserDefaults.standard.string(forKey: name) ?? ""
+
+    static func getToken() -> String{
+        let accessToken = UserDefaults.standard.string(forKey: token) ?? ""
         
-        return customerName
+        return accessToken
     }
     
     static func getId() -> String{
@@ -43,6 +43,6 @@ struct Defaults {
     static func clearUserData(){
         UserDefaults.standard.removeObject(forKey: userLogin)
         UserDefaults.standard.removeObject(forKey: id)
-        UserDefaults.standard.removeObject(forKey: name)
+        UserDefaults.standard.removeObject(forKey: token)
     }
 }

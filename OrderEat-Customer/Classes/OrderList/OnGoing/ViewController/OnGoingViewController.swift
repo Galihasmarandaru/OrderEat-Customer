@@ -33,22 +33,22 @@ class OnGoingViewController: UIViewController{
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
-            if let data = event.data {
+            if event.data != nil {
                  // you can parse the data as necessary
                 
-                print(data)
-                
-                print("trying refresh ongoing pagee")
-                self.attemptFetchTransactions()
-
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
                }
            })
-        PusherChannels.pusher.connect()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         attemptFetchTransactions()
+        PusherChannels.pusher.connect()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        PusherChannels.pusher.disconnect()
     }
     
     func startAnimation() {
@@ -76,7 +76,7 @@ class OnGoingViewController: UIViewController{
         
     }
     
-    @objc private func attemptFetchTransactions() {
+    @objc func attemptFetchTransactions() {
         viewModel.fetchTransactions()
         
         viewModel.updateLoadingStatus = {
@@ -99,9 +99,6 @@ class OnGoingViewController: UIViewController{
             DispatchQueue.main.async {
                 self.emptyStateView.isHidden = self.transactions.count > 0
                 self.onGoingCollectionView.reloadData()
-                
-                let generator = UIImpactFeedbackGenerator(style: .medium)
-                 generator.impactOccurred()
             }
         }
     }

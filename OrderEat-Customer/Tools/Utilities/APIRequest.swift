@@ -319,15 +319,24 @@ final class APIRequest {
             case 200:
                 let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
 
-                print(jsonData!["id"]!)
-                CurrentUser.id =  jsonData!["id"]!
-                CurrentUser.accessToken = jsonData!["access_token"]!
+                PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
+                PusherChannels.pusher.unsubscribeAll()
+                
+                let token = jsonData!["access_token"]!
+                let id = jsonData!["id"]!
+                
+                CurrentUser.id = id
+                CurrentUser.accessToken = token
+                
+                Defaults.clearUserData()
+                Defaults.saveUserLogin(true)
+                Defaults.saveCustomerData(token: token, id: id)
                 
                 completion(true, nil)
                 
             case 400:
-                print(data.prettyPrintedJSONString)
                 completion(nil, .offline)
+                
             default:
                 completion(nil, .offline)
                 
