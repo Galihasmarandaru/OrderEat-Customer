@@ -1454,13 +1454,13 @@
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = EX65DH5AM5;
+				DEVELOPMENT_TEAM = SJAF5B347D;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Eativa.Customer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Customer-gl";
 				PRODUCT_NAME = "Eativa-Customer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1475,13 +1475,13 @@
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = EX65DH5AM5;
+				DEVELOPMENT_TEAM = SJAF5B347D;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Eativa.Customer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Customer-gl";
 				PRODUCT_NAME = "Eativa-Customer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
