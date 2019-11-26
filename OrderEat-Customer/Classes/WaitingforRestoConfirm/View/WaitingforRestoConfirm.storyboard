@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Auz-hY-1hp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Auz-hY-1hp">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--Waitingfor Resto Confirm View Controller-->
         <scene sceneID="elW-eh-j43">
             <objects>
-                <viewController storyboardIdentifier="WaitingforRestoConfirm" id="Auz-hY-1hp" customClass="WaitingforRestoConfirmViewController" customModule="OrderEat_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WaitingforRestoConfirm" id="Auz-hY-1hp" customClass="WaitingforRestoConfirmViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hKe-Xl-Oqn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                                             <constraint firstAttribute="height" constant="379" id="bRa-0j-I28"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5g-Jp-4Xy" customClass="CustomButton" customModule="OrderEat_Customer" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5g-Jp-4Xy" customClass="CustomButton" customModule="Eativa_Customer" customModuleProvider="target">
                                         <rect key="frame" x="20" y="637.5" width="334" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="DPZ-VF-iae"/>
@@ -52,6 +52,17 @@
                                             <action selector="cancelOrderButtonPressed:" destination="Auz-hY-1hp" eventType="touchUpInside" id="U5N-AB-TdN"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaA-gr-u5p" userLabel="Minimize Button">
+                                        <rect key="frame" x="20" y="689" width="334" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="9rV-fY-K5P"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="cancelOrderButtonPressed:" destination="Auz-hY-1hp" eventType="touchUpInside" id="Fvf-4E-UC4"/>
+                                            <action selector="minimizeButtonPressed:" destination="Auz-hY-1hp" eventType="touchUpInside" id="f12-we-qfg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -59,15 +70,18 @@
                                     <constraint firstItem="Iqb-mR-5an" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="112" id="9mc-De-tni"/>
                                     <constraint firstItem="kIo-GA-8Ly" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="20" id="Aou-uF-GP5"/>
                                     <constraint firstAttribute="trailing" secondItem="Iqb-mR-5an" secondAttribute="trailing" constant="112" id="B8j-si-gEi"/>
+                                    <constraint firstItem="aaA-gr-u5p" firstAttribute="top" secondItem="V5g-Jp-4Xy" secondAttribute="bottom" constant="7.5" id="Bfm-db-z2M"/>
                                     <constraint firstItem="asL-x8-YVL" firstAttribute="top" secondItem="dq1-7r-loC" secondAttribute="bottom" constant="2" id="H8q-4U-Dxt"/>
                                     <constraint firstItem="asL-x8-YVL" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="20" id="JFt-Ae-2wd"/>
                                     <constraint firstItem="V5g-Jp-4Xy" firstAttribute="top" secondItem="Iqb-mR-5an" secondAttribute="bottom" constant="70" id="KgN-0L-TSz"/>
                                     <constraint firstAttribute="trailing" secondItem="dq1-7r-loC" secondAttribute="trailing" constant="50" id="M3L-U5-SfX"/>
                                     <constraint firstAttribute="trailing" secondItem="asL-x8-YVL" secondAttribute="trailing" constant="20" id="MXY-Io-G5P"/>
+                                    <constraint firstAttribute="trailing" secondItem="aaA-gr-u5p" secondAttribute="trailing" constant="20" id="NsK-pp-c7V"/>
                                     <constraint firstItem="dq1-7r-loC" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="50" id="avT-kL-gnG"/>
                                     <constraint firstAttribute="trailing" secondItem="kIo-GA-8Ly" secondAttribute="trailing" constant="20" id="c6R-9h-gWz"/>
                                     <constraint firstItem="V5g-Jp-4Xy" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="20" id="gRA-Qv-fjS"/>
                                     <constraint firstAttribute="trailing" secondItem="V5g-Jp-4Xy" secondAttribute="trailing" constant="20" id="jpB-b4-2vt"/>
+                                    <constraint firstItem="aaA-gr-u5p" firstAttribute="leading" secondItem="H4U-70-kir" secondAttribute="leading" constant="20" id="n32-it-AtH"/>
                                     <constraint firstItem="kIo-GA-8Ly" firstAttribute="top" secondItem="asL-x8-YVL" secondAttribute="bottom" constant="20" id="xgE-1H-dHM"/>
                                     <constraint firstItem="dq1-7r-loC" firstAttribute="top" secondItem="H4U-70-kir" secondAttribute="top" constant="35" id="zhs-yQ-sgb"/>
                                 </constraints>
@@ -85,6 +99,7 @@
                     <connections>
                         <outlet property="cancelOrderButton" destination="V5g-Jp-4Xy" id="01r-0k-EVo"/>
                         <outlet property="contentView" destination="H4U-70-kir" id="8BT-8O-tCL"/>
+                        <outlet property="minimizeButton" destination="aaA-gr-u5p" id="PD6-fX-iFN"/>
                         <outlet property="remainingTimeLabel" destination="kIo-GA-8Ly" id="oLM-Ff-Tw8"/>
                         <outlet property="restaurantNameLabel" destination="asL-x8-YVL" id="mvy-cq-eV3"/>
                         <outlet property="waitingImageView" destination="Iqb-mR-5an" id="VJW-cT-5x5"/>

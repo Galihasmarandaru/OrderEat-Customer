@@ -20,33 +20,38 @@ class SigninViewController: UIViewController {
     @IBAction func signInBtn(_ sender: Any) {
         // Sign in post request
                 
-                let params = [
-                    "phone": phoneTextField.text,
-                    "PIN": passwordTextField.text?.encrypted ?? nil
-                ]
-                
-                APIRequest.signIn(parameter: params) { (isVerified, error) in
-                    if let error = error {
-                        //print("ERROR : \(error)")
-                        return
+        let params = [
+            "phone": phoneTextField.text,
+            "PIN": passwordTextField.text?.encrypted ?? nil
+        ]
+        
+        APIRequest.signIn(parameter: params) { (isVerified, error) in
+            if let error = error {
+                //print("ERROR : \(error)")
+                return
+            }
+            
+            if isVerified! {
+                DispatchQueue.main.async {
+                    
+                    if (CurrentUser.id != "") {
+                        print(CurrentUser.accessToken)
+                        PusherChannels.subscribePushChannel(channel: CurrentUser.id)
+                        PusherBeams.registerDeviceInterest(pushInterest: CurrentUser.id)
                     }
                     
-                    if isVerified! {
-                        DispatchQueue.main.async {
-                            
-                            if (CurrentUser.id != "") {
-                                print(CurrentUser.accessToken)
-                                PusherChannels.subscribePushChannel(channel: CurrentUser.id)
-                                PusherBeams.registerDeviceInterest(pushInterest: CurrentUser.id)
-                            }
-                            
-                            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
-                            let appDelegate = UIApplication.shared.windows
-                            appDelegate.first?.rootViewController = tabBarVC
-                        }
-                       
-                    }
+                    let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                    let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+                    // tabBarVC.selectedIndex[1]
+                    let appDelegate = UIApplication.shared.windows
+                    appDelegate.first?.rootViewController = tabBarVC
                 }
+               
+            }
+        }
+        
+        for interest in PusherBeams.pushNotifications.getDeviceInterests()! {
+            print("Interest: \(interest)")
+        }
     }
 }

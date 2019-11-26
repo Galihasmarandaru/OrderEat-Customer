@@ -91,6 +91,10 @@ class ListMerchantViewController: UIViewController {
     }
     
     @IBAction func logoutBtnPressed(_ sender: Any) {
+        
+        PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
+        PusherChannels.pusher.unsubscribeAll()
+        
         Defaults.clearUserData()
         CurrentUser.reset()
         

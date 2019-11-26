@@ -91,9 +91,10 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
                 waitingConfirmationPageVC.transaction = self.transaction
 
                 if let navigator = self.merchantMenuVC.navigationController {
-                    self.dismiss(animated: true) {
+                    self.dismiss(animated: false) {
                         navigator.pushViewController(waitingConfirmationPageVC, animated: false)
                     }
+//                    self.present(waitingConfirmationPageVC, animated: true, completion: nil)
                 }
             }
         }
@@ -107,7 +108,8 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return details.count + 5
+            return details.count + 5
+        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -121,31 +123,34 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
         else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp. \(transaction.getSubTotalPrice())"
+            cellSub.rightLabel.text = "Rp. \(transaction.getSubTotalPrice().currencyFormat)"
 
             return cellSub
         }
         else if indexPath.row == (details.count + 1) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
-            cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
-            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
 
+            cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
+            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice().currencyFormat)"
+            
             return cellTax
         }
         else if indexPath.row == (details.count + 2) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. \(transaction.total!)"
-
+            cellTotal.rightLabel.text = "Rp. \(transaction.total!.currencyFormat)"
+            
             return cellTotal
         }
         else if indexPath.row == (details.count + 3) {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "pickUpTimeTableViewCell", for: indexPath) as! PickUpTimeTableViewCell
 
             cellPickup.pickUpTimeTextField.inputAccessoryView = addToolBar()
-
+            
             cellPickup.pickUpTimeTextField.text = pickUpTime.string
             cellPickup.pickUpTimeTextField.inputView = datePicker
+                        
+            cellPickup.pickUpTimeTextField.becomeFirstResponder()
             
             return cellPickup
         }
