@@ -16,6 +16,7 @@ class WaitingforRestoConfirmViewController: UIViewController {
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var waitingImageView: UIImageView!
     @IBOutlet weak var cancelOrderButton: CustomButton!
+    @IBOutlet weak var minimizeButton: UIButton!
     
     var transaction : Transaction!
     
@@ -28,12 +29,16 @@ class WaitingforRestoConfirmViewController: UIViewController {
         self.waitingImageView.image = UIImage(named: "waitingImage.png")
         self.cancelOrderButton.setTitle("Cancel Order", for: .normal)
         self.cancelOrderButton.setTitleColor(.merahTextButton, for: .normal)
+        self.minimizeButton.setTitle("Minimize", for: .normal)
+        self.minimizeButton.setTitleColor(.gray, for: .normal)
+        
+        self.restaurantNameLabel.text = transaction.merchant?.name
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             if let transactionID = event.data {
              // you can parse the data as necessary
-                print(transactionID)
+//                print("whatdataisthis: \(transactionID)")
             
                 if self.transaction.id == transactionID {
                     let generator = UINotificationFeedbackGenerator()
@@ -75,6 +80,7 @@ class WaitingforRestoConfirmViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        
     }
     
     @IBAction func cancelOrderButtonPressed(_ sender: Any) {
@@ -83,5 +89,13 @@ class WaitingforRestoConfirmViewController: UIViewController {
         APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 5])
         
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    @IBAction func minimizeButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+        tabBarVC.selectedIndex = 1
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = tabBarVC
     }
 }

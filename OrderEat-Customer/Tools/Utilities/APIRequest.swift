@@ -7,12 +7,12 @@
 //
 //
 
-
 import Foundation
 import UIKit
 
 final class APIRequest {
     static let api = "http://167.71.194.60/api"
+//    static let api = "http://167.71.194.60/development/api/"
     
     enum Endpoint : String {
         case customers = "/customer/"

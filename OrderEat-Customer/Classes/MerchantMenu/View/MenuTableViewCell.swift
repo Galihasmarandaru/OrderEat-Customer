@@ -40,7 +40,7 @@ class MenuTableViewCell: UITableViewCell {
             imageMenu.image = menu.image != nil ? UIImage(named: "default") : UIImage(named: "default")
             
             let price = menu.price
-            priceLbl.text = "Rp. \(price!)"
+            priceLbl.text = "Rp. \(price!.currencyFormat)"
         }
     }
     

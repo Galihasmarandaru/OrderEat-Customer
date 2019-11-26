@@ -33,7 +33,7 @@ class ItemOrderedTableViewCell: UITableViewCell {
             itemQtyLabel.text = String(detail.qty!)
             
             let price = detail.menu?.price
-            itemPriceLabel.text = "Rp. \(price!)"
+            itemPriceLabel.text = "Rp. \(price!.currencyFormat)"
         }
     }
 }

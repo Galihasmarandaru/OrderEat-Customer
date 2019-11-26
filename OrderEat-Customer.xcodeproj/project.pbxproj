@@ -15,9 +15,9 @@
 		0A73B681237518D9003E1543 /* OnGoingCollectionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A73B67F237518D9003E1543 /* OnGoingCollectionListCell.swift */; };
 		0A73B682237518D9003E1543 /* OnGoingCollectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A73B680237518D9003E1543 /* OnGoingCollectionListCell.xib */; };
 		0AA8961A2387977800033AFE /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA896192387977800033AFE /* OnBoardingCollectionViewCell.swift */; };
-		0AA8961E2387A2EE00033AFE /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8961D2387A2EE00033AFE /* UPCarouselFlowLayout.swift */; };
 		15177FC09B0E6C27B7B9FA80 /* Pods_OrderEat_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */; };
 		1D712389374EA7F1ACF31BD8 /* Pods_OrderEat_Customer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */; };
+		876F2452238CC9E000AEF432 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F2451238CC9E000AEF432 /* UPCarouselFlowLayout.swift */; };
 		87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6A237C0A29009AC6EA /* PusherBeams.swift */; };
 		87940C6D237C0A35009AC6EA /* PusherChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6C237C0A35009AC6EA /* PusherChannels.swift */; };
 		9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
@@ -128,12 +128,12 @@
 		0A73B67F237518D9003E1543 /* OnGoingCollectionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingCollectionListCell.swift; sourceTree = "<group>"; };
 		0A73B680237518D9003E1543 /* OnGoingCollectionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnGoingCollectionListCell.xib; sourceTree = "<group>"; };
 		0AA896192387977800033AFE /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		0AA8961D2387A2EE00033AFE /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_CustomerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		161E78106E0741F75E5C3C6A /* Pods-OrderEat-CustomerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerTests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerTests/Pods-OrderEat-CustomerTests.release.xcconfig"; sourceTree = "<group>"; };
 		2896473C030DA1179810F140 /* Pods-OrderEat-CustomerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerUITests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerUITests/Pods-OrderEat-CustomerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BCEE4C6E70AA41141DF0E8 /* Pods-OrderEat-Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.release.xcconfig"; sourceTree = "<group>"; };
+		876F2451238CC9E000AEF432 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		87940C69237BFF55009AC6EA /* OrderEat-Customer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OrderEat-Customer.entitlements"; sourceTree = "<group>"; };
 		87940C6A237C0A29009AC6EA /* PusherBeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherBeams.swift; sourceTree = "<group>"; };
 		87940C6C237C0A35009AC6EA /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 		CA26D1E52369653C000FDDD0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0AA8961D2387A2EE00033AFE /* UPCarouselFlowLayout.swift */,
+				876F2451238CC9E000AEF432 /* UPCarouselFlowLayout.swift */,
 				CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */,
 				0AA896192387977800033AFE /* OnBoardingCollectionViewCell.swift */,
 			);
@@ -1206,6 +1206,7 @@
 				A3DDA7522372A770006CB5BA /* DetailsTableViewCell.swift in Sources */,
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				CA904E8C23863B7300426715 /* Image.swift in Sources */,
+				876F2452238CC9E000AEF432 /* UPCarouselFlowLayout.swift in Sources */,
 				93FA9298237CF81B006AD4D2 /* (null) in Sources */,
 				A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */,
 				A3B71192236FFAFC00670669 /* PickUpTimeTableViewCell.swift in Sources */,
@@ -1215,7 +1216,6 @@
 				CA754E29237D12DF005BAD6D /* OrderDoneViewModel.swift in Sources */,
 				A3DDA73C23729BAB006CB5BA /* ConfirmPaymentViewController.swift in Sources */,
 				A3B7119E23710FD100670669 /* OrderedMenu.swift in Sources */,
-				0AA8961E2387A2EE00033AFE /* UPCarouselFlowLayout.swift in Sources */,
 				CA904E8E23863BD600426715 /* Cloudinary.swift in Sources */,
 				CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */,
 				93F62E7C237BD8E4007FED6B /* APIRequest.swift in Sources */,
@@ -1454,13 +1454,13 @@
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = SJAF5B347D;
+				DEVELOPMENT_TEAM = 7WQ84MA4V4;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Customer-gl";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eativa.Customer;
 				PRODUCT_NAME = "Eativa-Customer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1475,13 +1475,13 @@
 				CODE_SIGN_ENTITLEMENTS = "OrderEat-Customer/OrderEat-Customer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = SJAF5B347D;
+				DEVELOPMENT_TEAM = 7WQ84MA4V4;
 				INFOPLIST_FILE = "$(SRCROOT)/OrderEat-Customer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Galih-A.OrderEat-Customer-gl";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eativa.Customer;
 				PRODUCT_NAME = "Eativa-Customer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -204,7 +204,7 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
             if self.transaction.getTotalMenu() != 0 {
                 let totalMenu = self.transaction.getTotalMenu()
                 self.itemSelected.text = "\(totalMenu) item" + (totalMenu > 1 ? "s" : "")
-                self.priceSelected.text = "Rp. \(self.transaction.getSubTotalPrice())"
+                self.priceSelected.text =  "Rp. \(self.transaction.getSubTotalPrice().currencyFormat)"
             }
         }
         

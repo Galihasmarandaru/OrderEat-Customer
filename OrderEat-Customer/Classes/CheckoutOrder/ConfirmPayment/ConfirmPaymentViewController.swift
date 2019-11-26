@@ -82,6 +82,7 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row < details.count {
             let cellFood = tableView.dequeueReusableCell(withIdentifier: "orderedItemTableViewCell", for: indexPath) as! OrderedItemTableViewCell
             cellFood.detail = details[indexPath.row]
@@ -91,21 +92,22 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp.  \(transaction.getSubTotalPrice())"
+            cellSub.rightLabel.text = "Rp.  \(transaction.getSubTotalPrice().currencyFormat)"
 
             return cellSub
         }
         else if indexPath.row == (details.count + 1) {
+            
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
-            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice())"
+            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice().currencyFormat)"
 
             return cellTax
         }
         else if indexPath.row == (details.count + 2) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. \(transaction.total!)"
+            cellTotal.rightLabel.text = "Rp. \(transaction.total!.currencyFormat)"
 
             return cellTotal
         }
