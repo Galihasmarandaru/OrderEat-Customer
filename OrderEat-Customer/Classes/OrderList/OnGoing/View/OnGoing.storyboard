@@ -36,7 +36,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onGoingClicked:" destination="r8r-3S-p4L" eventType="touchUpInside" id="v8B-vY-zZe"/>
-                                    <action selector="onGoingClicked:" destination="L9L-Ld-Nfh" eventType="touchUpInside" id="vQt-F3-gel"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="faO-Bd-58q">
@@ -58,7 +57,7 @@
                                     <outlet property="delegate" destination="r8r-3S-p4L" id="p7r-0M-bbN"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSI-iT-z6s">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSI-iT-z6s">
                                 <rect key="frame" x="198" y="44" width="80" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -67,7 +66,6 @@
                                 </state>
                                 <connections>
                                     <action selector="historyClicked:" destination="r8r-3S-p4L" eventType="touchUpInside" id="Bf3-0c-36F"/>
-                                    <action selector="historyClicked:" destination="L9L-Ld-Nfh" eventType="touchUpInside" id="UGt-Jg-eMe"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-kx-eb9">
@@ -141,13 +139,14 @@
                         <outlet property="emptyStateView" destination="C7k-O8-QI1" id="yBF-Be-4pR"/>
                         <outlet property="historyButton" destination="mSI-iT-z6s" id="Pnt-SM-ltm"/>
                         <outlet property="historyUnderline" destination="WcA-kx-eb9" id="HMI-p9-lEU"/>
+                        <outlet property="noTransactionImage" destination="XnK-gg-o7W" id="RYg-oo-7c8"/>
+                        <outlet property="noTransactionLabel" destination="Eva-pU-ejv" id="Wgl-Mj-ZjS"/>
                         <outlet property="onGoingButton" destination="SJV-K3-9T3" id="ilf-no-G6b"/>
                         <outlet property="onGoingCollectionView" destination="9vX-mH-X2f" id="ofc-o0-ZkH"/>
                         <outlet property="onGoingUnderline" destination="faO-Bd-58q" id="izt-UY-jws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qhm-Bu-CDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="L9L-Ld-Nfh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1082.4000000000001" y="99.753694581280797"/>
         </scene>

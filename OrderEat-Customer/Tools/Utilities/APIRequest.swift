@@ -157,6 +157,45 @@ final class APIRequest {
         task.resume()
     }
     
+    class func getHistory (customerId: String, completion: @escaping ([Transaction]?, Error?) -> Void) {
+        let url = URL(string: api + "/customer/" + customerId + "/history")!
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let response = response as? HTTPURLResponse, let data = data
+                else {
+                    completion(nil, .offline)
+                    return
+            }
+            
+            switch(response.statusCode) {
+                case 200:
+                    let decoder = JSONDecoder()
+                    do {
+                        let transactions = try decoder.decode([Transaction].self, from: data)
+                        completion(transactions, nil)
+                    } catch {
+                        completion(nil, .offline)
+                    }
+                
+                case 400:
+                    completion(nil, .badRequest)
+                default:
+                    break
+
+            }
+        }
+        
+        task.resume()
+    }
+    
     // GET menu
     class func getMenus(merchantId: String, completion: @escaping ([Menu]?, Error?) -> Void) {
         let url = URL(string: api + "/merchant/" + merchantId + "/menu")!

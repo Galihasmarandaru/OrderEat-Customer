@@ -52,4 +52,19 @@ class OnGoingViewModel{
             self.transactions = transactions
         }
     }
+    
+    func fetchHistory() {
+        isLoading = true
+
+        APIRequest.getHistory(customerId: CurrentUser.id) { (transactions, error) in
+            if let error = error {
+                self.errorString = error.rawValue
+                self.isLoading = false
+                return
+            }
+            self.errorString = nil
+            self.isLoading = false
+            self.transactions = transactions
+        }
+    }
 }

@@ -59,7 +59,6 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="cancelOrderButtonPressed:" destination="Auz-hY-1hp" eventType="touchUpInside" id="Fvf-4E-UC4"/>
                                             <action selector="minimizeButtonPressed:" destination="Auz-hY-1hp" eventType="touchUpInside" id="f12-we-qfg"/>
                                         </connections>
                                     </button>
