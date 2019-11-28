@@ -43,6 +43,11 @@
 		A31B44A72374054B00022FE6 /* CancelOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31B44A62374054B00022FE6 /* CancelOrderViewController.swift */; };
 		A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A82374055E00022FE6 /* CancelOrder.storyboard */; };
 		A3573CE3237E47E40076D4D9 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3573CE2237E47E40076D4D9 /* AlertView.swift */; };
+		A3602EC5238F9517009E80EE /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3602EC4238F9517009E80EE /* Profile.storyboard */; };
+		A3602EC9238F9AF0009E80EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3602EC8238F9AF0009E80EE /* ProfileViewController.swift */; };
+		A3602ECB238FA5BA009E80EE /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3602ECA238FA5BA009E80EE /* UserDetailTableViewCell.swift */; };
+		A3602ECD238FA5DB009E80EE /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3602ECC238FA5DB009E80EE /* RateTableViewCell.swift */; };
+		A3602ECF238FA5E3009E80EE /* LogOutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3602ECE238FA5E3009E80EE /* LogOutButtonTableViewCell.swift */; };
 		A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B71185236FE90A00670669 /* OrderSetTime.storyboard */; };
 		A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118B236FF5AF00670669 /* CustomButton.swift */; };
 		A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */; };
@@ -157,6 +162,11 @@
 		A31B44A62374054B00022FE6 /* CancelOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancelOrderViewController.swift; path = "OrderEat-Customer/Classes/CancelOrder/ViewController/CancelOrderViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A31B44A82374055E00022FE6 /* CancelOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CancelOrder.storyboard; path = "OrderEat-Customer/Classes/CancelOrder/View/CancelOrder.storyboard"; sourceTree = SOURCE_ROOT; };
 		A3573CE2237E47E40076D4D9 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		A3602EC4238F9517009E80EE /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A3602EC8238F9AF0009E80EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A3602ECA238FA5BA009E80EE /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
+		A3602ECC238FA5DB009E80EE /* RateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
+		A3602ECE238FA5E3009E80EE /* LogOutButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButtonTableViewCell.swift; sourceTree = "<group>"; };
 		A3B71185236FE90A00670669 /* OrderSetTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderSetTime.storyboard; sourceTree = "<group>"; };
 		A3B7118B236FF5AF00670669 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A3B7118D236FFA9B00670669 /* ItemOrderedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrderedTableViewCell.swift; sourceTree = "<group>"; };
@@ -306,6 +316,34 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A3602EC0238F94DC009E80EE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A3602EC6238F9AD8009E80EE /* ViewController */,
+				A3602EC1238F94E7009E80EE /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A3602EC1238F94E7009E80EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3602EC4238F9517009E80EE /* Profile.storyboard */,
+				A3602ECE238FA5E3009E80EE /* LogOutButtonTableViewCell.swift */,
+				A3602ECC238FA5DB009E80EE /* RateTableViewCell.swift */,
+				A3602ECA238FA5BA009E80EE /* UserDetailTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3602EC6238F9AD8009E80EE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3602EC8238F9AF0009E80EE /* ProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		A3B71189236FF57300670669 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +404,7 @@
 		CA26D1EA23696717000FDDD0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A3602EC0238F94DC009E80EE /* Profile */,
 				CAB5D2DC23680C1E00ACAAD0 /* Model */,
 				CA26D1ED236967A2000FDDD0 /* LaunchScreen */,
 				CA26D1E32369652B000FDDD0 /* OnBoarding */,
@@ -1037,6 +1076,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
+				A3602EC5238F9517009E80EE /* Profile.storyboard in Resources */,
 				9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */,
 				CAA6023B237BBAD600EE4497 /* Signin.storyboard in Resources */,
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
@@ -1182,15 +1222,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				93ADD17E237D327E001E3094 /* String.swift in Sources */,
+				A3602ECD238FA5DB009E80EE /* RateTableViewCell.swift in Sources */,
+				A3602ECF238FA5E3009E80EE /* LogOutButtonTableViewCell.swift in Sources */,
 				CA70EE29237907BA0090B246 /* TabBarHome.swift in Sources */,
 				93ADD17E237D327E001E3094 /* String.swift in Sources */,
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
+				A3602EC9238F9AF0009E80EE /* ProfileViewController.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
 				0A73B681237518D9003E1543 /* OnGoingCollectionListCell.swift in Sources */,
 				0A61C1832371427700CF695F /* AddData.swift in Sources */,
 				93ADD181237EAB02001E3094 /* Alert.swift in Sources */,
+				A3602ECB238FA5BA009E80EE /* UserDetailTableViewCell.swift in Sources */,
 				CA35599A2366A5FB00382CCF /* ViewControllerHome.swift in Sources */,
 				A3B7118E236FFA9B00670669 /* ItemOrderedTableViewCell.swift in Sources */,
 				A31B44A72374054B00022FE6 /* CancelOrderViewController.swift in Sources */,
