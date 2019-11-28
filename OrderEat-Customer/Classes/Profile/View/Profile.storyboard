@@ -50,11 +50,15 @@
                                     <constraint firstAttribute="width" constant="135" id="RNu-3E-67q"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gpJ-uF-B5t">
-                                <rect key="frame" x="0.0" y="315" width="414" height="410"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gpJ-uF-B5t">
+                                <rect key="frame" x="0.0" y="285" width="414" height="204"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="Yc9-Ub-Cwz"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="n8r-Z4-Ikt" customClass="UserDetailTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailTableViewCell" rowHeight="50" id="n8r-Z4-Ikt" customClass="UserDetailTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n8r-Z4-Ikt" id="waF-Ca-hx0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -87,8 +91,8 @@
                                             <outlet property="rightLabel" destination="Hkb-Kd-ze3" id="CB5-3V-Q8O"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="FHN-KA-MwZ" customClass="RateTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="78" width="414" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RateTableViewCell" rowHeight="50" id="FHN-KA-MwZ" customClass="RateTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="105.5" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FHN-KA-MwZ" id="aIq-mm-IHp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -118,46 +122,45 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="YBK-bY-r7U" customClass="LogOutButtonTableViewCell" customModule="Eativa_Customer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="128" width="414" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YBK-bY-r7U" id="Jnf-fX-cqr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3K-qo-iTd">
-                                                    <rect key="frame" x="174.5" y="82.5" width="65" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="7BU-6a-NtN"/>
-                                                        <constraint firstAttribute="width" constant="65" id="iFv-cF-ljB"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <state key="normal" title="Log Out"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="C3K-qo-iTd" firstAttribute="centerX" secondItem="Jnf-fX-cqr" secondAttribute="centerX" id="lgw-F4-yo2"/>
-                                                <constraint firstItem="C3K-qo-iTd" firstAttribute="centerY" secondItem="Jnf-fX-cqr" secondAttribute="centerY" id="oKz-f3-6KV"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="logOutButton" destination="C3K-qo-iTd" id="5ur-no-xHF"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="a5O-KE-SmZ" id="oaj-Rv-p7p"/>
+                                    <outlet property="delegate" destination="a5O-KE-SmZ" id="pOv-B4-psS"/>
+                                </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-sp-GqZ">
+                                <rect key="frame" x="0.0" y="489" width="414" height="236"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-uf-E3M">
+                                        <rect key="frame" x="175.5" y="101.5" width="63" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="logOutButtonClicked:" destination="a5O-KE-SmZ" eventType="touchUpInside" id="cMh-DH-8tT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="gIG-uf-E3M" firstAttribute="centerX" secondItem="NSS-sp-GqZ" secondAttribute="centerX" id="PxA-cu-rrJ"/>
+                                    <constraint firstItem="gIG-uf-E3M" firstAttribute="centerY" secondItem="NSS-sp-GqZ" secondAttribute="centerY" id="t4o-vT-2SP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="y4i-d0-mdQ" firstAttribute="bottom" secondItem="gpJ-uF-B5t" secondAttribute="bottom" id="JPg-tz-cqf"/>
+                            <constraint firstItem="y4i-d0-mdQ" firstAttribute="bottom" secondItem="NSS-sp-GqZ" secondAttribute="bottom" id="Gjt-Go-0OO"/>
+                            <constraint firstItem="y4i-d0-mdQ" firstAttribute="trailing" secondItem="NSS-sp-GqZ" secondAttribute="trailing" id="Izi-cP-xoq"/>
                             <constraint firstItem="3eg-Ub-Ycv" firstAttribute="top" secondItem="y4i-d0-mdQ" secondAttribute="top" constant="172" id="KNo-ZI-yp3"/>
-                            <constraint firstItem="gpJ-uF-B5t" firstAttribute="top" secondItem="3eg-Ub-Ycv" secondAttribute="bottom" constant="-5" id="KY4-Q0-SVB"/>
+                            <constraint firstItem="gpJ-uF-B5t" firstAttribute="top" secondItem="3eg-Ub-Ycv" secondAttribute="bottom" constant="-35" id="KY4-Q0-SVB"/>
                             <constraint firstItem="iFN-x3-qgV" firstAttribute="centerX" secondItem="g6g-oP-5t0" secondAttribute="centerX" id="Mxs-nP-gJm"/>
                             <constraint firstItem="iFN-x3-qgV" firstAttribute="top" secondItem="y4i-d0-mdQ" secondAttribute="top" constant="90" id="QhV-dB-YUJ"/>
                             <constraint firstItem="y4i-d0-mdQ" firstAttribute="trailing" secondItem="gpJ-uF-B5t" secondAttribute="trailing" id="VTF-EK-I0u"/>
                             <constraint firstItem="y4i-d0-mdQ" firstAttribute="trailing" secondItem="3eg-Ub-Ycv" secondAttribute="trailing" id="YbV-8m-yDM"/>
+                            <constraint firstItem="NSS-sp-GqZ" firstAttribute="top" secondItem="gpJ-uF-B5t" secondAttribute="bottom" id="h5y-pv-h7q"/>
                             <constraint firstItem="gpJ-uF-B5t" firstAttribute="leading" secondItem="y4i-d0-mdQ" secondAttribute="leading" id="jj4-Zh-HMK"/>
                             <constraint firstItem="3eg-Ub-Ycv" firstAttribute="leading" secondItem="y4i-d0-mdQ" secondAttribute="leading" id="lFf-9o-Sr7"/>
+                            <constraint firstItem="NSS-sp-GqZ" firstAttribute="leading" secondItem="y4i-d0-mdQ" secondAttribute="leading" id="tBY-sw-Wot"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y4i-d0-mdQ"/>
                     </view>
@@ -167,6 +170,8 @@
                     <navigationItem key="navigationItem" title="Profile" id="isn-BY-iJT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="logOutButton" destination="gIG-uf-E3M" id="eWI-iF-sok"/>
+                        <outlet property="profileTableView" destination="gpJ-uF-B5t" id="0b4-h6-4kn"/>
                         <outlet property="profileUserImageView" destination="iFN-x3-qgV" id="LGT-Xc-ChM"/>
                         <outlet property="userMembershipLabel" destination="r1K-fJ-DHt" id="cba-8c-uvM"/>
                         <outlet property="userNameLabel" destination="D7e-oG-b8U" id="Ubc-bB-lGM"/>
