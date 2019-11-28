@@ -20,6 +20,19 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var emptyStateView: UIStackView!
     
+    
+    @IBOutlet weak var noTransactionImage: UIImageView!
+    @IBOutlet weak var noTransactionLabel: UILabel!
+    
+    enum noTransactionImageList: String {
+        case noOngoing = "No Order"
+        case noHistory = "No Orderr"
+    }
+    enum noTransactionLblText: String{
+        case noOngoing = "There is no ongoing transaction"
+        case noHistory = "There is no finish transaction yet"
+    }
+    
     // Injection
     var viewModel = OnGoingViewModel()
     
@@ -98,6 +111,36 @@ class OnGoingViewController: UIViewController{
             
             DispatchQueue.main.async {
                 self.emptyStateView.isHidden = self.transactions.count > 0
+                
+                self.onGoingCollectionView.reloadData()
+            }
+        }
+    }
+    
+    @objc func attemptFetchHistory() {
+        viewModel.fetchHistory()
+        
+        viewModel.updateLoadingStatus = {
+            //let _ = self.viewModel.isLoading ? self.startAnimation() : self.stopAnimation()
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchTransactions()
+                }
+            }
+        }
+        
+        viewModel.didFinishFetch = {
+            if let transactions = self.viewModel.transactions {
+                self.transactions = transactions
+            }
+            
+            DispatchQueue.main.async {
+                
+                self.emptyStateView.isHidden = self.transactions.count > 0
+                
                 self.onGoingCollectionView.reloadData()
             }
         }
@@ -105,20 +148,38 @@ class OnGoingViewController: UIViewController{
     
     func setupCollection(){
         onGoingCollectionView.register(UINib(nibName: "OnGoingCollectionListCell", bundle: nil), forCellWithReuseIdentifier: "onGoingCollectionListCellID")
+        
+        noTransactionImage.image = UIImage(named: noTransactionImageList.noOngoing.rawValue)
+        noTransactionLabel.text = noTransactionLblText.noOngoing.rawValue
+        
         onGoingCollectionView.reloadData()
     }
     
     @IBAction func onGoingClicked(_ sender: Any) {
+        
+        attemptFetchTransactions()
+
+        self.emptyStateView.isHidden = true
+        noTransactionImage.image = UIImage(named: noTransactionImageList.noOngoing.rawValue)
+        noTransactionLabel.text = noTransactionLblText.noOngoing.rawValue
         onGoingUnderline.isHidden = false
         historyUnderline.isHidden = true
+
+
         onGoingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
     }
     
     @IBAction func historyClicked(_ sender: Any)
     {
+        attemptFetchHistory()
+
+        self.emptyStateView.isHidden = true
+//        noTransactionImage.image = UIImage(named: noTransactionImageList.noOngoing.rawValue)
+        noTransactionLabel.text = noTransactionLblText.noHistory.rawValue
         onGoingUnderline.isHidden = true
         historyUnderline.isHidden = false
+
         onGoingButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         

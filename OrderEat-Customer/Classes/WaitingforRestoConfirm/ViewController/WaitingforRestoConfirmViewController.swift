@@ -38,8 +38,10 @@ class WaitingforRestoConfirmViewController: UIViewController {
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             if let transactionID = event.data {
              // you can parse the data as necessary
-//                print("whatdataisthis: \(transactionID)")
+                print("whatdataisthis: \(transactionID)")
+                print("IDDDDD: \(String(describing: self.transaction.id))")
             
+                
                 if self.transaction.id == transactionID {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
