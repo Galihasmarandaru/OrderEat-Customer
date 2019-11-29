@@ -10,6 +10,7 @@ import UIKit
 
 struct Transaction : Codable{
     var id : String? // D
+    var orderNumber: String?
     var customer : Customer? // D
     var merchant : Merchant? // D
     var customerId : String? // E
@@ -17,10 +18,12 @@ struct Transaction : Codable{
     var pickUpTime : String? // D, E
     var total : Int? // D, E
     var status : Int? // D, E
+    var qrCode: String?
     var details : [TransactionDetail]? // D, E
     
     private enum CodingKeys: String, CodingKey {
         case id
+        case orderNumber
         case customer
         case merchant
         case customerId
@@ -28,17 +31,20 @@ struct Transaction : Codable{
         case pickUpTime
         case total
         case status
+        case qrCode
         case details
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
+        self.orderNumber = try container.decodeIfPresent(String.self, forKey: .orderNumber)
         self.customer = try container.decodeIfPresent(Customer.self, forKey: .customer)
         self.merchant = try container.decodeIfPresent(Merchant.self, forKey: .merchant)
         self.pickUpTime = try container.decodeIfPresent(String.self, forKey: .pickUpTime)
         self.total = try container.decodeIfPresent(Int.self, forKey: .total)
         self.status = try container.decodeIfPresent(Int.self, forKey: .status)
+        self.qrCode = try container.decodeIfPresent(String.self, forKey: .qrCode)
         self.details = try container.decodeIfPresent([TransactionDetail].self, forKey: .details)
     }
     

@@ -16,6 +16,7 @@ class OrderDoneViewController: UIViewController {
     // Header View
     @IBOutlet weak var merchantNameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var orderNumberLbl: UILabel!
     
     var details : [TransactionDetail]!
     
@@ -34,7 +35,9 @@ class OrderDoneViewController: UIViewController {
         config()
         
         merchantNameLbl.text = transaction.merchant?.name!
+        orderNumberLbl.text = "Order No: " + transaction.orderNumber!
         statusLbl.text = "Status: " + transactionStatus[transaction.status!]
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -107,8 +110,9 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             if transaction.status == 3 {
                 let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
-
+                
                 cellQR.QRImageView.image = image
+                
                 cellQR.pickUpTimeLabel.text = transaction.pickUpTime?.time
 
                 return cellQR
