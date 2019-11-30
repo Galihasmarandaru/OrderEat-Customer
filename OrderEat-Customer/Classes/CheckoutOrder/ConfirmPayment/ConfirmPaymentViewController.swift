@@ -16,6 +16,7 @@ class ConfirmPaymentViewController: UIViewController {
     // Header View
     @IBOutlet weak var merchantNameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var orderNumberLbl: UILabel!
     
     var details : [TransactionDetail]!
     var transaction : Transaction! {
@@ -30,8 +31,9 @@ class ConfirmPaymentViewController: UIViewController {
         super.viewDidLoad()
         
         config()
-        
+                        
         merchantNameLbl.text = transaction.merchant?.name!
+        orderNumberLbl.text = "Order No: " + transaction.orderNumber!
         statusLbl.text = "Status: " + transactionStatus[transaction.status!]
     }
     

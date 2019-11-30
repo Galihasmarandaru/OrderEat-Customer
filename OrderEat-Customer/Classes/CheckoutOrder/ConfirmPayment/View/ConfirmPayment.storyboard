@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hbL-LA-ZBw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hbL-LA-ZBw">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -278,6 +278,7 @@
                         <outlet property="headerView" destination="XTk-fN-sib" id="fdh-rk-4Eu"/>
                         <outlet property="merchantNameLbl" destination="fg8-dx-KKY" id="6S0-xa-Boe"/>
                         <outlet property="orderDetailsTableView" destination="yyw-Dl-6df" id="AYW-sv-nqA"/>
+                        <outlet property="orderNumberLbl" destination="q4h-5S-chv" id="aDJ-iZ-fbE"/>
                         <outlet property="statusLbl" destination="9h5-f9-vaL" id="M91-gA-CVv"/>
                     </connections>
                 </viewController>

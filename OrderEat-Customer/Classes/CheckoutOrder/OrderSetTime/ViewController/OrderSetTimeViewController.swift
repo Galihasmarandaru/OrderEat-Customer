@@ -11,7 +11,6 @@ import UIKit
 class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var restaurantName: UILabel!
-    @IBOutlet weak var orderNumber: UILabel!
     @IBOutlet weak var orderTableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var merchantNameLbl: UILabel!
@@ -81,6 +80,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
 
     @IBAction func confirmOrderButtonClicked(_ sender: Any) {
         transaction.pickUpTime = pickUpTime.string
+        
         APIRequest.post(.transactions, object: transaction) { (id, error) in
             self.transaction.id = id
 
