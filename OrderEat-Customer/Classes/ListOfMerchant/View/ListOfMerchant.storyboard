@@ -10,7 +10,7 @@
         <!--Discover-->
         <scene sceneID="PTF-zj-AOo">
             <objects>
-                <viewController storyboardIdentifier="ListOfMerchant" title="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9a7-OL-Pme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +162,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tSD-8i-5hL">
             <objects>
-                <navigationController id="9vW-Lm-PPd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListOfMerchant" id="9vW-Lm-PPd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="UPy-Nu-SRg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -174,7 +174,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdz-1I-eZp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="26"/>
+            <point key="canvasLocation" x="378" y="25"/>
         </scene>
     </scenes>
     <resources>

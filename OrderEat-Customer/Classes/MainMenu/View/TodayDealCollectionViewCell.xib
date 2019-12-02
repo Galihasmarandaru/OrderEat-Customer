@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodayDealCollectionCell" id="gTV-IL-0wX" customClass="TodayDealCollectionViewCell" customModule="Eativa_Customer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOq-fR-jSK">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kupon disc" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-oU-njK">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="394" id="5Ie-tE-jYA"/>
+                                    <constraint firstAttribute="height" constant="100" id="XlR-uL-t1H"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="a3g-oU-njK" secondAttribute="trailing" id="5Uj-Uf-I1c"/>
+                            <constraint firstItem="a3g-oU-njK" firstAttribute="leading" secondItem="pOq-fR-jSK" secondAttribute="leading" id="F01-x9-xUx"/>
+                            <constraint firstAttribute="bottom" secondItem="a3g-oU-njK" secondAttribute="bottom" id="Jut-EO-jap"/>
+                            <constraint firstItem="a3g-oU-njK" firstAttribute="top" secondItem="pOq-fR-jSK" secondAttribute="top" id="a2N-F6-ua7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pOq-fR-jSK" secondAttribute="trailing" id="Eap-wg-0lp"/>
+                <constraint firstItem="pOq-fR-jSK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TfT-5q-YN5"/>
+                <constraint firstItem="pOq-fR-jSK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UbT-bW-ekz"/>
+                <constraint firstAttribute="bottom" secondItem="pOq-fR-jSK" secondAttribute="bottom" id="ZHB-kj-fnq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="todayDealImage" destination="a3g-oU-njK" id="6Tn-hD-9TH"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Kupon disc" width="500" height="170"/>
+    </resources>
+</document>

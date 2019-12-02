@@ -38,9 +38,10 @@
             <point key="canvasLocation" x="2247" y="-58"/>
         </scene>
         <!--ListOfMerchant-->
+        <!--MainMenu-->
         <scene sceneID="Tb7-zo-aqA">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListOfMerchant" id="r8Z-qr-Eil" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MainMenu" referencedIdentifier="MainMenu" id="r8Z-qr-Eil" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Discover" id="dvw-qF-aF7">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
