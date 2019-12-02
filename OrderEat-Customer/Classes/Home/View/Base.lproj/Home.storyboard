@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iyF-7M-NGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iyF-7M-NGT">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="r8Z-qr-Eil" kind="relationship" relationship="viewControllers" id="o4o-xC-9eY"/>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1100" y="-50"/>
         </scene>
-        <!--ListOfMerchant-->
+        <!--MainMenu-->
         <scene sceneID="Tb7-zo-aqA">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListOfMerchant" id="r8Z-qr-Eil" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MainMenu" referencedIdentifier="MainMenu" id="r8Z-qr-Eil" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Discover" id="dvw-qF-aF7">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
@@ -52,7 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.dash" catalog="system" width="64" height="44"/>
-
+        <image name="list.dash" catalog="system" width="64" height="42"/>
     </resources>
 </document>
