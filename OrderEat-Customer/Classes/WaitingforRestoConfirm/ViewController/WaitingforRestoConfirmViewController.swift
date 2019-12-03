@@ -36,24 +36,33 @@ class WaitingforRestoConfirmViewController: UIViewController {
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
-            if let transactionID = event.data {
-             // you can parse the data as necessary
-                print("whatdataisthis: \(transactionID)")
-                print("IDDDDD: \(String(describing: self.transaction.id))")
-            
+            if let transaction = event.data {
                 
-                if self.transaction.id == transactionID {
-                    let generator = UINotificationFeedbackGenerator()
-                    generator.notificationOccurred(.success)
+                let data =  Data(transaction.utf8)
+                
+                let decoder = JSONDecoder()
+                do {
+                    let transactions = try decoder.decode([Transaction].self, from: data)
+                                        
+                    // transaction[0] => after update
+                    // transaction[1] => before update
                     
-                    DispatchQueue.main.async {
-                        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                        let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
-                        tabBarVC.selectedIndex = 1
-                        let appDelegate = UIApplication.shared.windows
-                        appDelegate.first?.rootViewController = tabBarVC
-                }
-            }
+                    if self.transaction.id == (transactions[0].id! ) {
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+    
+                        DispatchQueue.main.async {
+                            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+                            tabBarVC.selectedIndex = 1
+                            let appDelegate = UIApplication.shared.windows
+                            appDelegate.first?.rootViewController = tabBarVC
+                        }
+                    }
+                    
+                } catch let error as NSError {
+                   print(error)
+               }
             
            }
        })
