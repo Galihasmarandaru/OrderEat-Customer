@@ -71,6 +71,11 @@
 		A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71197236FFDA400670669 /* OrderSetTimeViewController.swift */; };
 		A3B7119E23710FD100670669 /* OrderedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7119D23710FD100670669 /* OrderedMenu.swift */; };
 		A3B711A0237161E200670669 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7119F237161E200670669 /* CustomColor.swift */; };
+		A3C71DE12398BE6400400D11 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C71DE02398BE6400400D11 /* Signup.storyboard */; };
+		A3C71DE42398BEE500400D11 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C71DE32398BEE500400D11 /* SignupViewController.swift */; };
+		A3C71DE92398C14F00400D11 /* OTPSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C71DE82398C14F00400D11 /* OTPSignup.storyboard */; };
+		A3C71DEB2398C18100400D11 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C71DEA2398C18100400D11 /* DismissKeyboard.swift */; };
+		A3C71DEE2398C1C700400D11 /* OTPSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C71DED2398C1C700400D11 /* OTPSignupViewController.swift */; };
 		A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DDA73923729B93006CB5BA /* ConfirmPayment.storyboard */; };
 		A3DDA73C23729BAB006CB5BA /* ConfirmPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA73B23729BAB006CB5BA /* ConfirmPaymentViewController.swift */; };
 		A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA74F2372A768006CB5BA /* OrderedItemTableViewCell.swift */; };
@@ -205,6 +210,11 @@
 		A3B71197236FFDA400670669 /* OrderSetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSetTimeViewController.swift; sourceTree = "<group>"; };
 		A3B7119D23710FD100670669 /* OrderedMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedMenu.swift; sourceTree = "<group>"; };
 		A3B7119F237161E200670669 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		A3C71DE02398BE6400400D11 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		A3C71DE32398BEE500400D11 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A3C71DE82398C14F00400D11 /* OTPSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTPSignup.storyboard; sourceTree = "<group>"; };
+		A3C71DEA2398C18100400D11 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
+		A3C71DED2398C1C700400D11 /* OTPSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSignupViewController.swift; sourceTree = "<group>"; };
 		A3DDA73923729B93006CB5BA /* ConfirmPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPayment.storyboard; sourceTree = "<group>"; };
 		A3DDA73B23729BAB006CB5BA /* ConfirmPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfirmPaymentViewController.swift; path = "OrderEat-Customer/Classes/CheckoutOrder/ConfirmPayment/ConfirmPaymentViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A3DDA74F2372A768006CB5BA /* OrderedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -434,8 +444,61 @@
 				A3B7119F237161E200670669 /* CustomColor.swift */,
 				A31B449C2373CB6400022FE6 /* File.swift */,
 				A3573CE2237E47E40076D4D9 /* AlertView.swift */,
+				A3C71DEA2398C18100400D11 /* DismissKeyboard.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A3C71DDE2398BE3600400D11 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE22398BED200400D11 /* ViewController */,
+				A3C71DDF2398BE4300400D11 /* VIew */,
+			);
+			name = Signup;
+			path = "OrderEat-Customer/Classes/Authentication/Signup";
+			sourceTree = SOURCE_ROOT;
+		};
+		A3C71DDF2398BE4300400D11 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE02398BE6400400D11 /* Signup.storyboard */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		A3C71DE22398BED200400D11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE32398BEE500400D11 /* SignupViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A3C71DE62398C13500400D11 /* OTPSignup */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DEC2398C1B600400D11 /* ViewController */,
+				A3C71DE72398C13B00400D11 /* View */,
+			);
+			name = OTPSignup;
+			path = "OrderEat-Customer/Classes/Authentication/OTPSignup";
+			sourceTree = SOURCE_ROOT;
+		};
+		A3C71DE72398C13B00400D11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE82398C14F00400D11 /* OTPSignup.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3C71DEC2398C1B600400D11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DED2398C1C700400D11 /* OTPSignupViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CA26D1E32369652B000FDDD0 /* OnBoarding */ = {
@@ -645,6 +708,8 @@
 		CA73E6DF236FC2CB00BD3050 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				A3C71DE62398C13500400D11 /* OTPSignup */,
+				A3C71DDE2398BE3600400D11 /* Signup */,
 				CA754E5F237E6642005BAD6D /* OTP */,
 				CA73E6E1236FC30100BD3050 /* Signin */,
 			);
@@ -1169,11 +1234,13 @@
 				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
 				A31B449F2373FD5800022FE6 /* OrderDone.storyboard in Resources */,
 				0A73B682237518D9003E1543 /* OnGoingCollectionListCell.xib in Resources */,
+				A3C71DE92398C14F00400D11 /* OTPSignup.storyboard in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
 				93AA9A382387838300B98AF4 /* loading.json in Resources */,
+				A3C71DE12398BE6400400D11 /* Signup.storyboard in Resources */,
 				A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1329,6 +1396,7 @@
 				CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */,
 				0AFBEF522390C568008EF737 /* LabelOurPickTableViewCell.swift in Sources */,
 				CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */,
+				A3C71DE42398BEE500400D11 /* SignupViewController.swift in Sources */,
 				93ADD17D237D327E001E3094 /* Date.swift in Sources */,
 				A3DDA7542372A778006CB5BA /* QRTableViewCell.swift in Sources */,
 				0AFBEF4C2390BB46008EF737 /* CategoriesViewModel.swift in Sources */,
@@ -1338,6 +1406,7 @@
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				CA904E8C23863B7300426715 /* Image.swift in Sources */,
 				876F2452238CC9E000AEF432 /* UPCarouselFlowLayout.swift in Sources */,
+				A3C71DEE2398C1C700400D11 /* OTPSignupViewController.swift in Sources */,
 				93FA9298237CF81B006AD4D2 /* (null) in Sources */,
 				0AFBEF42238FBB84008EF737 /* TodayDealTableViewCell.swift in Sources */,
 				A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */,
@@ -1362,6 +1431,7 @@
 				93F62E7A237BD8E4007FED6B /* Data.swift in Sources */,
 				93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */,
 				CA754E27237D12B6005BAD6D /* OrderSetTimeViewModel.swift in Sources */,
+				A3C71DEB2398C18100400D11 /* DismissKeyboard.swift in Sources */,
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
 				CA904E9023863C6800426715 /* UploadImage.swift in Sources */,
