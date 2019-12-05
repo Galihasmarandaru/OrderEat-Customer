@@ -52,6 +52,7 @@ class OnGoingViewController: UIViewController{
         
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
+            
             if event.data != nil {
                  // you can parse the data as necessary
                 

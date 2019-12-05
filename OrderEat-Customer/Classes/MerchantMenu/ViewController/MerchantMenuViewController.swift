@@ -73,6 +73,7 @@ class MerchantMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         merchantTitle.merchant = merchant
         viewOfMenu()
         createConstraint()
