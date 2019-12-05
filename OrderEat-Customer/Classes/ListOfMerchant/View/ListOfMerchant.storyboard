@@ -10,7 +10,7 @@
         <!--Discover-->
         <scene sceneID="PTF-zj-AOo">
             <objects>
-                <viewController title="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListOfMerchant" title="Discover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5on-1W-pb1" customClass="ListMerchantViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9a7-OL-Pme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +162,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tSD-8i-5hL">
             <objects>
-                <navigationController storyboardIdentifier="ListOfMerchant" id="9vW-Lm-PPd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListOfMerchant2" id="9vW-Lm-PPd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="UPy-Nu-SRg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -20,6 +20,7 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var emptyStateView: UIStackView!
     
+    @IBOutlet weak var beliYukButton: UIButton!
     
     @IBOutlet weak var noTransactionImage: UIImageView!
     @IBOutlet weak var noTransactionLabel: UILabel!
@@ -49,7 +50,7 @@ class OnGoingViewController: UIViewController{
         super.viewDidLoad()
         setupCollection()
         historyUnderline.isHidden = true
-        
+        beliYukButton.isHidden = false
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             
@@ -91,6 +92,12 @@ class OnGoingViewController: UIViewController{
         PusherChannels.pusher.disconnect()
     }
     
+    @IBAction func beliYukClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ListOfMerchant", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ListOfMerchant") as! ListMerchantViewController
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = vc
+    }
     func startAnimation() {
         DispatchQueue.main.async {
             self.emptyStateView.isHidden = true

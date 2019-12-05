@@ -81,25 +81,46 @@
                                 </constraints>
                             </view>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="C7k-O8-QI1">
-                                <rect key="frame" x="47.666666666666657" y="285" width="280" height="242"/>
+                                <rect key="frame" x="47.666666666666657" y="243.99999999999997" width="280" height="324.33333333333326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No Order" translatesAutoresizingMaskIntoConstraints="NO" id="XnK-gg-o7W">
-                                        <rect key="frame" x="40" y="0.0" width="200" height="168.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="HLh-LR-4kd"/>
-                                            <constraint firstAttribute="width" secondItem="XnK-gg-o7W" secondAttribute="height" multiplier="146:123" id="IE8-Ps-ZVa"/>
+                                            <constraint firstAttribute="width" constant="280" id="H99-F0-VSO"/>
+                                            <constraint firstAttribute="height" constant="200" id="P80-Vo-GtB"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no ongoing transaction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eva-pU-ejv">
-                                        <rect key="frame" x="14" y="198.33333333333331" width="252" height="43.666666666666657"/>
+                                        <rect key="frame" x="14" y="230" width="252" height="20.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="252" id="2ad-rq-LIz"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgL-Yh-kDI">
+                                        <rect key="frame" x="69.333333333333343" y="280.33333333333337" width="141" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="141" id="MoK-Zw-0eV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="BELI YUK" backgroundImage="Button On Boarding">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="beliYukClicked:" destination="r8r-3S-p4L" eventType="touchUpInside" id="oPg-oh-x62"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="C7k-O8-QI1" secondAttribute="height" multiplier="126:109" id="4Ar-sT-tKg"/>
-                                    <constraint firstAttribute="width" constant="280" id="Wdv-xx-ycP"/>
+                                    <constraint firstItem="bgL-Yh-kDI" firstAttribute="top" secondItem="Eva-pU-ejv" secondAttribute="bottom" constant="30" id="0Jn-eg-xTR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eva-pU-ejv" secondAttribute="trailing" constant="14" id="8a4-cT-JG2"/>
+                                    <constraint firstItem="Eva-pU-ejv" firstAttribute="top" secondItem="XnK-gg-o7W" secondAttribute="bottom" constant="30" id="ag8-rX-BBn"/>
+                                    <constraint firstItem="Eva-pU-ejv" firstAttribute="leading" secondItem="C7k-O8-QI1" secondAttribute="leading" constant="14" id="euG-Ka-UbV"/>
+                                    <constraint firstAttribute="trailing" secondItem="XnK-gg-o7W" secondAttribute="trailing" id="iVc-Lb-Xqs"/>
+                                    <constraint firstItem="XnK-gg-o7W" firstAttribute="leading" secondItem="C7k-O8-QI1" secondAttribute="leading" id="iew-B9-DG0"/>
+                                    <constraint firstItem="XnK-gg-o7W" firstAttribute="top" secondItem="C7k-O8-QI1" secondAttribute="top" id="ijN-Qn-rno"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -136,6 +157,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="animationView" destination="GNZ-im-b9F" id="j3H-Ck-0B3"/>
+                        <outlet property="beliYukButton" destination="bgL-Yh-kDI" id="hGG-Ah-Vnj"/>
                         <outlet property="emptyStateView" destination="C7k-O8-QI1" id="yBF-Be-4pR"/>
                         <outlet property="historyButton" destination="mSI-iT-z6s" id="Pnt-SM-ltm"/>
                         <outlet property="historyUnderline" destination="WcA-kx-eb9" id="HMI-p9-lEU"/>
@@ -152,6 +174,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button On Boarding" width="375" height="44"/>
         <image name="No Order" width="584" height="492"/>
         <image name="Rectangle" width="48" height="2"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
