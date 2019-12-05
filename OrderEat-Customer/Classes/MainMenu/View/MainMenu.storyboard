@@ -257,11 +257,22 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainMenuTableView" destination="u0W-D4-SVV" id="bZC-2m-1jf"/>
+                        <segue destination="SIh-O5-RAi" kind="show" identifier="toMerchantMenu" id="kQl-z7-qBC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPm-gG-MmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2739.130434782609" y="24.776785714285712"/>
+            <point key="canvasLocation" x="2709" y="31"/>
+        </scene>
+        <!--MerchantMenu-->
+        <scene sceneID="t8v-Ln-416">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MerchantMenu" id="SIh-O5-RAi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="O68-Be-xyv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54g-OA-RT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3441" y="18"/>
         </scene>
         <!--Discover-->
         <scene sceneID="IpL-4J-ZWV">

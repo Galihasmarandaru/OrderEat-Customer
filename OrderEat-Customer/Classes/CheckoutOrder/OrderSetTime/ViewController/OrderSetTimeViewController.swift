@@ -147,7 +147,7 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
 
             cellPickup.pickUpTimeTextField.inputAccessoryView = addToolBar()
             
-            cellPickup.pickUpTimeTextField.text = pickUpTime.string
+            cellPickup.pickUpTimeTextField.text = pickUpTime.time
             cellPickup.pickUpTimeTextField.inputView = datePicker
                         
             cellPickup.pickUpTimeTextField.becomeFirstResponder()

@@ -18,6 +18,7 @@ class CategoriesViewModel : NSObject, UICollectionViewDataSource,UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellCate = collectionView.dequeueReusableCell(withReuseIdentifier: "MainMenuCollectionCell", for: indexPath) as! MainMenuCollectionViewCell
+        
         cellCate.imageCategories.image = imageCategories[indexPath.row]
         
         return cellCate

@@ -12,8 +12,24 @@ import CryptoKit
 extension String {
     var time : String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
+        //        formatter.locale = Locale(identifier: "en_US_POSIX")
+
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+        let date = formatter.date(from: self)
         
+        formatter.dateFormat = "HH:mm"
+        
+        let string = formatter.string(from: date!)
+        
+        return string
+    }
+    
+    var workingHourFormat : String {
+        let formatter = DateFormatter()
+
+        formatter.dateFormat = "HH:mm:ss"
+
         let date = formatter.date(from: self)
         
         formatter.dateFormat = "HH:mm"

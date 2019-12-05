@@ -19,6 +19,14 @@ class OurPicksTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    var merchant: Merchant!{
+        didSet{
+            self.imageOurPick.image = merchant!.image != nil ? UIImage(named: "default") : UIImage(named: "default")
+            self.restoNameLabel.text = merchant.name
+            self.restoAddressLabel.text = merchant.address
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

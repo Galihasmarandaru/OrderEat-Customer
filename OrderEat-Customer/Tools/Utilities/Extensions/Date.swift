@@ -11,6 +11,15 @@ import Foundation
 extension Date {
     var string : String {
         let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        let string = formatter.string(from: self)
+        
+        return string
+    }
+    
+    var time : String {
+        let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         
         let string = formatter.string(from: self)
