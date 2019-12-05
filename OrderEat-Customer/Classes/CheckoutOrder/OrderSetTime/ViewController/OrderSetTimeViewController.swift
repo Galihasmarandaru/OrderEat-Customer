@@ -79,23 +79,33 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     }
 
     @IBAction func confirmOrderButtonClicked(_ sender: Any) {
-        transaction.pickUpTime = pickUpTime.string
-        
+
         APIRequest.post(.transactions, object: transaction) { (id, error) in
             self.transaction.id = id
-
-            let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
+            self.transaction.pickUpTime = self.pickUpTime.string
+            
+            let storyboard02 = UIStoryboard(name: "Home", bundle: nil)
             DispatchQueue.main.async {
-                let waitingConfirmationPageVC = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
+                
+                let tabBarVC = storyboard02.instantiateViewController(identifier: "tabBar") as! UITabBarController
+                tabBarVC.selectedIndex = 1
+                
+                let ongoingVC = tabBarVC.viewControllers![1] as! OnGoingViewController
+                ongoingVC.isWaitingForConfirmation = true
+                ongoingVC.pendingTransaction = self.transaction
+                
+                let appDelegate = UIApplication.shared.windows
+                
+                appDelegate.first?.rootViewController = tabBarVC
+                
+                
 
-                waitingConfirmationPageVC.transaction = self.transaction
-
-                if let navigator = self.merchantMenuVC.navigationController {
-                    self.dismiss(animated: false) {
-                        navigator.pushViewController(waitingConfirmationPageVC, animated: false)
-                    }
-//                    self.present(waitingConfirmationPageVC, animated: true, completion: nil)
-                }
+//                if let navigator = self.merchantMenuVC.navigationController {
+//                    self.dismiss(animated: false) {
+//                        navigator.pushViewController(waitingConfirmationPageVC, animated: false)
+//                    }
+////                    self.present(waitingConfirmationPageVC, animated: true, completion: nil)
+//                }
             }
         }
     }

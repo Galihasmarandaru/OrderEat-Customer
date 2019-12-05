@@ -23,6 +23,9 @@ class MerchantMenuViewController: UIViewController {
     
     @IBOutlet weak var CartView: UIView!
     
+    
+    
+    
     @IBOutlet weak var menuViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     var bottomConstraint: NSLayoutConstraint!
@@ -41,6 +44,24 @@ class MerchantMenuViewController: UIViewController {
     
     var selectedItem: Int!
     var qtyItem: Int!
+    
+    var cardViewController: NotesViewController!
+    var runningAnimations = [UIViewPropertyAnimator]()
+    var animationProgressWhenInterrupted:CGFloat = 0
+    var visualEffectView:UIVisualEffectView!
+    let cardHandleAreaHeight:CGFloat = 65
+    let cardHeight:CGFloat = 520
+    
+    enum CardState {
+        case expanded
+        case collapsed
+    }
+    
+    var cardVisible = false
+    var nextState: CardState {
+        return cardVisible ? .collapsed : .expanded
+    }
+
     
     // Injection
     let viewModel = MerchantMenuViewModel()
@@ -134,6 +155,11 @@ class MerchantMenuViewController: UIViewController {
         self.viewMenu.layer.masksToBounds = false
     }
     
+//    MARK:  Notes Animation
+    @objc func AddActionNotes() {
+            setupCard()
+    }
+    
 //    MARK: Cart Animation
     func showCart() {
         let inset : CGFloat = 40
@@ -171,6 +197,125 @@ class MerchantMenuViewController: UIViewController {
         CartView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         CartView.widthAnchor.constraint(equalToConstant: 325).isActive = true
     }
+    
+    // MARK: Handle Notes
+    
+    func setupCard() {
+        visualEffectView = UIVisualEffectView()
+        visualEffectView.frame = self.view.frame
+        self.view.addSubview(visualEffectView)
+        
+        cardViewController = NotesViewController(nibName:"Notes", bundle:nil)
+        self.addChild(cardViewController)
+        self.view.addSubview(cardViewController.view)
+        
+        cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight + 10, width: self.view.bounds.width, height: cardHeight)
+        
+        cardViewController.view.clipsToBounds = true
+        cardViewController.barNotes.layer.cornerRadius = 3
+        cardViewController.view.tag = 1
+        
+        animateTransitionIfNeeded(state: nextState, duration: 0.3)
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MerchantMenuViewController.handleCardPan(recognizer:)))
+        
+        cardViewController.barNotes.addGestureRecognizer(panGestureRecognizer)
+        cardViewController.handleView.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    @objc
+    func handleCardPan (recognizer:UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            startInteractiveTransition(state: nextState, duration: 0.9)
+        case .changed:
+            let translation = recognizer.translation(in: self.cardViewController.handleView)
+            var fractionComplete = translation.y / cardHeight
+            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
+            updateInteractiveTransition(fractionCompleted: fractionComplete)
+        case .ended:
+            continueInteractiveTransition()
+            self.visualEffectView.removeFromSuperview()
+            self.removeSubview()
+        default:
+            break
+        }
+        
+    }
+    
+    func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
+        if runningAnimations.isEmpty {
+            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                switch state {
+                case .expanded:
+                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
+                case .collapsed:
+                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight + 80
+                }
+            }
+            
+            frameAnimator.addCompletion { _ in
+                self.cardVisible = !self.cardVisible
+                self.runningAnimations.removeAll()
+            }
+            
+            frameAnimator.startAnimation()
+            runningAnimations.append(frameAnimator)
+            
+            
+            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
+                switch state {
+                case .expanded:
+                    self.cardViewController.view.layer.cornerRadius = 12
+                case .collapsed:
+                    self.cardViewController.view.layer.cornerRadius = 0
+                }
+            }
+            
+            cornerRadiusAnimator.startAnimation()
+            runningAnimations.append(cornerRadiusAnimator)
+            
+            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                switch state {
+                case .expanded:
+                    self.visualEffectView.effect = UIBlurEffect(style: .dark)
+                case .collapsed:
+                    self.visualEffectView.effect = nil
+                }
+            }
+
+            blurAnimator.startAnimation()
+            runningAnimations.append(blurAnimator)
+        }
+    }
+    
+    func startInteractiveTransition(state:CardState, duration:TimeInterval) {
+        if runningAnimations.isEmpty {
+            animateTransitionIfNeeded(state: state, duration: duration)
+        }
+        for animator in runningAnimations {
+            animator.pauseAnimation()
+            animationProgressWhenInterrupted = animator.fractionComplete
+        }
+    }
+    
+    func updateInteractiveTransition(fractionCompleted:CGFloat) {
+        for animator in runningAnimations {
+            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+        }
+    }
+    
+    func continueInteractiveTransition (){
+        for animator in runningAnimations {
+            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        }
+    }
+    
+    func removeSubview(){
+        if let viewCard = self.view.viewWithTag(1){
+            viewCard.removeFromSuperview()
+        }
+    }
 }
 
 // MARK: Data Menu Merchant
@@ -207,6 +352,11 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
                 self.priceSelected.text =  "Rp. \(self.transaction.getSubTotalPrice().currencyFormat)"
             }
         }
+        
+        cell.activityCart = { [unowned self] in
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(self.AddActionNotes))
+                    cell.AddNotes.addGestureRecognizer(tap)
+                }
         
         return cell
     }
