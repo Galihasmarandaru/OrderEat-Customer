@@ -13,6 +13,14 @@ class MainMenuViewController: UIViewController {
     let categoriesViewModel = CategoriesViewModel()
     let todaysViewModel = TodaysViewModel()
    
+    // Injection
+    let viewModel = ListOfMerchantViewModel()
+    
+    // Array
+    var merchants : [Merchant] = []
+    var filteredMerchants : [Merchant] = []
+    var selectedMerchant : Merchant!
+    
     let searchController = UISearchController(searchResultsController: nil)
      var isFiltering : Bool {
          return searchController.isActive && !isSearchBarEmpty
@@ -24,6 +32,9 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         setupSearchController()
         
+        attemptFetchMerchants()
+
+        
     }
     
     func setupSearchController() {
@@ -34,6 +45,40 @@ class MainMenuViewController: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
+    }
+    
+    private func attemptFetchMerchants() {
+        viewModel.fetchMerchants()
+        
+        viewModel.updateLoadingStatus = {
+            
+        }
+        
+        viewModel.showAlertClosure = {
+            if let errorString = self.viewModel.errorString {
+                Alert.showErrorAlert(on: self, title: errorString) {
+                    self.viewModel.fetchMerchants()
+                }
+            }
+        }
+        
+        viewModel.didFinishFetch = {
+            if let merchants = self.viewModel.merchants {
+                self.merchants = merchants
+            }
+            
+            DispatchQueue.main.async {
+                self.mainMenuTableView.reloadData()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMerchantMenu" {
+            let vc = segue.destination as! MerchantMenuViewController
+            
+            vc.merchant = selectedMerchant
+        }
     }
     
 
@@ -67,6 +112,8 @@ extension MainMenuViewController: UITableViewDelegate,UITableViewDataSource{
         }
         else if section == 2 {
             return 1
+        }else if section == 3 {
+            return merchants.count
         }else{
             return imageArr.count
         }
@@ -102,14 +149,29 @@ extension MainMenuViewController: UITableViewDelegate,UITableViewDataSource{
         else if indexPath.section == 3 {
             
             let cellOurPicks = tableView.dequeueReusableCell(withIdentifier: "cellOurPicks", for: indexPath) as! OurPicksTableViewCell
-            cellOurPicks.imageOurPick.image = imageArr[indexPath.row]
-            cellOurPicks.restoNameLabel.text = "BURGER KING"
-            cellOurPicks.restoAddressLabel.text = "Aeon Mall"
-            cellOurPicks.restoDetailLabel.text = "6 km"
+            
+//            cellOurPicks.imageOurPick.image = imageArr[indexPath.row]
+//            cellOurPicks.restoNameLabel.text = "BURGER KING"
+//            cellOurPicks.restoAddressLabel.text = "Aeon Mall"
+//            cellOurPicks.restoDetailLabel.text = "6 km"
+//            return cellOurPicks
+            
+            cellOurPicks.merchant = merchants[indexPath.row]
             return cellOurPicks
         }
         else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // how to identify which cell is selected ?
+        
+        let cell = tableView.cellForRow(at: indexPath) as! OurPicksTableViewCell
+
+        selectedMerchant = cell.merchant
+        
+        performSegue(withIdentifier: "toMerchantMenu", sender: nil)
     }
 }
