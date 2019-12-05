@@ -23,6 +23,9 @@ class MenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewStepper: UIView!
     
+    @IBOutlet weak var AddNotes: UIView!
+    
+    
     var MerchantMenuVC: MerchantMenuViewController!
     var bottomConstraint: NSLayoutConstraint!
     
@@ -32,6 +35,7 @@ class MenuTableViewCell: UITableViewCell {
     var checkCartClosure: (() -> ())?
     var plusBtnClosure: (() -> ())?
     var minusBtnClosure: (() -> ())?
+    var activityCart: (() -> ())?
     
     // Container
     var menu : Menu! {
@@ -64,6 +68,7 @@ class MenuTableViewCell: UITableViewCell {
         toggleButtonView()
         refreshLabel()
         refreshCartClosure?()
+        activityCart?()
     }
     
     @IBAction func minusTap(_ sender: UIButton) {

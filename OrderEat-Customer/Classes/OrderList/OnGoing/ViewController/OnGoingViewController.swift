@@ -24,6 +24,9 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var noTransactionImage: UIImageView!
     @IBOutlet weak var noTransactionLabel: UILabel!
     
+    var isWaitingForConfirmation : Bool = false
+    var pendingTransaction : Transaction!
+    
     enum noTransactionImageList: String {
         case noOngoing = "No Order"
         case noHistory = "No Orderr"
@@ -39,6 +42,9 @@ class OnGoingViewController: UIViewController{
     // Array
     var transactions = [Transaction]()
     
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
@@ -53,6 +59,26 @@ class OnGoingViewController: UIViewController{
                 generator.impactOccurred()
                }
            })
+        
+
+        DispatchQueue.main.async {
+            print(self.isWaitingForConfirmation)
+            if self.isWaitingForConfirmation {
+                let storyboard01 = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
+                let waitingConfirmationPageVC = storyboard01.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
+
+                waitingConfirmationPageVC.transaction = self.pendingTransaction
+                print(self.pendingTransaction)
+                
+                self.present(waitingConfirmationPageVC, animated: true, completion: nil)
+                
+            }
+        }
+        
+        let collectionViewLayout = onGoingCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        collectionViewLayout?.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 25, right: 0)
+        collectionViewLayout?.invalidateLayout()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -202,6 +228,8 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         cell.layer.shadowOffset = CGSize(width: 3, height: 3)
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
+        
+        
         return cell
     }
     

@@ -281,7 +281,6 @@ final class APIRequest {
             
             switch(response.statusCode) {
                 case 200:
-                    
                     let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
                     
                     let newObjectId = json["id"] as! String

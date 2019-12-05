@@ -68,6 +68,8 @@
 		A3E4D5D32375201800693241 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D22375201800693241 /* DetailTableViewCell.swift */; };
 		A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */; };
 		A3E4D5D92375234A00693241 /* OrderDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */; };
+		CA00688023976AA400713A59 /* Notes.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00687F23976AA400713A59 /* Notes.xib */; };
+		CA00688223976AF600713A59 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00688123976AF600713A59 /* NotesViewController.swift */; };
 		CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */; };
 		CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
@@ -190,6 +192,8 @@
 		B2F1FB048AAD7F9EF99DECC5 /* Pods-OrderEat-CustomerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerUITests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerUITests/Pods-OrderEat-CustomerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C215777DC99BD140213BFF05 /* Pods-OrderEat-CustomerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerTests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerTests/Pods-OrderEat-CustomerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9E1CDE4DCFBBE2D2140CA50 /* Pods-OrderEat-Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.debug.xcconfig"; sourceTree = "<group>"; };
+		CA00687F23976AA400713A59 /* Notes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes.xib; sourceTree = "<group>"; };
+		CA00688123976AF600713A59 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
 		CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellDelegate.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* Eativa-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eativa-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -663,6 +667,7 @@
 		CA73E6EA236FC44E00BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CA00687F23976AA400713A59 /* Notes.xib */,
 				CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */,
 				CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */,
 				CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */,
@@ -674,6 +679,7 @@
 		CA73E6EB236FC45300BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CA00688123976AF600713A59 /* NotesViewController.swift */,
 				CA73E71C236FEA3500BD3050 /* MerchantMenuViewController.swift */,
 			);
 			path = ViewController;
@@ -1078,6 +1084,7 @@
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
 				A3602EC5238F9517009E80EE /* Profile.storyboard in Resources */,
 				9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */,
+				CA00688023976AA400713A59 /* Notes.xib in Resources */,
 				CAA6023B237BBAD600EE4497 /* Signin.storyboard in Resources */,
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
 				9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */,
@@ -1229,6 +1236,7 @@
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
+				CA00688223976AF600713A59 /* NotesViewController.swift in Sources */,
 				A3602EC9238F9AF0009E80EE /* ProfileViewController.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
 				0A73B681237518D9003E1543 /* OnGoingCollectionListCell.swift in Sources */,
