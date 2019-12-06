@@ -187,17 +187,6 @@
                                                                                         <action selector="plusTap:" destination="aaC-xl-hYx" eventType="touchUpInside" id="mGY-Vy-VQf"/>
                                                                                     </connections>
                                                                                 </button>
-                                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8mO-Ht-oAR" userLabel="AddNotes">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    <subviews>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnNotes" translatesAutoresizingMaskIntoConstraints="NO" id="JDl-WK-Yaj">
-                                                                                            <rect key="frame" x="7" y="7" width="16" height="16"/>
-                                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                        </imageView>
-                                                                                    </subviews>
-                                                                                    <color key="backgroundColor" red="0.85882352939999995" green="0.89411764709999997" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                                </view>
                                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-Fr-tv1">
                                                                                     <rect key="frame" x="31" y="0.0" width="30" height="30"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -218,6 +207,18 @@
                                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJ7-Dp-YMZ">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                    <color key="backgroundColor" red="0.90196078431372551" green="0.92250627279999997" blue="0.58817327019999999" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                                                    <state key="normal" image="btnNotes">
+                                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                                                    </state>
+                                                                                    <connections>
+                                                                                        <action selector="noteTap:" destination="aaC-xl-hYx" eventType="touchUpInside" id="oWl-8T-QYr"/>
+                                                                                    </connections>
+                                                                                </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </view>
@@ -241,7 +242,6 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <outlet property="AddNotes" destination="8mO-Ht-oAR" id="OR7-gU-98K"/>
                                                     <outlet property="addButton" destination="z9E-lb-UJs" id="wjT-Fe-cHa"/>
                                                     <outlet property="detailFood" destination="LdB-LH-9Cw" id="p4G-Y3-p73"/>
                                                     <outlet property="imageMenu" destination="GfZ-D1-vlg" id="gk5-Cw-2cR"/>

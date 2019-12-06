@@ -83,7 +83,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
       
         APIRequest.post(.transactions, object: transaction) { (id, error) in
             self.transaction.id = id
-            self.transaction.pickUpTime = self.pickUpTime.string
+            self.transaction.pickUpTime = self.pickUpTime!.string
             
             let storyboard02 = UIStoryboard(name: "Home", bundle: nil)
             DispatchQueue.main.async {

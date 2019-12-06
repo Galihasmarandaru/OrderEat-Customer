@@ -14,6 +14,7 @@ class ItemOrderedTableViewCell: UITableViewCell {
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemQtyLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
+    @IBOutlet weak var itemNotesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,8 @@ class ItemOrderedTableViewCell: UITableViewCell {
             
             let price = detail.menu?.price
             itemPriceLabel.text = "Rp. \(price!.currencyFormat)"
+            
+            itemNotesLabel.text = detail.notes
         }
     }
 }

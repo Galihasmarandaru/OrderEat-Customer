@@ -158,7 +158,7 @@ class MerchantMenuViewController: UIViewController {
     
 //    MARK:  Notes Animation
     @objc func AddActionNotes() {
-            setupCard()
+        //setupCard()
     }
     
 //    MARK: Cart Animation
@@ -201,12 +201,14 @@ class MerchantMenuViewController: UIViewController {
     
     // MARK: Handle Notes
     
-    func setupCard() {
+    func setupCard(detail: TransactionDetail) {
         visualEffectView = UIVisualEffectView()
         visualEffectView.frame = self.view.frame
         self.view.addSubview(visualEffectView)
         
         cardViewController = NotesViewController(nibName:"Notes", bundle:nil)
+        cardViewController.detail = detail
+        
         self.addChild(cardViewController)
         self.view.addSubview(cardViewController.view)
         
@@ -219,9 +221,16 @@ class MerchantMenuViewController: UIViewController {
         animateTransitionIfNeeded(state: nextState, duration: 0.3)
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MerchantMenuViewController.handleCardPan(recognizer:)))
-        
+                
         cardViewController.barNotes.addGestureRecognizer(panGestureRecognizer)
         cardViewController.handleView.addGestureRecognizer(panGestureRecognizer)
+    
+        cardViewController.addNotesBtnClosure = { [unowned self] in
+            DispatchQueue.main.async {
+                self.animateTransitionIfNeeded(state: .collapsed, duration: 0.5)
+                self.visualEffectView.removeFromSuperview()
+            }
+        }
     }
     
     @objc
@@ -334,6 +343,16 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
         cell.detail = transaction.details![row]
         cell.menu =  menus[row]
         
+        cell.delegate = self
+//        notesVC
+//            .addNotesBtnClosure = {
+//            print("inside closure")
+//
+////            cell.detail.notes = notes.textFieldNotes.text
+////            print("whati sthe notes : "  + notes.textFieldNotes.text!)
+//            self.animateTransitionIfNeeded(state: .collapsed, duration: 0.5)
+//        }
+        
         cell.addBtnClosure = { [unowned self] in
             if self.transaction.getTotalMenu() == 0 {
                 self.showCart()
@@ -354,10 +373,10 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
             }
         }
         
-        cell.activityCart = { [unowned self] in
-                    let tap = UITapGestureRecognizer(target: self, action: #selector(self.AddActionNotes))
-                    cell.AddNotes.addGestureRecognizer(tap)
-                }
+//        cell.activityCart = { [unowned self] in
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.AddActionNotes))
+//                    cell.AddNotes.addGestureRecognizer(tap)
+//                }
         
         return cell
     }
@@ -381,5 +400,11 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
             menuViewTopConstraint.constant = (1 - progress/2) * 215.0
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+extension MerchantMenuViewController : MenuTableViewCellDelegate {
+    func didPressedNotesBtn(detail: TransactionDetail) {
+        setupCard(detail: detail)
     }
 }
