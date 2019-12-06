@@ -13,7 +13,7 @@ import PushNotifications
 final class CurrentUser {
     static var id = ""
     static var accessToken: String = ""
-    
+        
     class func reset() {
         id = ""
         accessToken = ""

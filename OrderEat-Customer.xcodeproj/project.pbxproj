@@ -30,6 +30,7 @@
 		0AFBEF522390C568008EF737 /* LabelOurPickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBEF512390C568008EF737 /* LabelOurPickTableViewCell.swift */; };
 		15177FC09B0E6C27B7B9FA80 /* Pods_OrderEat_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E19B133C07584D633276187 /* Pods_OrderEat_CustomerTests.framework */; };
 		1D712389374EA7F1ACF31BD8 /* Pods_OrderEat_Customer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */; };
+		87250BDC2398F7050039F25C /* Midtrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87250BDB2398F7050039F25C /* Midtrans.swift */; };
 		876F2452238CC9E000AEF432 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F2451238CC9E000AEF432 /* UPCarouselFlowLayout.swift */; };
 		87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6A237C0A29009AC6EA /* PusherBeams.swift */; };
 		87940C6D237C0A35009AC6EA /* PusherChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87940C6C237C0A35009AC6EA /* PusherChannels.swift */; };
@@ -164,6 +165,7 @@
 		2896473C030DA1179810F140 /* Pods-OrderEat-CustomerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerUITests.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerUITests/Pods-OrderEat-CustomerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F5BB07C204E94B232B02B81 /* Pods_OrderEat_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderEat_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BCEE4C6E70AA41141DF0E8 /* Pods-OrderEat-Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.release.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.release.xcconfig"; sourceTree = "<group>"; };
+		87250BDB2398F7050039F25C /* Midtrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Midtrans.swift; sourceTree = "<group>"; };
 		876F2451238CC9E000AEF432 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		87940C69237BFF55009AC6EA /* OrderEat-Customer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OrderEat-Customer.entitlements"; sourceTree = "<group>"; };
 		87940C6A237C0A29009AC6EA /* PusherBeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherBeams.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				87940C6C237C0A35009AC6EA /* PusherChannels.swift */,
 				93ADD180237EAB02001E3094 /* Alert.swift */,
 				935A165D2384D85A001C1D4F /* Defaults.swift */,
+				87250BDB2398F7050039F25C /* Midtrans.swift */,
 			);
 			name = Utilities;
 			path = "OrderEat-Customer/Tools/Utilities";
@@ -1356,6 +1359,7 @@
 				CA754E27237D12B6005BAD6D /* OrderSetTimeViewModel.swift in Sources */,
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
+				87250BDC2398F7050039F25C /* Midtrans.swift in Sources */,
 				CA904E9023863C6800426715 /* UploadImage.swift in Sources */,
 				0AFBEF3A238F9658008EF737 /*  MainMenuViewModel.swift in Sources */,
 				CA754E66237E67DF005BAD6D /* OTPViewController.swift in Sources */,

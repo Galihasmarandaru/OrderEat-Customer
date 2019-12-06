@@ -15,7 +15,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var merchantNameLbl: UILabel!
     
-    var pickUpTime = Date()
+    var pickUpTime : Date?
     var paymentMethod: String = "GOPAY"
     
     let viewPicker = UIPickerView()
@@ -26,6 +26,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
         let picker = UIDatePicker()
         
         picker.datePickerMode = .time
+        picker.minuteInterval = 10
         
         picker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
         
@@ -65,7 +66,6 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     
     func config() {
         self.view.addBackground()
-        datePicker.minimumDate = Calendar.current.date(byAdding: .minute, value: 30, to: Date())
         datePicker.backgroundColor = .white
         viewPicker.backgroundColor = .white
         
@@ -79,7 +79,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
     }
 
     @IBAction func confirmOrderButtonClicked(_ sender: Any) {
-        transaction.pickUpTime = pickUpTime.string
+        transaction.pickUpTime = pickUpTime!.string
         
         APIRequest.post(.transactions, object: transaction) { (id, error) in
             self.transaction.id = id
@@ -147,7 +147,10 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
 
             cellPickup.pickUpTimeTextField.inputAccessoryView = addToolBar()
             
-            cellPickup.pickUpTimeTextField.text = pickUpTime.time
+            if pickUpTime != nil {
+                cellPickup.pickUpTimeTextField.text = pickUpTime!.time
+            }
+            
             cellPickup.pickUpTimeTextField.inputView = datePicker
                         
             cellPickup.pickUpTimeTextField.becomeFirstResponder()

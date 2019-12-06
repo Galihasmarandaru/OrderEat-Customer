@@ -139,6 +139,19 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
         
         cellButton.confirmBtnClosure = { [unowned self] in
+            
+            // get midtrans token
+            APIRequest.getMidtransToken(transaction: self.transaction) { (response, error) in
+            
+                if let error = error {
+                    print(error)
+                } else {
+//                    let midtransToken = response!["token"] as! [String:String]
+                }
+                
+            }
+            
+            
             Alert.showConfirmationAlert(on: self, title: "Confirm Payment", message: "Are you sure you have done your payment?", yesAction: {
                 APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
                 self.dismiss(animated: true, completion: nil)
