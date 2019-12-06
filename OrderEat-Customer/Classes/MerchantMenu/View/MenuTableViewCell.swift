@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MenuTableViewCellDelegate {
+    func didPressedNotesBtn(detail: TransactionDetail)
+}
+
 class MenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageMenu: UIImageView!
@@ -29,6 +33,8 @@ class MenuTableViewCell: UITableViewCell {
     var MerchantMenuVC: MerchantMenuViewController!
     var bottomConstraint: NSLayoutConstraint!
     
+    var delegate : MenuTableViewCellDelegate!
+    
     // Closure
     var addBtnClosure: (() ->  ())?
     var refreshCartClosure: (() -> ())?
@@ -36,7 +42,7 @@ class MenuTableViewCell: UITableViewCell {
     var plusBtnClosure: (() -> ())?
     var minusBtnClosure: (() -> ())?
     var activityCart: (() -> ())?
-    
+        
     // Container
     var menu : Menu! {
         didSet {
@@ -90,6 +96,11 @@ class MenuTableViewCell: UITableViewCell {
         refreshLabel()
     }
     
+    @IBAction func noteTap(_ sender: Any) {
+        delegate.didPressedNotesBtn(detail: detail)
+    }
+    
+    
     func toggleButtonView() {
         addButton.isHidden = !addButton.isHidden
         viewStepper.isHidden = !viewStepper.isHidden
@@ -98,4 +109,6 @@ class MenuTableViewCell: UITableViewCell {
     func refreshLabel() {
         qtyItem.text = String(detail.qty!)
     }
+    
+    
 }

@@ -90,19 +90,19 @@ class ListMerchantViewController: UIViewController {
         vc.merchant = selectedMerchant
     }
     
-    @IBAction func logoutBtnPressed(_ sender: Any) {
-        
-        PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
-        PusherChannels.pusher.unsubscribeAll()
-        
-        Defaults.clearUserData()
-        CurrentUser.reset()
-        
-        let storyboard = UIStoryboard(name: "Signin", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
-        let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = vc
-    }
+//    @IBAction func logoutBtnPressed(_ sender: Any) {
+//        
+//        PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
+//        PusherChannels.pusher.unsubscribeAll()
+//        
+//        Defaults.clearUserData()
+//        CurrentUser.reset()
+//        
+//        let storyboard = UIStoryboard(name: "Signin", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
+//        let appDelegate = UIApplication.shared.windows
+//        appDelegate.first?.rootViewController = vc
+//    }
 }
 
 extension ListMerchantViewController: UITableViewDataSource,UITableViewDelegate{

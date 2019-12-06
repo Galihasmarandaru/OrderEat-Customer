@@ -253,7 +253,18 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="LCy-ac-CBP"/>
-                    <navigationItem key="navigationItem" id="wD1-kV-Czl"/>
+                    <navigationItem key="navigationItem" id="wD1-kV-Czl">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wbE-Uy-Vi6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WQP-aY-kzA" userLabel="Logout">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                            </button>
+                            <connections>
+                                <action selector="logoutBtnPressed:" destination="h1g-RU-TZu" id="93r-yb-7sd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainMenuTableView" destination="u0W-D4-SVV" id="bZC-2m-1jf"/>

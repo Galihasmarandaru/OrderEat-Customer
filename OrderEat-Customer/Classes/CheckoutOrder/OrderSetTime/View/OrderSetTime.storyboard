@@ -73,16 +73,24 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMx-Hc-HzH" userLabel="Item Notes Label">
+                                                    <rect key="frame" x="132" y="86" width="39" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qfK-J8-ty6" firstAttribute="top" secondItem="QKh-Ac-UWU" secondAttribute="bottom" constant="8" id="881-gT-tuB"/>
                                                 <constraint firstItem="qfK-J8-ty6" firstAttribute="leading" secondItem="pMK-Wn-clZ" secondAttribute="trailing" constant="8" id="BoW-yA-g0g"/>
+                                                <constraint firstItem="rMx-Hc-HzH" firstAttribute="top" secondItem="qfK-J8-ty6" secondAttribute="bottom" constant="1" id="CRh-4t-ebJ"/>
                                                 <constraint firstItem="5Cy-P7-You" firstAttribute="leading" secondItem="pMK-Wn-clZ" secondAttribute="trailing" constant="8" id="Eoj-rd-p6q"/>
                                                 <constraint firstAttribute="bottom" secondItem="pMK-Wn-clZ" secondAttribute="bottom" constant="17" id="Nft-h7-YAa"/>
                                                 <constraint firstItem="5Cy-P7-You" firstAttribute="top" secondItem="vbf-jL-OhC" secondAttribute="topMargin" constant="15" id="Ubp-I6-eMa"/>
                                                 <constraint firstItem="pMK-Wn-clZ" firstAttribute="top" secondItem="vbf-jL-OhC" secondAttribute="top" constant="16" id="dNr-eS-ht9"/>
                                                 <constraint firstItem="pMK-Wn-clZ" firstAttribute="leading" secondItem="vbf-jL-OhC" secondAttribute="leading" constant="20" id="kx6-bJ-fxx"/>
                                                 <constraint firstItem="QKh-Ac-UWU" firstAttribute="leading" secondItem="pMK-Wn-clZ" secondAttribute="trailing" constant="8" id="suD-IT-UFa"/>
+                                                <constraint firstItem="rMx-Hc-HzH" firstAttribute="leading" secondItem="qfK-J8-ty6" secondAttribute="leading" id="uzx-Sr-EEM"/>
                                                 <constraint firstItem="QKh-Ac-UWU" firstAttribute="top" secondItem="5Cy-P7-You" secondAttribute="bottom" id="xsV-tC-aQr"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -90,6 +98,7 @@
                                         <connections>
                                             <outlet property="itemImageVIew" destination="pMK-Wn-clZ" id="K7a-KO-3EH"/>
                                             <outlet property="itemNameLabel" destination="5Cy-P7-You" id="bb1-0k-b00"/>
+                                            <outlet property="itemNotesLabel" destination="rMx-Hc-HzH" id="aSe-oG-Ghl"/>
                                             <outlet property="itemPriceLabel" destination="qfK-J8-ty6" id="FSb-PL-irK"/>
                                             <outlet property="itemQtyLabel" destination="QKh-Ac-UWU" id="1mg-Yk-5au"/>
                                         </connections>

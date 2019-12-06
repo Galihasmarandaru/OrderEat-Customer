@@ -11,7 +11,7 @@
             <connections>
                 <outlet property="barNotes" destination="gdk-Pp-SqP" id="CE0-oD-BqV"/>
                 <outlet property="handleView" destination="S4S-o7-R0E" id="3VV-xS-Z48"/>
-                <outlet property="textFieldNotes" destination="3eQ-m0-0tv" id="jze-wD-lDB"/>
+                <outlet property="textFieldNotes" destination="3eQ-m0-0tv" id="jyS-S4-vmY"/>
                 <outlet property="view" destination="QX8-Bb-Ct9" id="L3q-LG-GpM"/>
             </connections>
         </placeholder>
@@ -68,6 +68,9 @@
                                 <constraint firstAttribute="height" constant="30" id="Qko-d7-ZJr"/>
                             </constraints>
                             <state key="normal" title="Save"/>
+                            <connections>
+                                <action selector="saveNoteBtnPress:" destination="-1" eventType="touchUpInside" id="Pjh-eu-q6R"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
