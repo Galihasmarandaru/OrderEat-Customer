@@ -72,6 +72,11 @@
 		A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71197236FFDA400670669 /* OrderSetTimeViewController.swift */; };
 		A3B7119E23710FD100670669 /* OrderedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7119D23710FD100670669 /* OrderedMenu.swift */; };
 		A3B711A0237161E200670669 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7119F237161E200670669 /* CustomColor.swift */; };
+		A3C71DE12398BE6400400D11 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C71DE02398BE6400400D11 /* Signup.storyboard */; };
+		A3C71DE42398BEE500400D11 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C71DE32398BEE500400D11 /* SignupViewController.swift */; };
+		A3C71DE92398C14F00400D11 /* OTPSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C71DE82398C14F00400D11 /* OTPSignup.storyboard */; };
+		A3C71DEB2398C18100400D11 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C71DEA2398C18100400D11 /* DismissKeyboard.swift */; };
+		A3C71DEE2398C1C700400D11 /* OTPSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C71DED2398C1C700400D11 /* OTPSignupViewController.swift */; };
 		A3DDA73A23729B93006CB5BA /* ConfirmPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DDA73923729B93006CB5BA /* ConfirmPayment.storyboard */; };
 		A3DDA73C23729BAB006CB5BA /* ConfirmPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA73B23729BAB006CB5BA /* ConfirmPaymentViewController.swift */; };
 		A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DDA74F2372A768006CB5BA /* OrderedItemTableViewCell.swift */; };
@@ -82,6 +87,8 @@
 		A3E4D5D32375201800693241 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D22375201800693241 /* DetailTableViewCell.swift */; };
 		A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D42375202800693241 /* ShowQRTableViewCell.swift */; };
 		A3E4D5D92375234A00693241 /* OrderDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D5D82375234A00693241 /* OrderDoneViewController.swift */; };
+		CA00688023976AA400713A59 /* Notes.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00687F23976AA400713A59 /* Notes.xib */; };
+		CA00688223976AF600713A59 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00688123976AF600713A59 /* NotesViewController.swift */; };
 		CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */; };
 		CA1BB5E023747B6D00F6EFD0 /* ButtonCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */; };
 		CA3559962366A5FB00382CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3559952366A5FB00382CCF /* AppDelegate.swift */; };
@@ -205,6 +212,11 @@
 		A3B71197236FFDA400670669 /* OrderSetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSetTimeViewController.swift; sourceTree = "<group>"; };
 		A3B7119D23710FD100670669 /* OrderedMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedMenu.swift; sourceTree = "<group>"; };
 		A3B7119F237161E200670669 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		A3C71DE02398BE6400400D11 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		A3C71DE32398BEE500400D11 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A3C71DE82398C14F00400D11 /* OTPSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OTPSignup.storyboard; sourceTree = "<group>"; };
+		A3C71DEA2398C18100400D11 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
+		A3C71DED2398C1C700400D11 /* OTPSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSignupViewController.swift; sourceTree = "<group>"; };
 		A3DDA73923729B93006CB5BA /* ConfirmPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPayment.storyboard; sourceTree = "<group>"; };
 		A3DDA73B23729BAB006CB5BA /* ConfirmPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfirmPaymentViewController.swift; path = "OrderEat-Customer/Classes/CheckoutOrder/ConfirmPayment/ConfirmPaymentViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A3DDA74F2372A768006CB5BA /* OrderedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +230,8 @@
 		B2F1FB048AAD7F9EF99DECC5 /* Pods-OrderEat-CustomerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerUITests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerUITests/Pods-OrderEat-CustomerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C215777DC99BD140213BFF05 /* Pods-OrderEat-CustomerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-CustomerTests.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-CustomerTests/Pods-OrderEat-CustomerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9E1CDE4DCFBBE2D2140CA50 /* Pods-OrderEat-Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderEat-Customer.debug.xcconfig"; path = "Target Support Files/Pods-OrderEat-Customer/Pods-OrderEat-Customer.debug.xcconfig"; sourceTree = "<group>"; };
+		CA00687F23976AA400713A59 /* Notes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes.xib; sourceTree = "<group>"; };
+		CA00688123976AF600713A59 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMerchantView.swift; sourceTree = "<group>"; };
 		CA1BB5DF23747B6D00F6EFD0 /* ButtonCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellDelegate.swift; sourceTree = "<group>"; };
 		CA3559922366A5FB00382CCF /* Eativa-Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eativa-Customer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,8 +447,61 @@
 				A3B7119F237161E200670669 /* CustomColor.swift */,
 				A31B449C2373CB6400022FE6 /* File.swift */,
 				A3573CE2237E47E40076D4D9 /* AlertView.swift */,
+				A3C71DEA2398C18100400D11 /* DismissKeyboard.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A3C71DDE2398BE3600400D11 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE22398BED200400D11 /* ViewController */,
+				A3C71DDF2398BE4300400D11 /* VIew */,
+			);
+			name = Signup;
+			path = "OrderEat-Customer/Classes/Authentication/Signup";
+			sourceTree = SOURCE_ROOT;
+		};
+		A3C71DDF2398BE4300400D11 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE02398BE6400400D11 /* Signup.storyboard */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		A3C71DE22398BED200400D11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE32398BEE500400D11 /* SignupViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A3C71DE62398C13500400D11 /* OTPSignup */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DEC2398C1B600400D11 /* ViewController */,
+				A3C71DE72398C13B00400D11 /* View */,
+			);
+			name = OTPSignup;
+			path = "OrderEat-Customer/Classes/Authentication/OTPSignup";
+			sourceTree = SOURCE_ROOT;
+		};
+		A3C71DE72398C13B00400D11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DE82398C14F00400D11 /* OTPSignup.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3C71DEC2398C1B600400D11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3C71DED2398C1C700400D11 /* OTPSignupViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CA26D1E32369652B000FDDD0 /* OnBoarding */ = {
@@ -644,6 +711,8 @@
 		CA73E6DF236FC2CB00BD3050 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				A3C71DE62398C13500400D11 /* OTPSignup */,
+				A3C71DDE2398BE3600400D11 /* Signup */,
 				CA754E5F237E6642005BAD6D /* OTP */,
 				CA73E6E1236FC30100BD3050 /* Signin */,
 			);
@@ -737,6 +806,7 @@
 		CA73E6EA236FC44E00BD3050 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CA00687F23976AA400713A59 /* Notes.xib */,
 				CA73E711236FCABC00BD3050 /* MerchantMenu.storyboard */,
 				CA73E71E236FECAF00BD3050 /* MenuTableViewCell.swift */,
 				CA1BB4AB23710BA700F6EFD0 /* DetailMerchantView.swift */,
@@ -748,6 +818,7 @@
 		CA73E6EB236FC45300BD3050 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CA00688123976AF600713A59 /* NotesViewController.swift */,
 				CA73E71C236FEA3500BD3050 /* MerchantMenuViewController.swift */,
 			);
 			path = ViewController;
@@ -1153,6 +1224,7 @@
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
 				A3602EC5238F9517009E80EE /* Profile.storyboard in Resources */,
 				9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */,
+				CA00688023976AA400713A59 /* Notes.xib in Resources */,
 				CAA6023B237BBAD600EE4497 /* Signin.storyboard in Resources */,
 				0AFBEF36238F95CC008EF737 /* MainMenu.storyboard in Resources */,
 				93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */,
@@ -1165,11 +1237,13 @@
 				CA35599D2366A5FB00382CCF /* Home.storyboard in Resources */,
 				A31B449F2373FD5800022FE6 /* OrderDone.storyboard in Resources */,
 				0A73B682237518D9003E1543 /* OnGoingCollectionListCell.xib in Resources */,
+				A3C71DE92398C14F00400D11 /* OTPSignup.storyboard in Resources */,
 				CA73E70C236FC6C800BD3050 /* ListOfMerchant.storyboard in Resources */,
 				CA73E712236FCABC00BD3050 /* MerchantMenu.storyboard in Resources */,
 				A3B71186236FE90A00670669 /* OrderSetTime.storyboard in Resources */,
 				CA73E715236FD3E800BD3050 /* OnGoing.storyboard in Resources */,
 				93AA9A382387838300B98AF4 /* loading.json in Resources */,
+				A3C71DE12398BE6400400D11 /* Signup.storyboard in Resources */,
 				A31B44A92374055E00022FE6 /* CancelOrder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1307,6 +1381,7 @@
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
+				CA00688223976AF600713A59 /* NotesViewController.swift in Sources */,
 				A3602EC9238F9AF0009E80EE /* ProfileViewController.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
 				0A73B681237518D9003E1543 /* OnGoingCollectionListCell.swift in Sources */,
@@ -1324,6 +1399,7 @@
 				CA1BB4AC23710BA700F6EFD0 /* DetailMerchantView.swift in Sources */,
 				0AFBEF522390C568008EF737 /* LabelOurPickTableViewCell.swift in Sources */,
 				CA73E71B236FE0B900BD3050 /* Transaction.swift in Sources */,
+				A3C71DE42398BEE500400D11 /* SignupViewController.swift in Sources */,
 				93ADD17D237D327E001E3094 /* Date.swift in Sources */,
 				A3DDA7542372A778006CB5BA /* QRTableViewCell.swift in Sources */,
 				0AFBEF4C2390BB46008EF737 /* CategoriesViewModel.swift in Sources */,
@@ -1333,6 +1409,7 @@
 				CAB5D2E323680D9D00ACAAD0 /* Menu.swift in Sources */,
 				CA904E8C23863B7300426715 /* Image.swift in Sources */,
 				876F2452238CC9E000AEF432 /* UPCarouselFlowLayout.swift in Sources */,
+				A3C71DEE2398C1C700400D11 /* OTPSignupViewController.swift in Sources */,
 				93FA9298237CF81B006AD4D2 /* (null) in Sources */,
 				0AFBEF42238FBB84008EF737 /* TodayDealTableViewCell.swift in Sources */,
 				A3B71198236FFDA400670669 /* OrderSetTimeViewController.swift in Sources */,
@@ -1357,6 +1434,7 @@
 				93F62E7A237BD8E4007FED6B /* Data.swift in Sources */,
 				93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */,
 				CA754E27237D12B6005BAD6D /* OrderSetTimeViewModel.swift in Sources */,
+				A3C71DEB2398C18100400D11 /* DismissKeyboard.swift in Sources */,
 				A3DDA7502372A768006CB5BA /* OrderedItemTableViewCell.swift in Sources */,
 				A3B71190236FFAD000670669 /* PriceOrderedTableViewCell.swift in Sources */,
 				87250BDC2398F7050039F25C /* Midtrans.swift in Sources */,

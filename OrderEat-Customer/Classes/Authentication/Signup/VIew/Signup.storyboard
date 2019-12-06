@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xwc-Lv-cFt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Signup View Controller-->
+        <scene sceneID="QdP-Uk-WAl">
+            <objects>
+                <viewController id="xwc-Lv-cFt" customClass="SignupViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HJ9-yW-F7H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-4R-Dhw">
+                                <rect key="frame" x="107" y="130" width="200" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="JsB-XQ-fin"/>
+                                    <constraint firstAttribute="width" constant="200" id="LgP-6Z-7Cu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5h-Z2-jH9">
+                                <rect key="frame" x="20" y="315" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bq-Ed-T5a">
+                                <rect key="frame" x="20" y="387" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gq1-j3-3o8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fdJ-t3-fGn">
+                                <rect key="frame" x="20" y="451" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="VCo-kb-crs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwG-fh-9rA" customClass="CustomButton" customModule="Eativa_Customer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="525" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="AtV-nS-54R"/>
+                                </constraints>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonClicked:" destination="xwc-Lv-cFt" eventType="touchUpInside" id="dS7-Sk-1le"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-Nf-roi">
+                                <rect key="frame" x="20" y="577" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Zir-Fv-TZc"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="xwc-Lv-cFt" eventType="touchUpInside" id="CIs-Ge-3zt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="S5h-Z2-jH9" firstAttribute="top" secondItem="Rhy-4R-Dhw" secondAttribute="bottom" constant="35" id="2vM-zq-anC"/>
+                            <constraint firstItem="Rhy-4R-Dhw" firstAttribute="top" secondItem="vTL-VH-uRm" secondAttribute="top" constant="86" id="3F0-1Y-5S7"/>
+                            <constraint firstItem="2Bq-Ed-T5a" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="3wy-XK-ykb"/>
+                            <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="Abv-Nf-roi" secondAttribute="trailing" constant="20" id="Ax8-Q8-Bvm"/>
+                            <constraint firstItem="2Bq-Ed-T5a" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="CWZ-Cd-xp5"/>
+                            <constraint firstItem="S5h-Z2-jH9" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="EWT-cu-dAQ"/>
+                            <constraint firstItem="fdJ-t3-fGn" firstAttribute="top" secondItem="2Bq-Ed-T5a" secondAttribute="bottom" constant="20" id="J3r-Qp-hVn"/>
+                            <constraint firstItem="S5h-Z2-jH9" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="PC2-vI-LKW"/>
+                            <constraint firstItem="2Bq-Ed-T5a" firstAttribute="top" secondItem="S5h-Z2-jH9" secondAttribute="bottom" constant="51" id="Pnj-QZ-4WG"/>
+                            <constraint firstItem="gwG-fh-9rA" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="b31-CN-CaL"/>
+                            <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="gwG-fh-9rA" secondAttribute="trailing" constant="20" id="beL-na-Pjg"/>
+                            <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="2Bq-Ed-T5a" secondAttribute="trailing" constant="20" id="bid-eJ-8Lw"/>
+                            <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="S5h-Z2-jH9" secondAttribute="trailing" constant="20" id="dmK-PP-wKu"/>
+                            <constraint firstItem="Abv-Nf-roi" firstAttribute="top" secondItem="gwG-fh-9rA" secondAttribute="bottom" constant="8" id="fKc-YU-bSD"/>
+                            <constraint firstItem="Abv-Nf-roi" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="fzf-cM-6mv"/>
+                            <constraint firstItem="Rhy-4R-Dhw" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="ilc-MF-NU5"/>
+                            <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="fdJ-t3-fGn" secondAttribute="trailing" constant="20" id="pRR-xt-dMT"/>
+                            <constraint firstItem="fdJ-t3-fGn" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="qpA-Wd-zEY"/>
+                            <constraint firstItem="fdJ-t3-fGn" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="rBr-3n-nJq"/>
+                            <constraint firstItem="gwG-fh-9rA" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="x0d-i6-f9E"/>
+                            <constraint firstItem="gwG-fh-9rA" firstAttribute="top" secondItem="fdJ-t3-fGn" secondAttribute="bottom" constant="30" id="yhE-Xv-scg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vTL-VH-uRm"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="2Bq-Ed-T5a" id="ZH9-Lr-Nk5"/>
+                        <outlet property="phoneNumberTextField" destination="fdJ-t3-fGn" id="Dhh-Im-Ktp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l39-BF-0Mf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="-105"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="432" height="362"/>
+    </resources>
+</document>

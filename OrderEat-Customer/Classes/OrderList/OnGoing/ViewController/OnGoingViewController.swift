@@ -20,9 +20,13 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var emptyStateView: UIStackView!
     
+    @IBOutlet weak var beliYukButton: UIButton!
     
     @IBOutlet weak var noTransactionImage: UIImageView!
     @IBOutlet weak var noTransactionLabel: UILabel!
+    
+    var isWaitingForConfirmation : Bool = false
+    var pendingTransaction : Transaction!
     
     enum noTransactionImageList: String {
         case noOngoing = "No Order"
@@ -39,11 +43,14 @@ class OnGoingViewController: UIViewController{
     // Array
     var transactions = [Transaction]()
     
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
         historyUnderline.isHidden = true
-        
+        beliYukButton.isHidden = false
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             
@@ -54,6 +61,26 @@ class OnGoingViewController: UIViewController{
                 generator.impactOccurred()
                }
            })
+        
+
+        DispatchQueue.main.async {
+            print(self.isWaitingForConfirmation)
+            if self.isWaitingForConfirmation {
+                let storyboard01 = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
+                let waitingConfirmationPageVC = storyboard01.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
+
+                waitingConfirmationPageVC.transaction = self.pendingTransaction
+                print(self.pendingTransaction)
+                
+                self.present(waitingConfirmationPageVC, animated: true, completion: nil)
+                
+            }
+        }
+        
+        let collectionViewLayout = onGoingCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        collectionViewLayout?.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 25, right: 0)
+        collectionViewLayout?.invalidateLayout()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +92,12 @@ class OnGoingViewController: UIViewController{
         PusherChannels.pusher.disconnect()
     }
     
+    @IBAction func beliYukClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ListOfMerchant", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ListOfMerchant") as! ListMerchantViewController
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = vc
+    }
     func startAnimation() {
         DispatchQueue.main.async {
             self.emptyStateView.isHidden = true
@@ -203,6 +236,8 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         cell.layer.shadowOffset = CGSize(width: 3, height: 3)
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
+        
+        
         return cell
     }
     
