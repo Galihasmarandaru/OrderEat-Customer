@@ -13,4 +13,5 @@ extension UIColor {
     static let ijoDela = #colorLiteral(red: 0.8588235294, green: 0.8941176471, blue: 0.4392156863, alpha: 1)
     static let merahTextButton = #colorLiteral(red: 0.8784313725, green: 0.1254901961, blue: 0.1254901961, alpha: 1)
     static let orangeBorder = #colorLiteral(red: 0.9960784314, green: 0.6588235294, blue: 0.1803921569, alpha: 1)
+    static let orangeButton = #colorLiteral(red: 0.9607843137, green: 0.5176470588, blue: 0.1333333333, alpha: 1)
 }
