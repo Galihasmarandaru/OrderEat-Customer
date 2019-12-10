@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XpD-Zl-wmM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Action Suggest Time View Controller-->
+        <scene sceneID="n6I-C4-wO9">
+            <objects>
+                <viewController id="XpD-Zl-wmM" customClass="ActionSuggestTimeViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zmc-Od-fJv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFH-a1-IhT">
+                                <rect key="frame" x="20" y="82" width="374" height="834"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHe-9v-GSn">
+                                        <rect key="frame" x="20" y="20" width="334" height="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="offer new pick up time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-Wt-Smw">
+                                        <rect key="frame" x="20" y="42" width="334" height="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Order No D-01 will be ready at" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQE-xW-T7A">
+                                        <rect key="frame" x="20" y="84" width="334" height="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tw-uy-Xbm">
+                                        <rect key="frame" x="20" y="116" width="334" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time remaining 09:55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ili-Ez-BRi">
+                                        <rect key="frame" x="20" y="169" width="334" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Suggest Pick Up Time" translatesAutoresizingMaskIntoConstraints="NO" id="rGl-gt-aka">
+                                        <rect key="frame" x="102" y="219" width="170" height="379"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kni-7P-eTD">
+                                        <rect key="frame" x="20" y="628" width="334" height="30"/>
+                                        <state key="normal" title="Accept">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="acceptButtonClicked:" destination="XpD-Zl-wmM" eventType="touchUpInside" id="c1k-wz-6at"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azi-K6-Opn">
+                                        <rect key="frame" x="20" y="668" width="334" height="30"/>
+                                        <state key="normal" title="Cancel Order">
+                                            <color key="titleColor" red="0.8784313725490196" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonClicked:" destination="XpD-Zl-wmM" eventType="touchUpInside" id="EIN-5V-d17"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="kni-7P-eTD" firstAttribute="centerX" secondItem="qFH-a1-IhT" secondAttribute="centerX" id="39K-zi-9mF"/>
+                                    <constraint firstItem="XQE-xW-T7A" firstAttribute="top" secondItem="zKL-Wt-Smw" secondAttribute="bottom" constant="20" id="81Z-lB-7CR"/>
+                                    <constraint firstItem="3Tw-uy-Xbm" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="20" id="CfG-gr-fkm"/>
+                                    <constraint firstItem="ili-Ez-BRi" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="20" id="DFF-tf-u20"/>
+                                    <constraint firstItem="UHe-9v-GSn" firstAttribute="centerX" secondItem="qFH-a1-IhT" secondAttribute="centerX" id="Fbs-GM-GAc"/>
+                                    <constraint firstAttribute="trailing" secondItem="XQE-xW-T7A" secondAttribute="trailing" constant="20" id="FvE-wY-OoE"/>
+                                    <constraint firstItem="rGl-gt-aka" firstAttribute="centerX" secondItem="qFH-a1-IhT" secondAttribute="centerX" id="Gcl-1p-3NT"/>
+                                    <constraint firstItem="rGl-gt-aka" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="102" id="Hav-Uv-mk6"/>
+                                    <constraint firstItem="UHe-9v-GSn" firstAttribute="top" secondItem="qFH-a1-IhT" secondAttribute="top" constant="20" id="KBy-hG-y0O"/>
+                                    <constraint firstItem="kni-7P-eTD" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="20" id="M0M-Hm-V0X"/>
+                                    <constraint firstItem="zKL-Wt-Smw" firstAttribute="centerX" secondItem="qFH-a1-IhT" secondAttribute="centerX" id="QIO-5X-v54"/>
+                                    <constraint firstItem="ili-Ez-BRi" firstAttribute="top" secondItem="3Tw-uy-Xbm" secondAttribute="bottom" constant="10" id="Rgj-S8-USW"/>
+                                    <constraint firstAttribute="trailing" secondItem="ili-Ez-BRi" secondAttribute="trailing" constant="20" id="Rmt-wl-elp"/>
+                                    <constraint firstItem="rGl-gt-aka" firstAttribute="top" secondItem="ili-Ez-BRi" secondAttribute="bottom" constant="30" id="TPx-iI-8pu"/>
+                                    <constraint firstItem="XQE-xW-T7A" firstAttribute="centerX" secondItem="qFH-a1-IhT" secondAttribute="centerX" id="TQe-Qf-y0c"/>
+                                    <constraint firstAttribute="trailing" secondItem="rGl-gt-aka" secondAttribute="trailing" constant="102" id="Vsk-8c-hLR"/>
+                                    <constraint firstItem="zKL-Wt-Smw" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="20" id="Wy3-01-vus"/>
+                                    <constraint firstItem="XQE-xW-T7A" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="20" id="XaR-zB-Idg"/>
+                                    <constraint firstItem="Azi-K6-Opn" firstAttribute="centerX" secondItem="qFH-a1-IhT" secondAttribute="centerX" id="a1d-VA-ofW"/>
+                                    <constraint firstAttribute="trailing" secondItem="UHe-9v-GSn" secondAttribute="trailing" constant="20" id="aAH-7l-ljd"/>
+                                    <constraint firstItem="kni-7P-eTD" firstAttribute="top" secondItem="rGl-gt-aka" secondAttribute="bottom" constant="30" id="bSI-Bz-EnH"/>
+                                    <constraint firstItem="Azi-K6-Opn" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="20" id="bkH-3a-mSX"/>
+                                    <constraint firstItem="zKL-Wt-Smw" firstAttribute="top" secondItem="UHe-9v-GSn" secondAttribute="bottom" id="ced-ih-FO7"/>
+                                    <constraint firstItem="3Tw-uy-Xbm" firstAttribute="top" secondItem="XQE-xW-T7A" secondAttribute="bottom" constant="10" id="dcH-fv-ftY"/>
+                                    <constraint firstAttribute="bottom" secondItem="rGl-gt-aka" secondAttribute="bottom" constant="236" id="f9x-Js-9gP"/>
+                                    <constraint firstAttribute="trailing" secondItem="kni-7P-eTD" secondAttribute="trailing" constant="20" id="hRC-S8-Iis"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Tw-uy-Xbm" secondAttribute="trailing" constant="20" id="nDL-8M-uxb"/>
+                                    <constraint firstItem="3Tw-uy-Xbm" firstAttribute="centerX" secondItem="qFH-a1-IhT" secondAttribute="centerX" id="p91-oD-Pq4"/>
+                                    <constraint firstItem="Azi-K6-Opn" firstAttribute="top" secondItem="kni-7P-eTD" secondAttribute="bottom" constant="10" id="qsb-Kd-KwI"/>
+                                    <constraint firstItem="UHe-9v-GSn" firstAttribute="leading" secondItem="qFH-a1-IhT" secondAttribute="leading" constant="20" id="vYr-qF-8H7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Azi-K6-Opn" secondAttribute="trailing" constant="20" id="xmu-cf-TdH"/>
+                                    <constraint firstAttribute="trailing" secondItem="zKL-Wt-Smw" secondAttribute="trailing" constant="20" id="yKG-7Q-J0Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qFH-a1-IhT" firstAttribute="top" secondItem="IKw-dg-eRN" secondAttribute="top" constant="38" id="0a4-PZ-Cwy"/>
+                            <constraint firstItem="qFH-a1-IhT" firstAttribute="centerX" secondItem="Zmc-Od-fJv" secondAttribute="centerX" id="LzB-u6-l1j"/>
+                            <constraint firstItem="qFH-a1-IhT" firstAttribute="leading" secondItem="IKw-dg-eRN" secondAttribute="leading" constant="20" id="fBb-mg-TMJ"/>
+                            <constraint firstAttribute="bottom" secondItem="qFH-a1-IhT" secondAttribute="bottom" constant="-20" id="fXh-lS-IAh"/>
+                            <constraint firstItem="IKw-dg-eRN" firstAttribute="trailing" secondItem="qFH-a1-IhT" secondAttribute="trailing" constant="20" id="thf-U7-jR1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IKw-dg-eRN"/>
+                    </view>
+                    <connections>
+                        <outlet property="acceptButton" destination="kni-7P-eTD" id="4yr-Vp-5Uw"/>
+                        <outlet property="contentView" destination="qFH-a1-IhT" id="QBh-6h-C1E"/>
+                        <outlet property="orderNumberLabel" destination="XQE-xW-T7A" id="Wh1-RG-Y2E"/>
+                        <outlet property="pickUpTimeLabel" destination="3Tw-uy-Xbm" id="vxy-9p-zXj"/>
+                        <outlet property="restaurantNameLabel" destination="UHe-9v-GSn" id="qwS-9t-Jcs"/>
+                        <outlet property="timeRemainingLabel" destination="ili-Ez-BRi" id="vrz-ud-CPK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mo6-CB-Q4F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100.00000000000001" y="-119.19642857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Suggest Pick Up Time" width="338" height="758"/>
+    </resources>
+</document>
