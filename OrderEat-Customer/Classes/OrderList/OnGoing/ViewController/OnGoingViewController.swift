@@ -51,6 +51,7 @@ class OnGoingViewController: UIViewController{
         setupCollection()
         historyUnderline.isHidden = true
         beliYukButton.isHidden = false
+        
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             

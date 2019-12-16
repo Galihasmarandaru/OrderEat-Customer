@@ -33,8 +33,10 @@ class ActionSuggestTimeViewController: UIViewController {
             }
         }
         
+        restaurantNameLabel.text = transaction.merchant?.name
         orderNumberLabel.text = transaction.orderNumber
-        pickUpTimeLabel.text = transaction.pickUpTime
+        pickUpTimeLabel.text = transaction.pickUpTime?.time
+        
     }
     
     func config() {

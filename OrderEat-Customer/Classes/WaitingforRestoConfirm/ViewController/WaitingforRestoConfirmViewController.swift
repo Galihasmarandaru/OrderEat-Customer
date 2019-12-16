@@ -67,17 +67,24 @@ class WaitingforRestoConfirmViewController: UIViewController {
                                      print("ERRROR OCCURED")
                                 } else {
                                     DispatchQueue.main.async {
-                                        let storyboard = UIStoryboard(name: "ConfirmPayment", bundle: nil)
-                                        let vc = storyboard.instantiateViewController(identifier: "ConfirmPayment") as! ConfirmPaymentViewController
-                                        vc.transaction  =   transaction as? Transaction
-                                        self.present(vc, animated: true, completion: nil)
+                                        let vc = UIStoryboard(name: "ConfirmPayment", bundle: nil).instantiateViewController(identifier: "ConfirmPayment") as! ConfirmPaymentViewController
+                                        vc.transaction = transaction as? Transaction
+                                        let appDelegate = UIApplication.shared.windows
+                                        appDelegate.first?.rootViewController = vc
                                     }
                                 }
                             }
-                            
+                        } else if (transactions[0].status!) == 6 {
+                            // Alert that transaction has been cancelled.
+                            let alert = UIAlertController(title: "Notice", message: "Your order has been cancelled", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                self.dismiss(animated: true, completion: {
+                                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                                })
+                            }))
+                            self.present(alert, animated: true, completion: nil)
                         }
                     }
-                    
                 } catch let error as NSError {
                    print(error)
                }
@@ -109,15 +116,14 @@ class WaitingforRestoConfirmViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        
     }
     
     @IBAction func cancelOrderButtonPressed(_ sender: Any) {
-        // Show Alert
-        
         APIRequest.put(.transactions, id: transaction.id!, parameter: ["status" : 6])
-        
-        self.navigationController?.popViewController(animated: false)
+    
+        self.dismiss(animated: true, completion: {
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        })
     }
     
     @IBAction func minimizeButtonPressed(_ sender: Any) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PusherSwift
 
 class ConfirmPaymentViewController: UIViewController {
 
@@ -38,9 +39,45 @@ class ConfirmPaymentViewController: UIViewController {
         
         
         // PUSHERRR
-        
-        
-        
+        // bind a callback to handle an event
+        let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
+            if let transaction = event.data {
+                
+                let data =  Data(transaction.utf8)
+                
+                let decoder = JSONDecoder()
+                do {
+                    let transactions = try decoder.decode([Transaction].self, from: data)
+                    
+                    if self.transaction.id == (transactions[0].id!) {
+                       
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+                        
+                        let alert = UIAlertController(title: "Notice", message: "Payment has been confirmed", preferredStyle: .alert)
+                       alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+                            tabBarVC.selectedIndex = 1
+                            let appDelegate = UIApplication.shared.windows
+                            appDelegate.first?.rootViewController = tabBarVC
+                       }))
+                       self.present(alert, animated: true, completion: nil)
+                    }
+                } catch let error as NSError {
+                   print(error)
+               }
+           }
+       })
+        PusherChannels.pusher.connect()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        PusherChannels.pusher.connect()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        PusherChannels.pusher.disconnect()
     }
     
     func config() {
@@ -143,7 +180,7 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         }
 
         if transaction.midtransUrl == nil {
-            cellButton.confirmPaymentButton.setTitle("Confirm Payment", for: .normal)
+            cellButton.confirmPaymentButton.setTitle("Pay with Gopay", for: .normal)
             cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
         } else {
             cellButton.confirmPaymentButton.setTitle("Waiting Payment", for: .normal)
