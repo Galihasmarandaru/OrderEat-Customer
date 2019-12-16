@@ -81,18 +81,19 @@ class MainMenuViewController: UIViewController {
         }
     }
     
-    @IBAction func logoutBtnPressed(_ sender: Any) {
+    @IBAction func logoutBtnTapped(_ sender: Any) {
+        print("LOGOUT")
         
-        PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
-        PusherChannels.pusher.unsubscribeAll()
-        
-        Defaults.clearUserData()
-        CurrentUser.reset()
-        
-        let storyboard = UIStoryboard(name: "Signin", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
-        let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = vc
+         PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
+         PusherChannels.pusher.unsubscribeAll()
+         
+         Defaults.clearUserData()
+         CurrentUser.reset()
+         
+         let storyboard = UIStoryboard(name: "Signin", bundle: nil)
+         let vc = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
+         let appDelegate = UIApplication.shared.windows
+         appDelegate.first?.rootViewController = vc
     }
     
 

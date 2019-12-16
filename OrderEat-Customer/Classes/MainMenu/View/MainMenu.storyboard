@@ -259,10 +259,10 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutBtnTapped:" destination="h1g-RU-TZu" eventType="touchUpInside" id="eCf-Vq-bob"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="logoutBtnPressed:" destination="h1g-RU-TZu" id="93r-yb-7sd"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

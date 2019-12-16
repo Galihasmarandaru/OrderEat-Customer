@@ -12,7 +12,6 @@ import UIKit
 
 final class APIRequest {
     static let api = "http://167.71.194.60/api"
-//    static let api = "http://167.71.194.60/development/api/"
     
     enum Endpoint : String {
         case customers = "/customer/"
@@ -365,6 +364,8 @@ final class APIRequest {
                 let id = jsonData!["id"]!
                 
                 CurrentUser.id = id
+                CurrentUser.name = jsonData!["name"]!
+                CurrentUser.email = jsonData!["email"]!
                 CurrentUser.accessToken = token
                 
                 Defaults.clearUserData()
@@ -380,55 +381,6 @@ final class APIRequest {
                 completion(nil, .offline)
                 
             }
-        }
-        
-        task.resume()
-    }
-    
-    class func getMidtransToken(transaction : Transaction, completion: @escaping (Any?, Error?) -> Void) {
-        let url = URL(string: api + "/payment/token")!;
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
-
-        let parameters: [String: Any] =  [
-            "transactionId": transaction.id!,
-            "totalAmount": transaction.total!
-        ]
-        
-        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data,
-                let response = response as? HTTPURLResponse,
-                error == nil else {
-                    completion(nil, .offline)
-                    return
-            }
-            
-//            guard 200 != response.statusCode else {
-//                completion(nil, .badRequest)
-//                return
-//            }
-            
-            switch(response.statusCode) {
-            case 200:
-//            let responseString = String(data: data, encoding: .utf8)
-                let responseData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
-                completion(responseData, nil)
-                
-            case 400:
-                completion(nil, .offline)
-                
-            default:
-                completion(nil, .offline)
-                
-            }
-            
-
         }
         
         task.resume()

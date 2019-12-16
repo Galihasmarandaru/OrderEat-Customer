@@ -140,22 +140,44 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         
         cellButton.confirmBtnClosure = { [unowned self] in
             
-            // get midtrans token
-            APIRequest.getMidtransToken(transaction: self.transaction) { (response, error) in
-            
+            Midtrans.createGopayPayment(transaction: self.transaction) { (response, error) in
+                
                 if let error = error {
                     print(error)
                 } else {
-//                    let midtransToken = response!["token"] as! [String:String]
+                    
+                    let paymentRecord = response as! [String:String]
+                    
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(URL(string: paymentRecord["redirect_url"]!)!, options: [:], completionHandler: nil)
+                                                
+                        Alert.showConfirmationAlert(on: self, title: "Confirm Payment", message: "Are you sure you have done your payment?", yesAction: {
+                            
+//                            Midtrans.getPaymentStatus(transactionId: self.transaction.id!) { (response, error) in
+//                                if let error = error {
+//                                    print(error)
+//                                } else {
+//
+//                                    DispatchQueue.main.async {
+//                                        let paymentStatus = response as! [String:String]
+//                                        print(paymentStatus["transaction_status"]!)
+//                                        if paymentStatus["transaction_status"] == "settlement" {
+//                                            APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
+//                                        }
+//                                    }
+//                                }
+//                            }
+                            
+                            self.dismiss(animated: true, completion: nil)
+                        })
+                    }
+                    
+                    
                 }
-                
             }
             
             
-            Alert.showConfirmationAlert(on: self, title: "Confirm Payment", message: "Are you sure you have done your payment?", yesAction: {
-                APIRequest.put(.transactions, id: self.transaction.id!, parameter: ["status" : 2])
-                self.dismiss(animated: true, completion: nil)
-            })
+            
         }
         
         return cellButton
