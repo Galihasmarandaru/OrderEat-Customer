@@ -46,6 +46,10 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Signin", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "Signin") as! SigninViewController
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = vc
     }
     
 }

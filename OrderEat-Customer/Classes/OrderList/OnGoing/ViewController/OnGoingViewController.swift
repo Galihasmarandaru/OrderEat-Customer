@@ -246,7 +246,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         let status = cell.transaction.status!
         
         switch status {
-        case 1: // Waiting for payment
+        case 2: // Waiting for payment
             let storyboard = UIStoryboard(name: "ConfirmPayment", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ConfirmPayment") as! ConfirmPaymentViewController
             
@@ -254,7 +254,7 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
             
             self.present(vc, animated: true, completion: nil)
             
-        case 2, 3: // On Process , ready to pickup
+        case 3, 4: // On Process , ready to pickup
             let storyboard = UIStoryboard(name: "OrderDone", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "OrderDone") as! OrderDoneViewController
 

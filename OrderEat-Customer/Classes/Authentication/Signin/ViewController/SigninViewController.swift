@@ -15,6 +15,15 @@ class SigninViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Defaults.getUserLogin() {
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+            tabBarVC.selectedIndex = 0
+            let appDelegate = UIApplication.shared.windows
+            appDelegate.first?.rootViewController = tabBarVC
+        }
+        
     }
     
     @IBAction func signInBtn(_ sender: Any) {

@@ -20,6 +20,7 @@ struct Transaction : Codable{
     var status : Int? // D, E
     var qrCode: String?
     var details : [TransactionDetail]? // D, E
+    var midtransUrl : String?
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -33,6 +34,7 @@ struct Transaction : Codable{
         case status
         case qrCode
         case details
+        case midtransUrl
     }
     
     init(from decoder: Decoder) throws {
@@ -46,6 +48,8 @@ struct Transaction : Codable{
         self.status = try container.decodeIfPresent(Int.self, forKey: .status)
         self.qrCode = try container.decodeIfPresent(String.self, forKey: .qrCode)
         self.details = try container.decodeIfPresent([TransactionDetail].self, forKey: .details)
+        self.midtransUrl = try container.decodeIfPresent(String.self, forKey: .midtransUrl)
+
     }
     
     init(merchantId : String) {

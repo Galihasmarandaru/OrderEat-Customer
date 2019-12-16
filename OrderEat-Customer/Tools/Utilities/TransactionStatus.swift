@@ -11,6 +11,7 @@ import Foundation
 
 let transactionStatus = [
     "Waiting for Confirmation",
+    "PickUp Changed",
     "Waiting for Payment",
     "On Process",
     "Ready to Pick Up",
