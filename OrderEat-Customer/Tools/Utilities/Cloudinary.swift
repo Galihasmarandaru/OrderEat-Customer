@@ -7,47 +7,108 @@
 //
 
 import Foundation
-import Alamofire
-import Cloudinary
 import UIKit
 
 final class Cloudinary {
-    
-    // Configuration
-    static let cloudName = "dkjgwktth"
-    static let config = CLDConfiguration(cloudName: "dkjgwktth", apiKey: "318896591113784")
-    static let cloudinary = CLDCloudinary(configuration: config)
 
-    // URL generation
-    class func createUrl() {
-        let url = cloudinary.createUrl().generate("sample.jpg")
-        print(url!)
+    enum Error : String {
+        case offline = "Please check your internet"
+        case badRequest = "Bad Request"
+        case invalidData = "Unstable Connection"
+        case failed = "Failed"
+        case internalServerError = "Internal Server Error"
     }
     
-    class func uploadImage() {
-                 
-        // Blackpepper Burger
-        // bg-merchat-1.jpg
-        let image = UIImage(named: "Blackpepper Burger.jpg")
-//        let image = UIImage(named: "bg-merchat-1.jpg")
-        let data = image?.jpegData(compressionQuality: 1)
+    class func imageUploadRequest(imageView: UIImageView, param: [String:String]?, completion: @escaping (Any?, Error?) -> Void ) {
 
-//        cloudinary.createUploader().upload(data: data!, uploadPreset: "unsignedCloud")
+            let url = URL(string: "http://167.71.194.60/api/merchant/upload/image")!
+            
+            var request = URLRequest(url: url);
+            request.httpMethod = "POST"
 
-//        Cloudinary::Uploader.upload("sample.jpg", :use_filename => true, :folder => "folder1/folder2")
+            let boundary = generateBoundaryString()
 
-        let params = CLDUploadRequestParams()
-            .setUploadPreset("unsignedCDN")
-            .setPublicId("MyBurger") // file name
-            .setTags("burger").setFolder("merchants")
-        
-        cloudinary.createUploader().upload(data: data! ,uploadPreset: "unsignedCDN",
-            params: params, progress: nil) { (response, error) in
-                if (error == nil) {
-                    print(response!.url)
-                    print("version: \(response!.version)")
+            //request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+            let imageData = imageView.image!.jpegData(compressionQuality: 1)
+
+            if(imageData==nil)  { return; }
+
+            request.httpBody = createBodyWithParameters(parameters: param, filePathKey: "image", imageDataKey: imageData! as NSData, boundary: boundary) as Data
+
+            //myActivityIndicator.startAnimating();
+
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                guard let response = response as? HTTPURLResponse, let data = data // offline
+                    else {
+                        completion(nil, .offline)
+                        return
                 }
+                
+                switch(response.statusCode) {
+                    case 200:
+                        let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
+                        completion(jsonData, nil)
+                    
+                    case 400:
+                        completion(nil, .badRequest)
+                    
+                    case 500:
+                        completion(nil, .internalServerError)
+                    
+                    default:
+                        break
+
+                }
+            }
+            
+            task.resume()
+
+
         }
+
+
+        class func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
+            let body = NSMutableData();
+
+            if parameters != nil {
+                for (key, value) in parameters! {
+                    body.appendString(string: "--\(boundary)\r\n")
+                    body.appendString(string: "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                    body.appendString(string: "\(value)\r\n")
+                }
+            }
+
+            let filename = "user-profile.jpg"
+            let mimetype = "image/jpg"
+
+            body.appendString(string: "--\(boundary)\r\n")
+            body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\( filename)\"\r\n")
+
+            body.appendString(string: "Content-Type: \(mimetype)\r\n\r\n")
+            body.append(imageDataKey as Data)
+            body.appendString(string: "\r\n")
+
+            body.appendString(string: "--\(boundary)--\r\n")
+
+            return body
+        }
+
+        class func generateBoundaryString() -> String {
+            return "Boundary-\(UUID().uuidString)"
+        }
+
     }
 
+
+// extension for impage uploading
+
+extension NSMutableData {
+
+    func appendString(string: String) {
+        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+        append(data!)
+    }
 }

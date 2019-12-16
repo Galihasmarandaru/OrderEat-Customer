@@ -10,7 +10,7 @@
         <!--Action Suggest Time View Controller-->
         <scene sceneID="n6I-C4-wO9">
             <objects>
-                <viewController id="XpD-Zl-wmM" customClass="ActionSuggestTimeViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActionSuggestTime" id="XpD-Zl-wmM" customClass="ActionSuggestTimeViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zmc-Od-fJv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kni-7P-eTD">
                                         <rect key="frame" x="20" y="628" width="334" height="30"/>
                                         <state key="normal" title="Accept">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="acceptButtonClicked:" destination="XpD-Zl-wmM" eventType="touchUpInside" id="c1k-wz-6at"/>

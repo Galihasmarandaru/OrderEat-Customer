@@ -16,10 +16,45 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var logOutButton: UIButton!
     
+    var customer: Customer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         config()
+        
+        APIRequest.getDetail(.customers, id: CurrentUser.id) { (customer, error) in
+            if (error != nil) {
+                // Display alert
+                print(error!)
+                
+            } else {
+                self.customer = customer as? Customer
+                
+                DispatchQueue.main.async {
+                    self.userNameLabel.text = self.customer?.name
+                    self.profileTableView.reloadData()
+                }
+            }
+        }
+        
+        profileUserImageView.image = UIImage(named: "default")
+        let uploadImageParams = [
+            "id": CurrentUser.id,
+            "filename": "profile"
+        ]
+        
+//        Cloudinary.imageUploadRequest(imageView: profileUserImageView, param: uploadImageParams) { (imageJson, error) in
+//            if (error != nil) {
+//                DispatchQueue.main.async {
+//                    print(error!)
+//                }
+//            } else {
+//                print("success")
+////                print((imageJson as! [String:String])["url"]!)
+//            }
+//        }
+        
     }
     
     func config() {
@@ -81,14 +116,14 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             if row == 0 {
                 let cellPhoneNumber = tableView.dequeueReusableCell(withIdentifier: "UserDetailTableViewCell", for: indexPath) as! UserDetailTableViewCell
                 cellPhoneNumber.leftLabel.text = "Phone Number"
-                cellPhoneNumber.rightLabel.text = "+62 812 89866009"
+                cellPhoneNumber.rightLabel.text = customer?.phone
 
                 return cellPhoneNumber
             }
             else {
                 let cellEmail = tableView.dequeueReusableCell(withIdentifier: "UserDetailTableViewCell", for: indexPath) as! UserDetailTableViewCell
                 cellEmail.leftLabel.text = "Email"
-                cellEmail.rightLabel.text = "galih@icloud.com"
+                cellEmail.rightLabel.text = customer?.email
 
                 return cellEmail
             }

@@ -184,7 +184,6 @@
         <!--Profile-->
         <scene sceneID="Hnt-OK-V99">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3m1-A9-Y5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ProfileNavBar" automaticallyAdjustsScrollViewInsets="NO" id="kOM-iC-tmh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="n5C-se-p9O">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
@@ -200,6 +199,7 @@
                         <segue destination="a5O-KE-SmZ" kind="relationship" relationship="rootViewController" id="meD-ES-7Q3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3m1-A9-Y5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4046.376811594203" y="-1962.0535714285713"/>
         </scene>
