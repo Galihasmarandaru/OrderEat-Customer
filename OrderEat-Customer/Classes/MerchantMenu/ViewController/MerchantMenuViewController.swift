@@ -73,7 +73,10 @@ class MerchantMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        if let qrCodeURL = merchant.image {
+            backgroundMerchant.load(url: URL(string: qrCodeURL)!)
+        }
         merchantTitle.merchant = merchant
         viewOfMenu()
         createConstraint()

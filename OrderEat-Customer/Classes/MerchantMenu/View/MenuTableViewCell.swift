@@ -47,8 +47,13 @@ class MenuTableViewCell: UITableViewCell {
     var menu : Menu! {
         didSet {
             titleFood.text = menu.name!
-            imageMenu.image = menu.image != nil ? UIImage(named: "default") : UIImage(named: "default")
             
+            if let imageUrl = menu.image {
+                imageMenu.load(url: URL(string: imageUrl)!)
+            } else {
+                imageMenu.image = UIImage(named: "default")
+            }
+
             let price = menu.price
             priceLbl.text = "Rp. \(price!.currencyFormat)"
         }

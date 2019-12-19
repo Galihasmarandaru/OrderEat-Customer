@@ -30,7 +30,7 @@ final class Cloudinary {
 
             let boundary = generateBoundaryString()
 
-            //request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+            request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
             request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
             let imageData = imageView.image!.jpegData(compressionQuality: 1)
@@ -62,13 +62,9 @@ final class Cloudinary {
                     
                     default:
                         break
-
                 }
             }
-            
             task.resume()
-
-
         }
 
 
