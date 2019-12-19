@@ -26,4 +26,10 @@ extension Date {
         
         return string
     }
+    
+    var roundedByTenMinute : Date {
+        let rounded = Date(timeIntervalSinceReferenceDate: (self.timeIntervalSinceReferenceDate / 600.0).rounded(.up) * 600.0)
+        
+        return rounded
+    }
 }

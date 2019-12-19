@@ -78,6 +78,9 @@
                                         <rect key="frame" x="163" y="5" width="48" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Signup"/>
+                                        <connections>
+                                            <action selector="signUpBtnTapped:" destination="4KV-vm-hmE" eventType="touchUpInside" id="17K-a9-uJv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

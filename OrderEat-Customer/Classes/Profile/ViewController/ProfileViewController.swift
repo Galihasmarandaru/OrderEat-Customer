@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
         }
         
         profileUserImageView.image = UIImage(named: "default")
+        
         let uploadImageParams = [
             "id": CurrentUser.id,
             "filename": "profile"

@@ -63,4 +63,12 @@ class SigninViewController: UIViewController {
             print("Interest: \(interest)")
         }
     }
+    
+    @IBAction func signUpBtnTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Signup", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "Signup") as SignupViewController
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = vc
+    }
+    
 }

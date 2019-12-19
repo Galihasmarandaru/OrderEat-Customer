@@ -73,7 +73,10 @@ class MerchantMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        if let qrCodeURL = merchant.image {
+            backgroundMerchant.load(url: URL(string: qrCodeURL)!)
+        }
         merchantTitle.merchant = merchant
         viewOfMenu()
         createConstraint()
@@ -382,24 +385,24 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffset = tableView.contentOffset.y
-        let limit : CGFloat = 300.0
-        //let maxLimit : CGFloat = 600.0
-        
-        let isScrollingDown : Bool = contentOffset > limit
-
-        if isScrollingDown != self.isScrollingDown {
-            self.isScrollingDown = isScrollingDown
-        }
-
-        if !isScrollingDown {
-            let progress = contentOffset / limit
-
-            //topBarView.alpha = contentOffset / limit
-
-            menuViewTopConstraint.constant = (1 - progress/2) * 215.0
-            self.view.layoutIfNeeded()
-        }
+//        let contentOffset = tableView.contentOffset.y
+//        let limit : CGFloat = 300.0
+//        //let maxLimit : CGFloat = 600.0
+//        
+//        let isScrollingDown : Bool = contentOffset > limit
+//
+//        if isScrollingDown != self.isScrollingDown {
+//            self.isScrollingDown = isScrollingDown
+//        }
+//
+//        if !isScrollingDown {
+//            let progress = contentOffset / limit
+//
+//            //topBarView.alpha = contentOffset / limit
+//
+//            menuViewTopConstraint.constant = (1 - progress/2) * 215.0
+//            self.view.layoutIfNeeded()
+//        }
     }
 }
 

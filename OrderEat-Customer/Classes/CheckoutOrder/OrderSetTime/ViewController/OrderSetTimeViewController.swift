@@ -61,6 +61,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
         
         config()
         
+        pickUpTime = Calendar.current.date(byAdding: .minute, value: 10, to: Date())?.roundedByTenMinute
         merchantNameLbl.text = transaction.merchant?.name!
     }
     
@@ -98,15 +99,6 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
                 let appDelegate = UIApplication.shared.windows
                 
                 appDelegate.first?.rootViewController = tabBarVC
-                
-                
-
-//                if let navigator = self.merchantMenuVC.navigationController {
-//                    self.dismiss(animated: false) {
-//                        navigator.pushViewController(waitingConfirmationPageVC, animated: false)
-//                    }
-////                    self.present(waitingConfirmationPageVC, animated: true, completion: nil)
-//                }
             }
         }
     }
@@ -158,11 +150,10 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
 
             cellPickup.pickUpTimeTextField.inputAccessoryView = addToolBar()
             
-            if pickUpTime != nil {
-                cellPickup.pickUpTimeTextField.text = pickUpTime!.time
-            }
+            cellPickup.pickUpTimeTextField.text = pickUpTime?.time
+            datePicker.date = pickUpTime!
             
-            cellPickup.pickUpTimeTextField.inputView = datePicker
+            cellPickup.datePicker = datePicker
                         
             cellPickup.pickUpTimeTextField.becomeFirstResponder()
             

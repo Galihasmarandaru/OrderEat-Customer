@@ -13,6 +13,13 @@ class PickUpTimeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var pickUpTimeTextField: UITextField!
     
+    var datePicker : UIDatePicker! {
+        didSet {
+            pickUpTimeTextField.inputView = datePicker
+            datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,4 +31,7 @@ class PickUpTimeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @objc func datePickerChanged(_ sender : UIDatePicker) {
+        pickUpTimeTextField.text = sender.date.time
+    }
 }

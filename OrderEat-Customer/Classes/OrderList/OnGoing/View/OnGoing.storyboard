@@ -10,7 +10,7 @@
         <!--Order List-->
         <scene sceneID="Ear-c9-CZC">
             <objects>
-                <viewController title="Order List" id="r8r-3S-p4L" customClass="OnGoingViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Ongoing" title="Order List" id="r8r-3S-p4L" customClass="OnGoingViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k5n-Ag-3fd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

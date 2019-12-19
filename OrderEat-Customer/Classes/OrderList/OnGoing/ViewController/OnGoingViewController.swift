@@ -51,16 +51,17 @@ class OnGoingViewController: UIViewController{
         setupCollection()
         historyUnderline.isHidden = true
         beliYukButton.isHidden = false
+        
         // bind a callback to handle an event
         let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
             
             if event.data != nil {
-                 // you can parse the data as necessary
-                
+             // you can parse the data as necessary
+            
                 let generator = UIImpactFeedbackGenerator(style: .medium)
                 generator.impactOccurred()
-               }
-           })
+            }
+        })
         
 
         DispatchQueue.main.async {
@@ -70,8 +71,8 @@ class OnGoingViewController: UIViewController{
                 let waitingConfirmationPageVC = storyboard01.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
 
                 waitingConfirmationPageVC.transaction = self.pendingTransaction
-                print(self.pendingTransaction)
-                
+                // print(self.pendingTransaction!)
+                waitingConfirmationPageVC.parentView = self
                 self.present(waitingConfirmationPageVC, animated: true, completion: nil)
                 
             }
@@ -82,6 +83,7 @@ class OnGoingViewController: UIViewController{
         collectionViewLayout?.invalidateLayout()
         
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         attemptFetchTransactions()
@@ -93,10 +95,11 @@ class OnGoingViewController: UIViewController{
     }
     
     @IBAction func beliYukClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ListOfMerchant", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ListOfMerchant") as! ListMerchantViewController
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+        tabBarVC.selectedIndex = 0
         let appDelegate = UIApplication.shared.windows
-        appDelegate.first?.rootViewController = vc
+        appDelegate.first?.rootViewController = tabBarVC
     }
     func startAnimation() {
         DispatchQueue.main.async {
@@ -172,9 +175,7 @@ class OnGoingViewController: UIViewController{
             }
             
             DispatchQueue.main.async {
-                
                 self.emptyStateView.isHidden = self.transactions.count > 0
-                
                 self.onGoingCollectionView.reloadData()
             }
         }
@@ -198,7 +199,6 @@ class OnGoingViewController: UIViewController{
         noTransactionLabel.text = noTransactionLblText.noOngoing.rawValue
         onGoingUnderline.isHidden = false
         historyUnderline.isHidden = true
-
 
         onGoingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         historyButton.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
@@ -246,6 +246,15 @@ extension OnGoingViewController: UICollectionViewDelegate,UICollectionViewDataSo
         let status = cell.transaction.status!
         
         switch status {
+            
+        case 0:
+            let storyboard = UIStoryboard(name: "WaitingforRestoConfirm", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "WaitingforRestoConfirm") as! WaitingforRestoConfirmViewController
+            
+            vc.transaction  = transactions[indexPath.row]
+            
+            self.present(vc, animated: true, completion: nil)
+
         case 2: // Waiting for payment
             let storyboard = UIStoryboard(name: "ConfirmPayment", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ConfirmPayment") as! ConfirmPaymentViewController

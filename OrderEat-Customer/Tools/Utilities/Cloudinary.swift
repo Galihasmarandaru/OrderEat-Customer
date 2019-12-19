@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 final class Cloudinary {
+    
+    static let api = APIRequest.api
 
     enum Error : String {
         case offline = "Please check your internet"
@@ -21,14 +23,14 @@ final class Cloudinary {
     
     class func imageUploadRequest(imageView: UIImageView, param: [String:String]?, completion: @escaping (Any?, Error?) -> Void ) {
 
-            let url = URL(string: "http://167.71.194.60/api/merchant/upload/image")!
+            let url = URL(string: api + "/merchant/upload/image")!
             
             var request = URLRequest(url: url);
             request.httpMethod = "POST"
 
             let boundary = generateBoundaryString()
 
-            //request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+            request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
             request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
             let imageData = imageView.image!.jpegData(compressionQuality: 1)
@@ -60,13 +62,9 @@ final class Cloudinary {
                     
                     default:
                         break
-
                 }
             }
-            
             task.resume()
-
-
         }
 
 
