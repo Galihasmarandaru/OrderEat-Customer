@@ -10,7 +10,7 @@
         <!--Signup View Controller-->
         <scene sceneID="QdP-Uk-WAl">
             <objects>
-                <viewController id="xwc-Lv-cFt" customClass="SignupViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Signup" id="xwc-Lv-cFt" customClass="SignupViewController" customModule="Eativa_Customer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HJ9-yW-F7H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,8 +43,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbE-HC-gZn">
+                                <rect key="frame" x="20" y="439" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ez4-A8-HWs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PIN - 6 digits" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z8C-Fn-XFk">
+                                <rect key="frame" x="20" y="493" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="SCc-uc-GA3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwG-fh-9rA" customClass="CustomButton" customModule="Eativa_Customer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="557" width="374" height="44"/>
+                                <rect key="frame" x="20" y="577" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="jJJ-gQ-maE"/>
                                 </constraints>
@@ -55,24 +71,8 @@
                                     <action selector="continueButtonClicked:" destination="xwc-Lv-cFt" eventType="touchUpInside" id="dS7-Sk-1le"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbE-HC-gZn">
-                                <rect key="frame" x="20" y="439" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Ez4-A8-HWs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PIN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z8C-Fn-XFk">
-                                <rect key="frame" x="20" y="493" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="SCc-uc-GA3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-Nf-roi">
-                                <rect key="frame" x="20" y="611" width="374" height="30"/>
+                                <rect key="frame" x="20" y="631" width="374" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -80,6 +80,15 @@
                                     <action selector="cancelButtonClicked:" destination="xwc-Lv-cFt" eventType="touchUpInside" id="CIs-Ge-3zt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq6-T8-o7O" userLabel="validation message">
+                                <rect key="frame" x="20" y="545" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Bwv-Ga-cOY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -93,18 +102,21 @@
                             <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="Abv-Nf-roi" secondAttribute="trailing" constant="20" id="LK3-XW-VyM"/>
                             <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="Rhy-4R-Dhw" secondAttribute="trailing" constant="107" id="Lub-6v-2ow"/>
                             <constraint firstItem="S5h-Z2-jH9" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="MI7-6G-bov"/>
-                            <constraint firstItem="gwG-fh-9rA" firstAttribute="top" secondItem="Z8C-Fn-XFk" secondAttribute="bottom" constant="20" id="PZF-e1-npW"/>
+                            <constraint firstItem="gwG-fh-9rA" firstAttribute="top" secondItem="gq6-T8-o7O" secondAttribute="bottom" constant="11" id="RRk-qL-sT5"/>
                             <constraint firstItem="fdJ-t3-fGn" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="T9B-Eg-Tvu"/>
                             <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="2Bq-Ed-T5a" secondAttribute="trailing" constant="20" id="TKz-wW-Hol"/>
+                            <constraint firstItem="gq6-T8-o7O" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="Xpp-ny-KjL"/>
                             <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="fdJ-t3-fGn" secondAttribute="trailing" constant="20" id="YUo-6m-ebh"/>
                             <constraint firstItem="Rhy-4R-Dhw" firstAttribute="top" secondItem="vTL-VH-uRm" secondAttribute="top" constant="50" id="dDc-Ys-Bnx"/>
                             <constraint firstItem="pbE-HC-gZn" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="fXt-wk-SOy"/>
                             <constraint firstItem="fdJ-t3-fGn" firstAttribute="top" secondItem="2Bq-Ed-T5a" secondAttribute="bottom" constant="10" id="fkX-fN-YnB"/>
+                            <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="gq6-T8-o7O" secondAttribute="trailing" constant="20" id="gmG-2q-Lyy"/>
                             <constraint firstItem="pbE-HC-gZn" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="hSU-sF-MA8"/>
                             <constraint firstItem="2Bq-Ed-T5a" firstAttribute="centerX" secondItem="HJ9-yW-F7H" secondAttribute="centerX" id="iFE-YO-bQW"/>
                             <constraint firstItem="Rhy-4R-Dhw" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="107" id="iGu-SX-lO1"/>
                             <constraint firstItem="Abv-Nf-roi" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="iMF-7m-0CV"/>
                             <constraint firstItem="vTL-VH-uRm" firstAttribute="trailing" secondItem="pbE-HC-gZn" secondAttribute="trailing" constant="20" id="lxT-x8-Zys"/>
+                            <constraint firstItem="gq6-T8-o7O" firstAttribute="top" secondItem="Z8C-Fn-XFk" secondAttribute="bottom" constant="8" id="mnu-lf-u7f"/>
                             <constraint firstItem="S5h-Z2-jH9" firstAttribute="top" secondItem="Rhy-4R-Dhw" secondAttribute="bottom" constant="20" id="nfq-qz-Lsi"/>
                             <constraint firstItem="Z8C-Fn-XFk" firstAttribute="leading" secondItem="vTL-VH-uRm" secondAttribute="leading" constant="20" id="tIE-5I-iJv"/>
                             <constraint firstItem="Abv-Nf-roi" firstAttribute="top" secondItem="gwG-fh-9rA" secondAttribute="bottom" constant="10" id="uFL-Iq-coK"/>
@@ -121,11 +133,12 @@
                         <outlet property="nameTextField" destination="2Bq-Ed-T5a" id="ZH9-Lr-Nk5"/>
                         <outlet property="phoneNumberTextField" destination="fdJ-t3-fGn" id="Dhh-Im-Ktp"/>
                         <outlet property="pinTextField" destination="Z8C-Fn-XFk" id="Lhh-WO-QJa"/>
+                        <outlet property="validationLbl" destination="gq6-T8-o7O" id="W4Y-an-eJw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l39-BF-0Mf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="-105"/>
+            <point key="canvasLocation" x="669.56521739130437" y="-105.13392857142857"/>
         </scene>
     </scenes>
     <resources>

@@ -20,6 +20,8 @@ class WaitingforRestoConfirmViewController: UIViewController {
     
     var transaction : Transaction!
     
+    var parentView : OnGoingViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,16 +70,17 @@ class WaitingforRestoConfirmViewController: UIViewController {
                                 } else {
                                     DispatchQueue.main.async {
                                         let vc = UIStoryboard(name: "ConfirmPayment", bundle: nil).instantiateViewController(identifier: "ConfirmPayment") as! ConfirmPaymentViewController
-                                        vc.transaction = transaction as? Transaction
+                                        vc.transaction = (transaction as! Transaction)
                                         let appDelegate = UIApplication.shared.windows
                                         appDelegate.first?.rootViewController = vc
                                     }
                                 }
                             }
-                        } else if (transactions[0].status!) == 6 {
+                        } else if (transactions[0].status!) == 7 {
                             // Alert that transaction has been cancelled.
                             let alert = UIAlertController(title: "Notice", message: "Your order has been cancelled", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                self.parentView.attemptFetchTransactions()
                                 self.dismiss(animated: true, completion: {
                                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                                 })

@@ -17,10 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
     var window : UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        //background color of text field
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .black
+        
         
         if Defaults.getUserLogin() {
             CurrentUser.id = Defaults.getId()
@@ -49,7 +46,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
         
         PusherBeams.pushNotifications.handleNotification(userInfo: userInfo)
     }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+                
+//        if let scheme = url.scheme,
+//            scheme.localizedCaseInsensitiveCompare("eativa") == .orderedSame,
+//            let host = url.host
+//            {
+//                if host == "callback" {
+//                    var parameters: [String: String] = [:]
+//                    URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+//                        parameters[$0.name] = $0.value
+//                    }
+//
+//                    print(scheme)
+//                    print(host)
+//                    print(parameters)
+//
+////                    let params: [String:String] = [
+////                        "order_id": parameters["order_id"]!,
+////                    ]
+//
+//                    Midtrans.getPaymentCallback(parameters: parameters) { (response, error) in
+//                        if let error = error {
+//                           print(error)
+//                       } else {
+//                            let transaction = response as! [String:String]
+//                            if transaction["status"]! == "settlement" {
+//
+//                                let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//                                let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+//                                tabBarVC.selectedIndex = 1
+//
+//                                let appDelegate = UIApplication.shared.windows
+//                                appDelegate.first?.rootViewController = tabBarVC
+//
+//                            } else {
+//
+//                            }
+//                        }
+//                    }
+//                }
+//        }
 
+        return true
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -63,6 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PusherDelegate{
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
 
     // MARK: - Core Data stack
 

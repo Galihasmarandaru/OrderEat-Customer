@@ -90,6 +90,14 @@ class ConfirmPaymentViewController: UIViewController {
         self.orderDetailsTableView.tableFooterView = UIView()
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+        tabBarVC.selectedIndex = 1
+        let appDelegate = UIApplication.shared.windows
+        appDelegate.first?.rootViewController = tabBarVC
+    }
+    
     @IBAction func saveQRButtonPressed(_ sender: Any) {
         //UIImageWriteToSavedPhotosAlbum(merchants.QRMerchant, nil, nil, nil)
         
@@ -175,21 +183,23 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         
         let cellButton = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
 
-        if let qrCodeURL = transaction.merchant!.qrCode {
-            cellButton.QRImageView.load(url: URL(string: qrCodeURL)!)
-        }
+//        if let qrCodeURL = transaction.merchant!.qrCode {
+//            cellButton.QRImageView.load(url: URL(string: qrCodeURL)!)
+//        }
 
         if transaction.midtransUrl == nil {
             cellButton.confirmPaymentButton.setTitle("Pay with Gopay", for: .normal)
             cellButton.confirmPaymentButton.setTitleColor(.black, for: .normal)
         } else {
-            cellButton.confirmPaymentButton.setTitle("Waiting Payment", for: .normal)
+            cellButton.confirmPaymentButton.setTitle("Waiting Payment", for: .disabled)
             cellButton.confirmPaymentButton.isEnabled = false
         }
             
-            
         cellButton.confirmBtnClosure = { [unowned self] in
-                                
+                             
+            cellButton.confirmPaymentButton.setTitle("Waiting Payment", for: .normal)
+            cellButton.confirmPaymentButton.isEnabled = false
+
             // request midtrans token
             Midtrans.createGopayPayment(transaction: self.transaction) { (response, error) in
                 
@@ -226,7 +236,6 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
                     }
                 }
             }
-            tableView.reloadData()
         }
         
         return cellButton

@@ -10,7 +10,9 @@
 import Foundation
 import UIKit
 
-final class APIRequest {
+final class APIRequest {              
+    
+//    static let api = "http://157.245.207.144/api"
     static let api = "http://167.71.194.60/api"
     
     enum Endpoint : String {
@@ -331,6 +333,57 @@ final class APIRequest {
         }
         
         task.resume()
+    }
+    
+    class func signUp(parameter body: [String : Any], completion: @escaping (Bool?, Error?) -> Void) {
+        let url = URL(string: api + "/customer/register")!
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: body, options: [])
+        
+        request.httpBody = jsonData!
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let response = response as? HTTPURLResponse, let data = data
+                else {
+                    completion(nil, .offline)
+                    return
+            }
+            
+            switch(response.statusCode) {
+            case 200:
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
+
+//                PusherBeams.removeDeviceInterest(pushInterest: CurrentUser.id)
+//                PusherChannels.pusher.unsubscribeAll()
+//
+//                CurrentUser.id = jsonData!["id"]!
+//                CurrentUser.name = jsonData!["name"]!
+//                CurrentUser.email = jsonData!["email"]!
+//                CurrentUser.accessToken = jsonData!["access_token"]!
+//
+//                Defaults.clearUserData()
+//                Defaults.saveUserLogin(true)
+//                Defaults.saveCustomerData(token: token, id: id)
+                
+                completion(true, nil)
+                
+            case 400:
+                completion(false, .offline)
+                
+            default:
+                completion(false, .offline)
+                
+            }
+        }
+        
+        task.resume()
+        
     }
     
     class func signIn(parameter body: [String : Any], completion: @escaping (Bool?, Error?) -> Void) {

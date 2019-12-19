@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 final class Cloudinary {
+    
+    static let api = APIRequest.api
 
     enum Error : String {
         case offline = "Please check your internet"
@@ -21,7 +23,7 @@ final class Cloudinary {
     
     class func imageUploadRequest(imageView: UIImageView, param: [String:String]?, completion: @escaping (Any?, Error?) -> Void ) {
 
-            let url = URL(string: "http://167.71.194.60/api/merchant/upload/image")!
+            let url = URL(string: api + "/merchant/upload/image")!
             
             var request = URLRequest(url: url);
             request.httpMethod = "POST"

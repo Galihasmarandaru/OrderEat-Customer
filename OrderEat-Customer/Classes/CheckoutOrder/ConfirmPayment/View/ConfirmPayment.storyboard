@@ -180,39 +180,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4RW-0E-c0s">
-                                                    <rect key="frame" x="224" y="21" width="130" height="130"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="NQ7-NB-5k0"/>
-                                                        <constraint firstAttribute="width" secondItem="4RW-0E-c0s" secondAttribute="height" multiplier="1:1" id="PV5-lv-EOz"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxY-Z1-hDq">
-                                                    <rect key="frame" x="224" y="160" width="130" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="0r4-Nc-bPx"/>
-                                                        <constraint firstAttribute="height" constant="30" id="d3X-K3-9eQ"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Open Go-Jek App"/>
-                                                    <connections>
-                                                        <action selector="saveQRButtonPressed:" destination="hbL-LA-ZBw" eventType="touchUpInside" id="kS6-4u-Bb9"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyy-Na-Dd6">
-                                                    <rect key="frame" x="20" y="50" width="194" height="140"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="140" id="F7e-Qc-5CL"/>
-                                                    </constraints>
-                                                    <string key="text">1. Click Open Go-Jek App and pay with this QR (this QR will be automatically saved to your Camera Roll)
-
-2. After that, click Confirm Payment below.</string>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqf-sh-WJe" customClass="CustomButton" customModule="Eativa_Customer" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="220" width="334" height="44"/>
+                                                    <rect key="frame" x="20" y="158" width="334" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Lbs-Q8-KVv"/>
                                                     </constraints>
@@ -221,38 +190,30 @@
                                                         <action selector="confirmBtnPressed:" destination="lTx-1q-dv0" eventType="touchUpInside" id="AdZ-mZ-EQ6"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to pay?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8z-JZ-PlM">
-                                                    <rect key="frame" x="20" y="20" width="95" height="20"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fae-jT-R0J">
+                                                    <rect key="frame" x="137" y="219" width="100" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="CCf-lG-KNv"/>
-                                                        <constraint firstAttribute="width" constant="95" id="VFb-5N-MI3"/>
+                                                        <constraint firstAttribute="height" constant="30" id="63Y-Kd-A7b"/>
+                                                        <constraint firstAttribute="width" constant="100" id="J7P-CG-rOh"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Back"/>
+                                                    <connections>
+                                                        <action selector="backButtonTapped:" destination="hbL-LA-ZBw" eventType="touchUpInside" id="ekq-Yf-myM"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="mxY-Z1-hDq" firstAttribute="top" secondItem="4RW-0E-c0s" secondAttribute="bottom" constant="9" id="717-TZ-zGk"/>
-                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="trailing" secondItem="kj9-V1-gZy" secondAttribute="trailingMargin" id="EQc-0m-ewO"/>
-                                                <constraint firstItem="S8z-JZ-PlM" firstAttribute="top" secondItem="kj9-V1-gZy" secondAttribute="topMargin" constant="9" id="Eno-bW-TUd"/>
-                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="top" secondItem="kj9-V1-gZy" secondAttribute="topMargin" constant="10" id="UBo-0B-5IP"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Dqf-sh-WJe" secondAttribute="bottom" constant="5" id="V56-b0-XHp"/>
-                                                <constraint firstItem="Eyy-Na-Dd6" firstAttribute="top" secondItem="S8z-JZ-PlM" secondAttribute="bottom" constant="10" id="Xwp-bE-niC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dqf-sh-WJe" secondAttribute="bottom" constant="67" id="V56-b0-XHp"/>
                                                 <constraint firstItem="Dqf-sh-WJe" firstAttribute="trailing" secondItem="kj9-V1-gZy" secondAttribute="trailingMargin" id="Z5z-ZY-FsR"/>
-                                                <constraint firstItem="4RW-0E-c0s" firstAttribute="leading" secondItem="Eyy-Na-Dd6" secondAttribute="trailing" constant="10" id="fto-qm-zou"/>
-                                                <constraint firstItem="mxY-Z1-hDq" firstAttribute="centerX" secondItem="4RW-0E-c0s" secondAttribute="centerX" id="i9j-t0-0pl"/>
                                                 <constraint firstItem="Dqf-sh-WJe" firstAttribute="leading" secondItem="kj9-V1-gZy" secondAttribute="leadingMargin" id="kKH-vp-kts"/>
-                                                <constraint firstItem="Eyy-Na-Dd6" firstAttribute="leading" secondItem="S8z-JZ-PlM" secondAttribute="leading" id="mRd-gC-IGW"/>
-                                                <constraint firstItem="S8z-JZ-PlM" firstAttribute="leading" secondItem="kj9-V1-gZy" secondAttribute="leadingMargin" id="zL9-OM-RxB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Fae-jT-R0J" secondAttribute="bottom" constant="20" id="riM-AK-bAu"/>
+                                                <constraint firstItem="Fae-jT-R0J" firstAttribute="centerX" secondItem="Dqf-sh-WJe" secondAttribute="centerX" id="vNp-Ka-wlk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="QRImageView" destination="4RW-0E-c0s" id="cpj-t8-5RG"/>
                                             <outlet property="confirmPaymentButton" destination="Dqf-sh-WJe" id="eEo-7A-4xg"/>
-                                            <outlet property="saveQRButton" destination="mxY-Z1-hDq" id="gGf-rh-kdp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

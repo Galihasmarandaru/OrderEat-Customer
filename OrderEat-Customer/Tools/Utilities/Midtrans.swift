@@ -9,7 +9,8 @@
 import Foundation
 
 final class Midtrans {
-    static let api = "http://167.71.194.60/api"
+
+    static let api = APIRequest.api
 
     static var midtransToken: String = ""
     
@@ -152,6 +153,43 @@ final class Midtrans {
             }
             
 
+        }
+        
+        task.resume()
+    }
+    
+    class func getPaymentCallback(parameters: [String:Any], completion: @escaping (Any?, Error?) -> Void) {
+        let url = URL(string: api + "/payment/charge/callback")!;
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(CurrentUser.accessToken)", forHTTPHeaderField: "Authorization")
+        
+        // parameters order_id status_code
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil else {
+                    completion(nil, .offline)
+                    return
+            }
+            
+            switch(response.statusCode) {
+            case 200:
+                let responseData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
+                completion(responseData, nil)
+                
+            case 400:
+                completion(nil, .offline)
+                
+            default:
+                completion(nil, .offline)
+            }
         }
         
         task.resume()

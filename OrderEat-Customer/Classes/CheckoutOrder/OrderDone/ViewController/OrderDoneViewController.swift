@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PusherSwift
 
 class OrderDoneViewController: UIViewController {
 
@@ -38,10 +39,53 @@ class OrderDoneViewController: UIViewController {
         orderNumberLbl.text = "Order No: " + transaction.orderNumber!
         statusLbl.text = "Status: " + transactionStatus[transaction.status!]
         
+        
+        // bind a callback to handle an event
+        let _ = PusherChannels.channel.bind(eventName: "Transaction", eventCallback: { (event: PusherEvent) in
+            if let transaction = event.data {
+                
+                let data =  Data(transaction.utf8)
+                
+                let decoder = JSONDecoder()
+                do {
+                    let transactions = try decoder.decode([Transaction].self, from: data)
+                                        
+                    // transaction[0] => after update
+                    // transaction[1] => before update
+                    
+                    if self.transaction.id == (transactions[0].id!) {
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+                        
+                        if (transactions[0].status!) == 4 {
+                            DispatchQueue.main.async {
+                                self.statusLbl.text = "Ready to Pick Up"
+                            }
+                        } else if (transactions[0].status!) == 5 {
+                            DispatchQueue.main.async {
+                                let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                                let tabBarVC = storyboard.instantiateViewController(identifier: "tabBar") as! UITabBarController
+                                tabBarVC.selectedIndex = 1
+                                let appDelegate = UIApplication.shared.windows
+                                appDelegate.first?.rootViewController = tabBarVC
+                            }
+                        }
+                    }
+                } catch let error as NSError {
+                   print(error)
+               }
+           }
+       })
+        PusherChannels.pusher.connect()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        PusherChannels.pusher.connect()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        PusherChannels.pusher.disconnect()
     }
     
     func config() {
@@ -116,6 +160,14 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
                 cellQR.pickUpTimeLabel.text = transaction.pickUpTime?.time
 
                 return cellQR
+            } else if transaction.status == 4 {
+                let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
+                
+                cellQR.QRImageView.image = image
+                
+                cellQR.pickUpTimeLabel.text = transaction.pickUpTime?.time
+
+                return cellQR
             }
             else {
                 let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
@@ -140,6 +192,9 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
             return 135
         }
         else if indexPath.row == details.count + 3 && transaction.status == 3{
+            return 370
+        }
+        else if indexPath.row == details.count + 3 && transaction.status == 4{
             return 370
         }
         else {
