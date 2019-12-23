@@ -50,8 +50,12 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
             transaction.details!.removeAll(where: {$0.qty == 0})
             details = transaction.details!
             transaction.total = transaction.getSubTotalPrice() + transaction.getTaxPrice()
+            transaction.discountedTotal = transaction.total! - transaction.getDiscount()
+            print("Discount :")
+            print(transaction.getDiscount())
         }
     }
+    
     var details : [TransactionDetail]!
     var subtotal : Int!
     var tax : Int!
@@ -111,7 +115,7 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return details.count + 5
+            return details.count + 6
         
     }
 
@@ -131,6 +135,14 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
             return cellSub
         }
         else if indexPath.row == (details.count + 1) {
+            let cellDiscount = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
+
+            cellDiscount.leftLabel.text = "Discount (\(Int(transaction.merchant!.discount! * 100))%)"
+            cellDiscount.rightLabel.text = "Rp. \(transaction.getDiscount().currencyFormat)"
+            
+            return cellDiscount
+        }
+        else if indexPath.row == (details.count + 2) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
 
             cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
@@ -138,14 +150,14 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
             
             return cellTax
         }
-        else if indexPath.row == (details.count + 2) {
+        else if indexPath.row == (details.count + 3) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. \(transaction.total!.currencyFormat)"
+            cellTotal.rightLabel.text = "Rp. \(transaction.discountedTotal!.currencyFormat)"
             
             return cellTotal
         }
-        else if indexPath.row == (details.count + 3) {
+        else if indexPath.row == (details.count + 4) {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "pickUpTimeTableViewCell", for: indexPath) as! PickUpTimeTableViewCell
 
             cellPickup.pickUpTimeTextField.inputAccessoryView = addToolBar()

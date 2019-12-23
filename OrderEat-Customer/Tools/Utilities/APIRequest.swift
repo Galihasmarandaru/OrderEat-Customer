@@ -10,10 +10,13 @@
 import Foundation
 import UIKit
 
-final class APIRequest {              
-    
-//    static let api = "http://157.245.207.144/api"
-    static let api = "http://167.71.194.60/api"
+enum ServerAddress : String {
+    case development = "http://167.71.194.60/api"
+    case production = "http://157.245.207.144/api"
+}
+
+final class APIRequest { 
+    static let api = ServerAddress.development.rawValue
     
     enum Endpoint : String {
         case customers = "/customer/"
@@ -406,6 +409,8 @@ final class APIRequest {
                     return
             }
             
+            
+            print(response.statusCode)
             switch(response.statusCode) {
             case 200:
                 let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
@@ -429,10 +434,8 @@ final class APIRequest {
                 
             case 400:
                 completion(nil, .offline)
-                
             default:
                 completion(nil, .offline)
-                
             }
         }
         

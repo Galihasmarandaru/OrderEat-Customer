@@ -136,6 +136,7 @@ class MerchantMenuViewController: UIViewController {
     }
     
     func setupTransaction() {
+        print(merchant.id!)
         transaction = Transaction(merchantId: merchant.id!)
         transaction.merchant = merchant
         for i in 0..<menus.count {

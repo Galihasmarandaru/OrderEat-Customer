@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W5O-lK-pEu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W5O-lK-pEu">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -111,18 +111,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL0-Bc-sIE">
-                                                    <rect key="frame" x="20" y="7" width="106" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="106" id="YbB-FS-zbI"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="20" y="7" width="142" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-kP-Zhk">
-                                                    <rect key="frame" x="155" y="7" width="197" height="20"/>
+                                                    <rect key="frame" x="182" y="7" width="170" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="197" id="eIR-ZD-p7B"/>
+                                                        <constraint firstAttribute="width" constant="170" id="eIR-ZD-p7B"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,10 +127,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="JL0-Bc-sIE" secondAttribute="trailing" constant="248" id="25d-Z0-jLJ"/>
                                                 <constraint firstItem="cBv-kP-Zhk" firstAttribute="top" secondItem="z0O-ij-1Dg" secondAttribute="top" constant="7" id="Fzv-fO-sX7"/>
                                                 <constraint firstItem="JL0-Bc-sIE" firstAttribute="centerY" secondItem="z0O-ij-1Dg" secondAttribute="centerY" id="M3f-4n-KHY"/>
-                                                <constraint firstItem="cBv-kP-Zhk" firstAttribute="leading" secondItem="z0O-ij-1Dg" secondAttribute="leading" constant="155" id="SWo-GG-E8b"/>
+                                                <constraint firstItem="cBv-kP-Zhk" firstAttribute="leading" secondItem="JL0-Bc-sIE" secondAttribute="trailing" constant="20" id="Siz-Jq-mo1"/>
                                                 <constraint firstItem="JL0-Bc-sIE" firstAttribute="top" secondItem="z0O-ij-1Dg" secondAttribute="topMargin" constant="-4" id="cJD-SR-da8"/>
                                                 <constraint firstItem="JL0-Bc-sIE" firstAttribute="leading" secondItem="z0O-ij-1Dg" secondAttribute="leading" constant="20" id="hB8-er-EhS"/>
                                                 <constraint firstAttribute="trailing" secondItem="cBv-kP-Zhk" secondAttribute="trailing" constant="22" id="trA-wE-u9X"/>

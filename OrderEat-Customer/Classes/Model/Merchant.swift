@@ -16,12 +16,14 @@ class Merchant : Codable {
     var email : String? // E
     var password : String? // E
     var address : String? // D, E
-    var isOpen :  Bool? // D
+    var isOpen : Bool? // D
     var lat : Double? // D, E
     var long : Double? // D, E
     var qrCode : String? // D, E
     var image : String? // D, E
     var tax : Double? // D, E
+    var discount : Double? // D
+    var maxDiscount : Int?
     var workingHours : [WorkingHour]?
     
     private enum CodingKeys: String, CodingKey {
@@ -37,11 +39,13 @@ class Merchant : Codable {
         case qrCode
         case image
         case tax
+        case discount
+        case maxDiscount
         case workingHours = "workingHour"
         case openHour
         case closeHour
     }
-
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(String.self, forKey: .id)
@@ -54,7 +58,12 @@ class Merchant : Codable {
         qrCode = try container.decodeIfPresent(String.self, forKey: .qrCode)
         image = try container.decodeIfPresent(String.self, forKey: .image)
         tax = try container.decodeIfPresent(Double.self, forKey: .tax)
+        discount = try container.decodeIfPresent(Double.self, forKey: .discount)
+        maxDiscount = try container.decodeIfPresent(Int.self, forKey: .maxDiscount)
         workingHours = try container.decodeIfPresent([WorkingHour].self, forKey: .workingHours)
+        
+        discount = 0.3
+        maxDiscount = 30000
     }
     
     func encode(to encoder: Encoder) throws {

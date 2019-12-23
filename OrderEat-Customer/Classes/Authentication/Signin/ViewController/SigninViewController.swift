@@ -55,7 +55,9 @@ class SigninViewController: UIViewController {
                     let appDelegate = UIApplication.shared.windows
                     appDelegate.first?.rootViewController = tabBarVC
                 }
-               
+            }
+            else {
+                
             }
         }
         

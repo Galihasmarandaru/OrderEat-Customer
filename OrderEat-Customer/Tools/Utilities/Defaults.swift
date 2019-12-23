@@ -17,7 +17,7 @@ struct Defaults {
         UserDefaults.standard.set(accessToken, forKey: token)
         UserDefaults.standard.set(customerId, forKey: id)
     }
-
+    
     static func getToken() -> String{
         let accessToken = UserDefaults.standard.string(forKey: token) ?? ""
         

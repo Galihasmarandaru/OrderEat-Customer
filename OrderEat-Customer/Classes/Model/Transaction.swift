@@ -17,6 +17,7 @@ struct Transaction : Codable{
     var merchantId : String? // E
     var pickUpTime : String? // D, E
     var total : Int? // D, E
+    var discountedTotal : Int?
     var status : Int? // D, E
     var qrCode: String?
     var details : [TransactionDetail]? // D, E
@@ -87,6 +88,13 @@ struct Transaction : Codable{
         }
         
         return totalPrice
+    }
+    
+    func getDiscount() -> Int {
+        let discount = Double(total!) * merchant!.discount!
+        let roundedDiscount = Int(discount / 100) * 100
+        
+        return roundedDiscount < merchant!.maxDiscount! ? roundedDiscount : merchant!.maxDiscount!
     }
     
     func getTaxPrice() -> Int {

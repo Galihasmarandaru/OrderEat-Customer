@@ -24,7 +24,6 @@ final class PusherBeams {
             registerDeviceInterest(pushInterest: CurrentUser.id)
             print("push notif init done")
         }
-
     }
     
     // run this after sign in
