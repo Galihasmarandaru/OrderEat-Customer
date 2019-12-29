@@ -32,8 +32,7 @@ class ItemTableViewCell: UITableViewCell {
             itemNameLabel.text = detail.menu?.name
             itemQtyLabel.text = String(detail.qty!)
             
-            let price = detail.menu?.price?.currencyFormat
-            itemPriceLabel.text = "Rp. \(price!)"
+            itemPriceLabel.text = detail.menu?.price?.asPrice
         }
     }
 

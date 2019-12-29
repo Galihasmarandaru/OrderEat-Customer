@@ -51,8 +51,6 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
             details = transaction.details!
             transaction.total = transaction.getSubTotalPrice() + transaction.getTaxPrice()
             transaction.discountedTotal = transaction.total! - transaction.getDiscount()
-            print("Discount :")
-            print(transaction.getDiscount())
         }
     }
     
@@ -85,7 +83,7 @@ class OrderSetTimeViewController: UIViewController, UITextFieldDelegate{
 
     @IBAction func confirmOrderButtonClicked(_ sender: Any) {
         transaction.pickUpTime = pickUpTime!.string
-      
+        
         APIRequest.post(.transactions, object: transaction) { (id, error) in
             self.transaction.id = id
             self.transaction.pickUpTime = self.pickUpTime!.string
@@ -130,7 +128,7 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
         else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp. \(transaction.getSubTotalPrice().currencyFormat)"
+            cellSub.rightLabel.text = transaction.getSubTotalPrice().asCurrency
 
             return cellSub
         }
@@ -138,7 +136,7 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
             let cellDiscount = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
 
             cellDiscount.leftLabel.text = "Discount (\(Int(transaction.merchant!.discount! * 100))%)"
-            cellDiscount.rightLabel.text = "Rp. \(transaction.getDiscount().currencyFormat)"
+            cellDiscount.rightLabel.text = "- " + transaction.getDiscount().asPrice
             
             return cellDiscount
         }
@@ -146,14 +144,14 @@ extension OrderSetTimeViewController: UITableViewDataSource, UITableViewDelegate
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
 
             cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
-            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice().currencyFormat)"
+            cellTax.rightLabel.text = transaction.getTaxPrice().asPrice
             
             return cellTax
         }
         else if indexPath.row == (details.count + 3) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "priceOrderedTableViewCell", for: indexPath) as! PriceOrderedTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. \(transaction.discountedTotal!.currencyFormat)"
+            cellTotal.rightLabel.text = transaction.discountedTotal!.asCurrency
             
             return cellTotal
         }

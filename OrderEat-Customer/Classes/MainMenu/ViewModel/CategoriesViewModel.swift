@@ -21,6 +21,8 @@ class CategoriesViewModel : NSObject, UICollectionViewDataSource,UICollectionVie
         
         cellCate.imageCategories.image = imageCategories[indexPath.row]
         
+        cellCate.disable()
+        
         return cellCate
     }
     

@@ -73,9 +73,9 @@ class MerchantMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let qrCodeURL = merchant.image {
-            backgroundMerchant.load(url: URL(string: qrCodeURL)!)
+        
+        if let topImageURL = merchant.image, topImageURL != "" {
+            backgroundMerchant.load(url: URL(string: topImageURL)!)
         }
         merchantTitle.merchant = merchant
         viewOfMenu()
@@ -345,47 +345,43 @@ extension MerchantMenuViewController: UITableViewDataSource, UITableViewDelegate
         let row = indexPath.row
         
         cell.detail = transaction.details![row]
-        cell.menu =  menus[row]
         
-        cell.delegate = self
-//        notesVC
-//            .addNotesBtnClosure = {
-//            print("inside closure")
-//
-////            cell.detail.notes = notes.textFieldNotes.text
-////            print("whati sthe notes : "  + notes.textFieldNotes.text!)
-//            self.animateTransitionIfNeeded(state: .collapsed, duration: 0.5)
-//        }
+        let menu =  menus[row]
+        cell.menu =  menu
         
-        cell.addBtnClosure = { [unowned self] in
-            if self.transaction.getTotalMenu() == 0 {
-                self.showCart()
+        if menu.isAvailable! == false {
+            cell.disable()
+        }
+        else {
+            cell.delegate = self
+            
+            cell.addBtnClosure = { [unowned self] in
+                if self.transaction.getTotalMenu() == 0 {
+                    self.showCart()
+                }
+            }
+            
+            cell.minusBtnClosure = { [unowned self] in
+                if self.transaction.getTotalMenu() == 0 {
+                    self.hideCart()
+                }
+            }
+            
+            cell.refreshCartClosure = { [unowned self] in
+                if self.transaction.getTotalMenu() != 0 {
+                    let totalMenu = self.transaction.getTotalMenu()
+                    self.itemSelected.text = "\(totalMenu) item" + (totalMenu > 1 ? "s" : "")
+                    self.priceSelected.text = self.transaction.getSubTotalPrice().asPrice
+                }
             }
         }
-        
-        cell.minusBtnClosure = { [unowned self] in
-            if self.transaction.getTotalMenu() == 0 {
-                self.hideCart()
-            }
-        }
-        
-        cell.refreshCartClosure = { [unowned self] in
-            if self.transaction.getTotalMenu() != 0 {
-                let totalMenu = self.transaction.getTotalMenu()
-                self.itemSelected.text = "\(totalMenu) item" + (totalMenu > 1 ? "s" : "")
-                self.priceSelected.text =  "Rp. \(self.transaction.getSubTotalPrice().currencyFormat)"
-            }
-        }
-        
-//        cell.activityCart = { [unowned self] in
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.AddActionNotes))
-//                    cell.AddNotes.addGestureRecognizer(tap)
-//                }
         
         return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // efek scroll
 //        let contentOffset = tableView.contentOffset.y
 //        let limit : CGFloat = 300.0
 //        //let maxLimit : CGFloat = 600.0

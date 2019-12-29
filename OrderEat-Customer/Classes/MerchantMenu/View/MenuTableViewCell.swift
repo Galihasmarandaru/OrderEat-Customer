@@ -54,8 +54,7 @@ class MenuTableViewCell: UITableViewCell {
                 imageMenu.image = UIImage(named: "default")
             }
 
-            let price = menu.price
-            priceLbl.text = "Rp. \(price!.currencyFormat)"
+            priceLbl.text = menu.price?.asPrice
         }
     }
     

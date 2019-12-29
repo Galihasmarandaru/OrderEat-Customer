@@ -11,12 +11,12 @@ import Foundation
 import UIKit
 
 enum ServerAddress : String {
-    case development = "http://167.71.194.60/api"
-    case production = "http://157.245.207.144/api"
+    case dev = "http://167.71.194.60/api"
+    case prod = "http://157.245.207.144/api"
 }
 
 final class APIRequest { 
-    static let api = ServerAddress.development.rawValue
+    static let api = ServerAddress.dev.rawValue
     
     enum Endpoint : String {
         case customers = "/customer/"

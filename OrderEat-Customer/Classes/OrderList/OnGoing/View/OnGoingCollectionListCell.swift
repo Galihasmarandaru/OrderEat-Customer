@@ -21,7 +21,8 @@ class OnGoingCollectionListCell: UICollectionViewCell {
     var transaction : Transaction! {
         didSet{
             self.merchantNameLbl.text = transaction.merchant?.name!
-            self.priceLbl.text = "Rp. \(transaction.total!.currencyFormat)"
+            self.orderNumLbl.text = "Order Number: " +  transaction.orderNumber!
+            self.priceLbl.text = transaction.total!.asCurrency
             self.statusLbl.text = "Status: " + transactionStatus[transaction.status!]
         }
     }

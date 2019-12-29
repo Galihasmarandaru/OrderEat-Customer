@@ -61,9 +61,6 @@ class Merchant : Codable {
         discount = try container.decodeIfPresent(Double.self, forKey: .discount)
         maxDiscount = try container.decodeIfPresent(Int.self, forKey: .maxDiscount)
         workingHours = try container.decodeIfPresent([WorkingHour].self, forKey: .workingHours)
-        
-        discount = 0.3
-        maxDiscount = 30000
     }
     
     func encode(to encoder: Encoder) throws {

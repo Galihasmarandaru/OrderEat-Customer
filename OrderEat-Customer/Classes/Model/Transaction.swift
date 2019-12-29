@@ -32,6 +32,7 @@ struct Transaction : Codable{
         case merchantId
         case pickUpTime
         case total
+        case discountedTotal
         case status
         case qrCode
         case details
@@ -46,11 +47,11 @@ struct Transaction : Codable{
         self.merchant = try container.decodeIfPresent(Merchant.self, forKey: .merchant)
         self.pickUpTime = try container.decodeIfPresent(String.self, forKey: .pickUpTime)
         self.total = try container.decodeIfPresent(Int.self, forKey: .total)
+        self.discountedTotal = try container.decodeIfPresent(Int.self, forKey: .discountedTotal)
         self.status = try container.decodeIfPresent(Int.self, forKey: .status)
         self.qrCode = try container.decodeIfPresent(String.self, forKey: .qrCode)
         self.details = try container.decodeIfPresent([TransactionDetail].self, forKey: .details)
         self.midtransUrl = try container.decodeIfPresent(String.self, forKey: .midtransUrl)
-
     }
     
     init(merchantId : String) {
@@ -65,6 +66,7 @@ struct Transaction : Codable{
         try container.encode(merchantId, forKey: .merchantId)
         try container.encode(pickUpTime, forKey: .pickUpTime)
         try container.encode(total, forKey: .total)
+        try container.encode(discountedTotal, forKey: .discountedTotal)
         try container.encode(details, forKey: .details)
     }
     
@@ -98,7 +100,6 @@ struct Transaction : Codable{
     }
     
     func getTaxPrice() -> Int {
-        
         let taxPrice = Int(merchant!.tax! * Double(getSubTotalPrice()))
         
         return taxPrice

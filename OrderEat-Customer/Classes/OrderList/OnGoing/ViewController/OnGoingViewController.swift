@@ -25,6 +25,8 @@ class OnGoingViewController: UIViewController{
     @IBOutlet weak var noTransactionImage: UIImageView!
     @IBOutlet weak var noTransactionLabel: UILabel!
     
+    var state : Int = 0
+    
     var isWaitingForConfirmation : Bool = false
     var pendingTransaction : Transaction!
     
@@ -58,6 +60,13 @@ class OnGoingViewController: UIViewController{
             if event.data != nil {
              // you can parse the data as necessary
             
+                if self.state == 0 {
+                    self.attemptFetchTransactions()
+                }
+                else {
+                    self.attemptFetchHistory()
+                }
+                
                 let generator = UIImpactFeedbackGenerator(style: .medium)
                 generator.impactOccurred()
             }
@@ -193,7 +202,7 @@ class OnGoingViewController: UIViewController{
     @IBAction func onGoingClicked(_ sender: Any) {
         
         attemptFetchTransactions()
-
+        state = 0
         self.emptyStateView.isHidden = true
         noTransactionImage.image = UIImage(named: noTransactionImageList.noOngoing.rawValue)
         noTransactionLabel.text = noTransactionLblText.noOngoing.rawValue
@@ -207,7 +216,7 @@ class OnGoingViewController: UIViewController{
     @IBAction func historyClicked(_ sender: Any)
     {
         attemptFetchHistory()
-
+        state = 1
         self.emptyStateView.isHidden = true
 //        noTransactionImage.image = UIImage(named: noTransactionImageList.noOngoing.rawValue)
         noTransactionLabel.text = noTransactionLblText.noHistory.rawValue

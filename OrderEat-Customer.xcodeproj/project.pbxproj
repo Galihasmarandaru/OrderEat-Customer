@@ -37,12 +37,15 @@
 		9319566F237D2DCA0044DE73 /* WaitingforRestoConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31B44A42374052C00022FE6 /* WaitingforRestoConfirm.storyboard */; };
 		934DA39A2383CCB7007675B4 /* WorkingHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DA3992383CCB7007675B4 /* WorkingHour.swift */; };
 		935A165E2384D85A001C1D4F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A165D2384D85A001C1D4F /* Defaults.swift */; };
+		93786EC723B855A9006C3A30 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93786EC623B855A9006C3A30 /* TableCell.swift */; };
+		93786EC923B876B3006C3A30 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93786EC823B876B3006C3A30 /* CollectionCell.swift */; };
 		93AA9A382387838300B98AF4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 93AA9A372387838300B98AF4 /* loading.json */; };
 		93AA9A3A23878E3F00B98AF4 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA9A3923878E3F00B98AF4 /* UIImageView.swift */; };
 		93ADD17D237D327E001E3094 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17B237D327E001E3094 /* Date.swift */; };
 		93ADD17E237D327E001E3094 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD17C237D327E001E3094 /* String.swift */; };
 		93ADD17F237D34B5001E3094 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB5D2E623692F7700ACAAD0 /* OnBoarding.storyboard */; };
 		93ADD181237EAB02001E3094 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADD180237EAB02001E3094 /* Alert.swift */; };
+		93ED404523B465F400E04247 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ED404423B465F400E04247 /* Int.swift */; };
 		93F62E79237BD8E4007FED6B /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E73237BD8E4007FED6B /* CurrentUser.swift */; };
 		93F62E7A237BD8E4007FED6B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E75237BD8E4007FED6B /* Data.swift */; };
 		93F62E7C237BD8E4007FED6B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62E77237BD8E4007FED6B /* APIRequest.swift */; };
@@ -181,11 +184,14 @@
 		87940C6C237C0A35009AC6EA /* PusherChannels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PusherChannels.swift; sourceTree = "<group>"; };
 		934DA3992383CCB7007675B4 /* WorkingHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHour.swift; sourceTree = "<group>"; };
 		935A165D2384D85A001C1D4F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		93786EC623B855A9006C3A30 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		93786EC823B876B3006C3A30 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		93AA9A372387838300B98AF4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		93AA9A3923878E3F00B98AF4 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		93ADD17B237D327E001E3094 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		93ADD17C237D327E001E3094 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		93ADD180237EAB02001E3094 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		93ED404423B465F400E04247 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		93F62E73237BD8E4007FED6B /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		93F62E75237BD8E4007FED6B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		93F62E77237BD8E4007FED6B /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -403,6 +409,9 @@
 				93ADD17C237D327E001E3094 /* String.swift */,
 				93F62E75237BD8E4007FED6B /* Data.swift */,
 				93AA9A3923878E3F00B98AF4 /* UIImageView.swift */,
+				93ED404423B465F400E04247 /* Int.swift */,
+				93786EC623B855A9006C3A30 /* TableCell.swift */,
+				93786EC823B876B3006C3A30 /* CollectionCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1412,6 +1421,7 @@
 				A3B7118C236FF5AF00670669 /* CustomButton.swift in Sources */,
 				0A2F5784236FFD990048BB0E /* ListMerchantViewController.swift in Sources */,
 				A3E4D5D12375200D00693241 /* ItemTableViewCell.swift in Sources */,
+				93786EC723B855A9006C3A30 /* TableCell.swift in Sources */,
 				CA00688223976AF600713A59 /* NotesViewController.swift in Sources */,
 				A3602EC9238F9AF0009E80EE /* ProfileViewController.swift in Sources */,
 				0A72B4FE236FF04100707951 /* ListMerchantTableViewCell.swift in Sources */,
@@ -1483,6 +1493,7 @@
 				87940C6B237C0A29009AC6EA /* PusherBeams.swift in Sources */,
 				A31B449D2373CB6400022FE6 /* File.swift in Sources */,
 				A3E4D5D52375202800693241 /* ShowQRTableViewCell.swift in Sources */,
+				93786EC923B876B3006C3A30 /* CollectionCell.swift in Sources */,
 				A3B71194236FFB1F00670669 /* PaymentMethodTableViewCell.swift in Sources */,
 				0A73B67E23741771003E1543 /* OnGoingViewController.swift in Sources */,
 				0AFBEF45238FBBBB008EF737 /* TodayDealCollectionViewCell.swift in Sources */,
@@ -1490,6 +1501,7 @@
 				0AA8961A2387977800033AFE /* OnBoardingCollectionViewCell.swift in Sources */,
 				93F62E7D237BD8E4007FED6B /* TransactionStatus.swift in Sources */,
 				935A165E2384D85A001C1D4F /* Defaults.swift in Sources */,
+				93ED404523B465F400E04247 /* Int.swift in Sources */,
 				CA3559982366A5FB00382CCF /* SceneDelegate.swift in Sources */,
 				87940C6D237C0A35009AC6EA /* PusherChannels.swift in Sources */,
 				0AFBEF4E2390BD4C008EF737 /* TodaysViewModel.swift in Sources */,

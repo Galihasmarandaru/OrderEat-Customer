@@ -30,7 +30,9 @@ class MainMenuViewController: UIViewController {
      }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchController()
+        
+        // MARK: Disable searchbar
+        //setupSearchController()
         
         attemptFetchMerchants()
 
@@ -122,12 +124,12 @@ extension MainMenuViewController: UITableViewDelegate,UITableViewDataSource{
         if section == 0{
             return 1
         }
-        else if section == 1{
+//        else if section == 1{
+//            return 1
+//        }
+        else if section == 2 - 1 { // minus 1 nya ilangin klo pake carousel / voucher promo
             return 1
-        }
-        else if section == 2 {
-            return 1
-        }else if section == 3 {
+        }else if section == 3 - 1 {
             return merchants.count
         }else{
             return imageArr.count
@@ -146,32 +148,33 @@ extension MainMenuViewController: UITableViewDelegate,UITableViewDataSource{
             cellCategory.categoriesViewCell.register(UINib(nibName: "MainMenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainMenuCollectionCell")
             cellCategory.categoriesViewCell.delegate = self
             cellCategory.categoriesViewCell.dataSource = categoriesViewModel
+            
             return cellCategory
         }
-        else if indexPath.section == 1{
-            let cellToday = tableView.dequeueReusableCell(withIdentifier: "cellToday", for: indexPath) as! TodayDealTableViewCell
-            cellToday.todayViewCell.register(UINib(nibName: "TodayDealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TodayDealCollectionCell")
-            tableView.separatorStyle = .none
-            cellToday.todayViewCell.delegate = self
-            cellToday.todayViewCell.dataSource = todaysViewModel
-            
-            return cellToday
-        }
-        else if indexPath.section == 2 {
+//        else if indexPath.section == 1{
+//            let cellToday = tableView.dequeueReusableCell(withIdentifier: "cellToday", for: indexPath) as! TodayDealTableViewCell
+//            cellToday.todayViewCell.register(UINib(nibName: "TodayDealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TodayDealCollectionCell")
+//            tableView.separatorStyle = .none
+//            cellToday.todayViewCell.delegate = self
+//            cellToday.todayViewCell.dataSource = todaysViewModel
+//
+//            return cellToday
+//        }
+        else if indexPath.section == 2 - 1 { // minus 1 nya ilangin klo pake carousel / voucher promo
             let cellLabelOurPicks = tableView.dequeueReusableCell(withIdentifier: "labelOurPick", for: indexPath) as! LabelOurPickTableViewCell
             return cellLabelOurPicks
         }
-        else if indexPath.section == 3 {
+        else if indexPath.section == 3 - 1 {
             
             let cellOurPicks = tableView.dequeueReusableCell(withIdentifier: "cellOurPicks", for: indexPath) as! OurPicksTableViewCell
             
-//            cellOurPicks.imageOurPick.image = imageArr[indexPath.row]
-//            cellOurPicks.restoNameLabel.text = "BURGER KING"
-//            cellOurPicks.restoAddressLabel.text = "Aeon Mall"
-//            cellOurPicks.restoDetailLabel.text = "6 km"
-//            return cellOurPicks
+            let merchant = merchants[indexPath.row]
+            cellOurPicks.merchant = merchant
             
-            cellOurPicks.merchant = merchants[indexPath.row]
+            if merchant.isOpen! == false {
+                cellOurPicks.disable()
+            }
+            
             return cellOurPicks
         }
         else {
@@ -183,7 +186,7 @@ extension MainMenuViewController: UITableViewDelegate,UITableViewDataSource{
         
         // how to identify which cell is selected ?
         
-        if indexPath != IndexPath(row: 0, section: 2) {
+        if indexPath != IndexPath(row: 0, section: 2 - 1) {
             let cell = tableView.cellForRow(at: indexPath) as! OurPicksTableViewCell
             selectedMerchant = cell.merchant
             

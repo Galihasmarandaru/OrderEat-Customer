@@ -51,19 +51,3 @@ extension String {
         return hashString
     }
 }
-
-extension Int {
-    
-    var currencyFormat : String {
-          let currencyValue:Int = self
-          let formatter = NumberFormatter()
-          formatter.numberStyle = .decimal
-          formatter.locale = Locale(identifier: "id_ID")
-          formatter.groupingSeparator = "."
-
-          let formattedTipAmount = formatter.string(from: NSNumber(value: currencyValue))
-          
-          return formattedTipAmount!
-
-      }
-}

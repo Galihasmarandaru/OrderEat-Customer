@@ -15,6 +15,7 @@ class OrderDoneViewController: UIViewController {
     @IBOutlet weak var orderDoneTableView: UITableView!
 
     // Header View
+    @IBOutlet weak var transactionMessageLbl: UILabel!
     @IBOutlet weak var merchantNameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var orderNumberLbl: UILabel!
@@ -34,7 +35,7 @@ class OrderDoneViewController: UIViewController {
         super.viewDidLoad()
         
         config()
-        
+        transactionMessageLbl.text = transaction.status == 3 ? "Food On Process" : "Pick Up Your Food Now"
         merchantNameLbl.text = transaction.merchant?.name!
         orderNumberLbl.text = "Order No: " + transaction.orderNumber!
         statusLbl.text = "Status: " + transactionStatus[transaction.status!]
@@ -120,7 +121,7 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return details.count + 4
+        return details.count + 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -133,34 +134,34 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
         else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp.  \(transaction.getSubTotalPrice().currencyFormat)"
+            cellSub.rightLabel.text = transaction.getSubTotalPrice().asCurrency
 
             return cellSub
         }
         else if indexPath.row == (details.count + 1) {
+            let cellDiscount = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
+
+            cellDiscount.leftLabel.text = "Discount (\(Int(transaction.merchant!.discount! * 100))%)"
+            cellDiscount.rightLabel.text = "- " + transaction.getDiscount().asPrice
+            
+            return cellDiscount
+        }
+        else if indexPath.row == (details.count + 2) {
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
-            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice().currencyFormat)"
+            cellTax.rightLabel.text = transaction.getTaxPrice().asPrice
 
             return cellTax
         }
-        else if indexPath.row == (details.count + 2) {
+        else if indexPath.row == (details.count + 3) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "detailTableViewCell", for: indexPath) as! DetailTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. \(transaction.total!.currencyFormat)"
+            cellTotal.rightLabel.text = transaction.discountedTotal?.asCurrency
 
             return cellTotal
         }
         else {
-            if transaction.status == 3 {
-                let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
-                
-                cellQR.QRImageView.image = image
-                
-                cellQR.pickUpTimeLabel.text = transaction.pickUpTime?.time
-
-                return cellQR
-            } else if transaction.status == 4 {
+            if transaction.status == 4 {
                 let cellQR = tableView.dequeueReusableCell(withIdentifier: "showQRTableViewCell", for: indexPath) as! ShowQRTableViewCell
                 
                 cellQR.QRImageView.image = image
@@ -191,10 +192,7 @@ extension OrderDoneViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row < details.count {
             return 135
         }
-        else if indexPath.row == details.count + 3 && transaction.status == 3{
-            return 370
-        }
-        else if indexPath.row == details.count + 3 && transaction.status == 4{
+        else if indexPath.row == details.count + 4 && transaction.status == 4{
             return 370
         }
         else {

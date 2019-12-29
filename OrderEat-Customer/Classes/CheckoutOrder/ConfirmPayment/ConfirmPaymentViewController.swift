@@ -132,7 +132,7 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return details.count + 5
+        return details.count + 6
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -146,46 +146,42 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         else if indexPath.row == details.count {
             let cellSub = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellSub.leftLabel.text = "Subtotal"
-            cellSub.rightLabel.text = "Rp.  \(transaction.getSubTotalPrice().currencyFormat)"
+            cellSub.rightLabel.text = transaction.getSubTotalPrice().asCurrency
 
             return cellSub
         }
         else if indexPath.row == (details.count + 1) {
+            let cellDiscount = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
+
+            cellDiscount.leftLabel.text = "Discount (\(Int(transaction.merchant!.discount! * 100))%)"
+            cellDiscount.rightLabel.text = "- " + transaction.getDiscount().asPrice
+            
+            return cellDiscount
+        }
+        else if indexPath.row == (details.count + 2) {
             
             let cellTax = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellTax.leftLabel.text = "Tax (\(Int(transaction.merchant!.tax! * 100))%)"
-            cellTax.rightLabel.text = "Rp. \(transaction.getTaxPrice().currencyFormat)"
+            cellTax.rightLabel.text = transaction.getTaxPrice().asPrice
 
             return cellTax
         }
-        else if indexPath.row == (details.count + 2) {
+        else if indexPath.row == (details.count + 3) {
             let cellTotal = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellTotal.leftLabel.text = "Total"
-            cellTotal.rightLabel.text = "Rp. \(transaction.total!.currencyFormat)"
+            cellTotal.rightLabel.text = transaction.discountedTotal!.asCurrency
 
             return cellTotal
         }
-        else if indexPath.row == (details.count + 3) {
+        else if indexPath.row == (details.count + 4) {
             let cellPickup = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
             cellPickup.leftLabel.text = "Pick Up Time"
             cellPickup.rightLabel.text = transaction.pickUpTime?.time
 
             return cellPickup
         }
-//        else if indexPath.row == (details.count + 4) {
-//        let cellPayment = tableView.dequeueReusableCell(withIdentifier: "detailsTableViewCell", for: indexPath) as! DetailsTableViewCell
-//
-//            cellPayment.leftLabel.text = "Payment Method"
-//            cellPayment.rightLabel.text = "GOPAY"
-//
-//        return cellPayment
-//        }
         
         let cellButton = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
-
-//        if let qrCodeURL = transaction.merchant!.qrCode {
-//            cellButton.QRImageView.load(url: URL(string: qrCodeURL)!)
-//        }
 
         if transaction.midtransUrl == nil {
             cellButton.confirmPaymentButton.setTitle("Pay with Gopay", for: .normal)
@@ -194,7 +190,7 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
             cellButton.confirmPaymentButton.setTitle("Waiting Payment", for: .disabled)
             cellButton.confirmPaymentButton.isEnabled = false
         }
-            
+        
         cellButton.confirmBtnClosure = { [unowned self] in
                              
             cellButton.confirmPaymentButton.setTitle("Waiting Payment", for: .normal)
@@ -245,8 +241,8 @@ extension ConfirmPaymentViewController: UITableViewDelegate, UITableViewDataSour
         if indexPath.row < details.count {
             return 135
         }
-        else if indexPath.row == details.count + 4 {
-            return 280
+        else if indexPath.row == details.count + 5 {
+            return 150
         }
         else {
             return 35

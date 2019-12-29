@@ -23,7 +23,7 @@ class OurPicksTableViewCell: UITableViewCell {
     var merchant: Merchant!{
         didSet{
             
-            if let imageUrl = merchant.image {
+            if let imageUrl = merchant.image, imageUrl != "" {
                 self.imageOurPick.load(url: URL(string: imageUrl)!)
             } else {
                 self.imageOurPick.image = UIImage(named: "default")
