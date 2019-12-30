@@ -186,7 +186,7 @@ extension MainMenuViewController: UITableViewDelegate,UITableViewDataSource{
         
         // how to identify which cell is selected ?
         
-        if indexPath != IndexPath(row: 0, section: 2 - 1) {
+        if indexPath != IndexPath(row: 0, section: 2 - 1) && indexPath != IndexPath(row: 0, section: 0) {
             let cell = tableView.cellForRow(at: indexPath) as! OurPicksTableViewCell
             selectedMerchant = cell.merchant
             

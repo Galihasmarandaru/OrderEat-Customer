@@ -253,7 +253,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="LCy-ac-CBP"/>
                     <navigationItem key="navigationItem" id="wD1-kV-Czl">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wbE-Uy-Vi6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WQP-aY-kzA" userLabel="Logout">
+                            <button key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WQP-aY-kzA" userLabel="Logout">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
