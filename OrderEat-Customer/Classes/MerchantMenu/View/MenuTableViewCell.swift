@@ -48,7 +48,7 @@ class MenuTableViewCell: UITableViewCell {
         didSet {
             titleFood.text = menu.name!
             
-            if let imageUrl = menu.image {
+            if let imageUrl = menu.image, imageUrl != "" {
                 imageMenu.load(url: URL(string: imageUrl)!)
             } else {
                 imageMenu.image = UIImage(named: "default")

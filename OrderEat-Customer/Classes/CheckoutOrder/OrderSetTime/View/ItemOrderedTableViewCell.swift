@@ -29,7 +29,12 @@ class ItemOrderedTableViewCell: UITableViewCell {
     
     var detail: TransactionDetail! {
         didSet {
-            itemImageVIew.image = detail.menu?.image != nil ? UIImage(named: "default") : UIImage(named: "default")
+            if let imageUrl = detail.menu!.image, imageUrl != "" {
+                itemImageVIew.load(url: URL(string: imageUrl)!)
+            } else {
+                itemImageVIew.image = UIImage(named: "default")
+            }
+            
             itemNameLabel.text = detail.menu?.name
             itemQtyLabel.text = String(detail.qty!)
             
