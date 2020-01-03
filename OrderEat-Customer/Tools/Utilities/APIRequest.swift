@@ -16,7 +16,7 @@ enum ServerAddress : String {
 }
 
 final class APIRequest { 
-    static let api = ServerAddress.dev.rawValue
+    static let api = ServerAddress.prod.rawValue
     
     enum Endpoint : String {
         case customers = "/customer/"
